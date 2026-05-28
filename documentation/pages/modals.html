@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modales - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Ventanas Modales (Modals)</h1>
+          <p class="u-text-lg u-text-muted">
+            Cuadros de diálogo superpuestos para flujos críticos, confirmaciones e inspección de detalles secundarios.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Triggers Section -->
+        <section class="u-mb-vi">
+          <h2>Laboratorio de Pruebas</h2>
+          <p class="u-mb-v">Haz clic en los siguientes botones para desencadenar la apertura de las variantes modales de forma interactiva:</p>
+          
+          <div class="c-card u-p-v">
+            <div class="l-flex-stack l-flex-stack--md u-align-start" style="flex-direction: row; flex-wrap: wrap;">
+              
+              <!-- Trigger for standard modal -->
+              <button class="c-btn c-btn--primary" data-modal-target="modal-classic-example">
+                Abrir Modal Estándar
+              </button>
+
+              <!-- Trigger for HTML5 dialog modal -->
+              <button class="c-btn c-btn--secondary" data-dialog-target="modal-dialog-example">
+                Abrir Modal Nativo (&lt;dialog&gt;)
+              </button>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical Description -->
+        <section class="u-mb-v">
+          <h2>Dos Métodos de Implementación</h2>
+          <ul>
+            <li><strong>Método Clásico (Overlay):</strong> Controlado mediante la clase <code>.c-modal-overlay--open</code> aplicada al contenedor principal. Aplica un desenfoque de fondo premium usando <code>backdrop-filter: blur(4px);</code>.</li>
+            <li><strong>Método Nativo (&lt;dialog&gt;):</strong> La forma moderna compatible con accesibilidad de pantalla y control de foco nativo del navegador, activada mediante <code>element.showModal()</code>.</li>
+          </ul>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 1: Estándar (Clases)
+       ========================================================================== -->
+  <div class="c-modal-overlay" id="modal-classic-example">
+    <div class="c-modal">
+      
+      <div class="c-modal__header">
+        <h4 class="c-modal__title">Confirmar Acción</h4>
+        <button class="c-modal__close" data-modal-close aria-label="Cerrar modal">
+          &#x2715;
+        </button>
+      </div>
+      
+      <div class="c-modal__body">
+        <p class="u-text-xs u-mb-iii">
+          ¿Estás seguro de que deseas guardar los cambios realizados en el sistema de diseño corporativo de Senia UI?
+        </p>
+        <p class="u-text-2xs u-text-muted">
+          Esta acción refrescará la caché visual local para aplicar la nueva paleta cromática del Design System de inmediato.
+        </p>
+      </div>
+      
+      <div class="c-modal__footer">
+        <button class="c-btn c-btn--sm c-btn--outline" data-modal-close>Cancelar</button>
+        <button class="c-btn c-btn--sm c-btn--primary" data-modal-close>Guardar Cambios</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: Nativo (<dialog>)
+       ========================================================================== -->
+  <dialog class="c-modal" id="modal-dialog-example">
+    
+    <div class="c-modal__header">
+      <h4 class="c-modal__title">Modal Nativo HTML5</h4>
+      <button class="c-modal__close" data-dialog-close aria-label="Cerrar modal">
+        &#x2715;
+      </button>
+    </div>
+    
+    <div class="c-modal__body">
+      <p class="u-text-xs u-mb-iii">
+        Este cuadro de diálogo se ha generado empleando el elemento semántico nativo <code>&lt;dialog&gt;</code> de HTML5.
+      </p>
+      <p class="u-text-2xs u-text-muted">
+        El navegador gestiona automáticamente el orden de tabulación (foco) y cierra el diálogo si el usuario presiona la tecla <code>Escape</code>.
+      </p>
+    </div>
+    
+    <div class="c-modal__footer">
+      <button class="c-btn c-btn--sm c-btn--outline" data-dialog-close>Entendido</button>
+    </div>
+
+  </dialog>
+
+</body>
+</html>

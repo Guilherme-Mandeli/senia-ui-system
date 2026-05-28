@@ -1,0 +1,30 @@
+/* Flex Layouts
+   Simple linear structures for top headers, cards actions, and responsive content stacks.
+*/
+
+.l-flex-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-iii);
+  align-items: flex-start;
+  
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.l-flex-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-iii);
+}
+
+.l-flex-stack--md {
+  gap: var(--space-v);
+}
+
+.l-flex-stack--lg {
+  gap: var(--space-vi);
+}

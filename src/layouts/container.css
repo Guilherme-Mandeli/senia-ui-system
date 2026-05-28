@@ -1,0 +1,25 @@
+/* Container Layouts
+   Controls overall width limits of sections and pages.
+*/
+
+.l-container {
+  width: 100%;
+  max-width: var(--container-full);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-iv);
+  padding-right: var(--space-iv);
+  
+  @media (min-width: 640px) {
+    padding-left: var(--space-v);
+    padding-right: var(--space-v);
+  }
+}
+
+.l-container--narrow {
+  max-width: 45rem; /* 720px */
+}
+
+.l-container--wide {
+  max-width: 90rem; /* 1440px */
+}

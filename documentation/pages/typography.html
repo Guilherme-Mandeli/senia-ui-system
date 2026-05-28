@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipografía - Senia UI CSS Framework</title>
+  <link class="js-stylesheet" rel="stylesheet" href="../../src/style.css">
+  <link class="js-stylesheet" rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Sistema Tipográfico</h1>
+          <p class="u-text-lg u-text-muted">
+            Jerarquía visual legible y consistente estructurada mediante las familias tipográficas Outfit e Inter.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Font Families -->
+        <section class="u-mb-vi">
+          <h2>Fuentes Corporativas</h2>
+          <div class="u-grid u-grid-cols-3 u-grid-gap-sm u-mt-v" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <div class="c-card u-p-v">
+              <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">Predeterminado</span>
+              <h3 style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-vii); font-weight: 800;">Gill Sans</h3>
+              <p style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-v);">
+                ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+                abcdefghijklmnñopqrstuvwxyz<br>
+                1234567890!@#$%^&*()
+              </p>
+              <div class="u-text-xs u-text-success u-mt-iii">--font-family-gill-sans</div>
+            </div>
+
+            <div class="c-card u-p-v">
+              <span class="c-badge c-badge--outline c-badge--success u-mb-ii">Seriedad</span>
+              <h3 style="font-family: var(--font-family-lato); font-size: var(--font-size-vii); font-weight: 700;">Lato</h3>
+              <p style="font-family: var(--font-family-lato); font-size: var(--font-size-v);">
+                ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
+                abcdefghijklmnñopqrstuvwxyz<br>
+                1234567890!@#$%^&*()
+              </p>
+              <div class="u-text-xs u-text-success u-mt-iii">--font-family-lato</div>
+            </div>
+
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Typography Sizes -->
+        <section class="u-mb-vi">
+          <h2>Escala de Tamaños (Modular)</h2>
+          <p class="u-mb-v">Escala relativa basada en unidades <code>rem</code> que escala armoniosamente en cualquier resolución.</p>
+          
+          <div class="c-card u-p-v">
+            <div class="l-flex-stack l-flex-stack--md">
+              
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-x</span>
+                <div style="font-size: var(--font-size-x); font-family: var(--font-family-heading); font-weight: 800; line-height: 1;">Senia Framework</div>
+              </div>
+              
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-ix</span>
+                <div style="font-size: var(--font-size-ix); font-family: var(--font-family-heading); font-weight: 800; line-height: 1.1;">Tamaño de Encabezado Principal</div>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-viii</span>
+                <div style="font-size: var(--font-size-viii); font-family: var(--font-family-heading); font-weight: 700;">Encabezados de Segundo Nivel (H2)</div>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-vii</span>
+                <div style="font-size: var(--font-size-vii); font-weight: 600;">Secciones medianas (H3)</div>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-vi</span>
+                <div style="font-size: var(--font-size-vi); font-weight: 500;">Párrafos destacados, leads o subtítulos (H4)</div>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-v</span>
+                <div style="font-size: var(--font-size-v);">Cuerpo de texto estándar por defecto de 1rem (16px). Legibilidad óptima para textos continuos.</div>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">--font-size-iv</span>
+                <div style="font-size: var(--font-size-iv);">Textos auxiliares, inputs de formulario y tablas secundarias (14px).</div>
+              </div>
+
+              <div>
+                <span class="c-badge u-mb-i">--font-size-ii</span>
+                <div style="font-size: var(--font-size-ii); text-transform: uppercase; font-weight: 600;">Etiquetas pequeñas, badges y notas (12px).</div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Font Weights Section -->
+        <section class="u-mb-vi">
+          <h2>Pesos Tipográficos</h2>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col">
+              <div>
+                <p class="u-text-light" style="font-size: var(--font-size-vi);">Light (300) - Cuerpo de lectura ligero</p>
+                <p class="u-text-regular" style="font-size: var(--font-size-vi);">Regular (400) - Cuerpo de lectura principal</p>
+                <p class="u-text-medium" style="font-size: var(--font-size-vi);">Medium (500) - Enlaces y etiquetas secundarias</p>
+              </div>
+              <div>
+                <p class="u-text-semibold" style="font-size: var(--font-size-vi);">Semibold (600) - Títulos de componentes</p>
+                <p class="u-text-bold" style="font-size: var(--font-size-vi);">Bold (700) - Títulos de secciones</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Text Utilities Section -->
+        <section class="u-mb-v">
+          <h2>Utilidades de Texto</h2>
+          <p class="u-mb-v">Clases de utilidad premium para controlar alineación, transformación, decoración, saltos de línea y desbordamientos.</p>
+
+          <div class="u-grid u-grid-cols-2 u-grid-gap-md" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            
+            <!-- Alignment & Transform -->
+            <div class="c-card u-p-v">
+              <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Alineación y Transformación</h3>
+              
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-center</span>
+                <p class="u-text-center u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto centrado</p>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-right</span>
+                <p class="u-text-right u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto a la derecha</p>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-uppercase</span>
+                <p class="u-text-uppercase u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto convertido a mayúsculas</p>
+              </div>
+
+              <div>
+                <span class="c-badge u-mb-i">.u-text-capitalize</span>
+                <p class="u-text-capitalize u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">texto capitalizado automáticamente</p>
+              </div>
+            </div>
+
+            <!-- Decoration & Overflow -->
+            <div class="c-card u-p-v">
+              <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Decoración y Ajustes</h3>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-underline</span>
+                <p class="u-text-underline u-p-iii">Texto subrayado</p>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-line-through</span>
+                <p class="u-text-line-through u-p-iii">Texto tachado</p>
+              </div>
+
+              <div class="u-mb-iv">
+                <span class="c-badge u-mb-i">.u-text-truncate</span>
+                <p class="u-text-truncate u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px; max-width: 250px;">
+                  Este es un texto largo que se recortará automáticamente.
+                </p>
+              </div>
+
+              <div>
+                <span class="c-badge u-mb-i">.u-text-hyphens-auto</span>
+                <p class="u-text-hyphens-auto u-p-iii" lang="es" style="background: var(--color-neutral-100); border-radius: 4px; max-width: 150px; text-align: justify;">
+                  Establecemos la separación silábica automática.
+                </p>
+              </div>
+            </div>
+
+            <!-- Wrap & Break -->
+            <div class="c-card u-p-v" style="grid-column: span 2;">
+              <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Ajustes de Línea y Rupturas</h3>
+              <div class="u-grid u-grid-cols-3 u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div>
+                  <span class="c-badge u-mb-i">.u-text-nowrap</span>
+                  <div class="u-p-iii u-text-nowrap" style="background: var(--color-neutral-100); border-radius: 4px; overflow: auto;">
+                    Este texto no saltará de línea bajo ninguna circunstancia.
+                  </div>
+                </div>
+                <div>
+                  <span class="c-badge u-mb-i">.u-text-break-all</span>
+                  <div class="u-p-iii u-text-break-all" style="background: var(--color-neutral-100); border-radius: 4px; word-break: break-all;">
+                    Supercalifragilisticoespialidosoconsaltodelineaextremo
+                  </div>
+                </div>
+                <div>
+                  <span class="c-badge u-mb-i">.u-text-wrap-break</span>
+                  <div class="u-p-iii u-text-wrap-break" style="background: var(--color-neutral-100); border-radius: 4px;">
+                    Palabras extremadamente-largas-que-se-deben-envolver.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

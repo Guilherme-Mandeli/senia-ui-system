@@ -1,0 +1,62 @@
+/* Dark Theme Mappings — Grupo Senia Brand
+   Applies dark surface mappings when the '.theme-dark' class is present on the document root.
+   Yellow primary adapts to lighter tints for readability on dark backgrounds.
+*/
+
+.theme-dark {
+  /* Page backgrounds & Typography */
+  --color-bg-page: var(--color-neutral-950);
+  --color-text-body: var(--color-neutral-300);
+  --color-text-heading: var(--color-neutral-50);
+  
+  /* Brand Links (lighter yellow for dark backgrounds) */
+  --color-text-link: var(--color-primary-400);
+  --color-text-link-hover: var(--color-primary-300);
+  
+  /* Borders */
+  --color-border-default: var(--color-neutral-800);
+  --color-border-subtle: var(--color-neutral-900);
+  --color-border-strong: var(--color-neutral-700);
+  
+  /* Cards & Surface panels */
+  --color-bg-card: var(--color-neutral-900);
+  --color-border-card: var(--color-neutral-800);
+
+  /* Warm Surfaces */
+  --color-bg-warm: hsl(var(--color-warm-h), 20%, 12%);
+  --color-bg-warm-subtle: hsl(var(--color-warm-h), 15%, 8%);
+  
+  /* Code components */
+  --color-bg-code-inline: var(--color-neutral-800);
+  --color-text-code-inline: var(--color-neutral-200);
+  --color-bg-code-block: var(--color-neutral-950);
+  
+  /* Form Elements */
+  --color-input-bg: var(--color-neutral-950);
+  --color-input-border: var(--color-neutral-800);
+  --color-input-text: var(--color-neutral-200);
+  --color-input-placeholder: var(--color-neutral-600);
+  --color-input-focus-border: var(--color-primary-500);
+  --color-input-disabled-bg: var(--color-neutral-900);
+  --color-input-disabled-text: var(--color-neutral-600);
+
+  /* Status overrides */
+  --color-text-success: hsl(var(--color-success-h), var(--color-success-s), 80%);
+  --color-bg-success-light: hsla(var(--color-success-h), var(--color-success-s), 45%, 0.1);
+  --color-border-success: hsl(var(--color-success-h), var(--color-success-s), 40%);
+
+  --color-text-warning: hsl(var(--color-warning-h), var(--color-warning-s), 80%);
+  --color-bg-warning-light: hsla(var(--color-warning-h), var(--color-warning-s), 50%, 0.1);
+  --color-border-warning: hsl(var(--color-warning-h), var(--color-warning-s), 40%);
+
+  --color-text-error: hsl(var(--color-error-h), var(--color-error-s), 80%);
+  --color-bg-error-light: hsla(var(--color-error-h), var(--color-error-s), 56%, 0.1);
+  --color-border-error: hsl(var(--color-error-h), var(--color-error-s), 40%);
+
+  --color-text-info: hsl(var(--color-info-h), var(--color-info-s), 80%);
+  --color-bg-info-light: hsla(var(--color-info-h), var(--color-info-s), 50%, 0.1);
+  --color-border-info: hsl(var(--color-info-h), var(--color-info-s), 40%);
+
+  /* Special focus override */
+  --color-focus: hsl(var(--color-primary-h), var(--color-primary-s), 50%);
+}

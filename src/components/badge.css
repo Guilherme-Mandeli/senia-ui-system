@@ -1,0 +1,91 @@
+/* Badge / Pill Label Component
+   BEM: .c-badge
+*/
+
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-ii);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-none);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-ii);
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-ii);
+}
+
+/* Pill Shape Modifier */
+.c-badge--pill {
+  border-radius: var(--radius-full);
+}
+
+/* --- Variants (Solid) --- */
+
+.c-badge--primary {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-800);
+  
+  .theme-dark & {
+    background-color: hsla(var(--color-primary-h), var(--color-primary-s), 50%, 0.15);
+    color: var(--color-primary-300);
+  }
+}
+
+.c-badge--success {
+  background-color: var(--color-bg-success-light);
+  color: var(--color-text-success);
+}
+
+.c-badge--warning {
+  background-color: var(--color-bg-warning-light);
+  color: var(--color-text-warning);
+}
+
+.c-badge--error {
+  background-color: var(--color-bg-error-light);
+  color: var(--color-text-error);
+}
+
+.c-badge--info {
+  background-color: var(--color-bg-info-light);
+  color: var(--color-text-info);
+}
+
+/* --- Variants (Outline) --- */
+
+.c-badge--outline {
+  background-color: transparent;
+  border-color: var(--color-border-default);
+  color: var(--color-text-body);
+  
+  &.c-badge--primary {
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-600);
+    .theme-dark & { border-color: var(--color-primary-700); color: var(--color-primary-300); }
+  }
+  
+  &.c-badge--success {
+    border-color: var(--color-border-success);
+    color: var(--color-text-success);
+  }
+  
+  &.c-badge--warning {
+    border-color: var(--color-border-warning);
+    color: var(--color-text-warning);
+  }
+  
+  &.c-badge--error {
+    border-color: var(--color-border-error);
+    color: var(--color-text-error);
+  }
+  
+  &.c-badge--info {
+    border-color: var(--color-border-info);
+    color: var(--color-text-info);
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Desarrollo - Senia UI CSS Framework</title>
+  <link class="js-stylesheet" rel="stylesheet" href="../../src/style.css">
+  <link class="js-stylesheet" rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation (Populated Dynamically) -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Developer Guide</span>
+          <h1>Integración &amp; Uso de Estilos</h1>
+          <p class="u-text-lg u-text-muted">
+            Aprende a integrar, estructurar y extender los estilos de <strong>Senia UI CSS Framework</strong> en tus aplicaciones web con un alto rendimiento.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Paso 1: Importación -->
+        <section class="u-mb-vi">
+          <h2>1. Cómo integrar el Framework</h2>
+          <p>Para hacer uso del framework en cualquier proyecto del grupo, tienes dos vías principales de integración:</p>
+          
+          <div class="u-grid u-grid-cols-2 u-grid-gap-sm u-mt-v" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="c-card u-p-v">
+              <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">Recomendado</span>
+              <h4>Vía Compilada (Producción / CDN)</h4>
+              <p class="u-text-sm u-text-muted">
+                Una vez construido el framework (<code>npm run build</code>), se generan dos archivos CSS independientes y sus versiones minificadas en el directorio <code>/dist/</code>:
+              </p>
+              <div class="u-mb-iii" style="margin-top: var(--space-ii);">
+                <strong class="u-text-xs" style="color: var(--color-primary-500); display: block;">1. Estilo Esencial (Tokens, Temas y Reset):</strong>
+                <p class="u-text-xs u-text-muted u-mb-i">Perfecto para usar solo variables y estilos base nativos.</p>
+                <pre style="margin-bottom: var(--space-ii);"><code>&lt;link rel="stylesheet" href="https://cdn.grupo-senia.com/assets/senia-essential.min.css"&gt;</code></pre>
+              </div>
+              <div>
+                <strong class="u-text-xs" style="color: var(--color-success-500); display: block;">2. Suite Completa (Componentes, Layouts y Utilidades):</strong>
+                <p class="u-text-xs u-text-muted u-mb-i">Nuestra suite completa lista para construir interfaces estilo Bootstrap.</p>
+                <pre style="margin-bottom: 0;"><code>&lt;link rel="stylesheet" href="https://cdn.grupo-senia.com/assets/senia-full.min.css"&gt;</code></pre>
+              </div>
+            </div>
+            
+            <div class="c-card u-p-v">
+              <span class="c-badge c-badge--outline c-badge--success u-mb-ii">Entorno Local</span>
+              <h4>Vía PostCSS / Módulos</h4>
+              <p class="u-text-sm u-text-muted">
+                Si estás desarrollando dentro del repositorio de Senia UI o en un bundle de Vite con PostCSS, puedes importar cualquiera de los dos entrypoints globales:
+              </p>
+              <div class="u-mb-iii" style="margin-top: var(--space-ii);">
+                <strong class="u-text-xs" style="display: block;">1. Estilo Esencial:</strong>
+                <pre style="margin-bottom: var(--space-ii);"><code>@import "senia-ui-system/src/essential.css";</code></pre>
+              </div>
+              <div>
+                <strong class="u-text-xs" style="display: block;">2. Suite Completa:</strong>
+                <pre style="margin-bottom: 0;"><code>@import "senia-ui-system/src/style.css";</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Convenciones de Selectores -->
+        <section class="u-mb-vi">
+          <h2>2. Convenciones de Nomenclatura</h2>
+          <p>
+            Utilizamos una metodología basada en **BEM Simplificado** combinada con prefijos semánticos para evitar conflictos y asegurar que las clases se auto-expliquen:
+          </p>
+          
+          <div class="c-card u-p-v">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--color-border-subtle);">
+                  <th style="padding: var(--space-ii) var(--space-iii);">Prefijo</th>
+                  <th style="padding: var(--space-ii) var(--space-iii);">Propósito</th>
+                  <th style="padding: var(--space-ii) var(--space-iii);">Ejemplo de Clase</th>
+                  <th style="padding: var(--space-ii) var(--space-iii);">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold; color: var(--color-primary-500);">c-</td>
+                  <td style="padding: var(--space-ii) var(--space-iii);">Componente encapsulado</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">.c-button, .c-card</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Bloque estilizado con comportamiento visual autónomo.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold; color: var(--color-success-500);">l-</td>
+                  <td style="padding: var(--space-ii) var(--space-iii);">Layout &amp; Estructura</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">.l-container, .l-grid</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Define contenedores de rejilla, layouts flexibles u organizadores espaciales.</td>
+                </tr>
+                <tr>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold; color: #ea580c;">u-</td>
+                  <td style="padding: var(--space-ii) var(--space-iii);">Utility (Clases Atómicas)</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">.u-mb-vi, .u-text-center</td>
+                  <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Estilos atómicos de única responsabilidad para retoques de margen, padding, alineamiento, etc.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Sobrescribir variables de diseño -->
+        <section class="u-mb-vi">
+          <h2>3. Personalización y Temas</h2>
+          <p>
+            Dado que todo el framework utiliza **Variables CSS Nativas**, es extremadamente fácil sobrescribir los valores por defecto (Tokens) en un componente o sección en particular sin necesidad de recompilar el CSS:
+          </p>
+          
+          <pre><code>/* Sobrescribir el color primario de Senia UI solo dentro de un bloque específico */
+.mi-seccion-personalizada {
+  --color-primary-500: 210 100% 56%; /* Cambia a HSL de azul brillante */
+  --radius-iv: 0px; /* Bordes totalmente rectos */
+}
+</code></pre>
+        </section>
+
+        <!-- Enlace a Fuentes -->
+        <section class="u-mb-v">
+          <div class="c-card c-card--featured u-p-v">
+            <h4>💡 Siguiente Paso: Gestión de Tipografías</h4>
+            <p class="u-text-sm u-text-muted">
+              Hemos implementado Gill Sans de forma integrada y optimizada. Visita la guía específica para aprender a utilizar los distintos pesos tipográficos de Gill Sans sin perjudicar la velocidad de tu web.
+            </p>
+            <a href="fonts.html" class="c-badge c-badge--primary c-badge--pill">Ir a Guía de Fuentes →</a>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* CSS Layer Architecture
+   Declares the explicit cascade order. Styles defined in later layers override 
+   styles from earlier layers, regardless of selector specificity.
+*/
+@layer reset, tokens, base, utilities, components, layouts, themes;

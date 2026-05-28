@@ -1,0 +1,138 @@
+/* Base Styles & Typography Configuration
+   Applies design tokens to native HTML elements.
+*/
+
+/* Importación externa de Fuentes (Google Fonts CDN)
+   Para desactivar y usar fuentes locales desde el CDN propio del proyecto:
+   1. Comente la línea @import de abajo.
+   2. Coloque las fuentes en /public/fonts/ y descomente las reglas en src/base/fonts.css.
+*/
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap'); */
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-v);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body, var(--color-neutral-800));
+  background-color: var(--color-bg-page, var(--color-neutral-50));
+  transition: background-color var(--transition-duration-normal) var(--transition-easing-premium), 
+              color var(--transition-duration-normal) var(--transition-easing-premium);
+}
+
+/* Headings with Outfit Font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-heading);
+  color: var(--color-text-heading, var(--color-neutral-900));
+  letter-spacing: var(--letter-spacing-i);
+}
+
+h1 {
+  font-size: var(--font-size-ix);
+  margin-bottom: var(--space-v);
+}
+
+h2 {
+  font-size: var(--font-size-viii);
+  margin-bottom: var(--space-iv);
+  padding-bottom: var(--space-i);
+}
+
+h3 {
+  font-size: var(--font-size-vii);
+  margin-bottom: var(--space-iii);
+}
+
+h4 {
+  font-size: var(--font-size-vi);
+  margin-bottom: var(--space-ii);
+}
+
+h5 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-ii);
+}
+
+h6 {
+  font-size: var(--font-size-v);
+  margin-bottom: var(--space-ii);
+}
+
+/* Paragraphs & Text Elements */
+p {
+  margin-bottom: var(--space-iv);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong, b {
+  font-weight: var(--font-weight-700);
+  color: var(--color-text-heading, var(--color-neutral-900));
+}
+
+small {
+  font-size: var(--font-size-iv);
+}
+
+/* Links */
+a {
+  color: var(--color-text-link, var(--color-primary-500));
+  font-weight: var(--font-weight-500);
+  transition: var(--transition-colors);
+  
+  &:hover {
+    color: var(--color-text-link-hover, var(--color-primary-700));
+  }
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--space-iv);
+  padding-left: var(--space-vi);
+}
+
+li {
+  margin-bottom: var(--space-i);
+}
+
+/* Code & Preformatted Text */
+code {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-iv);
+  background-color: var(--color-bg-code-inline, var(--color-neutral-100));
+  color: var(--color-text-code-inline, var(--color-neutral-800));
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-ii);
+  font-weight: var(--font-weight-500);
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-iv);
+  background-color: var(--color-bg-code-block, var(--color-neutral-900));
+  color: var(--color-neutral-50);
+  padding: var(--space-v);
+  border-radius: var(--radius-iv);
+  overflow-x: auto;
+  margin-bottom: var(--space-iv);
+  border: 1px solid var(--color-neutral-800);
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Horizontal Rules */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border-subtle, var(--color-neutral-200));
+  margin: var(--space-vi) 0;
+}

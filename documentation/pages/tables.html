@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablas - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Tablas de Datos (Tables)</h1>
+          <p class="u-text-lg u-text-muted">
+            Tablas estructuradas para representar listados masivos de datos de forma limpia, responsiva y contrastada.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Striped & Hover Table Section -->
+        <section class="u-mb-vi">
+          <h2>Tabla Cebrada e Interactiva</h2>
+          <p class="u-mb-v">Las clases modificadoras <code>.c-table--striped</code> y <code>.c-table--hover</code> colorean de forma alterna las filas del listado e iluminan la celda seleccionada al pasar el cursor (hover) para mejorar el escaneo de grandes columnas de datos.</p>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped c-table--hover">
+              <thead>
+                <tr>
+                  <th class="c-table__th">ID</th>
+                  <th class="c-table__th">Usuario</th>
+                  <th class="c-table__th">Rol</th>
+                  <th class="c-table__th">Último Acceso</th>
+                  <th class="c-table__th">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td">#001</td>
+                  <td class="c-table__td"><strong>Sofia Rodríguez</strong></td>
+                  <td class="c-table__td">Frontend Arch.</td>
+                  <td class="c-table__td">Hace 5 min</td>
+                  <td class="c-table__td">
+                    <span class="c-badge c-badge--pill c-badge--success">Online</span>
+                  </td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td">#002</td>
+                  <td class="c-table__td"><strong>Marcos Alarcón</strong></td>
+                  <td class="c-table__td">DevOps Lead</td>
+                  <td class="c-table__td">Ayer</td>
+                  <td class="c-table__td">
+                    <span class="c-badge c-badge--pill c-badge--success">Online</span>
+                  </td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td">#003</td>
+                  <td class="c-table__td"><strong>Lucia Beltrán</strong></td>
+                  <td class="c-table__td">UI/UX Specialist</td>
+                  <td class="c-table__td">Hace 3 días</td>
+                  <td class="c-table__td">
+                    <span class="c-badge c-badge--pill c-badge--warning">Ausente</span>
+                  </td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td">#004</td>
+                  <td class="c-table__td"><strong>Damián Cobos</strong></td>
+                  <td class="c-table__td">Product Manager</td>
+                  <td class="c-table__td">Hace 2 semanas</td>
+                  <td class="c-table__td">
+                    <span class="c-badge c-badge--pill c-badge--error">Offline</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Responsive Overflow Section -->
+        <section class="u-mb-v">
+          <h2>Responsividad Horizontal (.c-table-container)</h2>
+          <p class="u-mb-v">El contenedor inteligente <code>.c-table-container</code> aplica un scroll horizontal responsivo en pantallas móviles pequeñas para evitar la rotura o desborde del layout global de la página.</p>
+          
+          <div class="c-card u-p-iv" style="border-style: dashed; border-color: var(--color-primary-300);">
+            <p class="u-text-2xs u-text-muted">
+              Redimensiona tu navegador para simular una resolución de smartphone de menos de 480px de ancho y prueba a deslizar horizontalmente la tabla de arriba.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

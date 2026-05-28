@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convenciones del Sistema - Senia UI CSS Framework</title>
+  <link class="js-stylesheet" rel="stylesheet" href="../../src/style.css">
+  <link class="js-stylesheet" rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation (Populated Dynamically) -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-v">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Estándares del Framework</span>
+          <h1>Convenciones &amp; Filosofía</h1>
+          <p class="u-text-lg u-text-muted">
+            Directrices de diseño técnico, nomenclatura semántica y políticas de apilamiento jerárquico.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Conventions Navigation Layout -->
+        <div class="l-conventions-layout">
+          
+          <!-- Navigation Sidebar (Local Page Links) -->
+          <aside class="l-conventions-nav">
+            <div class="l-conventions-nav__title">Filosofía &amp; Tokens</div>
+            <a href="#filosofia" class="l-conventions-nav__link">Filosofía General</a>
+            <a href="#nomenclatura" class="l-conventions-nav__link">Nomenclatura BEM</a>
+            <a href="#hsl" class="l-conventions-nav__link">Colores &amp; HSL</a>
+            <a href="#fuentes" class="l-conventions-nav__link">Fuentes y Tipografía</a>
+            <a href="#z-index" class="l-conventions-nav__link">z-index (Apilamiento)</a>
+          </aside>
+          
+          <!-- Sections Content Canvas -->
+          <div class="l-conventions-content">
+            
+            <!-- Section 1: Filosofía -->
+            <section id="sec-filosofia" class="l-conventions-section">
+              <h2>Filosofía General</h2>
+              <p class="u-text-md u-text-muted u-mb-v">
+                Senia UI se sustenta en tres principios fundamentales que guían cómo escribimos estilos y estructuramos componentes:
+              </p>
+              
+              <div class="u-grid u-grid-cols-1 u-grid-gap-md u-mb-vi" style="grid-template-columns: 1fr;">
+                <div class="c-card u-p-v">
+                  <h4 class="u-text-primary u-mb-ii">1. CSS Nativo sobre Abstracciones</h4>
+                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                    Priorizamos el uso de estándares web modernos como <strong>CSS Custom Properties</strong>, <strong>Cascading Layers (@layer)</strong> y anidamiento nativo. Evitamos el uso excesivo de frameworks de terceros para asegurar un rendimiento de carga óptimo de 100% en navegadores.
+                  </p>
+                </div>
+                
+                <div class="c-card u-p-v">
+                  <h4 class="u-text-primary u-mb-ii">2. Componentes Cohesivos con Utilidades de Apoyo</h4>
+                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                    A diferencia del enfoque 100% atómico (Utility-First), defendemos el uso de **Componentes Robustos** que encapsulan los estilos de la marca y se apoyan en **Clases Utility** puntuales únicamente para retocar márgenes o alineaciones. Esto mantiene nuestro HTML limpio y semántico.
+                  </p>
+                </div>
+
+                <div class="c-card u-p-v">
+                  <h4 class="u-text-primary u-mb-ii">3. Flexibilidad Temática Dinámica</h4>
+                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                    Al usar variables CSS globales en lugar de variables compiladas (como en Sass/Less), habilitamos el cambio dinámico de modos claro/oscuro o marcas corporativas en tiempo de ejecución de forma nativa e instantánea.
+                  </p>
+                </div>
+              </div>
+            </section>
+            
+            <!-- Section 2: Nomenclatura -->
+            <section id="sec-nomenclatura" class="l-conventions-section">
+              <h2>Nomenclatura BEM Simplificada</h2>
+              <p>
+                Para evitar colisiones de estilos entre diferentes equipos del grupo, adoptamos una variante estructurada de **BEM (Block, Element, Modifier)** combinada con **prefijos de clase funcionales**:
+              </p>
+              
+              <div class="c-card u-p-v u-mb-v">
+                <h4 class="u-mb-iii">Esquema de Prefijos:</h4>
+                <ul style="padding-left: var(--space-v); margin-bottom: 0;">
+                  <li class="u-mb-iii"><strong><code>c-</code> (Component):</strong> Bloques autónomos y reutilizables. Ej: <code>.c-card</code>, <code>.c-button</code>.</li>
+                  <li class="u-mb-iii"><strong><code>l-</code> (Layout):</strong> Estructuras organizacionales de cuadrícula o contenedores que no aplican estilos estéticos. Ej: <code>.l-grid</code>, <code>.l-container</code>.</li>
+                  <li class="u-mb-iii"><strong><code>u-</code> (Utility):</strong> Clases de una sola propiedad con alta prioridad. Ej: <code>.u-text-center</code>, <code>.u-mt-vi</code>.</li>
+                </ul>
+              </div>
+
+              <h3>Estructura BEM en HTML</h3>
+              <pre><code>&lt;!-- El Bloque Principal (Componente) --&gt;
+&lt;div class="c-card c-card--featured"&gt;
+  
+  &lt;!-- Un Elemento interno adjunto --&gt;
+  &lt;h3 class="c-card__title"&gt;Título de Tarjeta&lt;/h3&gt;
+  
+  &lt;!-- Otro Elemento interno --&gt;
+  &lt;p class="c-card__body"&gt;Texto descriptivo...&lt;/p&gt;
+  
+&lt;/div&gt;</code></pre>
+            </section>
+            
+            <!-- Section 3: HSL -->
+            <section id="sec-hsl" class="l-conventions-section">
+              <h2>Colores en Formato HSL</h2>
+              <p>
+                Toda nuestra paleta de colores corporativos se define en el formato **HSL (Hue, Saturation, Lightness)** usando componentes desagregados.
+              </p>
+              
+              <div class="c-card u-p-v u-mb-v">
+                <h4>¿Por qué desagregar componentes HSL?</h4>
+                <p class="u-text-sm u-text-muted">
+                  Escribir los colores como variables de componentes individuales nos permite modificar dinámicamente la opacidad (usando la función CSS <code>color-mix</code> o <code>rgba()</code>) o la luminosidad en hovers y estados activos, sin necesidad de declarar una variable nueva para cada caso.
+                </p>
+                
+                <pre style="margin-bottom: 0;"><code>:root {
+  /* Guardamos los componentes puros de H, S, L del Amarillo Senia */
+  --color-primary-h: 52;
+  --color-primary-s: 100%;
+  --color-primary-l: 67%;
+  
+  /* Creamos el token consumible usando la base */
+  --color-primary-500: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  
+  /* Generamos hover oscureciendo la luminosidad */
+  --color-primary-600: hsl(46, 86%, 55%); /* Dorado hover */
+  
+  /* Generamos tintes claros subiendo la luminosidad */
+  --color-primary-100: hsl(46, 100%, 92%); /* Fondo suave */
+}</code></pre>
+              </div>
+            </section>
+            
+            <!-- Section 4: Fuentes y Tipografía -->
+            <section id="sec-fuentes" class="l-conventions-section">
+              <h2>Fuentes y Tipografía</h2>
+              <p class="u-text-md u-text-muted u-mb-v">
+                Estándares tipográficos, escala de tamaños relativos y optimización del CDN de fuentes corporativo en Senia UI.
+              </p>
+
+              <!-- Tabla de Contenidos (Index) al principio -->
+              <div class="c-card u-p-v u-mb-vi" style="background-color: rgba(255, 238, 88, 0.02); border-left: 4px solid var(--color-primary-500);">
+                <h4 style="margin-top: 0; font-size: var(--font-size-iv); text-transform: uppercase; color: var(--color-neutral-400); letter-spacing: var(--letter-spacing-ii);">Índice de Contenidos:</h4>
+                <ul style="padding-left: var(--space-v); margin-bottom: 0; font-size: var(--font-size-iv); line-height: 1.6;">
+                  <li><a href="#fuentes-familia" style="color: var(--color-primary-600); font-weight: 600;">1. Familias Tipográficas (font-family)</a></li>
+                  <li><a href="#fuentes-escala" style="color: var(--color-primary-600); font-weight: 600;">2. Escala de Tamaños (font-size)</a></li>
+                  <li><a href="#fuentes-pesos" style="color: var(--color-primary-600); font-weight: 600;">3. Mapeo de Pesos Tipográficos (font-weight)</a></li>
+                  <li><a href="#fuentes-cdn" style="color: var(--color-primary-600); font-weight: 600;">4. Optimización de CDN &amp; Carga Diferida (Lazy Load)</a></li>
+                  <li><a href="#fuentes-practicas" style="color: var(--color-primary-600); font-weight: 600;">5. Guía de Buenas Prácticas</a></li>
+                </ul>
+              </div>
+
+              <!-- 1. Familia Tipográfica -->
+              <div id="fuentes-familia" class="u-mb-vi">
+                <h3>1. Familias Tipográficas (font-family)</h3>
+                <p>
+                  Establecemos una jerarquía tipográfica unificada que asocia la identidad corporativa de la marca con fuentes de sistema nativas sólidas como salvaguarda secundaria (fallback):
+                </p>
+                <ul style="padding-left: var(--space-v);">
+                  <li class="u-mb-iii"><strong>Textos de lectura e interfaz:</strong> <code>--font-family-body</code>. Resuelve primero a la fuente corporativa <strong>Gill Sans</strong>, y como caída secundaria a <code>system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif</code>.</li>
+                  <li class="u-mb-iii"><strong>Títulos y encabezados:</strong> <code>--font-family-heading</code>. Resuelve de forma idéntica a <strong>Gill Sans</strong> con un escalado tipográfico destacado de peso y tracking.</li>
+                  <li class="u-mb-iii"><strong>Bloques de código y datos monoespaciados:</strong> <code>--font-family-mono</code>. Resuelve de manera nativa a <code>JetBrains Mono, Consolas, "Courier New", monospace</code>.</li>
+                </ul>
+
+                <div class="c-card u-p-v u-mt-v" style="background-color: rgba(255, 238, 88, 0.015); border: 1px dashed var(--color-border-card);">
+                  <h4 class="u-text-primary u-mb-ii">💼 Contexto Serio: Tipografía Lato</h4>
+                  <p class="u-text-sm u-mb-iv">
+                    Para productos corporativos o secciones con un <strong>contexto más formal y serio</strong> (ej. informes corporativos, paneles legales, políticas de privacidad), configuramos e integramos la tipografía **Lato**.
+                  </p>
+                  <p class="u-text-sm u-mb-iv">
+                    El token global es <code>--font-family-lato</code>, y puedes activarlo en cascada de forma nativa e instantánea añadiendo la clase <code>.theme-serious</code> o el atributo <code>data-theme="serious"</code> a cualquier contenedor de tu DOM:
+                  </p>
+                  <pre style="margin-bottom: 0;"><code>&lt;!-- Cambiar todo el contenido de una sección a la fuente Lato --&gt;
+&lt;div class="theme-serious"&gt;
+  &lt;h2&gt;Título Formal en Lato&lt;/h2&gt;
+  &lt;p&gt;Este párrafo se renderizará automáticamente en Lato para dar un tono más formal...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- 2. Escala de Tamaños -->
+              <div id="fuentes-escala" class="u-mb-vi">
+                <h3>2. Escala de Tamaños (font-size)</h3>
+                <p>
+                  Para garantizar la legibilidad y la accesibilidad en múltiples dispositivos, utilizamos una escala modular tipográfica basada en unidades relativas <code>rem</code> (donde `1rem` equivale por defecto a `16px` del tamaño de raíz del navegador):
+                </p>
+                <div class="c-card u-p-v u-mb-v">
+                  <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                      <tr style="border-bottom: 2px solid var(--color-border-subtle);">
+                        <th style="padding: var(--space-ii) var(--space-iii);">Token CSS</th>
+                        <th style="padding: var(--space-ii) var(--space-iii);">Valor Relativo</th>
+                        <th style="padding: var(--space-ii) var(--space-iii);">Equivalencia Pixels</th>
+                        <th style="padding: var(--space-ii) var(--space-iii);">Propósito Común</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-3xs</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">0.65rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">10.4px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-3xs);">Superíndices, pies de imagen muy pequeños.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-ii</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">0.75rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">12px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-ii);">Tooltips, subtítulos de tarjetas secundarias, leyendas de inputs.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-iv</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">0.875rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">14px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Textos de menú lateral, botones primarios, celdas de tablas densas.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-sm</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">1rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">16px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-sm);"><strong>Cuerpo de texto base (body)</strong> en toda la web.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-md</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">1.125rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">18px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-md);">Texto destacado de cabecera, lead paragraphs, subtítulos.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-vi</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">1.25rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">20px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-vi); font-weight: bold;">Títulos de secciones H3, tarjetas destacadas.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-vii</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">1.5rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">24px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-vii); font-weight: bold;">Títulos H2 de página de documentación.</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-viii</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">2rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">32px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-viii); font-weight: bold;">Títulos H1 principales en canvas de contenido.</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-weight: bold;">--font-size-ix</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">3rem</td>
+                        <td style="padding: var(--space-ii) var(--space-iii);">48px</td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-ix); font-weight: bold;">Hero Headers en Landing pages corporativas.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- 3. Pesos Tipográficos -->
+              <div id="fuentes-pesos" class="u-mb-vi">
+                <h3>3. Mapeo de Pesos Tipográficos (font-weight)</h3>
+                <p>
+                  Para evitar deformaciones artificiales de la fuente por parte del navegador (como negritas sintéticas), mapeamos de manera numérica exacta los pesos disponibles en el CDN corporativo:
+                </p>
+                <div class="u-grid u-grid-cols-2 u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                  <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-300);">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 300; font-size: var(--font-size-md);">Gill Sans Light (300)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Reservado para subtítulos ligeros de gran tamaño.</p>
+                  </div>
+                  <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-400);">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 400; font-size: var(--font-size-md);">Gill Sans Regular (400)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Párrafos de texto, cuerpo base, menús principales.</p>
+                  </div>
+                  <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-500);">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 500; font-size: var(--font-size-md);">Gill Sans Medium (500)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Elementos interactivos con énfasis sutil.</p>
+                  </div>
+                  <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-primary-500);">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 600; font-size: var(--font-size-md);">Gill Sans Semibold (600)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">El peso por defecto para todos los encabezados (H1-H6).</p>
+                  </div>
+                  <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-primary-700);">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 700; font-size: var(--font-size-md);">Gill Sans Bold (700)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Negrita estándar para textos con fuerte importancia semántica.</p>
+                  </div>
+                  <div class="c-card u-p-iv" style="border-left: 3px solid #000;">
+                    <strong style="font-family: var(--font-family-gill-sans); font-weight: 900; font-size: var(--font-size-md);">Gill Sans Heavy (900)</strong>
+                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Máxima contundencia tipográfica para textos Hero.</p>
+                  </div>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- 4. CDN & Performance -->
+              <div id="fuentes-cdn" class="u-mb-vi">
+                <h3>4. Carga Inteligente de Fuentes (Performance)</h3>
+                <div class="c-card u-p-v" style="background-color: rgba(16, 185, 129, 0.02); border: 1px solid var(--color-success-200);">
+                  <span class="c-badge c-badge--success c-badge--pill u-mb-iii">Estándar LCP</span>
+                  <h4>Carga diferida bajo demanda (Lazy Loading Nativo)</h4>
+                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                    A nivel de hoja de estilos corporativa, registramos las variantes de la tipografía Gill Sans usando reglas <code>@font-face</code>. Sin embargo, los navegadores modernos **solo descargan el archivo de la fuente del CDN si existe al menos un elemento en el DOM usando ese peso específico**.
+                    <br><br>
+                    Esto significa que al usar por defecto únicamente los pesos `400` y `600` en tu layout, las variantes `Light (300)`, `Bold (700)` o `Heavy (900)` **nunca consumirán ancho de banda de tu usuario**, optimizando al máximo el LCP (Largest Contentful Paint) y la velocidad de carga inicial.
+                  </p>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- 5. Buenas Prácticas -->
+              <div id="fuentes-practicas" class="u-mb-v">
+                <h3>5. Guía de Buenas Prácticas Tipográficas</h3>
+                <ul>
+                  <li class="u-mb-iii"><strong>Heredar en lugar de forzar:</strong> Evita declarar familias tipográficas ad-hoc en tus clases. Usa siempre <code>var(--font-family-body)</code> o simplemente confía en la herencia nativa de etiquetas.</li>
+                  <li class="u-mb-iii"><strong>Unidades Relativas:</strong> Nunca uses `px` para propiedades de <code>font-size</code> o <code>line-height</code>. Define los tamaños con variables del sistema (ej. <code>var(--font-size-iv)</code>) para soportar el zoom de accesibilidad nativo del navegador.</li>
+                  <li class="u-mb-iii"><strong>Evitar deformaciones:</strong> Nunca apliques pesos no soportados como <code>font-weight: 800</code> o <code>font-weight: bold</code> sobre Gill Sans si no has cargado el peso correspondiente en CSS, ya que forzará al navegador a sintetizar una negrita borrosa artificial.</li>
+                </ul>
+              </div>
+            </section>
+            
+            <!-- Section 5: Z-Index (Stack Visualizer) -->
+            <section id="sec-z-index" class="l-conventions-section">
+              <h2>z-index (Jerarquía de Apilamiento)</h2>
+              <p>
+                Para evitar los dolores de cabeza que provocan los números arbitrarios de `z-index` (como `9999` o `999999`), el sistema de diseño gestiona el espacio tridimensional del navegador usando una escala estricta y predecible de tokens.
+              </p>
+              
+              <p class="u-text-sm u-text-muted">
+                <strong>Haz clic en cualquier capa</strong> del modelo 3D isométrico a continuación para consultar su definición, el token correspondiente en CSS y un caso de uso recomendado.
+              </p>
+
+              <!-- Isometric 3D Stacking Visualizer Component -->
+              <div class="v-zindex-container">
+                
+                <!-- Left Column: 3D Stage -->
+                <div class="v-zindex-visualizer">
+                  <div class="v-zindex-stage">
+                    
+                    <!-- Layer: Tooltip -->
+                    <div class="v-zindex-layer" data-layer="tooltip" style="--z-offset: 180px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Tooltip</span>
+                        <span class="v-zindex-layer__variable">--z-index-tooltip</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1070</span>
+                    </div>
+                    
+                    <!-- Layer: Popover -->
+                    <div class="v-zindex-layer" data-layer="popover" style="--z-offset: 135px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Popover</span>
+                        <span class="v-zindex-layer__variable">--z-index-popover</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1060</span>
+                    </div>
+
+                    <!-- Layer: Modal -->
+                    <div class="v-zindex-layer" data-layer="modal" style="--z-offset: 90px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Modal</span>
+                        <span class="v-zindex-layer__variable">--z-index-modal</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1050</span>
+                    </div>
+
+                    <!-- Layer: Backdrop -->
+                    <div class="v-zindex-layer" data-layer="modal-backdrop" style="--z-offset: 45px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Backdrop</span>
+                        <span class="v-zindex-layer__variable">--z-index-modal-backdrop</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1040</span>
+                    </div>
+
+                    <!-- Layer: Fixed -->
+                    <div class="v-zindex-layer" data-layer="fixed" style="--z-offset: 0px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Fixed</span>
+                        <span class="v-zindex-layer__variable">--z-index-fixed</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1030</span>
+                    </div>
+
+                    <!-- Layer: Sticky -->
+                    <div class="v-zindex-layer" data-layer="sticky" style="--z-offset: -45px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Sticky</span>
+                        <span class="v-zindex-layer__variable">--z-index-sticky</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1020</span>
+                    </div>
+
+                    <!-- Layer: Dropdown -->
+                    <div class="v-zindex-layer" data-layer="dropdown" style="--z-offset: -90px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Dropdown</span>
+                        <span class="v-zindex-layer__variable">--z-index-dropdown</span>
+                      </div>
+                      <span class="v-zindex-layer__value">1000</span>
+                    </div>
+
+                    <!-- Layer: Base -->
+                    <div class="v-zindex-layer" data-layer="base" style="--z-offset: -135px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Base</span>
+                        <span class="v-zindex-layer__variable">--z-index-base</span>
+                      </div>
+                      <span class="v-zindex-layer__value">0</span>
+                    </div>
+
+                    <!-- Layer: Hide -->
+                    <div class="v-zindex-layer" data-layer="hide" style="--z-offset: -180px;">
+                      <div class="v-zindex-layer__shadow"></div>
+                      <div class="v-zindex-layer__info">
+                        <span class="v-zindex-layer__title">Hide</span>
+                        <span class="v-zindex-layer__variable">--z-index-hide</span>
+                      </div>
+                      <span class="v-zindex-layer__value">-1</span>
+                    </div>
+
+                  </div>
+                </div>
+                
+                <!-- Right Column: Info Details Panel -->
+                <div class="v-zindex-info-panel">
+                  
+                  <!-- Toolbar with navigation buttons -->
+                  <div class="v-zindex-nav-toolbar">
+                    <span class="v-zindex-nav-title">Navegar Capas</span>
+                    <div class="v-zindex-nav-controls">
+                      <button id="zindex-prev-btn" class="v-zindex-nav-btn" title="Capa Anterior (Abajo)">
+                        &larr; Anterior
+                      </button>
+                      <button id="zindex-next-btn" class="v-zindex-nav-btn" title="Siguiente Capa (Arriba)">
+                        Siguiente &rarr;
+                      </button>
+                    </div>
+                  </div>
+
+                  <div id="zindex-details-card" class="v-zindex-details-card">
+                    <div class="v-zindex-details-card__placeholder">
+                      Haz clic en cualquier capa del modelo 3D para ver su descripción detallada...
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+              <!-- Z-Index Utilities Sub-section -->
+              <div class="c-card u-p-v u-mt-vi">
+                <h3 style="font-size: var(--font-size-vi); margin-top: 0;">Clases de Utilidad de Apilamiento (Z-Index Utilities)</h3>
+                <p class="u-text-sm u-text-muted u-mb-iv">
+                  En lugar de escribir estilos embebidos, puedes aplicar directamente las clases de utilidad estructuradas bajo el patrón <code>.u-z-[capa]</code> en tu HTML.
+                </p>
+
+                <div class="u-grid u-grid-cols-2 u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-iii);">
+                  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: var(--font-size-iv);">
+                    <thead>
+                      <tr style="border-bottom: 2px solid var(--color-border-subtle);">
+                        <th style="padding: var(--space-ii) var(--space-iii);">Clase de Utilidad</th>
+                        <th style="padding: var(--space-ii) var(--space-iii);">Valor Resuelto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-hide</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">-1</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-auto</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">auto</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-base</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">0</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-dropdown</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1000</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-sticky</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1020</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: var(--font-size-iv);">
+                    <thead>
+                      <tr style="border-bottom: 2px solid var(--color-border-subtle);">
+                        <th style="padding: var(--space-ii) var(--space-iii);">Clase de Utilidad</th>
+                        <th style="padding: var(--space-ii) var(--space-iii);">Valor Resuelto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-fixed</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1030</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-modal-backdrop</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1040</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-modal</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1050</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-popover</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1060</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                        <td style="padding: var(--space-ii) var(--space-iii);"><span class="c-badge">.u-z-tooltip</span></td>
+                        <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono);">1070</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="u-mt-iv">
+                  <strong>Ejemplo práctico en HTML:</strong>
+                  <pre style="margin-bottom: 0;"><code>&lt;!-- Cabecera flotante e interactiva combinando utilidades --&gt;
+&lt;header class="u-fixed u-top-0 u-w-full u-z-sticky u-p-iv"&gt;
+  &lt;span&gt;Cabecera fija sobre contenido&lt;/span&gt;
+&lt;/header&gt;</code></pre>
+                </div>
+              </div>
+            </section>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

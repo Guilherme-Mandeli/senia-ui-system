@@ -1,0 +1,228 @@
+/* ==========================================================================
+   HSL Corporate Color System — Grupo Senia Brand Identity
+   Using HSL allows us to generate tints, shades, and interactive states
+   programmatically while keeping the brand visually consistent.
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     Brand Primary: Amarillo Senia (#FFEE58)
+     El color insignia de la marca. Utilizado en acentos, CTAs y elementos
+     de identidad visual corporativa.
+     NOTA: Al ser un amarillo claro, el texto sobre fondo primary debe ser
+     oscuro (--color-neutral-900) para cumplir contraste WCAG AA.
+     ----------------------------------------------------------------------- */
+  --color-primary-h: 54;
+  --color-primary-s: 100%;
+  --color-primary-l: 67%;
+  --color-primary-hsl: 54 100% 67%;
+  --color-primary-hex: #ffee58;
+
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l)); /* 500 */
+
+  --color-primary-50: hsl(54, 100%, 97%);
+  --color-primary-100: hsl(54, 100%, 93%);
+  --color-primary-200: hsl(54, 100%, 86%);
+  --color-primary-300: hsl(54, 100%, 78%);
+  --color-primary-400: hsl(54, 100%, 72%);
+  --color-primary-500: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-600: hsl(54, 95%, 58%);
+  --color-primary-700: hsl(54, 90%, 48%);
+  --color-primary-800: hsl(54, 85%, 38%);
+  --color-primary-900: hsl(54, 80%, 28%);
+  --color-primary-950: hsl(54, 75%, 18%);
+
+  /* -----------------------------------------------------------------------
+     Brand Secondary: Dorado Corporativo (#EFCB29)
+     Utilizado en flujos secundarios, acentos complementarios, botones
+     de acción secundaria y categorización visual.
+     ----------------------------------------------------------------------- */
+--color-secondary-h: 158;
+--color-secondary-s: 32%;
+--color-secondary-l: 28%;
+--color-secondary-hsl: 158 32% 28%;
+--color-secondary-hex: #27581a;
+
+--color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l)); /* 500 */
+
+/* Secondary Scale */
+
+--color-secondary-50: hsl(158, 30%, 96%);
+--color-secondary-100: hsl(158, 28%, 91%);
+--color-secondary-200: hsl(158, 26%, 82%);
+--color-secondary-300: hsl(158, 24%, 68%);
+--color-secondary-400: hsl(158, 28%, 48%);
+--color-secondary-500: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l)); /* deep forest */
+--color-secondary-600: hsl(158, 36%, 24%);
+--color-secondary-700: hsl(158, 40%, 20%);
+--color-secondary-800: hsl(158, 44%, 16%);
+--color-secondary-900: hsl(158, 48%, 12%);
+--color-secondary-950: hsl(158, 52%, 8%);
+
+  /* -----------------------------------------------------------------------
+     Neutral: Gris Puro Senia (Acromático)
+     Basado en los grises de marca #545454 (≈ 33% L) y #191919 (≈ 10% L).
+     Escala completamente acromática (saturación 0%) para máxima
+     versatilidad con cualquier color primario.
+     ----------------------------------------------------------------------- */
+  --color-neutral-h: 0;
+  --color-neutral-s: 0%;
+
+  --color-neutral: hsl(var(--color-neutral-h), var(--color-neutral-s), 65%);  /* 400 */
+
+  --color-neutral-50:  hsl(var(--color-neutral-h), var(--color-neutral-s), 98%);  /* #FAFAFA */
+  --color-neutral-100: hsl(var(--color-neutral-h), var(--color-neutral-s), 95%);  /* #F2F2F2 */
+  --color-neutral-200: hsl(var(--color-neutral-h), var(--color-neutral-s), 90%);  /* #E5E5E5 */
+  --color-neutral-300: hsl(var(--color-neutral-h), var(--color-neutral-s), 80%);  /* #CCCCCC */
+  --color-neutral-400: hsl(var(--color-neutral-h), var(--color-neutral-s), 65%);  /* #A6A6A6 */
+  --color-neutral-500: hsl(var(--color-neutral-h), var(--color-neutral-s), 50%);  /* #808080 */
+  --color-neutral-600: hsl(var(--color-neutral-h), var(--color-neutral-s), 33%);  /* ≈ #545454 */
+  --color-neutral-700: hsl(var(--color-neutral-h), var(--color-neutral-s), 28%);  /* #474747 */
+  --color-neutral-800: hsl(var(--color-neutral-h), var(--color-neutral-s), 18%);  /* #2E2E2E */
+  --color-neutral-900: hsl(var(--color-neutral-h), var(--color-neutral-s), 10%);  /* ≈ #191919 */
+  --color-neutral-950: hsl(var(--color-neutral-h), var(--color-neutral-s), 6%);   /* #0F0F0F */
+
+  /* -----------------------------------------------------------------------
+     Status Colors (Semánticos)
+     ----------------------------------------------------------------------- */
+  
+  /* -----------------------------------------------------------------------
+   Success Palette #83c76f
+   ----------------------------------------------------------------------- */
+  --color-success-h: 106;
+  --color-success-s: 46%;
+  --color-success-l: 42%;
+  --color-success-hsl: 106 46% 42%;
+  --color-success-hex: #83c76f;
+
+  --color-success: hsl(var(--color-success-h), var(--color-success-s), 42%); /* 500 */
+
+  --color-success-50:  hsl(var(--color-success-h), 65%, 95%);  /* Fondos de alertas */
+  --color-success-100: hsl(var(--color-success-h), 55%, 88%);  /* Bordes de alertas */
+  --color-success-200: hsl(var(--color-success-h), 50%, 76%);  
+  --color-success-300: hsl(var(--color-success-h), var(--color-success-s), 61%); /* #83c76f original */
+  --color-success-400: hsl(var(--color-success-h), var(--color-success-s), 52%); /* Hover de botones secundarios */
+  --color-success-500: hsl(var(--color-success-h), var(--color-success-s), 42%); /* Estado principal / Botones */
+  --color-success-600: hsl(var(--color-success-h), 52%, 34%);  /* Hover de botones primarios */
+  --color-success-700: hsl(var(--color-success-h), 56%, 26%);  
+  --color-success-800: hsl(var(--color-success-h), 60%, 18%);  
+  --color-success-900: hsl(var(--color-success-h), 65%, 11%);  /* Texto sobre fondos de alertas claros */
+
+
+  /* -----------------------------------------------------------------------
+   Warning Palette #ec7813
+   ----------------------------------------------------------------------- */
+  --color-warning-h: 28;
+  --color-warning-s: 85%;
+  --color-warning-l: 50%;
+  --color-warning-hsl: 28 85% 50%;
+  --color-warning-hex: #ec7813;
+
+  /* El default (500) ofrece un fuerte impacto visual para badges, bordes e iconos */
+  --color-warning: hsl(var(--color-warning-h), var(--color-warning-s), 50%); /* 500 */
+
+  --color-warning-50:  hsl(var(--color-warning-h), 90%, 95%);  /* Fondos de alertas de advertencia */
+  --color-warning-100: hsl(var(--color-warning-h), 88%, 88%);  /* Bordes de alertas de advertencia */
+  --color-warning-200: hsl(var(--color-warning-h), 86%, 78%);  
+  --color-warning-300: hsl(var(--color-warning-h), 85%, 68%);  
+  --color-warning-400: hsl(var(--color-warning-h), var(--color-warning-s), 58%); /* Hover ligero o estados activos */
+  --color-warning-500: hsl(var(--color-warning-h), var(--color-warning-s), 50%); /* Estado principal */
+  --color-warning-600: hsl(var(--color-warning-h), 88%, 43%);  /* Enlaces o textos de advertencia independientes */
+  --color-warning-700: hsl(var(--color-warning-h), 90%, 35%);  
+  --color-warning-800: hsl(var(--color-warning-h), 92%, 26%);  
+  --color-warning-900: hsl(var(--color-warning-h), 95%, 16%);  /* Texto legible sobre fondo warning-50 */
+
+
+  /* -----------------------------------------------------------------------
+   Error Palette #e02935
+   ----------------------------------------------------------------------- */
+  --color-error-h: 356;
+  --color-error-s: 75%;
+  --color-error-l: 52%;
+  --color-error-hsl: 356 75% 52%;
+  --color-error-hex: #e02935;
+
+  --color-error: hsl(var(--color-error-h), var(--color-error-s), 52%); /* 500 */
+
+  --color-error-50:  hsl(var(--color-error-h), 85%, 96%);  /* Fondos de alertas de error */
+  --color-error-100: hsl(var(--color-error-h), 80%, 91%);  /* Bordes de alertas de error */
+  --color-error-200: hsl(var(--color-error-h), 78%, 80%);  
+  --color-error-300: hsl(var(--color-error-h), 76%, 70%);  
+  --color-error-400: hsl(var(--color-error-h), var(--color-error-s), 60%); /* Hover de elementos secundarios */
+  --color-error-500: hsl(var(--color-error-h), var(--color-error-s), 52%); /* Estado principal / Botones destructivos */
+  --color-error-600: hsl(var(--color-error-h), 72%, 43%);  /* Hover de botones primarios */
+  --color-error-700: hsl(var(--color-error-h), 70%, 35%);  
+  --color-error-800: hsl(var(--color-error-h), 68%, 26%);  
+  --color-error-900: hsl(var(--color-error-h), 65%, 16%);  /* Texto crítico sobre fondos claros */
+
+
+  /* -----------------------------------------------------------------------
+   Info Palette #2671d9
+   ----------------------------------------------------------------------- */
+  --color-info-h: 215;
+  --color-info-s: 70%;
+  --color-info-hsl: 215 70% 50%;
+  --color-info-hex: #2671d9;
+
+  /* El default (500) proporciona un tono corporativo sólido y seguro */
+  --color-info: hsl(var(--color-info-h), var(--color-info-s), 50%); /* 500 */
+
+  --color-info-50:  hsl(var(--color-info-h), 80%, 95%);  /* Fondos de notificaciones */
+  --color-info-100: hsl(var(--color-info-h), 75%, 90%);  /* Bordes de notificaciones */
+  --color-info-200: hsl(var(--color-info-h), 72%, 80%);  
+  --color-info-300: hsl(var(--color-info-h), 70%, 70%);  
+  --color-info-400: hsl(var(--color-info-h), var(--color-info-s), 60%); 
+  --color-info-500: hsl(var(--color-info-h), var(--color-info-s), 50%); /* Estado principal / Botones */
+  --color-info-600: hsl(var(--color-info-h), 72%, 42%);  /* Hover de botones */
+  --color-info-700: hsl(var(--color-info-h), 75%, 34%);  
+  --color-info-800: hsl(var(--color-info-h), 80%, 25%);  
+  --color-info-900: hsl(var(--color-info-h), 85%, 15%);  /* Texto de alta legibilidad sobre info-50 */
+
+  /* -----------------------------------------------------------------------
+   Accessibility Overlay Color
+   ----------------------------------------------------------------------- */
+  --color-focus: var(--color-primary-600);
+
+
+  /* -----------------------------------------------------------------------
+   Cream: #fff8d6
+   ----------------------------------------------------------------------- */
+  --color-cream-h: 49.76;
+  --color-cream-s: 100%;
+  --color-cream-l: 91.96%;
+  --color-cream-hsl: 49.76 100% 91.96%;
+  --color-cream-hex: #fff8d6;
+
+  --color-cream: hsl(var(--color-cream-h), var(--color-cream-s), var(--color-cream-l));
+
+  --color-cream-light: hsl(var(--color-cream-h), var(--color-cream-s), 97%);
+  --color-cream-dark: hsl(var(--color-cream-h), var(--color-cream-s), 87.5%);
+
+   /* -----------------------------------------------------------------------
+    Sand: #e6e1cd
+    ----------------------------------------------------------------------- */
+  --color-sand-h: 48;
+  --color-sand-s: 33%;
+  --color-sand-l: 85%;
+  --color-sand-hsl: 48 33% 85%;
+  --color-sand-hex: #e6e1cd;
+
+  --color-sand: hsl(var(--color-sand-h), var(--color-sand-s), var(--color-sand-l)); 
+
+  --color-sand-light: hsl(var(--color-sand-h), var(--color-sand-s), 97%);
+  --color-sand-dark: hsl(var(--color-sand-h), var(--color-sand-s), 79%);
+
+  /* -----------------------------------------------------------------------
+   Sage: #ebe8c2
+   ----------------------------------------------------------------------- */
+  --color-sage-h: 56;
+  --color-sage-s: 51%;
+  --color-sage-l: 84%;
+  --color-sage-hsl: 56 51% 84%;
+  --color-sage-hex: #ebe8c2;
+
+  --color-sage: hsl(var(--color-sage-h), var(--color-sage-s), var(--color-sage-l));
+
+  --color-sage-light: hsl(var(--color-sage-h), var(--color-sage-s), 94%);
+  --color-sage-dark: hsl(var(--color-sage-h), var(--color-sage-s), 74%);
+}

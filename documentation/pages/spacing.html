@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaciado - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Sistema de Espaciado</h1>
+          <p class="u-text-lg u-text-muted">
+            Regla modular fluida basada en múltiplos de 4px / 8px declarados en unidades relativas <code>rem</code>.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Visual Ruler scale -->
+        <section class="u-mb-vi">
+          <h2>Regletas del Sistema</h2>
+          <p class="u-mb-v">Visualización de la dimensión horizontal de cada token de espaciado:</p>
+          
+          <div class="c-card u-p-v">
+            
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-i</code><span> 4px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 4px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-ii</code><span> 8px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 8px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-iii</code><span> 12px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 12px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-iv</code><span> 16px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 16px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-v</code><span> 24px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 24px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-vi</code><span> 30px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 30px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-vii</code><span> 36px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 36px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-viii</code><span> 50px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 50px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-ix</code><span> 72px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 72px;"></div>
+              </div>
+            </div>
+
+            <div class="v-space-row">
+              <div class="v-space-label"><code>--space-X</code><span> 98px</span></div>
+              <div class="v-space-bar-wrapper">
+                <div class="v-space-bar" style="width: 98px;"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Equivalence Table -->
+        <section class="u-mb-vi">
+          <h2 class="u-mb-iii">Equivalencias y Usos recomendados</h2>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped">
+              <thead>
+                <tr>
+                  <th class="c-table__th">Token CSS</th>
+                  <th class="c-table__th">Valor en Pixeles</th>
+                  <th class="c-table__th">Uso Principal Recomenado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-i</code></td>
+                  <td class="c-table__td">4px</td>
+                  <td class="c-table__td">Márgenes internos mínimos, gaps horizontales de inputs con iconos.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-ii</code></td>
+                  <td class="c-table__td">8px</td>
+                  <td class="c-table__td">Gaps de botones con textos, padding interno estrecho, margen de etiquetas.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-iii</code></td>
+                  <td class="c-table__td">12px</td>
+                  <td class="c-table__td">Espacios de agrupaciones en tarjetas, inputs y cabeceras de tablas.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-iv</code></td>
+                  <td class="c-table__td">16px</td>
+                  <td class="c-table__td">Margen inferior estándar de textos, padding de botones grandes y inputs.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-v</code></td>
+                  <td class="c-table__td">24px</td>
+                  <td class="c-table__td">Padding general de tarjetas, grids responsivos y divisiones lógicas.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-vi</code></td>
+                  <td class="c-table__td">30px</td>
+                  <td class="c-table__td">Márgenes entre secciones principales, cabeceras del sistema y separaciones.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-vii</code></td>
+                  <td class="c-table__td">36px</td>
+                  <td class="c-table__td">Espaciado de cabeceras hero, bloques grandes de landing e introducciones.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-viii</code></td>
+                  <td class="c-table__td">50px</td>
+                  <td class="c-table__td">Separación de columnas en formularios, grandes bloques de contenido y slides.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-ix</code></td>
+                  <td class="c-table__td">72px</td>
+                  <td class="c-table__td">División entre secciones principales, hero y secciones de servicio.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--space-x</code></td>
+                  <td class="c-table__td">98px</td>
+                  <td class="c-table__td">Márgenes exteriores de piezas principales, dashboards y layouts complejos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- New Spacing Utilities Reference -->
+        <section class="u-mb-v">
+          <h2>Clases de Utilidad de Margen, Relleno y Brechas (Margen, Padding & Gap)</h2>
+          <p class="u-mb-v">Mapeadas directamente a la escala modular del sistema de diseño (<code>i</code> a <code>x</code>).</p>
+          
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-iv);">
+              <div>
+                <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Prefijos Disponibles</h3>
+                <ul class="u-mb-iv" style="padding-left: var(--space-iv); line-height: 1.6;">
+                  <li><strong>m</strong>: Margen en todos los lados (<code>margin</code>)</li>
+                  <li><strong>p</strong>: Relleno en todos los lados (<code>padding</code>)</li>
+                  <li><strong>mt / pt</strong>: Margen/Relleno Superior (<code>top</code>)</li>
+                  <li><strong>mb / pb</strong>: Margen/Relleno Inferior (<code>bottom</code>)</li>
+                  <li><strong>ml / pl</strong>: Margen/Relleno Izquierdo (<code>left</code>)</li>
+                  <li><strong>mr / pr</strong>: Margen/Relleno Derecho (<code>right</code>)</li>
+                  <li><strong>mtb / ptb / my / py</strong>: Margen/Relleno de Bloque (<code>top</code> & <code>bottom</code>)</li>
+                  <li><strong>mlr / plr / mx / px</strong>: Margen/Relleno de Línea (<code>left</code> & <code>right</code>)</li>
+                  <li><strong>gap</strong>: Brecha en Flexbox y Grid (<code>gap</code>)</li>
+                  <li><strong>row-gap</strong>: Brecha entre filas (<code>row-gap</code>)</li>
+                  <li><strong>column-gap</strong>: Brecha entre columnas (<code>column-gap</code>)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Nomenclatura y Ejemplos</h3>
+                <p>Las clases siguen el patrón <code>.u-[prefijo]-[escala]</code>, donde escala es de <code>i</code> a <code>x</code>, <code>none</code> o <code>auto</code>.</p>
+                <div class="u-mt-iv">
+                  <div class="u-mb-ii">
+                    <span class="c-badge c-badge--primary">.u-mt-i</span>
+                    <span class="u-text-xs u-text-muted">-> margin-top: 4px;</span>
+                  </div>
+                  <div class="u-mb-ii">
+                    <span class="c-badge c-badge--primary">.u-mb-ii</span>
+                    <span class="u-text-xs u-text-muted">-> margin-bottom: 8px;</span>
+                  </div>
+                  <div class="u-mb-ii">
+                    <span class="c-badge c-badge--primary">.u-plr-v</span>
+                    <span class="u-text-xs u-text-muted">-> padding-inline: 24px;</span>
+                  </div>
+                  <div class="u-mb-ii">
+                    <span class="c-badge c-badge--primary">.u-gap-iii</span>
+                    <span class="u-text-xs u-text-muted">-> gap: 12px;</span>
+                  </div>
+                  <div class="u-mb-ii">
+                    <span class="c-badge c-badge--primary">.u-row-gap-vi</span>
+                    <span class="u-text-xs u-text-muted">-> row-gap: 30px;</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

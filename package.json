@@ -1,0 +1,20 @@
+{
+  "name": "senia-ui-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node build-css.js",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.1",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^13.0.1",
+    "rolldown": "^1.0.2",
+    "vite": "^6.4.2"
+  }
+}

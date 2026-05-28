@@ -1,0 +1,26 @@
+/* Transition & Easing Tokens
+   Consistent, delightful micro-animations for high-fidelity interactive feedback.
+*/
+
+:root {
+  /* Durations */
+  --transition-duration-fast: 120ms;
+  --transition-duration-normal: 200ms;
+  --transition-duration-slow: 300ms;
+
+  /* Easing curves */
+  --transition-easing-linear: linear;
+  --transition-easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --transition-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Smooth organic curve for UI transitions */
+  --transition-easing-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Pre-configured Shorthands */
+  --transition-all: all var(--transition-duration-normal) var(--transition-easing-premium);
+  --transition-colors: color var(--transition-duration-fast) var(--transition-easing-linear), 
+                      background-color var(--transition-duration-fast) var(--transition-easing-linear), 
+                      border-color var(--transition-duration-fast) var(--transition-easing-linear), 
+                      box-shadow var(--transition-duration-fast) var(--transition-easing-linear);
+}

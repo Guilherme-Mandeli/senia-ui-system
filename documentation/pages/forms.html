@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Formularios &amp; Inputs</h1>
+          <p class="u-text-lg u-text-muted">
+            Campos de entrada normalizados con soporte nativo de estados enfocados, deshabilitados y de error.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Standard Fields Section -->
+        <section class="u-mb-vi">
+          <h2>Campos de Texto y Selectores</h2>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col">
+              
+              <!-- Text field group -->
+              <div class="c-field-group">
+                <label for="input-standard" class="c-label">Nombre Completo</label>
+                <input type="text" id="input-standard" class="c-input" placeholder="Ej. Juan Pérez">
+                <span class="c-field-help-msg">Introduce tu nombre como figura en tu DNI.</span>
+              </div>
+
+              <!-- Select field group -->
+              <div class="c-field-group">
+                <label for="select-standard" class="c-label">País de Residencia</label>
+                <select id="select-standard" class="c-input">
+                  <option value="">Selecciona tu país...</option>
+                  <option value="es">España</option>
+                  <option value="mx">México</option>
+                  <option value="ar">Argentina</option>
+                  <option value="co">Colombia</option>
+                </select>
+              </div>
+
+              <!-- Textarea group -->
+              <div class="c-field-group u-col-span-full">
+                <label for="textarea-standard" class="c-label">Comentarios Adicionales</label>
+                <textarea id="textarea-standard" class="c-input" placeholder="Escribe aquí tus observaciones..."></textarea>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- States Matrix Section -->
+        <section class="u-mb-vi">
+          <h2>Matriz de Estados</h2>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--3col">
+              
+              <div class="c-field-group">
+                <label class="c-label">Campo Inactivo (Normal)</label>
+                <input type="text" class="c-input" placeholder="Escribe algo...">
+              </div>
+
+              <div class="c-field-group">
+                <label class="c-label">Campo Deshabilitado</label>
+                <input type="text" class="c-input" disabled value="Contenido inalterable" placeholder="Escribe algo...">
+              </div>
+
+              <div class="c-field-group">
+                <label class="c-label" style="color: var(--color-text-error);">Campo con Error</label>
+                <input type="text" class="c-input c-input--error" value="correo_incorrecto.com" placeholder="Correo electrónico">
+                <span class="c-field-error-msg">El formato del correo introducido no es válido.</span>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Checkboxes & Radios -->
+        <section class="u-mb-v">
+          <h2>Controles de Selección (Checkboxes &amp; Radios)</h2>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col">
+              
+              <!-- Checkboxes group -->
+              <div>
+                <h4 class="u-mb-iii">Opciones del Boletín (Checkboxes)</h4>
+                <div class="l-flex-stack">
+                  <label class="c-choice-label">
+                    <input type="checkbox" class="c-input--checkbox" checked>
+                    <span>Recibir noticias semanales</span>
+                  </label>
+                  
+                  <label class="c-choice-label">
+                    <input type="checkbox" class="c-input--checkbox">
+                    <span>Recibir ofertas y promociones</span>
+                  </label>
+
+                  <label class="c-choice-label" style="opacity: 0.5; cursor: not-allowed;">
+                    <input type="checkbox" class="c-input--checkbox" disabled>
+                    <span>Opcion restringida (Deshabilitada)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Radios group -->
+              <div>
+                <h4 class="u-mb-iii">Método de Facturación (Radios)</h4>
+                <div class="l-flex-stack">
+                  <label class="c-choice-label">
+                    <input type="radio" name="billing" class="c-input--radio" checked>
+                    <span>Factura mensual unificada</span>
+                  </label>
+                  
+                  <label class="c-choice-label">
+                    <input type="radio" name="billing" class="c-input--radio">
+                    <span>Factura inmediata por servicio</span>
+                  </label>
+
+                  <label class="c-choice-label" style="opacity: 0.5; cursor: not-allowed;">
+                    <input type="radio" name="billing" class="c-input--radio" disabled>
+                    <span>Pago anual (No disponible)</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

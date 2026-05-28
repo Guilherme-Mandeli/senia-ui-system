@@ -1,0 +1,23 @@
+/* Spacing Tokens
+   A relative, modular spacing scale built on rem units to maintain responsive layout integrity.
+*/
+
+:root {
+  --space-i: 4px;
+  --space-ii: 8px;
+  --space-iii: 12px;
+  --space-iv: 16px;
+  --space-v: 24px;
+  --space-vi: 30px;
+  --space-vii: 36px;
+  --space-viii: 50px;
+  --space-ix: 72px;
+  --space-x: 98px;
+  
+  /* Layout specific widths */
+  --container-email: 600px;
+  --container-small: 680px;
+  --container-medium: 920px;
+  --container-base: 1228px;
+  --container-full: 100%;
+}

@@ -1,0 +1,110 @@
+/* Position Utilities
+   Prefixes: u-
+*/
+
+/* ==========================================
+   POSITION SYSTEM
+   ========================================== */
+.u-static { position: static !important; }
+.u-relative { position: relative !important; }
+.u-absolute { position: absolute !important; }
+.u-fixed { position: fixed !important; }
+.u-sticky { position: sticky !important; }
+
+/* ==========================================
+   OFFSETS
+   ========================================== */
+
+/* Top (top-) */
+.u-top-0 { top: 0 !important; }
+.u-top-auto { top: auto !important; }
+.u-top-half { top: 50% !important; }
+.u-top-full { top: 100% !important; }
+.u-top-i { top: var(--space-i) !important; }
+.u-top-ii { top: var(--space-ii) !important; }
+.u-top-iii { top: var(--space-iii) !important; }
+.u-top-iv { top: var(--space-iv) !important; }
+.u-top-v { top: var(--space-v) !important; }
+.u-top-vi { top: var(--space-vi) !important; }
+.u-top-vii { top: var(--space-vii) !important; }
+.u-top-viii { top: var(--space-viii) !important; }
+.u-top-ix { top: var(--space-ix) !important; }
+.u-top-x { top: var(--space-x) !important; }
+
+/* Bottom (bottom-) */
+.u-bottom-0 { bottom: 0 !important; }
+.u-bottom-auto { bottom: auto !important; }
+.u-bottom-half { bottom: 50% !important; }
+.u-bottom-full { bottom: 100% !important; }
+.u-bottom-i { bottom: var(--space-i) !important; }
+.u-bottom-ii { bottom: var(--space-ii) !important; }
+.u-bottom-iii { bottom: var(--space-iii) !important; }
+.u-bottom-iv { bottom: var(--space-iv) !important; }
+.u-bottom-v { bottom: var(--space-v) !important; }
+.u-bottom-vi { bottom: var(--space-vi) !important; }
+.u-bottom-vii { bottom: var(--space-vii) !important; }
+.u-bottom-viii { bottom: var(--space-viii) !important; }
+.u-bottom-ix { bottom: var(--space-ix) !important; }
+.u-bottom-x { bottom: var(--space-x) !important; }
+
+/* Left (left-) */
+.u-left-0 { left: 0 !important; }
+.u-left-auto { left: auto !important; }
+.u-left-half { left: 50% !important; }
+.u-left-full { left: 100% !important; }
+.u-left-i { left: var(--space-i) !important; }
+.u-left-ii { left: var(--space-ii) !important; }
+.u-left-iii { left: var(--space-iii) !important; }
+.u-left-iv { left: var(--space-iv) !important; }
+.u-left-v { left: var(--space-v) !important; }
+.u-left-vi { left: var(--space-vi) !important; }
+.u-left-vii { left: var(--space-vii) !important; }
+.u-left-viii { left: var(--space-viii) !important; }
+.u-left-ix { left: var(--space-ix) !important; }
+.u-left-x { left: var(--space-x) !important; }
+
+/* Right (right-) */
+.u-right-0 { right: 0 !important; }
+.u-right-auto { right: auto !important; }
+.u-right-half { right: 50% !important; }
+.u-right-full { right: 100% !important; }
+.u-right-i { right: var(--space-i) !important; }
+.u-right-ii { right: var(--space-ii) !important; }
+.u-right-iii { right: var(--space-iii) !important; }
+.u-right-iv { right: var(--space-iv) !important; }
+.u-right-v { right: var(--space-v) !important; }
+.u-right-vi { right: var(--space-vi) !important; }
+.u-right-vii { right: var(--space-vii) !important; }
+.u-right-viii { right: var(--space-viii) !important; }
+.u-right-ix { right: var(--space-ix) !important; }
+.u-right-x { right: var(--space-x) !important; }
+
+/* Inset (inset-) */
+.u-inset-0 { inset: 0 !important; }
+.u-inset-auto { inset: auto !important; }
+.u-inset-half { inset: 50% !important; }
+.u-inset-full { inset: 100% !important; }
+.u-inset-i { inset: var(--space-i) !important; }
+.u-inset-ii { inset: var(--space-ii) !important; }
+.u-inset-iii { inset: var(--space-iii) !important; }
+.u-inset-iv { inset: var(--space-iv) !important; }
+.u-inset-v { inset: var(--space-v) !important; }
+.u-inset-vi { inset: var(--space-vi) !important; }
+.u-inset-vii { inset: var(--space-vii) !important; }
+.u-inset-viii { inset: var(--space-viii) !important; }
+.u-inset-ix { inset: var(--space-ix) !important; }
+.u-inset-x { inset: var(--space-x) !important; }
+
+/* ==========================================
+   STACKING SYSTEM (Z-INDEX)
+   ========================================== */
+.u-z-hide { z-index: var(--z-index-hide) !important; }
+.u-z-auto { z-index: var(--z-index-auto) !important; }
+.u-z-base { z-index: var(--z-index-base) !important; }
+.u-z-dropdown { z-index: var(--z-index-dropdown) !important; }
+.u-z-sticky { z-index: var(--z-index-sticky) !important; }
+.u-z-fixed { z-index: var(--z-index-fixed) !important; }
+.u-z-modal-backdrop { z-index: var(--z-index-modal-backdrop) !important; }
+.u-z-modal { z-index: var(--z-index-modal) !important; }
+.u-z-popover { z-index: var(--z-index-popover) !important; }
+.u-z-tooltip { z-index: var(--z-index-tooltip) !important; }

@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Senia UI - Essential Styles (Tokens, Themes, & Base Reset)
+   ========================================================================== */
+
+/* 1. Declare CSS Layers Order */
+@import "./core/layers.css";
+
+/* 2. Import Minimal Modules within their Cascading Layers */
+@import "./core/reset.css" layer(reset);
+@import "./tokens/index.css" layer(tokens);
+@import "./base/index.css" layer(base);
+@import "./themes/index.css" layer(themes);

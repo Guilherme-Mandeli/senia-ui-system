@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Tarjetas (Cards)</h1>
+          <p class="u-text-lg u-text-muted">
+            Contenedores modulares que agrupan información e integran llamadas a la acción, cabeceras y pies adaptables.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Card Styles Section -->
+        <section class="u-mb-vi">
+          <h2>Tipologías de Tarjetas</h2>
+          <p class="u-mb-v">Definimos tres versiones de estructura de tarjetas según el nivel de jerarquía y dinamismo requerido:</p>
+          
+          <div class="l-grid l-grid--3col">
+            
+            <!-- Standard Card -->
+            <div class="c-card">
+              <div class="c-card__header">
+                <h4 class="c-card__title">Tarjeta Estándar</h4>
+              </div>
+              <div class="c-card__body">
+                <p class="u-text-xs">
+                  La estructura básica consta de bordes refinados, un fondo blanco/neutro adaptativo y sombras suaves para definir una elevación limpia.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <span class="u-text-2xs u-text-muted">Modificador base</span>
+              </div>
+            </div>
+
+            <!-- Featured Card -->
+            <div class="c-card c-card--featured">
+              <div class="c-card__header">
+                <h4 class="c-card__title">Destacada (Featured)</h4>
+              </div>
+              <div class="c-card__body">
+                <p class="u-text-xs">
+                  Añade una franja superior coloreada con el tono de marca primario para llamar la atención del usuario en resúmenes o planes de precios.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <span class="u-text-2xs u-text-primary u-text-bold">Llamada a la acción</span>
+              </div>
+            </div>
+
+            <!-- Interactive Card -->
+            <div class="c-card c-card--interactive">
+              <div class="c-card__header">
+                <h4 class="c-card__title">Interactiva (Hover)</h4>
+              </div>
+              <div class="c-card__body">
+                <p class="u-text-xs">
+                  Ideal para listados navegables. Al pasar el cursor por encima (hover), la tarjeta se eleva sutilmente en el eje vertical y proyecta una sombra profunda.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <span class="u-text-2xs u-text-muted">Desliza el cursor encima</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Composite Card Showcase -->
+        <section class="u-mb-v">
+          <h2>Tarjetas Compuestas &amp; Acciones</h2>
+          <p class="u-mb-v">Ejemplo real de tarjeta de visualización de producto/panel que combina componentes del framework:</p>
+          
+          <div class="l-container l-container--narrow">
+            <div class="c-card">
+              <div class="c-card__header">
+                <div class="l-flex-split">
+                  <h4 class="c-card__title">Módulo de Analítica</h4>
+                  <span class="c-badge c-badge--success c-badge--pill">Activo</span>
+                </div>
+              </div>
+              
+              <div class="c-card__body">
+                <h2 class="u-mb-iii u-text-bold">3.245 <span class="u-text-xs u-text-muted" style="font-weight: normal;">Usuarios Mensuales</span></h2>
+                <p class="u-text-xs u-mb-iv">
+                  El tráfico de tu plataforma ha incrementado en un <strong>12%</strong> respecto al mes anterior. Continúa optimizando tus recursos.
+                </p>
+                <div class="u-text-2xs" style="background-color: var(--color-neutral-100); padding: var(--space-iii); border-radius: var(--radius-ii);">
+                  <strong class="u-text-primary">Nota técnica:</strong> Se están empleando layouts responsivos flexbox.
+                </div>
+              </div>
+              
+              <div class="c-card__footer">
+                <div class="l-flex-split u-w-full">
+                  <button class="c-btn c-btn--sm c-btn--ghost">Descargar informe</button>
+                  <button class="c-btn c-btn--sm c-btn--primary">Ver Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

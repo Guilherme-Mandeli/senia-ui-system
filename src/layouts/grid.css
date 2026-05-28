@@ -1,0 +1,134 @@
+/* Grid Layouts
+   Structural grid skeletons for primary page structures.
+*/
+
+/* Sidebar + main content layout */
+.l-sidebar-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-iii);
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 16rem 1fr;
+    gap: var(--space-vi);
+  }
+}
+
+.l-sidebar-layout__sidebar {
+  position: static;
+  
+  @media (min-width: 768px) {
+    position: sticky;
+    top: var(--space-iii);
+    align-self: start;
+    max-height: calc(100vh - var(--space-vii));
+    overflow-y: auto;
+  }
+}
+
+.l-sidebar-layout__content {
+  min-width: 0; /* Prevent grid breakout */
+}
+
+/* Common columns skeletons */
+.l-grid {
+  --cols-mobile: 1;
+  --cols-tablet: 1;
+  --cols-desktop: 1;
+
+  display: grid;
+  gap: var(--grid-gap, var(--space-iii));
+  grid-template-columns: repeat(var(--cols-mobile), 1fr);
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(var(--cols-tablet), 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(var(--cols-desktop), 1fr);
+  }
+}
+
+.l-grid--1col,
+.l-grid-1,
+.l-col-1 {
+  --cols-tablet: 1;
+  --cols-desktop: 1;
+}
+
+.l-grid--2col,
+.l-grid-2,
+.l-col-2 {
+  --cols-tablet: 2;
+  --cols-desktop: 2;
+}
+
+.l-grid--3col,
+.l-grid-3,
+.l-col-3 {
+  --cols-tablet: 2;
+  --cols-desktop: 3;
+}
+
+.l-grid--4col,
+.l-grid-4,
+.l-col-4 {
+  --cols-tablet: 2;
+  --cols-desktop: 4;
+}
+
+.l-grid--5col,
+.l-grid-5,
+.l-col-5 {
+  --cols-tablet: 2;
+  --cols-desktop: 5;
+}
+
+.l-grid--6col,
+.l-grid-6,
+.l-col-6 {
+  --cols-tablet: 3;
+  --cols-desktop: 6;
+}
+
+.l-grid--7col,
+.l-grid-7,
+.l-col-7 {
+  --cols-tablet: 3;
+  --cols-desktop: 7;
+}
+
+.l-grid--8col,
+.l-grid-8,
+.l-col-8 {
+  --cols-tablet: 4;
+  --cols-desktop: 8;
+}
+
+.l-grid--9col,
+.l-grid-9,
+.l-col-9 {
+  --cols-tablet: 3;
+  --cols-desktop: 9;
+}
+
+.l-grid--10col,
+.l-grid-10,
+.l-col-10 {
+  --cols-tablet: 4;
+  --cols-desktop: 10;
+}
+
+.l-grid--11col,
+.l-grid-11,
+.l-col-11 {
+  --cols-tablet: 4;
+  --cols-desktop: 11;
+}
+
+.l-grid--12col,
+.l-grid-12,
+.l-col-12 {
+  --cols-tablet: 4;
+  --cols-desktop: 12;
+}

@@ -1,0 +1,59 @@
+/* Sizing Utilities
+   Prefixes: u-w-, u-h-, u-min-w-, u-max-w-, u-min-h-, u-max-h-
+*/
+
+/* ==========================================
+   WIDTH UTILITIES
+   ========================================== */
+.u-w-auto { width: auto !important; }
+.u-w-full { width: 100% !important; }
+.u-w-fit { width: fit-content !important; }
+.u-w-screen { width: 100vw !important; }
+.u-w-min { width: min-content !important; }
+.u-w-max { width: max-content !important; }
+
+/* ==========================================
+   HEIGHT UTILITIES
+   ========================================== */
+.u-h-auto { height: auto !important; }
+.u-h-full { height: 100% !important; }
+.u-h-screen { height: 100vh !important; }
+.u-h-fit { height: fit-content !important; }
+
+/* ==========================================
+   MIN / MAX WIDTH UTILITIES
+   ========================================== */
+.u-min-w-auto { min-width: auto !important; }
+.u-min-w-none { min-width: none !important; }
+.u-min-w-full { min-width: 100% !important; }
+.u-min-w-screen { min-width: 100vw !important; }
+.u-min-w-fit { min-width: fit-content !important; }
+.u-min-w-min { min-width: min-content !important; }
+.u-min-w-max { min-width: max-content !important; }
+
+.u-max-w-auto { max-width: auto !important; }
+.u-max-w-none { max-width: none !important; }
+.u-max-w-full { max-width: 100% !important; }
+.u-max-w-screen { max-width: 100vw !important; }
+.u-max-w-fit { max-width: fit-content !important; }
+.u-max-w-min { max-width: min-content !important; }
+.u-max-w-max { max-width: max-content !important; }
+
+/* ==========================================
+   MIN / MAX HEIGHT UTILITIES
+   ========================================== */
+.u-min-h-auto { min-height: auto !important; }
+.u-min-h-none { min-height: none !important; }
+.u-min-h-full { min-height: 100% !important; }
+.u-min-h-screen { min-height: 100vh !important; }
+.u-min-h-fit { min-height: fit-content !important; }
+.u-min-h-min { min-height: min-content !important; }
+.u-min-h-max { min-height: max-content !important; }
+
+.u-max-h-auto { max-height: auto !important; }
+.u-max-h-none { max-height: none !important; }
+.u-max-h-full { max-height: 100% !important; }
+.u-max-h-screen { max-height: 100vh !important; }
+.u-max-h-fit { max-height: fit-content !important; }
+.u-max-h-min { max-height: min-content !important; }
+.u-max-h-max { max-height: max-content !important; }

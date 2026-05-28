@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grillas y Layouts - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Layout &amp; Grids</span>
+          <h1>Sistema de Grillas y Layouts</h1>
+          <p class="u-text-lg u-text-muted">
+            Estructuras de diseño responsivas que organizan la información de manera equilibrada y fluida.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Column layouts grids -->
+        <section class="u-mb-vi">
+          <h2>Grillas de Columnas Clásicas</h2>
+          <p class="u-mb-v">Las clases de layout simplificadas <code>.l-col-2</code>, <code>.l-col-3</code>, y <code>.l-col-4</code> (compatibles también con <code>.l-grid--2col</code>, etc.) se adaptan de forma reactiva al tamaño de pantalla móvil, apilándose en una única columna en smartphones y abriéndose progresivamente.</p>
+          
+          <!-- 2 Columns -->
+          <div class="u-mb-v">
+            <h4 class="u-mb-ii">Grilla de 2 Columnas (.l-col-2)</h4>
+            <div class="l-grid l-col-2">
+              <div class="c-card u-p-iv u-text-center u-text-bold u-text-primary" style="background-color: var(--color-primary-50); border-style: dashed;">Columna A</div>
+              <div class="c-card u-p-iv u-text-center u-text-bold u-text-primary" style="background-color: var(--color-primary-50); border-style: dashed;">Columna B</div>
+            </div>
+          </div>
+
+          <!-- 3 Columns -->
+          <div class="u-mb-v">
+            <h4 class="u-mb-ii">Grilla de 3 Columnas (.l-col-3)</h4>
+            <div class="l-grid l-col-3">
+              <div class="c-card u-p-iv u-text-center u-text-bold u-text-secondary" style="background-color: var(--color-secondary-50); border-style: dashed;">Columna A</div>
+              <div class="c-card u-p-iv u-text-center u-text-bold u-text-secondary" style="background-color: var(--color-secondary-50); border-style: dashed;">Columna B</div>
+              <div class="c-card u-p-iv u-text-center u-text-bold u-text-secondary" style="background-color: var(--color-secondary-50); border-style: dashed;">Columna C</div>
+            </div>
+          </div>
+
+          <!-- 4 Columns -->
+          <div class="u-mb-v">
+            <h4 class="u-mb-ii">Grilla de 4 Columnas (.l-col-4)</h4>
+            <div class="l-grid l-col-4">
+              <div class="c-card u-p-iv u-text-center u-text-muted" style="border-style: dashed;">Columna 1</div>
+              <div class="c-card u-p-iv u-text-center u-text-muted" style="border-style: dashed;">Columna 2</div>
+              <div class="c-card u-p-iv u-text-center u-text-muted" style="border-style: dashed;">Columna 3</div>
+              <div class="c-card u-p-iv u-text-center u-text-muted" style="border-style: dashed;">Columna 4</div>
+            </div>
+          </div>
+
+
+
+          <!-- 12 Columns Layout Grid (Static Fallback reference) -->
+          <div class="u-mb-iv">
+            <h4 class="u-mb-ii">Grilla Estructural Clásica de 12 Columnas (.l-col-12)</h4>
+            <div class="l-grid l-col-12 u-gap-ii">
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">1</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">2</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">3</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">4</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">5</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">6</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">7</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">8</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">9</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">10</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">11</div>
+              <div class="c-card u-p-ii u-text-center u-text-2xs u-text-muted" style="border-style: dashed;">12</div>
+            </div>
+          </div>
+
+        </section>
+
+        <hr>
+
+        <!-- New 12-Column Grid System Section -->
+        <section class="u-mb-vi">
+          <h2>Sistema de Grilla Atómica de 12 Columnas</h2>
+          <p class="u-mb-v">Dispones de un motor de grilla completo basado en columnas modulares de 1 a 12 con clases como <code>.u-grid-cols-[1-12]</code> y anchos de expansión mediante <code>.u-col-span-[1-12]</code> o <code>.u-col-span-full</code>.</p>
+
+          <!-- Interactive Grid visualizer -->
+          <div class="c-card u-p-v u-mb-v">
+            <h4 class="u-mb-iii">Estructura Base de 12 Columnas Puras (.u-grid-cols-12)</h4>
+            <div class="u-grid u-grid-cols-12 u-gap-ii u-mb-v">
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">1</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">2</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">3</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">4</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">5</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">6</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">7</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">8</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">9</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">10</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">11</div>
+              <div class="u-p-ii u-text-center u-text-2xs u-border u-radius-ii" style="background: rgba(255,238,88,0.15); font-weight: bold; color: var(--color-primary-900);">12</div>
+            </div>
+
+            <h4 class="u-mb-iii">Composiciones y Expansiones de Columna (col-span-)</h4>
+            <div class="u-grid u-grid-cols-12 u-gap-iii">
+              <!-- Span 6 (2 columns equivalent) -->
+              <div class="u-col-span-6 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: var(--color-neutral-100);">
+                <strong>.u-col-span-6</strong>
+              </div>
+              <div class="u-col-span-6 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: var(--color-neutral-100);">
+                <strong>.u-col-span-6</strong>
+              </div>
+
+              <!-- Span 4 (3 columns equivalent) -->
+              <div class="u-col-span-4 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: var(--color-neutral-50);">
+                <strong>.u-col-span-4</strong>
+              </div>
+              <div class="u-col-span-4 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: var(--color-neutral-50);">
+                <strong>.u-col-span-4</strong>
+              </div>
+              <div class="u-col-span-4 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: var(--color-neutral-50);">
+                <strong>.u-col-span-4</strong>
+              </div>
+
+              <!-- Uneven layouts: span 8 and span 4 -->
+              <div class="u-col-span-8 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: rgba(16,185,129,0.08); border-color: var(--color-success-300);">
+                <strong class="u-text-success">.u-col-span-8 (Contenido Principal)</strong>
+              </div>
+              <div class="u-col-span-4 u-p-iv u-text-center u-text-xs u-border u-radius-iv" style="background: rgba(38,113,217,0.08); border-color: var(--color-info-300);">
+                <strong class="u-text-info">.u-col-span-4 (Sidebar)</strong>
+              </div>
+
+              <!-- Span Full -->
+              <div class="u-col-span-full u-p-iv u-text-center u-text-xs u-border u-radius-iv u-border-primary" style="background: rgba(255,238,88,0.08);">
+                <strong>.u-col-span-full (Toda la fila)</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Sidebar layout showcase -->
+        <section class="u-mb-v">
+          <h2>Layout Sidebar + Contenido</h2>
+          <p class="u-mb-v">Utilizado en paneles de control y páginas de documentación. Consiste en una columna estrecha lateral fija/sticky y un área ancha de contenido.</p>
+          
+          <div class="c-card u-p-v" style="background-color: var(--color-neutral-100);">
+            <div class="l-sidebar-layout">
+              
+              <!-- Simulated Sidebar -->
+              <div class="l-sidebar-layout__sidebar c-card u-p-iv" style="border-color: var(--color-neutral-300); background-color: #ffffff;">
+                <h5 class="u-mb-iii">Navegación</h5>
+                <ul style="list-style: none; padding: 0; font-size: var(--font-size-iv);">
+                  <li class="u-mb-i"><a href="#" class="u-text-primary">Enlace Uno</a></li>
+                  <li class="u-mb-i"><a href="#">Enlace Dos</a></li>
+                  <li><a href="#">Enlace Tres</a></li>
+                </ul>
+              </div>
+              
+              <!-- Simulated Content -->
+              <div class="l-sidebar-layout__content c-card u-p-v" style="background-color: #ffffff; border-color: var(--color-neutral-300);">
+                <h4>Contenido del Panel</h4>
+                <p class="u-text-xs">
+                  Este bloque representa el cuerpo de la página. El sidebar lateral se volverá adhesivo (sticky) en pantallas de escritorio, y colapsará arriba en pantallas móviles de forma 100% nativa sin necesidad de Javascript.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

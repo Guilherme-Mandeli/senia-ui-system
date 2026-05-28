@@ -1,0 +1,78 @@
+/* Card Component
+   BEM: .c-card
+*/
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-iv);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition-duration-normal) var(--transition-easing-premium), 
+              box-shadow var(--transition-duration-normal) var(--transition-easing-premium), 
+              border-color var(--transition-duration-normal) var(--transition-easing-premium);
+}
+
+.c-card__header {
+  padding: var(--space-iv) var(--space-v);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background-color: rgba(0, 0, 0, 0.01);
+  
+  .theme-dark & {
+    background-color: rgba(255, 255, 255, 0.01);
+  }
+}
+
+.c-card__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-600);
+  margin-bottom: 0;
+}
+
+.c-card__body {
+  padding: var(--space-v);
+  flex-grow: 1;
+}
+
+.c-card__footer {
+  padding: var(--space-iv) var(--space-v);
+  border-top: 1px solid var(--color-border-subtle);
+  background-color: rgba(0, 0, 0, 0.01);
+  
+  .theme-dark & {
+    background-color: rgba(255, 255, 255, 0.01);
+  }
+}
+
+/* --- Interactive Card Modifier --- */
+
+.c-card--interactive {
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-300);
+    
+    .theme-dark & {
+      border-color: var(--color-primary-700);
+    }
+  }
+}
+
+/* --- Featured Card Modifier --- */
+.c-card--featured {
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--color-primary-500);
+  }
+}

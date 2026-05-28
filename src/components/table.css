@@ -1,0 +1,74 @@
+/* Table Component
+   BEM: .c-table, .c-table-container
+*/
+
+/* Mobile overflow-scroll container */
+.c-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-iv);
+  box-shadow: var(--shadow-sm);
+  
+  /* Scrollbar cleanups */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-neutral-300);
+    border-radius: var(--radius-full);
+  }
+}
+
+.c-table {
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-iv);
+  border-collapse: collapse;
+}
+
+.c-table__th {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-600);
+  color: var(--color-text-heading);
+  background-color: var(--color-neutral-100);
+  padding: var(--space-iv) var(--space-v);
+  border-bottom: 2px solid var(--color-border-default);
+  
+  .theme-dark & {
+    background-color: var(--color-neutral-900);
+    border-bottom: 2px solid var(--color-border-default);
+  }
+}
+
+.c-table__td {
+  padding: var(--space-iv) var(--space-v);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-body);
+  transition: background-color var(--transition-duration-fast) var(--transition-easing-linear);
+}
+
+/* --- Modifiers --- */
+
+/* Alternate Striped Rows */
+.c-table--striped {
+  .c-table__tr:nth-child(even) .c-table__td {
+    background-color: rgba(0, 0, 0, 0.015);
+  }
+  
+  .theme-dark & .c-table__tr:nth-child(even) .c-table__td {
+    background-color: rgba(255, 255, 255, 0.015);
+  }
+}
+
+/* Interactive Hover Rows */
+.c-table--hover {
+  .c-table__tr:hover .c-table__td {
+    background-color: var(--color-neutral-100);
+    .theme-dark & { background-color: var(--color-neutral-850, #1e293b); }
+  }
+}

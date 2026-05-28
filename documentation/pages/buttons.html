@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botones - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Botón (Button)</h1>
+          <p class="u-text-lg u-text-muted">
+            Acciones clave con transiciones cromáticas orgánicas, múltiples tamaños, variantes y estados adaptativos.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Variants Section -->
+        <section class="u-mb-vi">
+          <h2>Variantes del Sistema</h2>
+          <p class="u-mb-v">Definimos la importancia jerárquica de la acción usando modificadores semánticos claros:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Showcase de Variantes</div>
+            </div>
+            <div class="v-showcase__preview">
+              <button class="c-btn c-btn--primary">Primario (Indigo)</button>
+              <button class="c-btn c-btn--secondary">Secundario (Teal)</button>
+              <button class="c-btn c-btn--outline">Delineado (Outline)</button>
+              <button class="c-btn c-btn--ghost">Fantasma (Ghost)</button>
+              <button class="c-btn c-btn--link">Enlace (Link)</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sizes Section -->
+        <section class="u-mb-vi">
+          <h2>Tamaños</h2>
+          <p class="u-mb-v">Tres escalas para adaptarse al ritmo del layout o espacio disponible:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Pequeño, Mediano y Grande</div>
+            </div>
+            <div class="v-showcase__preview">
+              <button class="c-btn c-btn--sm c-btn--primary">Pequeño (SM)</button>
+              <button class="c-btn c-btn--primary">Mediano (Normal)</button>
+              <button class="c-btn c-btn--lg c-btn--primary">Grande (LG)</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive States Section -->
+        <section class="u-mb-v">
+          <h2>Estados Interactivos &amp; Accesibilidad</h2>
+          <p class="u-mb-v">Matriz de estados interactivos para probar la estabilidad y feedback del componente ante las interacciones del usuario:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Estados de Botones</div>
+            </div>
+            <div class="v-showcase__preview">
+              <button class="c-btn c-btn--primary">Estado Normal</button>
+              <button class="c-btn c-btn--primary" disabled>Deshabilitado (Disabled)</button>
+              <button class="c-btn c-btn--primary c-btn--loading">Cargando (Loading)</button>
+              
+              <button class="c-btn c-btn--outline">Outline Normal</button>
+              <button class="c-btn c-btn--outline" disabled>Outline Disabled</button>
+              <button class="c-btn c-btn--outline c-btn--loading">Outline Loading</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Senia UI CSS Framework
+   High-performance, scalable, modular corporate CSS architecture.
+   ========================================================================== */
+
+/* 1. Declare CSS Layers Order */
+@import "./core/layers.css";
+
+/* 2. Import Modules within their Cascading Layers */
+@import "./core/reset.css" layer(reset);
+@import "./tokens/index.css" layer(tokens);
+@import "./base/index.css" layer(base);
+@import "./utilities/index.css" layer(utilities);
+@import "./components/index.css" layer(components);
+@import "./layouts/index.css" layer(layouts);
+@import "./themes/index.css" layer(themes);

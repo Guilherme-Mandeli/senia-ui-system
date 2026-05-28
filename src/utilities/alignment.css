@@ -1,0 +1,60 @@
+/* Alignment Utilities
+   Prefixes: u-
+*/
+
+/* ==========================================
+   JUSTIFY CONTENT (justify-)
+   ========================================== */
+.u-justify-start { justify-content: flex-start !important; }
+.u-justify-end { justify-content: flex-end !important; }
+.u-justify-center { justify-content: center !important; }
+.u-justify-between { justify-content: space-between !important; }
+.u-justify-around { justify-content: space-around !important; }
+.u-justify-evenly { justify-content: space-evenly !important; }
+.u-justify-stretch { justify-content: stretch !important; }
+
+/* ==========================================
+   ALIGN ITEMS (items-)
+   ========================================== */
+.u-items-start { align-items: flex-start !important; }
+.u-items-end { align-items: flex-end !important; }
+.u-items-center { align-items: center !important; }
+.u-items-baseline { align-items: baseline !important; }
+.u-items-stretch { align-items: stretch !important; }
+
+/* Backward compatibility legacy aliases */
+.u-align-start { align-items: flex-start !important; }
+.u-align-center { align-items: center !important; }
+.u-align-end { align-items: flex-end !important; }
+.u-align-stretch { align-items: stretch !important; }
+
+/* ==========================================
+   ALIGN CONTENT (content-)
+   ========================================== */
+.u-content-start { align-content: flex-start !important; }
+.u-content-end { align-content: flex-end !important; }
+.u-content-center { align-content: center !important; }
+.u-content-between { align-content: space-between !important; }
+.u-content-around { align-content: space-around !important; }
+.u-content-stretch { align-content: stretch !important; }
+
+/* ==========================================
+   ALIGN SELF (self-)
+   ========================================== */
+.u-self-auto { align-self: auto !important; }
+.u-self-start { align-self: flex-start !important; }
+.u-self-end { align-self: flex-end !important; }
+.u-self-center { align-self: center !important; }
+.u-self-baseline { align-self: baseline !important; }
+.u-self-stretch { align-self: stretch !important; }
+
+/* ==========================================
+   PLACE ITEMS (place-items)
+   ========================================== */
+.u-place-items-start { place-items: start !important; }
+.u-place-items-end { place-items: end !important; }
+.u-place-items-center { place-items: center !important; }
+.u-place-items-stretch { place-items: stretch !important; }
+
+/* Legacy alias */
+.u-place-center { place-items: center !important; }

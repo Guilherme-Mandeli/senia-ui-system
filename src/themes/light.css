@@ -1,0 +1,59 @@
+/* Light Theme Mappings — Grupo Senia Brand
+   Maps design tokens to functional, semantic variables.
+   Optimized for yellow primary: links use darker variants for WCAG contrast.
+*/
+
+:root {
+  /* Page backgrounds & Typography */
+  --color-bg-page: var(--color-neutral-50);
+  --color-text-body: var(--color-neutral-700);
+  --color-text-heading: var(--color-neutral-900);
+  
+  /* Brand Links (primary-700 passes WCAG AA contrast on white) */
+  --color-text-link: var(--color-primary-700);
+  --color-text-link-hover: var(--color-primary-800);
+  
+  /* Borders */
+  --color-border-default: var(--color-neutral-300);
+  --color-border-subtle: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-400);
+  
+  /* Cards & Surface panels */
+  --color-bg-card: #ffffff;
+  --color-border-card: var(--color-neutral-200);
+
+  /* Warm Surfaces (optional decorative backgrounds) */
+  --color-bg-warm: var(--color-warm-100);
+  --color-bg-warm-subtle: var(--color-warm-50);
+  
+  /* Code components */
+  --color-bg-code-inline: var(--color-neutral-100);
+  --color-text-code-inline: var(--color-neutral-800);
+  --color-bg-code-block: var(--color-neutral-900);
+  
+  /* Form Elements */
+  --color-input-bg: #ffffff;
+  --color-input-border: var(--color-neutral-300);
+  --color-input-text: var(--color-neutral-800);
+  --color-input-placeholder: var(--color-neutral-400);
+  --color-input-focus-border: var(--color-primary-600);
+  --color-input-disabled-bg: var(--color-neutral-100);
+  --color-input-disabled-text: var(--color-neutral-400);
+
+  /* Status overrides */
+  --color-text-success: var(--color-success-700);
+  --color-bg-success-light: var(--color-success-50);
+  --color-border-success: var(--color-success-500);
+
+  --color-text-warning: var(--color-warning-700);
+  --color-bg-warning-light: var(--color-warning-50);
+  --color-border-warning: var(--color-warning-500);
+
+  --color-text-error: var(--color-error-700);
+  --color-bg-error-light: var(--color-error-50);
+  --color-border-error: var(--color-error-500);
+
+  --color-text-info: var(--color-info-700);
+  --color-bg-info-light: var(--color-info-50);
+  --color-border-info: var(--color-info-500);
+}

@@ -1,0 +1,75 @@
+/* Typography Utilities
+   Prefix: u-text-
+*/
+
+/* Text Alignments */
+.u-text-left { text-align: left; }
+.u-text-center { text-align: center; }
+.u-text-right { text-align: right; }
+.u-text-justify { text-align: justify; }
+
+/* Font Weights */
+.u-text-light { font-weight: var(--font-weight-300); }
+.u-text-regular { font-weight: var(--font-weight-400); }
+.u-text-medium { font-weight: var(--font-weight-500); }
+.u-text-semibold { font-weight: var(--font-weight-600); }
+.u-text-bold { font-weight: var(--font-weight-700); }
+
+/* Color overrides */
+.u-text-primary { color: var(--color-primary-500); }
+.u-text-secondary { color: var(--color-secondary-500); }
+.u-text-muted { color: var(--color-neutral-500); }
+.u-text-success { color: var(--color-text-success); }
+.u-text-error { color: var(--color-text-error); }
+
+/* Font sizes */
+.u-text-2xs { font-size: var(--font-size-ii); }
+.u-text-xs { font-size: var(--font-size-iv); }
+.u-text-sm { font-size: var(--font-size-iv); } /* Safe mobile font */
+.u-text-md { font-size: var(--font-size-md); }
+.u-text-lg { font-size: var(--font-size-vi); }
+.u-text-xl { font-size: var(--font-size-vii); }
+
+/* Text Transform */
+.u-text-uppercase { text-transform: uppercase; }
+.u-text-lowercase { text-transform: lowercase; }
+.u-text-capitalize { text-transform: capitalize; }
+.u-text-transform-none { text-transform: none; }
+
+/* Text Decoration */
+.u-text-underline { text-decoration: underline; }
+.u-text-line-through { text-decoration: line-through; }
+.u-text-decoration-none { text-decoration: none; }
+
+/* White Space */
+.u-text-nowrap { white-space: nowrap; }
+.u-text-pre { white-space: pre; }
+.u-text-pre-line { white-space: pre-line; }
+.u-text-pre-wrap { white-space: pre-wrap; }
+.u-text-white-space-normal { white-space: normal; }
+
+/* Word Break */
+.u-text-break-normal { word-break: normal; }
+.u-text-break-all { word-break: break-all; }
+.u-text-break-keep { word-break: keep-all; }
+
+/* Overflow Wrap (Word Wrap) */
+.u-text-wrap-normal { overflow-wrap: normal; }
+.u-text-wrap-anywhere { overflow-wrap: anywhere; }
+.u-text-wrap-break { overflow-wrap: break-word; }
+
+/* Text Overflow */
+.u-text-overflow-clip { text-overflow: clip; }
+.u-text-overflow-ellipsis { text-overflow: ellipsis; }
+
+/* Hyphens */
+.u-text-hyphens-none { hyphens: none; }
+.u-text-hyphens-manual { hyphens: manual; }
+.u-text-hyphens-auto { hyphens: auto; }
+
+/* Ellipsis & Squeezing (legacy utility) */
+.u-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

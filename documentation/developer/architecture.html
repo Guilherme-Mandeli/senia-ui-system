@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura CSS - Senia UI CSS Framework</title>
+  <link class="js-stylesheet" rel="stylesheet" href="../../src/style.css">
+  <link class="js-stylesheet" rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation (Populated Dynamically) -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Developer Core</span>
+          <h1>Arquitectura del Framework</h1>
+          <p class="u-text-lg u-text-muted">
+            Entiende los pilares de ingeniería CSS detrás de <strong>Senia UI</strong>: capas de cascada, modularidad atómica y compilación de alto rendimiento.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Sección 1: Cascading Layers -->
+        <section class="u-mb-vi">
+          <h2>1. Capas de Cascada Ordenadas (@layer)</h2>
+          <p>
+            Uno de los mayores problemas históricos en grandes bases de código CSS es la "guerra de especificidad". Senia UI resuelve esto nativamente usando <strong>CSS Cascading Layers (capas de cascada)</strong>.
+          </p>
+          <p>
+            Al declarar explícitamente el orden de las capas, garantizamos que las reglas de una capa posterior siempre prevalezcan sobre las anteriores, <em>independientemente de la complejidad de sus selectores</em>.
+          </p>
+
+          <div class="c-card u-p-v u-mb-v" style="background-color: rgba(255, 238, 88, 0.03);">
+            <h4 class="u-text-primary u-mb-ii">Orden de Prevalencia (de menos prioritario a más prioritario):</h4>
+            <pre style="margin-bottom: 0; overflow-x: auto;"><code>@layer reset, tokens, base, utilities, components, layouts, themes;</code></pre>
+          </div>
+
+          <table style="width: 100%; border-collapse: collapse; text-align: left;" class="u-mt-v">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border-subtle);">
+                <th style="padding: var(--space-ii) var(--space-iii);">Capa (@layer)</th>
+                <th style="padding: var(--space-ii) var(--space-iii);">Ubicación del Código</th>
+                <th style="padding: var(--space-ii) var(--space-iii);">Responsabilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">1. reset</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/core/reset.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Resets modernos basados en Andy Bell y Josh Comeau. Normaliza el renderizado entre navegadores.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">2. tokens</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/tokens/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Definiciones cromáticas en HSL, escalas de espaciado, tipografía, bordes, sombras y z-index globales.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">3. base</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/base/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Reglas genéricas sobre selectores HTML directos (body, h1-h6, p, tables). Inicializa tipografías.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">4. utilities</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/utilities/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Clases atómicas de única responsabilidad (ej. <code>.u-mb-vi</code> o <code>.u-text-center</code>) para pequeños ajustes rápidos de maquetación.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">5. components</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/components/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Bloques web encapsulados construidos bajo la convención BEM Simplificada (ej. <code>.c-button</code> o <code>.c-card</code>).</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">6. layouts</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/layouts/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Sistemas de cuadrícula globales, flexbox wrappers y contenedores estructurales de alto nivel (ej. <code>.l-container</code>).</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-ii) var(--space-iii); font-weight: bold;">7. themes</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-family: var(--font-family-mono); font-size: var(--font-size-ii);">src/themes/*.css</td>
+                <td style="padding: var(--space-ii) var(--space-iii); font-size: var(--font-size-iv);">Mapeo de variables de tema oscuro y variables contextuales para personalización de marcas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <hr>
+
+        <!-- Sección 2: Estructura del Código Fuente -->
+        <section class="u-mb-vi">
+          <h2>2. Estructura de Directorios</h2>
+          <p>
+            El framework mantiene una separación limpia de responsabilidades organizando el código dentro de <code>/src</code> en módulos fáciles de mantener e importar:
+          </p>
+          
+          <pre><code>src/
+├── core/
+│   ├── layers.css      # Declaración inicial del orden de prioridad
+│   └── reset.css       # Normalizaciones HTML básicas
+├── tokens/
+│   ├── colors.css      # Paleta HSL
+│   ├── spacing.css     # Escalas de margin y padding
+│   ├── z-index.css     # Apilamiento jerárquico
+│   └── index.css       # Agregador de tokens
+├── base/
+│   ├── base.css        # Estilos HTML semánticos globales
+│   └── index.css
+├── components/
+│   ├── button.css      # Componente Botón
+│   ├── modal.css       # Modales estándar y nativos &lt;dialog&gt;
+│   └── index.css
+├── style.css           # Archivo de entrada agregador global</code></pre>
+        </section>
+
+        <hr>
+
+        <!-- Sección 3: Tooling y Build -->
+        <section class="u-mb-vi">
+          <h2>3. Herramientas y Pipeline de Compilación</h2>
+          <p>
+            Para garantizar que el CSS final esté optimizado para producción, utilizamos una arquitectura de tooling moderna:
+          </p>
+          <ul>
+            <li><strong>Vite:</strong> Actúa como el servidor de desarrollo rápido y la orquesta del empaquetado.</li>
+            <li><strong>PostCSS:</strong> Procesa el CSS nativo permitiendo el uso de imports anidados y estructuración modular.</li>
+            <li><strong>Autoprefixer:</strong> Analiza el código CSS final y añade automáticamente prefijos de fabricante (vendor prefixes) basados en el soporte global actual de navegadores.</li>
+            <li><strong>cssnano:</strong> Realiza optimizaciones agresivas eliminando comentarios innecesarios, espacios en blanco y minificando los valores para reducir al mínimo el peso final del archivo.</li>
+          </ul>
+        </section>
+
+        <hr>
+
+        <!-- Sección de Siguiente Paso -->
+        <section class="u-mb-v">
+          <div class="c-card c-card--featured u-p-v">
+            <h4>🛡️ Filosofía y Normas del Framework</h4>
+            <p class="u-text-sm u-text-muted">
+              Para desarrollar componentes e interfaces consistentes, es imprescindible seguir nuestras convenciones de diseño y entender la semántica de tokens como HSL o `z-index`.
+            </p>
+            <a href="conventions.html" class="c-badge c-badge--primary c-badge--pill">Ir a Guía de Convenciones →</a>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

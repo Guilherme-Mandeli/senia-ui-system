@@ -1,0 +1,44 @@
+/* Display Utilities
+   Prefixes: u-
+*/
+
+/* ==========================================
+   DISPLAY SYSTEM
+   ========================================== */
+.u-block { display: block !important; }
+.u-inline { display: inline !important; }
+.u-inline-block { display: inline-block !important; }
+.u-flex { display: flex !important; }
+.u-grid { display: grid !important; }
+.u-contents { display: contents !important; }
+.u-hidden { display: none !important; }
+
+/* Prefixed fallback formats for standard integration */
+.u-display-block { display: block !important; }
+.u-display-inline { display: inline !important; }
+.u-display-inline-block { display: inline-block !important; }
+.u-display-flex { display: flex !important; }
+.u-display-grid { display: grid !important; }
+.u-display-contents { display: contents !important; }
+.u-display-hidden { display: none !important; }
+.u-display-none { display: none !important; }
+
+/* ==========================================
+   VISIBILITY SYSTEM
+   ========================================== */
+.u-visible { visibility: visible !important; }
+.u-invisible { visibility: hidden !important; }
+.u-collapse { visibility: collapse !important; }
+
+/* SR Only class for accessibility */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

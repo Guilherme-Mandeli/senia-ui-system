@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etiquetas - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
+          <h1>Etiquetas &amp; Badges</h1>
+          <p class="u-text-lg u-text-muted">
+            Pequeños indicadores visuales para estados, metadatos estructurados y prioridades de información.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Solid Badges -->
+        <section class="u-mb-vi">
+          <h2>Etiquetas Sólidas (Solid Badges)</h2>
+          <p class="u-mb-v">Fondo coloreado suave con alta legibilidad cromática. Se complementa con formas rectangulares y tipo píldora (pill):</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Variantes Rectangulares estándar</div>
+            </div>
+            <div class="v-showcase__preview">
+              <span class="c-badge c-badge--primary">Primario</span>
+              <span class="c-badge c-badge--success">Completado</span>
+              <span class="c-badge c-badge--warning">Pendiente</span>
+              <span class="c-badge c-badge--error">Rechazado</span>
+              <span class="c-badge c-badge--info">Novedad</span>
+            </div>
+          </div>
+
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Variantes tipo Píldora (.c-badge--pill)</div>
+            </div>
+            <div class="v-showcase__preview">
+              <span class="c-badge c-badge--pill c-badge--primary">Indigo Pill</span>
+              <span class="c-badge c-badge--pill c-badge--success">Success Pill</span>
+              <span class="c-badge c-badge--pill c-badge--warning">Warning Pill</span>
+              <span class="c-badge c-badge--pill c-badge--error">Error Pill</span>
+              <span class="c-badge c-badge--pill c-badge--info">Info Pill</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Outline Badges -->
+        <section class="u-mb-v">
+          <h2>Etiquetas Delineadas (Outline Badges)</h2>
+          <p class="u-mb-v">Ideal para metadatos, tags de categorías secundarias y filtros de interfaz:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Variantes Outline Píldora</div>
+            </div>
+            <div class="v-showcase__preview">
+              <span class="c-badge c-badge--pill c-badge--outline c-badge--primary">Categoría</span>
+              <span class="c-badge c-badge--pill c-badge--outline c-badge--success">Aprobado</span>
+              <span class="c-badge c-badge--pill c-badge--outline c-badge--warning">En Espera</span>
+              <span class="c-badge c-badge--pill c-badge--outline c-badge--error">Crítico</span>
+              <span class="c-badge c-badge--pill c-badge--outline c-badge--info">Ayuda</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

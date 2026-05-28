@@ -1,0 +1,117 @@
+/* Modern Reset CSS
+   Inspired by Andy Bell, Josh Comeau, and modern-normalize.
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margins and padding for common elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Avoid text-size-adjust on mobile and make scroll behavior smooth */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+/* 4. Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. Remove list styles on select elements where list is used as layout */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* 6. A elements default styling reset */
+a {
+  text-decoration-skip-ink: auto;
+  color: inherit;
+}
+
+/* 7. Make images and media responsive and block-level */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 8. Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+/* 9. Remove wild animations for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 10. Clean focus outline default for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-focus, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* 11. Normalize form elements */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 12. Clean table defaults */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}

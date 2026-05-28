@@ -1,0 +1,14 @@
+/* Responsive Breakpoints Guide
+   These tokens represent standard corporate viewport sizes.
+   Note: Standard native CSS does not support CSS variables inside @media rules.
+   These are declared for theme-level configuration, reference, and visualizer documentation.
+*/
+
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}

@@ -1,0 +1,160 @@
+/* Form & Input Components
+   BEM: .c-input, .c-label, .c-field-group
+*/
+
+.c-field-group {
+  margin-bottom: var(--space-iv);
+}
+
+.c-label {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-iv);
+  font-weight: var(--font-weight-600);
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-i);
+}
+
+.c-input {
+  width: 100%;
+  display: block;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-iv);
+  color: var(--color-input-text);
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-iii);
+  padding: 0.5rem 0.75rem;
+  line-height: var(--line-height-none);
+  box-shadow: var(--shadow-inner);
+  transition: var(--transition-colors);
+  
+  &::placeholder {
+    color: var(--color-input-placeholder);
+    opacity: 1;
+  }
+  
+  &:hover {
+    border-color: var(--color-neutral-400);
+    .theme-dark & { border-color: var(--color-neutral-600); }
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-input-focus-border);
+    box-shadow: var(--shadow-focus), var(--shadow-inner);
+  }
+  
+  &:disabled,
+  &.c-input--disabled {
+    background-color: var(--color-input-disabled-bg);
+    color: var(--color-input-disabled-text);
+    cursor: not-allowed;
+    border-color: var(--color-border-subtle);
+  }
+}
+
+/* Textarea modifier */
+textarea.c-input {
+  line-height: var(--line-height-base);
+  min-height: 5rem;
+  resize: vertical;
+}
+
+/* Select element customization */
+select.c-input {
+  padding-right: 2rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234b5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem 1rem;
+  
+  .theme-dark & {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  }
+}
+
+/* --- State Modifiers --- */
+
+.c-input--error {
+  border-color: var(--color-border-error) !important;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15), var(--shadow-inner) !important;
+  }
+}
+
+.c-field-error-msg {
+  display: block;
+  font-size: var(--font-size-ii);
+  color: var(--color-text-error);
+  margin-top: var(--space-i);
+}
+
+.c-field-help-msg {
+  display: block;
+  font-size: var(--font-size-ii);
+  color: var(--color-text-body);
+  opacity: 0.8;
+  margin-top: var(--space-i);
+}
+
+/* --- Inline Controls (Checkboxes & Radios) --- */
+
+.c-choice-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-ii);
+  font-size: var(--font-size-iv);
+  color: var(--color-text-body);
+  cursor: pointer;
+  user-select: none;
+}
+
+.c-input--checkbox,
+.c-input--radio {
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius-ii);
+  border: 1px solid var(--color-input-border);
+  background-color: var(--color-input-bg);
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  appearance: none;
+  transition: var(--transition-colors);
+  
+  &:hover {
+    border-color: var(--color-neutral-400);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-input-focus-border);
+    box-shadow: var(--shadow-focus);
+  }
+  
+  &:checked {
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+  }
+}
+
+.c-input--checkbox:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem 0.75rem;
+}
+
+.c-input--radio {
+  border-radius: var(--radius-full);
+  
+  &:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.5rem 0.5rem;
+  }
+}

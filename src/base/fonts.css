@@ -1,0 +1,264 @@
+/* ==========================================================================
+   Senia UI - CDN Local & Custom Fonts Configuration
+   Use this file to declare local @font-face rules served from /fonts/
+   ========================================================================== */
+
+/* 
+   Para activar estas fuentes y evitar llamadas externas:
+   1. Coloque los archivos de fuentes (.woff2) en "public/fonts/" siguiendo la estructura sugerida.
+   2. Descomente las secciones correspondientes en este archivo.
+   3. Comente la importación externa de Google Fonts al inicio de "src/base/base.css".
+*/
+/* Importación de Fuente Lato (Google Fonts CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. INTER - Cuerpo de Texto (Body)
+   -------------------------------------------------------------------------- */
+/*
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/inter/inter-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter/inter-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-700.woff2') format('woff2');
+}
+*/
+
+/* --------------------------------------------------------------------------
+   2. OUTFIT - Encabezados (Headings)
+   -------------------------------------------------------------------------- */
+/*
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/outfit/outfit-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/outfit/outfit-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/outfit/outfit-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/outfit/outfit-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/outfit/outfit-800.woff2') format('woff2');
+}
+*/
+
+/* --------------------------------------------------------------------------
+   3. JETBRAINS MONO - Monoespaciado (Mono)
+   -------------------------------------------------------------------------- */
+/*
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-500.woff2') format('woff2');
+}
+*/
+
+/* --------------------------------------------------------------------------
+   4. PLANTILLA DE FUENTE CORPORATIVA PERSONALIZADA
+   (Use esta plantilla para añadir cualquier otra fuente corporativa externa)
+   -------------------------------------------------------------------------- */
+/*
+@font-face {
+  font-family: 'MiFuenteCorporativa';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/mi-fuente/mi-fuente-regular.woff2') format('woff2'),
+       url('/fonts/mi-fuente/mi-fuente-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MiFuenteCorporativa';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/mi-fuente/mi-fuente-bold.woff2') format('woff2'),
+       url('/fonts/mi-fuente/mi-fuente-bold.woff') format('woff');
+}
+*/
+
+/* --------------------------------------------------------------------------
+   5. GILL SANS - Fuente Corporativa Activa (Cargada desde el CDN Local)
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-light-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-medium-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-medium-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-bold-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-heavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-heavy-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-condensed.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/gill-sans/gill-sans-condensed-bold.otf') format('opentype');
+}
+

@@ -1,0 +1,18 @@
+/* Border Radius Tokens
+   Consistent bounds and rounded options for card panels, buttons, inputs, and modals.
+*/
+
+:root {
+  --radius-none: 0px;
+  --radius-i: 3px;
+  --radius-ii: 4px;
+  --radius-iii: 6px;
+  --radius-iv: 8px;
+  --radius-v: 10px;
+  --radius-vi: 12px;
+  --radius-vii: 16px;
+  --radius-viii: 18px;
+  --radius-ix: 20px;
+  --radius-x: 24px;
+  --radius-full: 9999px;
+}
