@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transiciones &amp; Animaciones - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+  <style>
+    /* Custom presentation animations specifically for showcase comparison */
+    .v-demo-track {
+      background-color: var(--color-neutral-100);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-iii);
+      padding: var(--space-iii);
+      margin-bottom: var(--space-iii);
+      position: relative;
+      overflow: hidden;
+      
+      .theme-dark & { background-color: var(--color-neutral-900); }
+    }
+    
+    .v-demo-box {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary-500);
+      border: 1px solid var(--color-neutral-400);
+      border-radius: var(--radius-iii);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-2xs);
+      font-weight: bold;
+      color: var(--color-neutral-900);
+      transform: translateX(0);
+      transition: transform var(--transition-duration-slow);
+    }
+    
+    .v-demo-track:hover .v-demo-box {
+      transform: translateX(calc(100% + 140px));
+    }
+  </style>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Transiciones &amp; Animaciones</h1>
+          <p class="u-text-lg u-text-muted">
+            Curvas de aceleración y tiempos estándar para crear micro-interacciones corporativas fluidas y naturales.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Interactive easings comparison -->
+        <section class="u-mb-vi">
+          <h2>Comparador de Curvas de Aceleración (Easing comparison)</h2>
+          <p class="u-mb-v">Pase el cursor por encima de cada pista de carrera para ver el comportamiento de las curvas de transición:</p>
+          
+          <div class="c-card u-p-v">
+            
+            <div class="u-mb-iv">
+              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva Lineal (<code>--transition-easing-linear</code>)</span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-linear);">Linear</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Entrada (<code>--transition-easing-in</code>)</span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-in);">In</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Salida (<code>--transition-easing-out</code>)</span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-out);">Out</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Entrada-Salida (<code>--transition-easing-in-out</code>)</span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-in-out);">In-Out</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="c-badge c-badge--primary u-mb-ii">Premium</span>
+              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva Orgánica de Sènia (<code>--transition-easing-premium</code>)</span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-premium); background: var(--color-secondary-500); color: #ffffff;">Premium</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Shorthand interactive swatches -->
+        <section class="u-mb-vi">
+          <h2>Mapeos de Transición Preconfigurados</h2>
+          <p class="u-mb-v">Interactúe con los botones y superficies para experimentar las transiciones globales de color, fondos y escalas:</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px;">
+              <button class="c-btn c-btn--outline" style="transition: var(--transition-colors);">
+                Transición de Colores
+              </button>
+              <span class="u-text-2xs u-text-muted u-mt-iii"><code>transition: var(--transition-colors);</code></span>
+            </div>
+
+            <div class="c-card c-card--interactive u-p-v u-items-center u-justify-center" style="min-height: 160px; transition: var(--transition-all);">
+              <span class="u-text-xs u-text-bold">Efecto Elevador Global</span>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>transition: var(--transition-all);</code></span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Equivalence Table -->
+        <section class="u-mb-vi">
+          <h2 class="u-mb-iii">Especificación de Tiempos y Curvas</h2>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped">
+              <thead>
+                <tr>
+                  <th class="c-table__th">Token CSS</th>
+                  <th class="c-table__th">Especificación Técnica</th>
+                  <th class="c-table__th">Propósito Principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-duration-fast</code></td>
+                  <td class="c-table__td">120ms</td>
+                  <td class="c-table__td">Micro-interacciones ultrarrápidas: hovers de botones, cambios de iconos y links.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-duration-normal</code></td>
+                  <td class="c-table__td">200ms</td>
+                  <td class="c-table__td">Transición intermedia óptima: elevaciones de tarjetas y aperturas de barras laterales.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-duration-slow</code></td>
+                  <td class="c-table__td">300ms</td>
+                  <td class="c-table__td">Transiciones lentas y majestuosas: modales fluidos, diálogos grandes y banners rotativos.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-easing-linear</code></td>
+                  <td class="c-table__td">linear</td>
+                  <td class="c-table__td">Transición con velocidad constante. Utilizado únicamente para fundidos de opacidad y color.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-easing-premium</code></td>
+                  <td class="c-table__td">cubic-bezier(0.16, 1, 0.3, 1)</td>
+                  <td class="c-table__td">Curva de aceleración ultra fluida inspirada en interfaces nativas de Apple y Google.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

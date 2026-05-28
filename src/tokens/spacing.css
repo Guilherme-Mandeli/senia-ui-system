@@ -19,5 +19,6 @@
   --container-small: 680px;
   --container-medium: 920px;
   --container-base: 1228px;
+  --container-mobile: 90%;
   --container-full: 100%;
 }

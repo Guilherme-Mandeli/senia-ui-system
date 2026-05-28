@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puntos de Ruptura (Breakpoints) - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+  <style>
+    /* Viewport live tracker box */
+    .v-viewport-tracker {
+      background-color: var(--color-bg-card);
+      border: 2px solid var(--color-primary-500);
+      border-radius: var(--radius-iv);
+      padding: var(--space-v);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: var(--space-vi);
+    }
+    
+    .v-viewport-width {
+      font-size: var(--font-size-x);
+      font-weight: 800;
+      color: var(--color-text-heading);
+      font-family: var(--font-family-mono);
+      margin-bottom: var(--space-ii);
+    }
+  </style>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Puntos de Ruptura (Breakpoints)</h1>
+          <p class="u-text-lg u-text-muted">
+            Límites responsivos estandarizados para adaptar maquetaciones y estilos a móviles, tabletas y pantallas de escritorio.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Live Viewport Width Tracker -->
+        <section class="u-mb-vi">
+          <h2>Tracker de Pantalla en Vivo</h2>
+          <p class="u-mb-v">Redimensione la ventana de su navegador para ver la dimensión del ancho de su pantalla en vivo y los límites activos:</p>
+          
+          <div class="v-viewport-tracker">
+            <div id="viewport-width" class="v-viewport-width">--- px</div>
+            <div id="viewport-active-breakpoint" class="c-badge c-badge--primary c-badge--pill u-text-sm">Buscando...</div>
+          </div>
+        </section>
+
+        <!-- Breakpoints Scale Swatches -->
+        <section class="u-mb-vi">
+          <h2>Escala de Breakpoints</h2>
+          <p class="u-mb-v">Puntos de control responsivos preconfigurados en Sènia UI:</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">xs (Mobile)</span>
+              <strong class="u-text-md">480px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-xs</code></span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--success u-mb-ii">sm (Tablet Small)</span>
+              <strong class="u-text-md">768px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-sm</code></span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--warning u-mb-ii">md (Tablet / Laptop)</span>
+              <strong class="u-text-md">1024px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-md</code></span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--error u-mb-ii">lg (Desktop)</span>
+              <strong class="u-text-md">1280px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-lg</code></span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--info u-mb-ii">xl (Wide Desktop)</span>
+              <strong class="u-text-md">1440px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-xl</code></span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">2xl (Ultra Wide)</span>
+              <strong class="u-text-md">1920px</strong>
+              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-2xl</code></span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Recommended Media Queries Code -->
+        <section class="u-mb-vi">
+          <h2>Uso en CSS Nativo (Media Queries)</h2>
+          <p class="u-mb-v">Uso recomendado en tus archivos de estilos para maquetaciones responsivas:</p>
+          
+          <pre><code>/* Mobile First */
+
+/* Tablet Small */
+@media (min-width: 768px) {
+  .mi-bloque {
+    /* sm */
+  }
+}
+
+/* Tablet / Laptop */
+@media (min-width: 1024px) {
+  .mi-bloque {
+    /* md */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .mi-bloque {
+    /* lg */
+  }
+}
+
+/* Wide Desktop */
+@media (min-width: 1440px) {
+  .mi-bloque {
+    /* xl */
+  }
+}
+
+/* Ultra Wide */
+@media (min-width: 1920px) {
+  .mi-bloque {
+    /* 2xl */
+  }
+}
+</code></pre>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Live Viewport Tracker Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const widthVal = document.getElementById('viewport-width');
+      const activeQuery = document.getElementById('viewport-active-breakpoint');
+      
+      function updateViewport() {
+      const width = window.innerWidth;
+
+      widthVal.textContent = width + ' px';
+
+      if (width < 480) {
+        activeQuery.textContent = 'Mobile (xs)';
+        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-sm';
+
+      } else if (width < 768) {
+        activeQuery.textContent = 'Tablet Small (sm)';
+        activeQuery.className = 'c-badge c-badge--success c-badge--pill u-text-sm';
+
+      } else if (width < 1024) {
+        activeQuery.textContent = 'Tablet / Laptop (md)';
+        activeQuery.className = 'c-badge c-badge--warning c-badge--pill u-text-sm';
+
+      } else if (width < 1280) {
+        activeQuery.textContent = 'Desktop (lg)';
+        activeQuery.className = 'c-badge c-badge--error c-badge--pill u-text-sm';
+
+      } else if (width < 1440) {
+        activeQuery.textContent = 'Wide Desktop (xl)';
+        activeQuery.className = 'c-badge c-badge--info c-badge--pill u-text-sm';
+
+      } else {
+        activeQuery.textContent = 'Ultra Wide (2xl)';
+        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-sm';
+      }
+    }
+      
+      window.addEventListener('resize', updateViewport);
+      updateViewport();
+    });
+  </script>
+
+</body>
+</html>

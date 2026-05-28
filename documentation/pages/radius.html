@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bordes & Radios - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Bordes &amp; Radios</h1>
+          <p class="u-text-lg u-text-muted">
+            Escala geométrica estandarizada para esquinas curvas de contenedores, inputs, botones y modales.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Visual Radius Swatches -->
+        <section class="u-mb-vi">
+          <h2>Muestra de Bordes</h2>
+          <p class="u-mb-v">Deslice o interactúe con los contenedores para apreciar las distintas curvaturas y esquinas redondeadas:</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+            
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-none);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-none</span>
+              <span class="u-text-2xs u-text-muted">0px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-i);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-i</span>
+              <span class="u-text-2xs u-text-muted">3px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-ii);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-ii</span>
+              <span class="u-text-2xs u-text-muted">4px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-iii);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-iii</span>
+              <span class="u-text-2xs u-text-muted">6px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-iv);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-iv</span>
+              <span class="u-text-2xs u-text-muted">8px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-v);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-v</span>
+              <span class="u-text-2xs u-text-muted">10px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-vi);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-vi</span>
+              <span class="u-text-2xs u-text-muted">12px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-vii);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-vii</span>
+              <span class="u-text-2xs u-text-muted">16px</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
+              <div class="u-w-full" style="height: 60px; background: var(--color-primary-500); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-full);"></div>
+              <span class="u-text-xs u-text-bold u-mt-iii">--radius-full</span>
+              <span class="u-text-2xs u-text-muted">9999px</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Equivalence Table -->
+        <section class="u-mb-vi">
+          <h2 class="u-mb-iii">Valores y Convenciones de Uso</h2>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped">
+              <thead>
+                <tr>
+                  <th class="c-table__th">Token CSS</th>
+                  <th class="c-table__th">Valor en Pixeles</th>
+                  <th class="c-table__th">Uso Recomendado en Sènia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-none</code></td>
+                  <td class="c-table__td">0px</td>
+                  <td class="c-table__td">Esquinas en ángulo recto. Ideal para elementos adjuntos o extendidos a pantalla completa.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-i</code></td>
+                  <td class="c-table__td">3px</td>
+                  <td class="c-table__td">Redondeado sutil para pequeños checkboxes, tooltips o selectores mínimos.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-ii</code></td>
+                  <td class="c-table__td">4px</td>
+                  <td class="c-table__td">Botones pequeños, mini badges, campos de texto compactos y tags simples.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-iii</code></td>
+                  <td class="c-table__td">6px</td>
+                  <td class="c-table__td">Botones por defecto, inputs regulares y selectores estándar en Sènia UI.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-iv</code></td>
+                  <td class="c-table__td">8px</td>
+                  <td class="c-table__td">Curvatura por defecto para tarjetas (.c-card), layouts fijos e inputs grandes.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-v</code></td>
+                  <td class="c-table__td">10px</td>
+                  <td class="c-table__td">Paneles informativos destacados, notificaciones toast y popovers dinámicos.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-vi</code></td>
+                  <td class="c-table__td">12px</td>
+                  <td class="c-table__td">Modales del sistema (.c-modal), diálogos de confirmación y cards muy amplias.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-vii</code></td>
+                  <td class="c-table__td">16px</td>
+                  <td class="c-table__td">Grandes contenedores hero, banners promocionales y elementos gráficos destacados.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--radius-full</code></td>
+                  <td class="c-table__td">9999px</td>
+                  <td class="c-table__td">Badges tipo píldora (.c-badge--pill), avatares circulares y botones redondos (FAB).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Classes of Utility -->
+        <section class="u-mb-v">
+          <h2>Clases de Utilidad de Radio de Borde (Border Radius)</h2>
+          <p class="u-mb-v">Clases atómicas listas para aplicar el sistema de esquinas redondeadas sobre cualquier elemento:</p>
+          
+          <div class="c-card u-p-v">
+            <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+              <div>
+                <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Nomenclatura</h3>
+                <p class="u-mb-iv">Las clases siguen la convención <code>.u-radius-[escala]</code> mapeando las variables de diseño.</p>
+                <ul style="padding-left: var(--space-iv); line-height: 1.6;">
+                  <li><code>.u-radius-none</code></li>
+                  <li><code>.u-radius-i</code></li>
+                  <li><code>.u-radius-ii</code></li>
+                  <li><code>.u-radius-iii</code></li>
+                  <li><code>.u-radius-iv</code></li>
+                  <li><code>.u-radius-v</code></li>
+                  <li><code>.u-radius-vi</code></li>
+                  <li><code>.u-radius-vii</code></li>
+                  <li><code>.u-radius-viii</code></li>
+                  <li><code>.u-radius-ix</code></li>
+                  <li><code>.u-radius-x</code></li>
+                  <li><code>.u-radius-full</code></li>
+                </ul>
+              </div>
+              <div class="u-flex u-items-center u-justify-center">
+                <div class="u-p-v" style="border: 2px dashed var(--color-primary-500); border-radius: var(--radius-vi);">
+                  <div class="u-p-v" style="background: var(--color-neutral-100); border-radius: var(--radius-full); width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: var(--font-size-ii); font-weight: bold;">
+                    Esquinas Circulares
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

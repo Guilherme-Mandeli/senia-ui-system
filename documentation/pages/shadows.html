@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sombras &amp; Elevaciones - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Sombras &amp; Elevaciones</h1>
+          <p class="u-text-lg u-text-muted">
+            Escala tridimensional realista de sombras para simular profundidad, prioridades y jerarquías aéreas.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Shadow Elevators Grid -->
+        <section class="u-mb-vi">
+          <h2>Elevaciones Físicas</h2>
+          <p class="u-mb-v">Pase el cursor o pulse sobre las siguientes tarjetas para inspeccionar el nivel de proyección de sombras tridimensionales:</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+            
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-none); border-color: var(--color-border-default);">
+              <span class="u-text-xs u-text-bold">--shadow-none</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 0 (Plano)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-i);">
+              <span class="u-text-xs u-text-bold">--shadow-i</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 1 (Mínima)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-ii);">
+              <span class="u-text-xs u-text-bold">--shadow-ii</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 2 (Card por defecto)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-iii);">
+              <span class="u-text-xs u-text-bold">--shadow-iii</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 3 (Flotante)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-iv);">
+              <span class="u-text-xs u-text-bold">--shadow-iv</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 4 (Hover / Popovers)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-v);">
+              <span class="u-text-xs u-text-bold">--shadow-v</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 5 (Toast / Sticky)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-vi);">
+              <span class="u-text-xs u-text-bold">--shadow-vi</span>
+              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 6 (Modales aéreos)</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Special shadows and controls -->
+        <section class="u-mb-vi">
+          <h2>Sombras Especiales y Enfoque</h2>
+          <p class="u-mb-v">Especialmente diseñadas para interactivos del sistema como campos de texto y focos de accesibilidad:</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <div class="c-card u-p-v">
+              <h4>Sombra Interna (<code>--shadow-inner</code>)</h4>
+              <p class="u-text-xs u-text-muted u-mb-iii">Proyecta la sombra hacia el interior de la superficie, simulando hundimiento físico.</p>
+              <div class="u-p-iv" style="box-shadow: var(--shadow-inner); background: var(--color-neutral-100); border-radius: var(--radius-ii); text-align: center; font-family: var(--font-family-mono); font-size: var(--font-size-ii);">
+                box-shadow: var(--shadow-inner);
+              </div>
+            </div>
+
+            <div class="c-card u-p-v">
+              <h4>Foco de Accesibilidad (<code>--shadow-focus</code>)</h4>
+              <p class="u-text-xs u-text-muted u-mb-iii">Aureola brillante exterior con el color amarillo corporativo de Sènia para resaltar interacciones por teclado.</p>
+              <button class="c-btn c-btn--outline u-w-full" style="box-shadow: var(--shadow-focus);">
+                Botón Enfocado de Muestra
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Equivalence Table -->
+        <section class="u-mb-vi">
+          <h2 class="u-mb-iii">Guía y Convenciones de Uso</h2>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped">
+              <thead>
+                <tr>
+                  <th class="c-table__th">Token CSS</th>
+                  <th class="c-table__th">Descripción Física</th>
+                  <th class="c-table__th">Uso Recomendado en Sènia UI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-none</code></td>
+                  <td class="c-table__td">Sin sombra visible.</td>
+                  <td class="c-table__td">Elementos integrados en columnas de rejillas o layouts con bordes limpios sin relieve.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-i</code></td>
+                  <td class="c-table__td">Micro sombra difusa mínima.</td>
+                  <td class="c-table__td">Botones primarios y secundarios para darles relieve sutil sobre el fondo de la página.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-ii</code></td>
+                  <td class="c-table__td">Sombra estándar suave de doble capa.</td>
+                  <td class="c-table__td">Tarjetas de catálogo, cajas de información y contenedores base por defecto (.c-card).</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-iii</code></td>
+                  <td class="c-table__td">Elevación media realista.</td>
+                  <td class="c-table__td">Tarjetas con hover interactivo de segundo nivel y dropdowns sencillos de formularios.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-iv</code></td>
+                  <td class="c-table__td">Sombra amplia aérea difusa.</td>
+                  <td class="c-table__td">Efecto Hover en tarjetas interactivas complejas y menús flotantes principales.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-v</code></td>
+                  <td class="c-table__td">Elevación acentuada a gran altura.</td>
+                  <td class="c-table__td">Cajas de notificaciones Toast flotantes fijas, headers adhesivos y elementos tipo sticky.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-vi</code></td>
+                  <td class="c-table__td">Máxima proyección de sombra y desenfoque.</td>
+                  <td class="c-table__td">Ventanas Modales del sistema (.c-modal) y diálogos aéreos principales.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

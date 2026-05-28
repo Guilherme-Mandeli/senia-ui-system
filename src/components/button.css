@@ -57,13 +57,13 @@
   background-color: var(--color-primary-500);
   border-color: var(--color-primary-500);
   color: var(--color-neutral-900);
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-i);
   
   &:hover {
     background-color: var(--color-primary-600);
     border-color: var(--color-primary-600);
     color: var(--color-neutral-900);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-ii);
   }
   
   &:active {
@@ -78,13 +78,13 @@
   background-color: var(--color-secondary-500);
   border-color: var(--color-secondary-500);
   color: var(--color-neutral-900);
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-i);
   
   &:hover {
     background-color: var(--color-secondary-600);
     border-color: var(--color-secondary-600);
     color: var(--color-neutral-900);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-ii);
   }
   
   &:active {

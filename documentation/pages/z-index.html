@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z-Index &amp; Apilamiento - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <div class="v-header__dot"></div>
+      <span>Senia UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <h1>Z-Index &amp; Apilamiento</h1>
+          <p class="u-text-lg u-text-muted">
+            Escala de apilamiento vertical estandarizada y segura para coordinar superposiciones aéreas de capas.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- 3D Interactive Stack Visualizer Section -->
+        <section class="u-mb-vi">
+          <h2>Laboratorio de Apilamiento 3D</h2>
+          <p class="u-mb-v">Haga clic sobre cualquier capa 3D isométrica de la izquierda para desplegar sus detalles de especificación y casos prácticos de uso:</p>
+          
+          <div class="v-zindex-container">
+            <!-- 3D visualizer -->
+            <div class="v-zindex-visualizer">
+              <div class="v-zindex-stage">
+                <div class="v-zindex-layer" data-layer="tooltip" style="--z-offset: 120px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Tooltip</span>
+                    <span class="v-zindex-layer__variable">--z-index-tooltip</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1070</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="popover" style="--z-offset: 90px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Popover</span>
+                    <span class="v-zindex-layer__variable">--z-index-popover</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1060</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="modal" style="--z-offset: 60px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Modal Dialog</span>
+                    <span class="v-zindex-layer__variable">--z-index-modal</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1050</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="modal-backdrop" style="--z-offset: 30px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Modal Backdrop</span>
+                    <span class="v-zindex-layer__variable">--z-index-modal-backdrop</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1040</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="fixed" style="--z-offset: 0px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Fixed</span>
+                    <span class="v-zindex-layer__variable">--z-index-fixed</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1030</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="sticky" style="--z-offset: -30px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Sticky</span>
+                    <span class="v-zindex-layer__variable">--z-index-sticky</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1020</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="dropdown" style="--z-offset: -60px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Dropdown</span>
+                    <span class="v-zindex-layer__variable">--z-index-dropdown</span>
+                  </div>
+                  <span class="v-zindex-layer__value">1000</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="base" style="--z-offset: -90px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Base</span>
+                    <span class="v-zindex-layer__variable">--z-index-base</span>
+                  </div>
+                  <span class="v-zindex-layer__value">0</span>
+                </div>
+                <div class="v-zindex-layer" data-layer="hide" style="--z-offset: -120px;">
+                  <div class="v-zindex-layer__shadow"></div>
+                  <div class="v-zindex-layer__info">
+                    <span class="v-zindex-layer__title">Hide</span>
+                    <span class="v-zindex-layer__variable">--z-index-hide</span>
+                  </div>
+                  <span class="v-zindex-layer__value">-1</span>
+                </div>
+              </div>
+            </div>
+            <!-- Info Details Panel -->
+            <div class="v-zindex-info-panel">
+              <div class="v-zindex-nav-toolbar">
+                <span class="v-zindex-nav-title u-text-xs u-text-bold">Navegar Capas</span>
+                <div class="v-zindex-nav-controls">
+                  <button id="zindex-prev-btn" class="v-zindex-nav-btn">Anterior</button>
+                  <button id="zindex-next-btn" class="v-zindex-nav-btn">Siguiente</button>
+                </div>
+              </div>
+              <div id="zindex-details-card" class="v-zindex-details-card">
+                <!-- Loaded dynamically by visualizer.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stacking Utilities -->
+        <section class="u-mb-v">
+          <h2>Clases de Utilidad de Posición e Índice Z (Z-Index Utilities)</h2>
+          <p class="u-mb-v">Clases atómicas listas para manipular la profundidad de cualquier elemento interactivo:</p>
+          
+          <div class="c-card u-p-v">
+            <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+              <div>
+                <strong style="display: block; margin-bottom: var(--space-ii);">Clases de Utilidad Z-Index:</strong>
+                <ul class="u-mb-iv" style="padding-left: var(--space-iv); line-height: 1.6;">
+                  <li><code>.u-z-hide</code> -> <code>z-index: -1;</code></li>
+                  <li><code>.u-z-auto</code> -> <code>z-index: auto;</code></li>
+                  <li><code>.u-z-base</code> -> <code>z-index: 0;</code></li>
+                  <li><code>.u-z-dropdown</code> -> <code>z-index: 1000;</code></li>
+                  <li><code>.u-z-sticky</code> -> <code>z-index: 1020;</code></li>
+                  <li><code>.u-z-fixed</code> -> <code>z-index: 1030;</code></li>
+                  <li><code>.u-z-modal-backdrop</code> -> <code>z-index: 1040;</code></li>
+                  <li><code>.u-z-modal</code> -> <code>z-index: 1050;</code></li>
+                  <li><code>.u-z-popover</code> -> <code>z-index: 1060;</code></li>
+                  <li><code>.u-z-tooltip</code> -> <code>z-index: 1070;</code></li>
+                </ul>
+              </div>
+              <div>
+                <strong style="display: block; margin-bottom: var(--space-ii);">Clases de Posicionamiento (Importantes para Z-Index):</strong>
+                <ul style="padding-left: var(--space-iv); line-height: 1.6;">
+                  <li><code>.u-relative</code> -> <code>position: relative;</code></li>
+                  <li><code>.u-absolute</code> -> <code>position: absolute;</code></li>
+                  <li><code>.u-fixed</code> -> <code>position: fixed;</code></li>
+                  <li><code>.u-sticky</code> -> <code>position: sticky;</code></li>
+                  <li><code>.u-static</code> -> <code>position: static;</code></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

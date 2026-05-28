@@ -37,20 +37,21 @@
 }
 
 .v-header__logo {
-  font-family: var(--font-family-heading);
-  font-weight: 800;
+  font-family: var(--font-family-gill-sans);
   font-size: var(--font-size-md);
   color: var(--color-text-heading);
   display: flex;
   align-items: center;
   gap: var(--space-i);
 }
-
-.v-header__dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-primary-500);
-  border-radius: var(--radius-full);
+.logo-negative {
+  display: none;
+}
+.theme-dark .logo-negative {
+  display: block;
+}
+.theme-dark .logo-positive {
+  display: none;
 }
 
 /* Theme Toggle Slider */

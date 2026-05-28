@@ -112,6 +112,11 @@ function initNavigation() {
         cleanPath.includes('colors') || 
         cleanPath.includes('typography') || 
         cleanPath.includes('spacing') || 
+        cleanPath.includes('radius') || 
+        cleanPath.includes('shadows') || 
+        cleanPath.includes('z-index') || 
+        cleanPath.includes('transitions') || 
+        cleanPath.includes('breakpoints') || 
         cleanPath.includes('grids')
       );
     }
@@ -150,6 +155,11 @@ function initNavigation() {
         <li><a href="${rootPrefix}pages/colors.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('colors.html') ? 'v-sidebar__link--active' : ''}">Colores</a></li>
         <li><a href="${rootPrefix}pages/typography.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('typography.html') ? 'v-sidebar__link--active' : ''}">Tipografía</a></li>
         <li><a href="${rootPrefix}pages/spacing.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('spacing.html') ? 'v-sidebar__link--active' : ''}">Espaciado</a></li>
+        <li><a href="${rootPrefix}pages/radius.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('radius.html') ? 'v-sidebar__link--active' : ''}">Bordes</a></li>
+        <li><a href="${rootPrefix}pages/shadows.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('shadows.html') ? 'v-sidebar__link--active' : ''}">Sombras</a></li>
+        <li><a href="${rootPrefix}pages/z-index.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('z-index.html') ? 'v-sidebar__link--active' : ''}">Z-Index</a></li>
+        <li><a href="${rootPrefix}pages/transitions.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('transitions.html') ? 'v-sidebar__link--active' : ''}">Transiciones</a></li>
+        <li><a href="${rootPrefix}pages/breakpoints.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('breakpoints.html') ? 'v-sidebar__link--active' : ''}">Breakpoints</a></li>
         <li><a href="${rootPrefix}pages/grids.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('grids.html') ? 'v-sidebar__link--active' : ''}">Grillas</a></li>
       </ul>
     </details>

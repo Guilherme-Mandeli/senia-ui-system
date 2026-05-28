@@ -4,24 +4,121 @@
 
 .u-grid { display: grid !important; }
 
-/* ==========================================
-   TEMPLATES
-   ========================================== */
+/* ==========================================================================
+   TEMPLATES & PLACEMENT (Mobile-First Defaults: collapse to 1 column on mobile, activate on tablets >=768px)
+   ========================================================================== */
 
-/* Columns (grid-cols-) */
+/* Columns Default (Mobile) */
 .u-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
-.u-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-.u-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-.u-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-.u-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
-.u-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
-.u-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)) !important; }
-.u-grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; }
-.u-grid-cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)) !important; }
-.u-grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)) !important; }
-.u-grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)) !important; }
-.u-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
 .u-grid-cols-none { grid-template-columns: none !important; }
+
+/* Col Spans Default (Mobile) */
+.u-col-span-1 { grid-column: span 1 / span 1 !important; }
+.u-col-span-full { grid-column: 1 / -1 !important; }
+
+/* Desktop/Tablet Activation (>=768px) */
+@media (min-width: 768px) {
+  .u-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .u-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .u-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .u-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .u-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .u-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)) !important; }
+  .u-grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; }
+  .u-grid-cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)) !important; }
+  .u-grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)) !important; }
+  .u-grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)) !important; }
+  .u-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+  .u-col-span-2 { grid-column: span 2 / span 2 !important; }
+  .u-col-span-3 { grid-column: span 3 / span 3 !important; }
+  .u-col-span-4 { grid-column: span 4 / span 4 !important; }
+  .u-col-span-5 { grid-column: span 5 / span 5 !important; }
+  .u-col-span-6 { grid-column: span 6 / span 6 !important; }
+  .u-col-span-7 { grid-column: span 7 / span 7 !important; }
+  .u-col-span-8 { grid-column: span 8 / span 8 !important; }
+  .u-col-span-9 { grid-column: span 9 / span 9 !important; }
+  .u-col-span-10 { grid-column: span 10 / span 10 !important; }
+  .u-col-span-11 { grid-column: span 11 / span 11 !important; }
+  .u-col-span-12 { grid-column: span 12 / span 12 !important; }
+}
+
+/* ==========================================================================
+   EXPLICIT RESPONSIVE UTILITIES (Mobile-First Breakpoints)
+   ========================================================================== */
+
+/* --- Tablet Small (sm: >=768px) --- */
+@media (min-width: 768px) {
+  .u-sm\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .u-sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .u-sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .u-sm\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .u-sm\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .u-sm\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+  .u-sm\:col-span-1 { grid-column: span 1 / span 1 !important; }
+  .u-sm\:col-span-2 { grid-column: span 2 / span 2 !important; }
+  .u-sm\:col-span-3 { grid-column: span 3 / span 3 !important; }
+  .u-sm\:col-span-4 { grid-column: span 4 / span 4 !important; }
+  .u-sm\:col-span-6 { grid-column: span 6 / span 6 !important; }
+  .u-sm\:col-span-8 { grid-column: span 8 / span 8 !important; }
+  .u-sm\:col-span-12 { grid-column: span 12 / span 12 !important; }
+  .u-sm\:col-span-full { grid-column: 1 / -1 !important; }
+}
+
+/* --- Tablet / Laptop (md: >=1024px) --- */
+@media (min-width: 1024px) {
+  .u-md\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .u-md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .u-md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .u-md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .u-md\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .u-md\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+  .u-md\:col-span-1 { grid-column: span 1 / span 1 !important; }
+  .u-md\:col-span-2 { grid-column: span 2 / span 2 !important; }
+  .u-md\:col-span-3 { grid-column: span 3 / span 3 !important; }
+  .u-md\:col-span-4 { grid-column: span 4 / span 4 !important; }
+  .u-md\:col-span-6 { grid-column: span 6 / span 6 !important; }
+  .u-md\:col-span-8 { grid-column: span 8 / span 8 !important; }
+  .u-md\:col-span-12 { grid-column: span 12 / span 12 !important; }
+  .u-md\:col-span-full { grid-column: 1 / -1 !important; }
+}
+
+/* --- Desktop (lg: >=1280px) --- */
+@media (min-width: 1280px) {
+  .u-lg\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .u-lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .u-lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .u-lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .u-lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .u-lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+  .u-lg\:col-span-1 { grid-column: span 1 / span 1 !important; }
+  .u-lg\:col-span-2 { grid-column: span 2 / span 2 !important; }
+  .u-lg\:col-span-3 { grid-column: span 3 / span 3 !important; }
+  .u-lg\:col-span-4 { grid-column: span 4 / span 4 !important; }
+  .u-lg\:col-span-6 { grid-column: span 6 / span 6 !important; }
+  .u-lg\:col-span-8 { grid-column: span 8 / span 8 !important; }
+  .u-lg\:col-span-12 { grid-column: span 12 / span 12 !important; }
+  .u-lg\:col-span-full { grid-column: 1 / -1 !important; }
+}
+
+/* --- Wide Desktop (xl: >=1440px) --- */
+@media (min-width: 1440px) {
+  .u-xl\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .u-xl\:col-span-12 { grid-column: span 12 / span 12 !important; }
+}
+
+/* --- Ultra Wide (2xl: >=1920px) --- */
+@media (min-width: 1920px) {
+  .u-2xl\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .u-2xl\:col-span-12 { grid-column: span 12 / span 12 !important; }
+}
+
+/* ==========================================
+   ROWS & AUTO FLOW
+   ========================================== */
 
 /* Rows (grid-rows-) */
 .u-grid-rows-1 { grid-template-rows: repeat(1, minmax(0, 1fr)) !important; }
@@ -32,26 +129,6 @@
 .u-grid-rows-6 { grid-template-rows: repeat(6, minmax(0, 1fr)) !important; }
 .u-grid-rows-none { grid-template-rows: none !important; }
 
-
-/* ==========================================
-   PLACEMENT
-   ========================================== */
-
-/* Col Span (col-span-) */
-.u-col-span-1 { grid-column: span 1 / span 1 !important; }
-.u-col-span-2 { grid-column: span 2 / span 2 !important; }
-.u-col-span-3 { grid-column: span 3 / span 3 !important; }
-.u-col-span-4 { grid-column: span 4 / span 4 !important; }
-.u-col-span-5 { grid-column: span 5 / span 5 !important; }
-.u-col-span-6 { grid-column: span 6 / span 6 !important; }
-.u-col-span-7 { grid-column: span 7 / span 7 !important; }
-.u-col-span-8 { grid-column: span 8 / span 8 !important; }
-.u-col-span-9 { grid-column: span 9 / span 9 !important; }
-.u-col-span-10 { grid-column: span 10 / span 10 !important; }
-.u-col-span-11 { grid-column: span 11 / span 11 !important; }
-.u-col-span-12 { grid-column: span 12 / span 12 !important; }
-.u-col-span-full { grid-column: 1 / -1 !important; }
-
 /* Row Span (row-span-) */
 .u-row-span-1 { grid-row: span 1 / span 1 !important; }
 .u-row-span-2 { grid-row: span 2 / span 2 !important; }
@@ -61,18 +138,14 @@
 .u-row-span-6 { grid-row: span 6 / span 6 !important; }
 .u-row-span-full { grid-row: 1 / -1 !important; }
 
-
-/* ==========================================
-   AUTO FLOW
-   ========================================== */
 .u-grid-flow-row { grid-auto-flow: row !important; }
 .u-grid-flow-column { grid-auto-flow: column !important; }
-.u-grid-flow-col { grid-auto-flow: column !important; } /* Alias */
+.u-grid-flow-col { grid-auto-flow: column !important; }
 .u-grid-flow-dense { grid-auto-flow: dense !important; }
 .u-grid-flow-row-dense { grid-auto-flow: row dense !important; }
 .u-grid-flow-col-dense { grid-auto-flow: column dense !important; }
 
-/* Gaps (keeps legacy mappings just in case) */
+/* Gaps */
 .u-grid-gap-3xs { gap: var(--space-i) !important; }
 .u-grid-gap-2xs { gap: var(--space-ii) !important; }
 .u-grid-gap-xs { gap: var(--space-iii) !important; }
