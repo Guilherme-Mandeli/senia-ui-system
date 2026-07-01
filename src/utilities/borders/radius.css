@@ -1,0 +1,16 @@
+/* Border Radius Utilities
+   Prefixes: u-radius-
+*/
+
+.u-radius-none { border-radius: var(--radius-none) !important; }
+.u-radius-i { border-radius: var(--radius-i) !important; }
+.u-radius-ii { border-radius: var(--radius-ii) !important; }
+.u-radius-iii { border-radius: var(--radius-iii) !important; }
+.u-radius-iv { border-radius: var(--radius-iv) !important; }
+.u-radius-v { border-radius: var(--radius-v) !important; }
+.u-radius-vi { border-radius: var(--radius-vi) !important; }
+.u-radius-vii { border-radius: var(--radius-vii) !important; }
+.u-radius-viii { border-radius: var(--radius-viii) !important; }
+.u-radius-ix { border-radius: var(--radius-ix) !important; }
+.u-radius-x { border-radius: var(--radius-x) !important; }
+.u-radius-full { border-radius: var(--radius-full) !important; }

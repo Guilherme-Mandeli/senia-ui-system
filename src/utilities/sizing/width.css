@@ -1,0 +1,10 @@
+/* Width Utilities
+   Prefixes: u-w-
+*/
+
+.u-w-auto { width: auto !important; }
+.u-w-full { width: 100% !important; }
+.u-w-fit { width: fit-content !important; }
+.u-w-screen { width: 100vw !important; }
+.u-w-min { width: min-content !important; }
+.u-w-max { width: max-content !important; }

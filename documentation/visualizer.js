@@ -111,13 +111,19 @@ function initNavigation() {
       return cleanPath.includes('/pages/') && (
         cleanPath.includes('colors') || 
         cleanPath.includes('typography') || 
+        cleanPath.includes('breakpoints')
+      );
+    }
+    if (groupName === 'utilities') {
+      return cleanPath.includes('/pages/') && (
         cleanPath.includes('spacing') || 
         cleanPath.includes('radius') || 
+        cleanPath.includes('outlines') || 
         cleanPath.includes('shadows') || 
         cleanPath.includes('z-index') || 
         cleanPath.includes('transitions') || 
-        cleanPath.includes('breakpoints') || 
-        cleanPath.includes('grids')
+        cleanPath.includes('grids') ||
+        cleanPath.includes('effects')
       );
     }
     if (groupName === 'components') {
@@ -127,7 +133,14 @@ function initNavigation() {
         cleanPath.includes('cards') || 
         cleanPath.includes('badges') || 
         cleanPath.includes('modals') || 
-        cleanPath.includes('tables')
+        cleanPath.includes('tables') ||
+        cleanPath.includes('tooltips') ||
+        cleanPath.includes('dropdowns') ||
+        cleanPath.includes('accordions') ||
+        cleanPath.includes('progress') ||
+        cleanPath.includes('loading') ||
+        cleanPath.includes('navigation') ||
+        cleanPath.includes('input-groups')
       );
     }
     if (groupName === 'developer') {
@@ -148,32 +161,49 @@ function initNavigation() {
       </ul>
     </div>
     
-    <!-- Tokens de Diseño Collapsible Submenu -->
+    <!-- Bases y Tokens Collapsible Submenu -->
     <details class="v-sidebar__submenu" ${isOpenGroup('tokens') ? 'open' : ''}>
-      <summary class="v-sidebar__submenu-trigger">Tokens de Diseño</summary>
+      <summary class="v-sidebar__submenu-trigger">Tokens y Bases</summary>
       <ul class="v-sidebar__submenu-nav">
         <li><a href="${rootPrefix}pages/colors.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('colors.html') ? 'v-sidebar__link--active' : ''}">Colores</a></li>
         <li><a href="${rootPrefix}pages/typography.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('typography.html') ? 'v-sidebar__link--active' : ''}">Tipografía</a></li>
-        <li><a href="${rootPrefix}pages/spacing.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('spacing.html') ? 'v-sidebar__link--active' : ''}">Espaciado</a></li>
-        <li><a href="${rootPrefix}pages/radius.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('radius.html') ? 'v-sidebar__link--active' : ''}">Bordes</a></li>
-        <li><a href="${rootPrefix}pages/shadows.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('shadows.html') ? 'v-sidebar__link--active' : ''}">Sombras</a></li>
-        <li><a href="${rootPrefix}pages/z-index.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('z-index.html') ? 'v-sidebar__link--active' : ''}">Z-Index</a></li>
-        <li><a href="${rootPrefix}pages/transitions.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('transitions.html') ? 'v-sidebar__link--active' : ''}">Transiciones</a></li>
         <li><a href="${rootPrefix}pages/breakpoints.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('breakpoints.html') ? 'v-sidebar__link--active' : ''}">Breakpoints</a></li>
-        <li><a href="${rootPrefix}pages/grids.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('grids.html') ? 'v-sidebar__link--active' : ''}">Grillas</a></li>
+      </ul>
+    </details>
+
+    <!-- Utilidades CSS Atómicas Collapsible Submenu -->
+    <details class="v-sidebar__submenu" ${isOpenGroup('utilities') ? 'open' : ''}>
+      <summary class="v-sidebar__submenu-trigger">Utilidades CSS Atómicas</summary>
+      <ul class="v-sidebar__submenu-nav">
+        <li><a href="${rootPrefix}pages/spacing.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('spacing.html') ? 'v-sidebar__link--active' : ''}">Espaciado (Margin & Padding)</a></li>
+        <li><a href="${rootPrefix}pages/grids.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('grids.html') ? 'v-sidebar__link--active' : ''}">Alineación (Flex & Grid)</a></li>
+        <li><a href="${rootPrefix}pages/radius.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('radius.html') ? 'v-sidebar__link--active' : ''}">Radios de Bordes</a></li>
+        <li><a href="${rootPrefix}pages/outlines.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('outlines.html') ? 'v-sidebar__link--active' : ''}">Contornos (Outlines)</a></li>
+        <li><a href="${rootPrefix}pages/shadows.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('shadows.html') ? 'v-sidebar__link--active' : ''}">Sombras (Shadows)</a></li>
+        <li><a href="${rootPrefix}pages/z-index.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('z-index.html') ? 'v-sidebar__link--active' : ''}">Diseño & Z-Index</a></li>
+        <li><a href="${rootPrefix}pages/transitions.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('transitions.html') ? 'v-sidebar__link--active' : ''}">Transiciones Atómicas</a></li>
+        <li><a href="${rootPrefix}pages/effects.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('effects.html') ? 'v-sidebar__link--active' : ''}">Efectos, Blur & Filtros</a></li>
       </ul>
     </details>
     
     <!-- Componentes Collapsible Submenu -->
     <details class="v-sidebar__submenu" ${isOpenGroup('components') ? 'open' : ''}>
-      <summary class="v-sidebar__submenu-trigger">Componentes</summary>
+      <summary class="v-sidebar__submenu-trigger">Componentes (BEM)</summary>
       <ul class="v-sidebar__submenu-nav">
         <li><a href="${rootPrefix}pages/buttons.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('buttons.html') ? 'v-sidebar__link--active' : ''}">Botones</a></li>
         <li><a href="${rootPrefix}pages/forms.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('forms.html') ? 'v-sidebar__link--active' : ''}">Formularios</a></li>
+        <li><a href="${rootPrefix}pages/form-fields.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('form-fields.html') ? 'v-sidebar__link--active' : ''}">Campos Avanzados</a></li>
+        <li><a href="${rootPrefix}pages/input-groups.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('input-groups.html') ? 'v-sidebar__link--active' : ''}">Grupos de Input</a></li>
         <li><a href="${rootPrefix}pages/cards.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('cards.html') ? 'v-sidebar__link--active' : ''}">Tarjetas</a></li>
         <li><a href="${rootPrefix}pages/badges.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('badges.html') ? 'v-sidebar__link--active' : ''}">Etiquetas</a></li>
         <li><a href="${rootPrefix}pages/modals.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('modals.html') ? 'v-sidebar__link--active' : ''}">Modales</a></li>
         <li><a href="${rootPrefix}pages/tables.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('tables.html') ? 'v-sidebar__link--active' : ''}">Tablas</a></li>
+        <li><a href="${rootPrefix}pages/tooltips.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('tooltips.html') ? 'v-sidebar__link--active' : ''}">Tooltips</a></li>
+        <li><a href="${rootPrefix}pages/dropdowns.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('dropdowns.html') ? 'v-sidebar__link--active' : ''}">Dropdowns</a></li>
+        <li><a href="${rootPrefix}pages/accordions.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('accordions.html') ? 'v-sidebar__link--active' : ''}">Acordeones</a></li>
+        <li><a href="${rootPrefix}pages/progress.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('progress.html') ? 'v-sidebar__link--active' : ''}">Progreso</a></li>
+        <li><a href="${rootPrefix}pages/loading.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('loading.html') ? 'v-sidebar__link--active' : ''}">Cargas / Spinners</a></li>
+        <li><a href="${rootPrefix}pages/navigation.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('navigation.html') ? 'v-sidebar__link--active' : ''}">Navegación</a></li>
       </ul>
     </details>
     
@@ -182,6 +212,7 @@ function initNavigation() {
       <summary class="v-sidebar__submenu-trigger">Desarrolladores</summary>
       <ul class="v-sidebar__submenu-nav">
         <li><a href="${rootPrefix}developer/usage.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('usage.html') ? 'v-sidebar__link--active' : ''}">Primeros Pasos</a></li>
+        <li><a href="${rootPrefix}developer/configuration.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('configuration.html') ? 'v-sidebar__link--active' : ''}">Personalización de Temas</a></li>
         <li><a href="${rootPrefix}developer/architecture.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('architecture.html') ? 'v-sidebar__link--active' : ''}">Arquitectura</a></li>
         <li><a href="${rootPrefix}developer/conventions.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('conventions.html') ? 'v-sidebar__link--active' : ''}">Convenciones</a></li>
         <li><a href="${rootPrefix}developer/fonts.html" class="v-sidebar__link v-sidebar__link--submenu ${isActive('fonts.html') ? 'v-sidebar__link--active' : ''}">Uso de Fuentes</a></li>
@@ -335,10 +366,10 @@ function initZIndexVisualizer() {
           <h3 style="margin: 0; font-size: var(--font-size-md); color: var(--color-text-heading);">${data.title}</h3>
           <span class="v-zindex-layer__value" style="font-size: var(--font-size-iv);">${data.value}</span>
         </div>
-        <div style="font-family: var(--font-family-mono); font-size: var(--font-size-ii); color: var(--color-primary-500); margin-bottom: var(--space-iv); font-weight: 600;">
+        <div style="font-family: var(--font-family-mono); font-size: var(--font-size-ii); color: var(--color-highlight); margin-bottom: var(--space-iv); font-weight: 600;">
           ${data.variable}
         </div>
-        <p class="u-text-sm u-text-muted" style="margin-bottom: var(--space-iv); line-height: 1.5;">
+        <p class="u-text-iv u-text-muted" style="margin-bottom: var(--space-iv); line-height: 1.5;">
           ${data.description}
         </p>
         <div style="border-top: 1px solid var(--color-border-subtle); padding-top: var(--space-iii);">

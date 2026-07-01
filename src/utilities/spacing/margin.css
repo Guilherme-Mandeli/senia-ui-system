@@ -1,0 +1,136 @@
+/* Spacing Utilities (Margins)
+   Prefixes: u-m- (margin)
+   Based on the relative --space- scale (i to x)
+*/
+
+/* ==========================================
+   MARGIN UTILITIES
+   ========================================== */
+
+/* Margin All (m) */
+.u-m-none { margin: 0 !important; }
+.u-m-i { margin: var(--space-i) !important; }
+.u-m-ii { margin: var(--space-ii) !important; }
+.u-m-iii { margin: var(--space-iii) !important; }
+.u-m-iv { margin: var(--space-iv) !important; }
+.u-m-v { margin: var(--space-v) !important; }
+.u-m-vi { margin: var(--space-vi) !important; }
+.u-m-vii { margin: var(--space-vii) !important; }
+.u-m-viii { margin: var(--space-viii) !important; }
+.u-m-ix { margin: var(--space-ix) !important; }
+.u-m-x { margin: var(--space-x) !important; }
+.u-m-auto { margin: auto !important; }
+
+/* Margin Top (mt) */
+.u-mt-none { margin-top: 0 !important; }
+.u-mt-i { margin-top: var(--space-i) !important; }
+.u-mt-ii { margin-top: var(--space-ii) !important; }
+.u-mt-iii { margin-top: var(--space-iii) !important; }
+.u-mt-iv { margin-top: var(--space-iv) !important; }
+.u-mt-v { margin-top: var(--space-v) !important; }
+.u-mt-vi { margin-top: var(--space-vi) !important; }
+.u-mt-vii { margin-top: var(--space-vii) !important; }
+.u-mt-viii { margin-top: var(--space-viii) !important; }
+.u-mt-ix { margin-top: var(--space-ix) !important; }
+.u-mt-x { margin-top: var(--space-x) !important; }
+.u-mt-auto { margin-top: auto !important; }
+
+/* Margin Bottom (mb) */
+.u-mb-none { margin-bottom: 0 !important; }
+.u-mb-i { margin-bottom: var(--space-i) !important; }
+.u-mb-ii { margin-bottom: var(--space-ii) !important; }
+.u-mb-iii { margin-bottom: var(--space-iii) !important; }
+.u-mb-iv { margin-bottom: var(--space-iv) !important; }
+.u-mb-v { margin-bottom: var(--space-v) !important; }
+.u-mb-vi { margin-bottom: var(--space-vi) !important; }
+.u-mb-vii { margin-bottom: var(--space-vii) !important; }
+.u-mb-viii { margin-bottom: var(--space-viii) !important; }
+.u-mb-ix { margin-bottom: var(--space-ix) !important; }
+.u-mb-x { margin-bottom: var(--space-x) !important; }
+.u-mb-auto { margin-bottom: auto !important; }
+
+/* Margin Left (ml) */
+.u-ml-none { margin-left: 0 !important; }
+.u-ml-i { margin-left: var(--space-i) !important; }
+.u-ml-ii { margin-left: var(--space-ii) !important; }
+.u-ml-iii { margin-left: var(--space-iii) !important; }
+.u-ml-iv { margin-left: var(--space-iv) !important; }
+.u-ml-v { margin-left: var(--space-v) !important; }
+.u-ml-vi { margin-left: var(--space-vi) !important; }
+.u-ml-vii { margin-left: var(--space-vii) !important; }
+.u-ml-viii { margin-left: var(--space-viii) !important; }
+.u-ml-ix { margin-left: var(--space-ix) !important; }
+.u-ml-x { margin-left: var(--space-x) !important; }
+.u-ml-auto { margin-left: auto !important; }
+
+/* Margin Right (mr) */
+.u-mr-none { margin-right: 0 !important; }
+.u-mr-i { margin-right: var(--space-i) !important; }
+.u-mr-ii { margin-right: var(--space-ii) !important; }
+.u-mr-iii { margin-right: var(--space-iii) !important; }
+.u-mr-iv { margin-right: var(--space-iv) !important; }
+.u-mr-v { margin-right: var(--space-v) !important; }
+.u-mr-vi { margin-right: var(--space-vi) !important; }
+.u-mr-vii { margin-right: var(--space-vii) !important; }
+.u-mr-viii { margin-right: var(--space-viii) !important; }
+.u-mr-ix { margin-right: var(--space-ix) !important; }
+.u-mr-x { margin-right: var(--space-x) !important; }
+.u-mr-auto { margin-right: auto !important; }
+
+/* Margin Block (mtb - Top and Bottom) */
+.u-mtb-none { margin-block: 0 !important; }
+.u-mtb-i { margin-block: var(--space-i) !important; }
+.u-mtb-ii { margin-block: var(--space-ii) !important; }
+.u-mtb-iii { margin-block: var(--space-iii) !important; }
+.u-mtb-iv { margin-block: var(--space-iv) !important; }
+.u-mtb-v { margin-block: var(--space-v) !important; }
+.u-mtb-vi { margin-block: var(--space-vi) !important; }
+.u-mtb-vii { margin-block: var(--space-vii) !important; }
+.u-mtb-viii { margin-block: var(--space-viii) !important; }
+.u-mtb-ix { margin-block: var(--space-ix) !important; }
+.u-mtb-x { margin-block: var(--space-x) !important; }
+.u-mtb-auto { margin-block: auto !important; }
+
+/* Margin Block (y - Top and Bottom) */
+.u-my-none { margin-block: 0 !important; }
+.u-my-i { margin-block: var(--space-i) !important; }
+.u-my-ii { margin-block: var(--space-ii) !important; }
+.u-my-iii { margin-block: var(--space-iii) !important; }
+.u-my-iv { margin-block: var(--space-iv) !important; }
+.u-my-v { margin-block: var(--space-v) !important; }
+.u-my-vi { margin-block: var(--space-vi) !important; }
+.u-my-vii { margin-block: var(--space-vii) !important; }
+.u-my-viii { margin-block: var(--space-viii) !important; }
+.u-my-ix { margin-block: var(--space-ix) !important; }
+.u-my-x { margin-block: var(--space-x) !important; }
+.u-my-auto { margin-block: auto !important; }
+
+/* Margin Inline (mlr - Left and Right) */
+.u-mlr-none { margin-inline: 0 !important; }
+.u-mlr-auto { margin-inline: auto !important; }
+.u-mlr-i { margin-inline: var(--space-i) !important; }
+.u-mlr-ii { margin-inline: var(--space-ii) !important; }
+.u-mlr-iii { margin-inline: var(--space-iii) !important; }
+.u-mlr-iv { margin-inline: var(--space-iv) !important; }
+.u-mlr-v { margin-inline: var(--space-v) !important; }
+.u-mlr-vi { margin-inline: var(--space-vi) !important; }
+.u-mlr-vii { margin-inline: var(--space-vii) !important; }
+.u-mlr-viii { margin-inline: var(--space-viii) !important; }
+.u-mlr-ix { margin-inline: var(--space-ix) !important; }
+.u-mlr-x { margin-inline: var(--space-x) !important; }
+.u-mlr-auto { margin-inline: auto !important; }
+
+/* Margin Inline (mx - Left and Right) */
+.u-mx-none { margin-inline: 0 !important; }
+.u-mx-auto { margin-inline: auto !important; }
+.u-mx-i { margin-inline: var(--space-i) !important; }
+.u-mx-ii { margin-inline: var(--space-ii) !important; }
+.u-mx-iii { margin-inline: var(--space-iii) !important; }
+.u-mx-iv { margin-inline: var(--space-iv) !important; }
+.u-mx-v { margin-inline: var(--space-v) !important; }
+.u-mx-vi { margin-inline: var(--space-vi) !important; }
+.u-mx-vii { margin-inline: var(--space-vii) !important; }
+.u-mx-viii { margin-inline: var(--space-viii) !important; }
+.u-mx-ix { margin-inline: var(--space-ix) !important; }
+.u-mx-x { margin-inline: var(--space-x) !important; }
+.u-mx-auto { margin-inline: auto !important; }

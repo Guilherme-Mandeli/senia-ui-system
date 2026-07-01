@@ -38,11 +38,3 @@
 /* Backward compatibility */
 .u-flex-grow-1 { flex-grow: 1 !important; }
 .u-flex-shrink-0 { flex-shrink: 0 !important; }
-
-/* Gaps (Grid / Flex unified gaps are also in spacing.css, keeping these for safety) */
-.u-flex-gap-3xs { gap: var(--space-i) !important; }
-.u-flex-gap-2xs { gap: var(--space-ii) !important; }
-.u-flex-gap-xs { gap: var(--space-iii) !important; }
-.u-flex-gap-sm { gap: var(--space-iv) !important; }
-.u-flex-gap-md { gap: var(--space-v) !important; }
-.u-flex-gap-lg { gap: var(--space-vi) !important; }

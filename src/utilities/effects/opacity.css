@@ -1,0 +1,26 @@
+/* Opacity Utilities
+   Prefixes: u-opacity-
+   Escala completa de 0 a 100 en incrementos de 5%
+*/
+
+.u-opacity-0 { opacity: 0 !important; }
+.u-opacity-5 { opacity: 0.05 !important; }
+.u-opacity-10 { opacity: 0.1 !important; }
+.u-opacity-15 { opacity: 0.15 !important; }
+.u-opacity-20 { opacity: 0.2 !important; }
+.u-opacity-25 { opacity: 0.25 !important; }
+.u-opacity-30 { opacity: 0.3 !important; }
+.u-opacity-35 { opacity: 0.35 !important; }
+.u-opacity-40 { opacity: 0.4 !important; }
+.u-opacity-45 { opacity: 0.45 !important; }
+.u-opacity-50 { opacity: 0.5 !important; }
+.u-opacity-55 { opacity: 0.55 !important; }
+.u-opacity-60 { opacity: 0.6 !important; }
+.u-opacity-65 { opacity: 0.65 !important; }
+.u-opacity-70 { opacity: 0.7 !important; }
+.u-opacity-75 { opacity: 0.75 !important; }
+.u-opacity-80 { opacity: 0.8 !important; }
+.u-opacity-85 { opacity: 0.85 !important; }
+.u-opacity-90 { opacity: 0.9 !important; }
+.u-opacity-95 { opacity: 0.95 !important; }
+.u-opacity-100 { opacity: 1 !important; }

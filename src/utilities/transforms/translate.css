@@ -1,0 +1,15 @@
+/* Translate Utilities
+   Prefixes: u-translate-
+*/
+
+.u-translate-x-0 { transform: translateX(0) !important; }
+.u-translate-x-half { transform: translateX(50%) !important; }
+.u-translate-x-full { transform: translateX(100%) !important; }
+.u-translate-x-n-half { transform: translateX(-50%) !important; }
+.u-translate-x-n-full { transform: translateX(-100%) !important; }
+
+.u-translate-y-0 { transform: translateY(0) !important; }
+.u-translate-y-half { transform: translateY(50%) !important; }
+.u-translate-y-full { transform: translateY(100%) !important; }
+.u-translate-y-n-half { transform: translateY(-50%) !important; }
+.u-translate-y-n-full { transform: translateY(-100%) !important; }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navegación y Breadcrumbs - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Navegación y Breadcrumbs</h1>
+          <p class="u-text-vi u-text-muted">
+            Menús estructurales flexibles de navegación (`nav`) y rutas de migas de pan (`breadcrumbs`) para gestionar la orientación espacial del usuario.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Header Nav Showcase -->
+        <section class="u-mb-vi">
+          <h2>Barra de Navegación Estándar (`nav` / `.c-nav`)</h2>
+          <p class="u-mb-v">Un contenedor flex alineado que distribuye el logo y los enlaces de navegación de forma automatizada:</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Navegación Superior</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column u-p-none">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full u-p-v" style="border-bottom: 1px solid var(--color-border-subtle);">
+                <span class="v-token-tag">&lt;nav&gt;</span>
+                <span class="v-token-class">.c-nav</span>
+                <span class="v-token-tag">&lt;a&gt;</span><span class="v-token-class">[aria-current="page"]</span>
+              </div>
+              <div class="u-w-full" style="overflow: hidden;">
+                <nav class="u-mb-none">
+                  <!-- Left logo/brand -->
+                  <ul>
+                    <li>
+                      <a href="#" style="font-weight: 700; font-size: var(--font-size-v); padding: 0;">
+                        Senia UI
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- Right menu links -->
+                  <ul>
+                    <li><a href="#" class="is-active" aria-current="page">Proyectos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><button class="c-btn c-btn--sm c-btn--primary">Acceso</button></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Breadcrumbs Showcase -->
+        <section class="u-mb-vi">
+          <h2>Migas de Pan Nativas (`nav[aria-label="breadcrumb"]`)</h2>
+          <p class="u-mb-v">Migas de pan estructuradas de forma semántica con separadores automáticos para páginas internas:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Migas de Pan (Breadcrumbs)</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;nav&gt;</span><span class="v-token-class">[aria-label="breadcrumb"]</span>
+                <span class="v-token-class">.c-breadcrumb</span>
+              </div>
+              <div class="u-w-full">
+                <nav aria-label="breadcrumb" class="u-mb-none">
+                  <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Componentes</a></li>
+                    <li>Navegación</li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Barra de navegación --&gt;
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Mi Proyecto&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button class="c-btn c-btn--sm"&gt;Salir&lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Migas de pan (Breadcrumbs) --&gt;
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Panel&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Detalle del Item&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

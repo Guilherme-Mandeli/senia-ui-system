@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,7 +40,7 @@
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
           <h1>Formularios &amp; Inputs</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Campos de entrada normalizados con soporte nativo de estados enfocados, deshabilitados y de error.
           </p>
         </header>
@@ -49,11 +50,15 @@
         <!-- Standard Fields Section -->
         <section class="u-mb-vi">
           <h2>Campos de Texto y Selectores</h2>
+          <p class="u-mb-v">Elementos de entrada estándar estilizados con diseño moderno y foco animado.</p>
           <div class="c-card u-p-v">
             <div class="l-grid l-grid--2col">
               
               <!-- Text field group -->
               <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input (text)</span>
+                </div>
                 <label for="input-standard" class="c-label">Nombre Completo</label>
                 <input type="text" id="input-standard" class="c-input" placeholder="Ej. Juan Pérez">
                 <span class="c-field-help-msg">Introduce tu nombre como figura en tu DNI.</span>
@@ -61,6 +66,9 @@
 
               <!-- Select field group -->
               <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">select.c-input</span>
+                </div>
                 <label for="select-standard" class="c-label">País de Residencia</label>
                 <select id="select-standard" class="c-input">
                   <option value="">Selecciona tu país...</option>
@@ -71,10 +79,174 @@
                 </select>
               </div>
 
+              <!-- File Upload field group -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input (file)</span>
+                </div>
+                <label for="file-standard" class="c-label">Subir Currículum (PDF)</label>
+                <input type="file" id="file-standard" class="c-input">
+                <span class="c-field-help-msg">Tamaño máximo de archivo: 5MB.</span>
+              </div>
+
+              <!-- Color picker field group -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input (color)</span>
+                </div>
+                <label for="color-standard" class="c-label">Color de Marca Personal</label>
+                <input type="color" id="color-standard" class="c-input" value="#ffca28">
+                <span class="c-field-help-msg">Selecciona tu color de acento.</span>
+              </div>
+
+              <!-- Date field group -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input (date)</span>
+                </div>
+                <label for="date-standard" class="c-label">Fecha de Nacimiento</label>
+                <input type="date" id="date-standard" class="c-input">
+              </div>
+
+              <!-- Time field group -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input (time)</span>
+                </div>
+                <label for="time-standard" class="c-label">Hora Preferida de Contacto</label>
+                <input type="time" id="time-standard" class="c-input">
+              </div>
+
               <!-- Textarea group -->
               <div class="c-field-group u-col-span-full">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">textarea.c-input</span>
+                </div>
                 <label for="textarea-standard" class="c-label">Comentarios Adicionales</label>
                 <textarea id="textarea-standard" class="c-input" placeholder="Escribe aquí tus observaciones..."></textarea>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Floating Labels Section (Preview) -->
+        <section class="u-mb-vi">
+          <h2>Diseño de Etiquetas: Estándar vs. Flotante</h2>
+          <p class="u-mb-v">El sistema incluye dos estilos de campos de formulario. El diseño <strong>flotante</strong> utiliza <code>fieldset + legend</code> para crear un corte natural en el borde cuando la etiqueta sube. Es CSS puro, sin JavaScript.</p>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col">
+
+              <!-- Estándar -->
+              <div>
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-field-group</span>
+                </div>
+                <div class="c-field-group">
+                  <label class="c-label">Nombre Completo</label>
+                  <input type="text" class="c-input" placeholder="Escribe tu nombre...">
+                </div>
+                <div class="c-field-group">
+                  <label class="c-label">Correo Electrónico</label>
+                  <input type="email" class="c-input" placeholder="tu@correo.com">
+                </div>
+              </div>
+
+              <!-- Flotante (Fieldset + Legend) -->
+              <div>
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-field-group--floating</span>
+                </div>
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Nombre Completo</span></legend>
+                    <input id="fl-nombre-preview" class="c-input" type="text" placeholder=" ">
+                    <label class="c-label" for="fl-nombre-preview">Nombre Completo</label>
+                  </fieldset>
+                </div>
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Correo Electrónico</span></legend>
+                    <input id="fl-correo-preview" class="c-input" type="email" placeholder=" ">
+                    <label class="c-label" for="fl-correo-preview">Correo Electrónico</label>
+                  </fieldset>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="c-card u-p-iv u-mt-iv" style="background-color: var(--color-bg-warm-subtle); border-left: 3px solid var(--color-info-500);">
+            <p style="margin: 0; font-size: var(--font-size-iii); color: var(--color-text-body);">
+              <strong>Componente avanzado:</strong> El campo flotante requiere una estructura HTML específica con <code>fieldset</code>, <code>legend</code>, <code>input</code> y <code>label</code>. Consulta la documentación completa con variaciones de estados, validaciones y ejemplos de código en la página dedicada:
+              <a href="form-fields.html" style="font-weight: 700;">Campos de Formulario Avanzados →</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- Search Fields Section -->
+        <section class="u-mb-vi">
+          <h2>Campos de Búsqueda (Search)</h2>
+          <p class="u-mb-v">Variaciones comunes de campos de búsqueda integrando botones e iconos de lupa.</p>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--2col">
+              
+              <!-- Solo la lupa (Botón de Lupa) -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-btn.c-btn--square</span>
+                </div>
+                <label class="c-label">Solo la Lupa (Botón de Búsqueda)</label>
+                <div class="u-flex u-gap-ii">
+                  <button class="c-btn c-btn--neutral c-btn--square">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </button>
+                  <button class="c-btn c-btn--primary c-btn--square u-brand-colors">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <span class="c-field-help-msg">Buscador colapsado o botón de envío directo.</span>
+              </div>
+
+              <!-- Input + Lupa (Input Group) -->
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input-group</span>
+                </div>
+                <label class="c-label">Input + Botón de Lupa</label>
+                <div class="c-input-group u-w-full">
+                  <input type="search" class="c-input" placeholder="Buscar en el catálogo...">
+                  <button class="c-btn c-btn--neutral c-btn--square">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <span class="c-field-help-msg">Caja de búsqueda estándar de comercio electrónico.</span>
+              </div>
+
+              <!-- Input + Lupa de Marca (c-input-group--search) -->
+              <div class="c-field-group u-col-span-full">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input-group--search</span>
+                </div>
+                <label class="c-label">Barra de Búsqueda Redondeada con Botón</label>
+                <div class="c-input-group--search u-w-full">
+                  <input type="search" class="c-input" placeholder="¿Qué estás buscando hoy?">
+                  <button class="c-btn c-btn--primary u-brand-colors">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: var(--space-i); display: inline-block; vertical-align: middle;">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span>Buscar</span>
+                  </button>
+                </div>
+                <span class="c-field-help-msg">Variante ejecutada en el visualizador técnico y barra de cabecera principal.</span>
               </div>
 
             </div>
@@ -84,20 +256,65 @@
         <!-- States Matrix Section -->
         <section class="u-mb-vi">
           <h2>Matriz de Estados</h2>
+          <p class="u-mb-v">Estados interactivos con transiciones premium y validaciones visuales instantáneas.</p>
           <div class="c-card u-p-v">
             <div class="l-grid l-grid--3col">
               
               <div class="c-field-group">
-                <label class="c-label">Campo Inactivo (Normal)</label>
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">Normal / Focus</span>
+                </div>
+                <label class="c-label">Campo Predeterminado</label>
                 <input type="text" class="c-input" placeholder="Escribe algo...">
               </div>
 
               <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">:disabled</span>
+                </div>
                 <label class="c-label">Campo Deshabilitado</label>
                 <input type="text" class="c-input" disabled value="Contenido inalterable" placeholder="Escribe algo...">
               </div>
 
               <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">[readonly]</span>
+                </div>
+                <label class="c-label">Campo de Solo Lectura</label>
+                <input type="text" class="c-input" readonly value="No editable pero seleccionable">
+              </div>
+
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input--success</span>
+                </div>
+                <label class="c-label" style="color: var(--color-text-success);">Campo Correcto</label>
+                <input type="text" class="c-input c-input--success" value="usuario_valido" placeholder="Nombre de usuario">
+                <span class="c-field-success-msg">¡El nombre de usuario está disponible!</span>
+              </div>
+
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input--warning</span>
+                </div>
+                <label class="c-label" style="color: var(--color-text-warning);">Campo Advertencia</label>
+                <input type="text" class="c-input c-input--warning" value="contrasena_debil123" placeholder="Contraseña">
+                <span class="c-field-warning-msg">La contraseña introducida es muy débil.</span>
+              </div>
+
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input--info</span>
+                </div>
+                <label class="c-label" style="color: var(--color-text-info);">Campo Informativo</label>
+                <input type="text" class="c-input c-input--info" value="ejemplo_alias" placeholder="Alias">
+                <span class="c-field-info-msg">Tu alias será visible para otros usuarios.</span>
+              </div>
+
+              <div class="c-field-group u-col-span-full">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-input--error</span>
+                </div>
                 <label class="c-label" style="color: var(--color-text-error);">Campo con Error</label>
                 <input type="text" class="c-input c-input--error" value="correo_incorrecto.com" placeholder="Correo electrónico">
                 <span class="c-field-error-msg">El formato del correo introducido no es válido.</span>
@@ -108,15 +325,19 @@
         </section>
 
         <!-- Checkboxes & Radios -->
-        <section class="u-mb-v">
+        <section class="u-mb-vi">
           <h2>Controles de Selección (Checkboxes &amp; Radios)</h2>
+          <p class="u-mb-v">Casillas y selectores redondos de alta legibilidad para elecciones múltiples o exclusivas.</p>
           <div class="c-card u-p-v">
             <div class="l-grid l-grid--2col">
               
               <!-- Checkboxes group -->
               <div>
-                <h4 class="u-mb-iii">Opciones del Boletín (Checkboxes)</h4>
-                <div class="l-flex-stack">
+                <div class="u-flex u-align-center u-gap-ii u-mb-iii">
+                  <h4 class="u-m-none">Opciones del Boletín</h4>
+                  <span class="v-token-class">.c-input--checkbox</span>
+                </div>
+                <div class="l-flex-stack u-gap-iii">
                   <label class="c-choice-label">
                     <input type="checkbox" class="c-input--checkbox" checked>
                     <span>Recibir noticias semanales</span>
@@ -129,15 +350,18 @@
 
                   <label class="c-choice-label" style="opacity: 0.5; cursor: not-allowed;">
                     <input type="checkbox" class="c-input--checkbox" disabled>
-                    <span>Opcion restringida (Deshabilitada)</span>
+                    <span>Opción restringida (Deshabilitada)</span>
                   </label>
                 </div>
               </div>
 
               <!-- Radios group -->
               <div>
-                <h4 class="u-mb-iii">Método de Facturación (Radios)</h4>
-                <div class="l-flex-stack">
+                <div class="u-flex u-align-center u-gap-ii u-mb-iii">
+                  <h4 class="u-m-none">Método de Facturación</h4>
+                  <span class="v-token-class">.c-input--radio</span>
+                </div>
+                <div class="l-flex-stack u-gap-iii">
                   <label class="c-choice-label">
                     <input type="radio" name="billing" class="c-input--radio" checked>
                     <span>Factura mensual unificada</span>
@@ -155,6 +379,290 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        <!-- Toggle Switches -->
+        <section class="u-mb-vi">
+          <h2>Interruptores Deslizables (Toggle Switches)</h2>
+          <p class="u-mb-v">Controles binarios modernos para activar o desactivar opciones con transiciones táctiles ultra suaves.</p>
+          <div class="c-card u-p-v">
+            <div class="l-grid l-grid--3col">
+              
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-switch</span>
+                </div>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Modo oscuro automático</span>
+                </label>
+              </div>
+
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-switch</span>
+                </div>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input">
+                  <span class="c-switch__slider"></span>
+                  <span>Notificaciones push</span>
+                </label>
+              </div>
+
+              <div class="c-field-group">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="v-token-class">.c-switch :disabled</span>
+                </div>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" disabled checked>
+                  <span class="c-switch__slider"></span>
+                  <span style="opacity: 0.5;">Sincronización en la nube</span>
+                </label>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Dynamic form theming showcase -->
+        <section class="u-mb-vi">
+          <h2>Temas Dinámicos de Resaltado (Form Accent Theming)</h2>
+          <p class="u-mb-v">Sènia UI permite redefinir el color de acento y enfoque de todos los controles de formulario desde cualquier contenedor padre. Esto adaptará de forma inteligente el foco de los inputs, el relleno y marca de las casillas, y el color de los interruptores.</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <!-- Primary Form Theme -->
+            <div class="c-card u-p-v u-form-theme-primary">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tema Primario (Sènia) <span style="font-weight: normal; opacity: 0.75; font-size: 0.85em;">(Predeterminado)</span></h4>
+                <span class="v-token-class">.u-form-theme-primary</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Enfocado (Primary)</label>
+                <input type="text" class="c-input" placeholder="Haz clic para ver el foco..." value="Ejemplo de texto">
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Checkbox</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Secondary Form Theme -->
+            <div class="c-card u-p-v u-form-theme-secondary">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tema Secundario</h4>
+                <span class="v-token-class">.u-form-theme-secondary</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Enfocado (Secondary)</label>
+                <input type="text" class="c-input" placeholder="Haz clic para ver el foco..." value="Ejemplo de texto">
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Checkbox</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Neutral Form Theme -->
+            <div class="c-card u-p-v u-form-theme-neutral">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tema Neutral</h4>
+                <span class="v-token-class">.u-form-theme-neutral</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Enfocado (Neutral)</label>
+                <input type="text" class="c-input" placeholder="Haz clic para ver el foco..." value="Ejemplo de texto">
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Checkbox</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Dynamic form sizing showcase -->
+        <section class="u-mb-vi">
+          <h2>Escalas Dinámicas de Tamaño (Form Sizing)</h2>
+          <p class="u-mb-v">Sènia UI permite escalar las proporciones de todos los controles de formulario desde cualquier contenedor padre. Esto ajusta de forma síncrona el padding vertical de los inputs y las dimensiones físicas de casillas, radios y switches.</p>
+          
+          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <!-- Small Form Size -->
+            <div class="c-card u-p-v u-form-size-sm">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tamaño Pequeño</h4>
+                <span class="v-token-class">.u-form-size-sm</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Pequeño</label>
+                <input type="text" class="c-input" placeholder="Nombre completo..." value="Juan Pérez">
+              </div>
+
+              <div class="c-field-group">
+                <label class="c-label">Selector Pequeño</label>
+                <select class="c-input">
+                  <option>España</option>
+                  <option>México</option>
+                </select>
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Casilla</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Medium Form Size -->
+            <div class="c-card u-p-v u-form-size-md">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tamaño Normal <span style="font-weight: normal; opacity: 0.75; font-size: 0.85em;">(Predeterminado)</span></h4>
+                <span class="v-token-class">.u-form-size-md</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Normal</label>
+                <input type="text" class="c-input" placeholder="Nombre completo..." value="Juan Pérez">
+              </div>
+
+              <div class="c-field-group">
+                <label class="c-label">Selector Normal</label>
+                <select class="c-input">
+                  <option>España</option>
+                  <option>México</option>
+                </select>
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Casilla</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Large Form Size -->
+            <div class="c-card u-p-v u-form-size-lg">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <h4 class="u-m-none">Tamaño Grande</h4>
+                <span class="v-token-class">.u-form-size-lg</span>
+              </div>
+              
+              <div class="c-field-group">
+                <label class="c-label">Input Grande</label>
+                <input type="text" class="c-input" placeholder="Nombre completo..." value="Juan Pérez">
+              </div>
+
+              <div class="c-field-group">
+                <label class="c-label">Selector Grande</label>
+                <select class="c-input">
+                  <option>España</option>
+                  <option>México</option>
+                </select>
+              </div>
+
+              <div class="c-field-group u-flex u-gap-iv u-align-center">
+                <label class="c-choice-label">
+                  <input type="checkbox" class="c-input--checkbox" checked>
+                  <span>Casilla</span>
+                </label>
+                <label class="c-switch">
+                  <input type="checkbox" class="c-switch__input" checked>
+                  <span class="c-switch__slider"></span>
+                  <span>Switch</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+        <!-- Premium Slider & Validation Section -->
+        <section class="u-mb-vi">
+          <h2>Controles Premium (Slider &amp; Validación Integrada)</h2>
+          <p class="u-mb-v">Refinamientos inspirados en PicoCSS con animaciones de arrastre en deslizadores de rango e iconos vectoriales automáticos basados en atributos semánticos.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Deslizador de Rango Interactivo</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;input&gt;</span><span class="v-token-class">[type="range"]</span>
+                <span class="v-token-class">:active</span>
+              </div>
+              <div class="u-w-full">
+                <label for="range-slider-demo" class="c-label">Nivel de Volumen (Mantén presionado y desliza para ver escala del tirador):</label>
+                <input type="range" id="range-slider-demo" value="50" min="0" max="100">
+              </div>
+            </div>
+          </div>
+
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Validación por Atributo Nivel Navegador</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">[aria-invalid="true"]</span>
+                <span class="v-token-class">[aria-invalid="false"]</span>
+              </div>
+              <div class="l-grid l-grid--2col u-w-full">
+                <!-- Valid input -->
+                <div class="c-field-group">
+                  <label class="c-label">Correo Registrado Correctamente</label>
+                  <input type="email" class="c-input" aria-invalid="false" value="contacto@seniamarketing.com">
+                  <span class="c-field-success-msg">Dirección de correo validada con éxito.</span>
+                </div>
+                <!-- Invalid input -->
+                <div class="c-field-group">
+                  <label class="c-label">Dirección IP incorrecta</label>
+                  <input type="text" class="c-input" aria-invalid="true" value="999.888.777.666">
+                  <span class="c-field-error-msg">Por favor, escribe una dirección IPv4 válida.</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

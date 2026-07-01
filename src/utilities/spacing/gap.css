@@ -1,0 +1,60 @@
+/* Spacing Utilities (Gaps)
+   Prefixes: u-gap-, u-flex-gap-, u-grid-gap-
+*/
+
+/* Gap All (gap) */
+.u-gap-none { gap: 0 !important; }
+.u-gap-i { gap: var(--space-i) !important; }
+.u-gap-ii { gap: var(--space-ii) !important; }
+.u-gap-iii { gap: var(--space-iii) !important; }
+.u-gap-iv { gap: var(--space-iv) !important; }
+.u-gap-v { gap: var(--space-v) !important; }
+.u-gap-vi { gap: var(--space-vi) !important; }
+.u-gap-vii { gap: var(--space-vii) !important; }
+.u-gap-viii { gap: var(--space-viii) !important; }
+.u-gap-ix { gap: var(--space-ix) !important; }
+.u-gap-x { gap: var(--space-x) !important; }
+
+/* Row Gap (row-gap) */
+.u-row-gap-none { row-gap: 0 !important; }
+.u-row-gap-i { row-gap: var(--space-i) !important; }
+.u-row-gap-ii { row-gap: var(--space-ii) !important; }
+.u-row-gap-iii { row-gap: var(--space-iii) !important; }
+.u-row-gap-iv { row-gap: var(--space-iv) !important; }
+.u-row-gap-v { row-gap: var(--space-v) !important; }
+.u-row-gap-vi { row-gap: var(--space-vi) !important; }
+.u-row-gap-vii { row-gap: var(--space-vii) !important; }
+.u-row-gap-viii { row-gap: var(--space-viii) !important; }
+.u-row-gap-ix { row-gap: var(--space-ix) !important; }
+.u-row-gap-x { row-gap: var(--space-x) !important; }
+
+/* Column Gap (column-gap) */
+.u-column-gap-none { column-gap: 0 !important; }
+.u-column-gap-i { column-gap: var(--space-i) !important; }
+.u-column-gap-ii { column-gap: var(--space-ii) !important; }
+.u-column-gap-iii { column-gap: var(--space-iii) !important; }
+.u-column-gap-iv { column-gap: var(--space-iv) !important; }
+.u-column-gap-v { column-gap: var(--space-v) !important; }
+.u-column-gap-vi { column-gap: var(--space-vi) !important; }
+.u-column-gap-vii { column-gap: var(--space-vii) !important; }
+.u-column-gap-viii { column-gap: var(--space-viii) !important; }
+.u-column-gap-ix { column-gap: var(--space-ix) !important; }
+.u-column-gap-x { column-gap: var(--space-x) !important; }
+
+/* Flex Gaps */
+.u-flex-gap-none { gap: 0 !important; }
+.u-flex-gap-3xs { gap: var(--space-i) !important; }
+.u-flex-gap-2xs { gap: var(--space-ii) !important; }
+.u-flex-gap-xs { gap: var(--space-iii) !important; }
+.u-flex-gap-sm { gap: var(--space-iv) !important; }
+.u-flex-gap-md { gap: var(--space-v) !important; }
+.u-flex-gap-lg { gap: var(--space-vi) !important; }
+
+/* Grid Gaps */
+.u-grid-gap-none { gap: 0 !important; }
+.u-grid-gap-3xs { gap: var(--space-i) !important; }
+.u-grid-gap-2xs { gap: var(--space-ii) !important; }
+.u-grid-gap-xs { gap: var(--space-iii) !important; }
+.u-grid-gap-sm { gap: var(--space-iv) !important; }
+.u-grid-gap-md { gap: var(--space-v) !important; }
+.u-grid-gap-lg { gap: var(--space-vi) !important; }

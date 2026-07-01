@@ -1,0 +1,7 @@
+/* Background Size Utilities
+   Prefixes: u-bg-
+*/
+
+.u-bg-auto { background-size: auto !important; }
+.u-bg-cover { background-size: cover !important; }
+.u-bg-contain { background-size: contain !important; }

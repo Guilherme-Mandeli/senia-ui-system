@@ -1,0 +1,99 @@
+/* Progress Bar CSS Component
+   Normalizes and styles native HTML5 <progress> elements.
+   BEM: .c-progress class and semantic modifiers.
+*/
+
+:root {
+  --progress-height: 0.5rem;
+  --progress-track-bg: var(--color-neutral-200);
+  --progress-fill-bg: var(--color-highlight);
+  
+  .theme-dark & {
+    --progress-track-bg: var(--color-neutral-800);
+  }
+}
+
+progress {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--progress-height);
+  border: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--progress-track-bg);
+  overflow: hidden;
+  margin-bottom: var(--space-iii);
+
+  /* Webkit track reset */
+  &::-webkit-progress-bar {
+    background-color: transparent;
+    border-radius: var(--radius-full);
+  }
+
+  /* Webkit progress filling */
+  &::-webkit-progress-value {
+    background-color: var(--progress-fill-bg);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-duration-normal) var(--transition-easing-premium);
+  }
+
+  /* Mozilla progress filling */
+  &::-moz-progress-bar {
+    background-color: var(--progress-fill-bg);
+    border-radius: var(--radius-full);
+    transition: padding-bottom var(--transition-duration-normal) var(--transition-easing-premium); /* Firefox transitions trick */
+  }
+
+  /* --- Indeterminate State --- */
+  &:indeterminate {
+    background: var(--progress-track-bg)
+      linear-gradient(
+        to right,
+        var(--progress-fill-bg) 30%,
+        var(--progress-track-bg) 30%
+      )
+      top left / 150% 150% no-repeat;
+    animation: c-progress-slide 1.2s linear infinite;
+
+    &::-webkit-progress-value {
+      background-color: transparent;
+    }
+
+    &::-moz-progress-bar {
+      background-color: transparent;
+    }
+  }
+}
+
+/* --- Brand modifiers (if applied on progress element) --- */
+
+progress {
+  &.c-progress--secondary {
+    --progress-fill-bg: var(--color-secondary-500);
+  }
+  &.c-progress--success {
+    --progress-fill-bg: var(--color-success-500);
+  }
+  &.c-progress--warning {
+    --progress-fill-bg: var(--color-warning-500);
+  }
+  &.c-progress--error {
+    --progress-fill-bg: var(--color-error-500);
+  }
+  &.c-progress--info {
+    --progress-fill-bg: var(--color-info-500);
+  }
+}
+
+/* Indeterminate animation keyframes */
+@keyframes c-progress-slide {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

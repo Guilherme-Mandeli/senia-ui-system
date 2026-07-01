@@ -1,0 +1,11 @@
+/* Justify Content Utilities
+   Prefixes: u-justify-
+*/
+
+.u-justify-start { justify-content: flex-start !important; }
+.u-justify-end { justify-content: flex-end !important; }
+.u-justify-center { justify-content: center !important; }
+.u-justify-between { justify-content: space-between !important; }
+.u-justify-around { justify-content: space-around !important; }
+.u-justify-evenly { justify-content: space-evenly !important; }
+.u-justify-stretch { justify-content: stretch !important; }

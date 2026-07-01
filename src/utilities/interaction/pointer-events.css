@@ -1,0 +1,6 @@
+/* Pointer Events Utilities
+   Prefixes: u-pointer-events-
+*/
+
+.u-pointer-events-none { pointer-events: none !important; }
+.u-pointer-events-auto { pointer-events: auto !important; }

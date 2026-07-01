@@ -1,0 +1,123 @@
+/* Navigation & Breadcrumb CSS Component
+   Styles native HTML5 <nav> elements and custom breadcrumbs.
+   BEM: .c-nav, .c-breadcrumb
+*/
+
+/* --- Native Nav & navbar styling --- */
+
+nav,
+.c-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-iii) var(--space-v);
+  background-color: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border-subtle);
+  min-height: 4rem;
+
+  /* Reset lists inside nav */
+  ul,
+  ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-iv);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Link items styling */
+  a:not(.c-btn) {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-body);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-iv);
+    font-weight: var(--font-weight-500);
+    text-decoration: none;
+    padding: var(--space-ii) var(--space-iii);
+    border-radius: var(--radius-ii);
+    transition: var(--transition-colors);
+
+    &:hover {
+      color: var(--color-text-heading);
+      background-color: var(--color-neutral-100);
+      
+      .theme-dark & {
+        background-color: var(--color-neutral-800);
+      }
+    }
+
+    &[aria-current="page"],
+    &.is-active {
+      color: var(--color-text-link);
+      font-weight: var(--font-weight-700);
+    }
+  }
+
+  /* Sticky navbar modifier */
+  &.c-nav--sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-sticky);
+    box-shadow: var(--shadow-i);
+  }
+}
+
+/* --- Native Breadcrumbs (`nav[aria-label="breadcrumb"]`) --- */
+
+nav[aria-label="breadcrumb"],
+.c-breadcrumb {
+  background-color: transparent;
+  border-bottom: none;
+  padding: var(--space-ii) 0;
+  min-height: auto;
+  justify-content: flex-start;
+
+  ul,
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-size-iii);
+    color: var(--color-text-body);
+
+    /* Link item styling inside breadcrumbs */
+    a {
+      padding: var(--space-i) var(--space-ii);
+      color: var(--color-text-body);
+      font-weight: var(--font-weight-400);
+
+      &:hover {
+        color: var(--color-text-heading);
+      }
+    }
+
+    /* Add breadcrumb divider */
+    &:not(:last-child)::after {
+      content: "/";
+      display: inline-block;
+      margin: 0 var(--space-ii);
+      color: var(--color-neutral-400);
+      font-size: var(--font-size-ii);
+    }
+
+    /* Active / Current page item */
+    &:last-child {
+      color: var(--color-neutral-500);
+      pointer-events: none;
+      font-weight: var(--font-weight-500);
+      
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/* Font Weights Utilities
+   Prefixes: u-text-
+*/
+
+/* Font Weights */
+.u-text-thin, .u-text-100 { font-weight: var(--font-weight-100) !important; }
+.u-text-extralight, .u-text-200 { font-weight: var(--font-weight-200) !important; }
+.u-text-light, .u-text-300 { font-weight: var(--font-weight-300) !important; }
+.u-text-regular, .u-text-400 { font-weight: var(--font-weight-400) !important; }
+.u-text-medium, .u-text-500 { font-weight: var(--font-weight-500) !important; }
+.u-text-semibold, .u-text-600 { font-weight: var(--font-weight-600) !important; }
+.u-text-bold, .u-text-700 { font-weight: var(--font-weight-700) !important; }
+.u-text-extrabold, .u-text-800 { font-weight: var(--font-weight-800) !important; }
+.u-text-black, .u-text-900 { font-weight: var(--font-weight-900) !important; }

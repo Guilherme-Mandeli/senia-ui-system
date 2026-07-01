@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltips - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Tooltips (`[data-tooltip]`)</h1>
+          <p class="u-text-vi u-text-muted">
+            Pequeñas etiquetas flotantes que emergen sobre elementos para brindar información contextual rápida sin recargar la vista, construidas con puro CSS declarativo.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Visual Showcase Section -->
+        <section class="u-mb-vi">
+          <h2>Laboratorio de Posicionamiento</h2>
+          <p class="u-mb-v">Pasa el cursor (hover) o enfoca con el tabulador (focus) cualquiera de los siguientes elementos para visualizar el tooltip en acción.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Posiciones del Tooltip</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">[data-tooltip]</span>
+                <span class="v-token-class">[data-placement="top"]</span>
+                <span class="v-token-class">[data-placement="bottom"]</span>
+                <span class="v-token-class">[data-placement="left"]</span>
+                <span class="v-token-class">[data-placement="right"]</span>
+              </div>
+              <div class="u-flex u-flex-gap-md u-flex-wrap u-justify-center u-w-full">
+                <!-- Top Placement -->
+                <button class="c-btn c-btn--outline" data-tooltip="Este tooltip se muestra arriba por defecto" data-placement="top">
+                  Tooltip Arriba (Default)
+                </button>
+  
+                <!-- Bottom Placement -->
+                <button class="c-btn c-btn--outline" data-tooltip="Este tooltip se muestra abajo" data-placement="bottom">
+                  Tooltip Obajo
+                </button>
+  
+                <!-- Left Placement -->
+                <button class="c-btn c-btn--outline" data-tooltip="Este tooltip se muestra a la izquierda" data-placement="left">
+                  Tooltip Izquierda
+                </button>
+  
+                <!-- Right Placement -->
+                <button class="c-btn c-btn--outline" data-tooltip="Este tooltip se muestra a la derecha" data-placement="right">
+                  Tooltip Derecha
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Inline Text Reference -->
+        <section class="u-mb-vi">
+          <h2>Uso en Bloques de Texto</h2>
+          <p class="u-text-iv">
+            Los tooltips también se pueden integrar fácilmente en textos en línea para explicar términos complejos. Al aplicarse sobre etiquetas neutras (como <code>&lt;span&gt;</code>), el sistema aplica de forma automática un subrayado punteado y cambia el cursor a modo de ayuda:
+          </p>
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Tooltip en Texto en Línea</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;span&gt;</span><span class="v-token-class">[data-tooltip]</span>
+              </div>
+              <p style="line-height: 1.6;" class="u-mb-none u-w-full">
+                El diseño de la interfaz corporativa del <span data-tooltip="Grupo Senia: Empresa líder en servicios integrales de marketing y comunicación" data-placement="top">Grupo Senia</span> sigue rigurosamente las pautas de accesibilidad descritas en las <span data-tooltip="Web Content Accessibility Guidelines (Pautas de Accesibilidad al Contenido en la Web)" data-placement="bottom">WCAG 2.1</span>, garantizando que el contraste cromático de los botones primarios sobre fondo blanco sea legible para cualquier usuario.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Botón con tooltip arriba --&gt;
+&lt;button data-tooltip="Mensaje aclaratorio" data-placement="top"&gt;
+  Hover me
+&lt;/button&gt;
+
+&lt;!-- Texto en línea con tooltip abajo --&gt;
+&lt;span data-tooltip="Explicación detallada" data-placement="bottom"&gt;
+  término técnico
+&lt;/span&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

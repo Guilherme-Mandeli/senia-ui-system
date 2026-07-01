@@ -1,0 +1,156 @@
+/* Accordion / Details CSS Component
+   Inspired by PicoCSS, customized for Senia UI.
+   Applies to native <details> elements and supports BEM class .c-accordion.
+*/
+
+/* --- Native / Classless Accordion Styling --- */
+
+details {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-iv);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-iii);
+  background-color: var(--color-bg-card);
+  transition: border-color var(--transition-duration-fast) var(--transition-easing-premium),
+              box-shadow var(--transition-duration-fast) var(--transition-easing-premium);
+  
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &[open] {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-ii);
+  }
+
+  /* Summary Header */
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-iv) var(--space-v);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-iv);
+    font-weight: var(--font-weight-600);
+    color: var(--color-text-heading);
+    cursor: pointer;
+    user-select: none;
+    list-style: none; /* Hide default arrow */
+    transition: background-color var(--transition-duration-fast) var(--transition-easing-premium);
+    border-radius: calc(var(--radius-iii) - 1px);
+
+    /* Hide standard details caret marker in Safari */
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::marker {
+      display: none;
+    }
+    &::-moz-list-bullet {
+      list-style-type: none;
+    }
+
+    /* Custom caret using border trick */
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform var(--transition-duration-normal) var(--transition-easing-premium);
+      margin-left: var(--space-iii);
+      color: var(--color-neutral-400);
+    }
+
+    &:hover {
+      background-color: var(--color-neutral-50);
+      color: var(--color-text-heading);
+      
+      &::after {
+        color: var(--color-text-heading);
+      }
+
+      .theme-dark & {
+        background-color: var(--color-neutral-800);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-focus, var(--color-highlight));
+      outline-offset: -2px;
+    }
+  }
+
+  /* Opened summary styling */
+  &[open] > summary {
+    border-bottom: 1px solid var(--color-border-subtle);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &::after {
+      transform: rotate(-135deg);
+      color: var(--color-text-heading);
+    }
+  }
+
+  /* Body Content wrapper (any child following summary) */
+  > summary ~ * {
+    padding: var(--space-v);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-iv);
+    color: var(--color-text-body);
+    animation: c-accordion-fade var(--transition-duration-normal) var(--transition-easing-premium) forwards;
+  }
+}
+
+/* --- BEM Accordion Class-based Option (.c-accordion) --- */
+
+.c-accordion {
+  /* Simple class-based selector wrapping details */
+  &.c-accordion--clean {
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-border-subtle);
+
+    &[open] {
+      box-shadow: none;
+      border-bottom: 1px solid var(--color-border-strong);
+    }
+
+    summary {
+      padding: var(--space-iii) 0;
+      background-color: transparent;
+      border-radius: 0;
+      
+      &:hover {
+        background-color: transparent;
+        color: var(--color-text-link);
+      }
+    }
+
+    &[open] > summary {
+      border-bottom: none;
+    }
+
+    > summary ~ * {
+      padding: var(--space-iii) 0 var(--space-v) 0;
+    }
+  }
+}
+
+/* Animations */
+@keyframes c-accordion-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

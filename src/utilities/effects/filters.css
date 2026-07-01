@@ -1,0 +1,22 @@
+/* Filter Utilities
+   Prefixes: u-
+*/
+
+.u-grayscale { filter: grayscale(100%) !important; }
+.u-grayscale-0 { filter: grayscale(0) !important; }
+
+.u-brightness-50 { filter: brightness(0.5) !important; }
+.u-brightness-75 { filter: brightness(0.75) !important; }
+.u-brightness-90 { filter: brightness(0.9) !important; }
+.u-brightness-100 { filter: brightness(1) !important; }
+.u-brightness-110 { filter: brightness(1.1) !important; }
+.u-brightness-125 { filter: brightness(1.25) !important; }
+.u-brightness-150 { filter: brightness(1.5) !important; }
+.u-brightness-200 { filter: brightness(2) !important; }
+
+.u-contrast-50 { filter: contrast(0.5) !important; }
+.u-contrast-75 { filter: contrast(0.75) !important; }
+.u-contrast-100 { filter: contrast(1) !important; }
+.u-contrast-125 { filter: contrast(1.25) !important; }
+.u-contrast-150 { filter: contrast(1.5) !important; }
+.u-contrast-200 { filter: contrast(2) !important; }

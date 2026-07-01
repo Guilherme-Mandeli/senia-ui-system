@@ -34,8 +34,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -57,9 +58,9 @@
       <div class="l-container">
         
         <header class="u-mb-vi">
-          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Tokens de Diseño</span>
           <h1>Puntos de Ruptura (Breakpoints)</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Límites responsivos estandarizados para adaptar maquetaciones y estilos a móviles, tabletas y pantallas de escritorio.
           </p>
         </header>
@@ -73,7 +74,7 @@
           
           <div class="v-viewport-tracker">
             <div id="viewport-width" class="v-viewport-width">--- px</div>
-            <div id="viewport-active-breakpoint" class="c-badge c-badge--primary c-badge--pill u-text-sm">Buscando...</div>
+            <div id="viewport-active-breakpoint" class="c-badge c-badge--primary c-badge--pill u-text-iv">Buscando...</div>
           </div>
         </section>
 
@@ -86,38 +87,38 @@
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">xs (Mobile)</span>
-              <strong class="u-text-md">480px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-xs</code></span>
+              <strong class="u-text-v">480px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-xs</code></span>
             </div>
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--success u-mb-ii">sm (Tablet Small)</span>
-              <strong class="u-text-md">768px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-sm</code></span>
+              <strong class="u-text-v">768px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-sm</code></span>
             </div>
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--warning u-mb-ii">md (Tablet / Laptop)</span>
-              <strong class="u-text-md">1024px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-md</code></span>
+              <strong class="u-text-v">1024px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-md</code></span>
             </div>
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--error u-mb-ii">lg (Desktop)</span>
-              <strong class="u-text-md">1280px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-lg</code></span>
+              <strong class="u-text-v">1280px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-lg</code></span>
             </div>
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--info u-mb-ii">xl (Wide Desktop)</span>
-              <strong class="u-text-md">1440px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-xl</code></span>
+              <strong class="u-text-v">1440px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-xl</code></span>
             </div>
 
             <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 140px;">
               <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">2xl (Ultra Wide)</span>
-              <strong class="u-text-md">1920px</strong>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>--breakpoint-2xl</code></span>
+              <strong class="u-text-v">1920px</strong>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>--breakpoint-2xl</code></span>
             </div>
 
           </div>
@@ -185,27 +186,27 @@
 
       if (width < 480) {
         activeQuery.textContent = 'Mobile (xs)';
-        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-iv';
 
       } else if (width < 768) {
         activeQuery.textContent = 'Tablet Small (sm)';
-        activeQuery.className = 'c-badge c-badge--success c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--success c-badge--pill u-text-iv';
 
       } else if (width < 1024) {
         activeQuery.textContent = 'Tablet / Laptop (md)';
-        activeQuery.className = 'c-badge c-badge--warning c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--warning c-badge--pill u-text-iv';
 
       } else if (width < 1280) {
         activeQuery.textContent = 'Desktop (lg)';
-        activeQuery.className = 'c-badge c-badge--error c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--error c-badge--pill u-text-iv';
 
       } else if (width < 1440) {
         activeQuery.textContent = 'Wide Desktop (xl)';
-        activeQuery.className = 'c-badge c-badge--info c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--info c-badge--pill u-text-iv';
 
       } else {
         activeQuery.textContent = 'Ultra Wide (2xl)';
-        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-sm';
+        activeQuery.className = 'c-badge c-badge--primary c-badge--pill u-text-iv';
       }
     }
       

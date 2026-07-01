@@ -1,0 +1,180 @@
+/* Tooltip CSS Component
+   Inspired by PicoCSS, adapted for Senia UI Design Tokens.
+   Supports [data-tooltip] with positioning via [data-placement].
+*/
+
+:root {
+  --color-tooltip-bg: var(--color-neutral-800);
+  --color-tooltip-text: var(--color-neutral-50);
+  --tooltip-radius: var(--radius-ii);
+  --tooltip-font-size: var(--font-size-ii);
+  --tooltip-padding-y: 0.35rem;
+  --tooltip-padding-x: 0.6rem;
+  
+  .theme-dark & {
+    --color-tooltip-bg: var(--color-neutral-100);
+    --color-tooltip-text: var(--color-neutral-950);
+  }
+}
+
+/* Base tooltip container setup */
+[data-tooltip] {
+  position: relative;
+  
+  /* Style non-interactive elements with dotted underline and help cursor */
+  &:not(a, button, input, select, textarea, [role="button"]) {
+    border-bottom: 1px dotted var(--color-border-strong);
+    text-decoration: none;
+    cursor: help;
+  }
+
+  /* Tooltip body (::before) and arrow caret (::after) common styles */
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    z-index: var(--z-index-tooltip);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration-fast) var(--transition-easing-premium),
+                transform var(--transition-duration-fast) var(--transition-easing-premium);
+  }
+
+  /* Tooltip body specific styles */
+  &::before {
+    content: attr(data-tooltip);
+    background-color: var(--color-tooltip-bg);
+    color: var(--color-tooltip-text);
+    padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+    border-radius: var(--tooltip-radius);
+    font-size: var(--tooltip-font-size);
+    font-weight: var(--font-weight-500);
+    font-family: var(--font-family-body);
+    line-height: var(--line-height-none);
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: var(--shadow-iii);
+  }
+
+  /* Tooltip caret (arrow) specific styles */
+  &::after {
+    content: "";
+    border: 5px solid transparent;
+  }
+
+  /* --- Positions Setup --- */
+
+  /* DEFAULT / TOP: tooltip above, caret below it pointing down */
+  &:not([data-placement]),
+  &[data-placement="top"] {
+    &::before {
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, var(--space-ii)) scale(0.95);
+    }
+    
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, var(--space-i)) scale(0.95);
+      border-top-color: var(--color-tooltip-bg);
+    }
+
+    &:hover,
+    &:focus-within {
+      &::before {
+        transform: translate(-50%, calc(-1 * var(--space-ii))) scale(1);
+      }
+      &::after {
+        transform: translate(-50%, 0) scale(1);
+      }
+    }
+  }
+
+  /* BOTTOM: tooltip below, caret above it pointing up */
+  &[data-placement="bottom"] {
+    &::before {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, calc(-1 * var(--space-ii))) scale(0.95);
+    }
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, calc(-1 * var(--space-i))) scale(0.95);
+      border-bottom-color: var(--color-tooltip-bg);
+    }
+
+    &:hover,
+    &:focus-within {
+      &::before {
+        transform: translate(-50%, var(--space-ii)) scale(1);
+      }
+      &::after {
+        transform: translate(-50%, 0) scale(1);
+      }
+    }
+  }
+
+  /* LEFT: tooltip to the left, caret to the right pointing right */
+  &[data-placement="left"] {
+    &::before {
+      right: 100%;
+      top: 50%;
+      transform: translate(var(--space-ii), -50%) scale(0.95);
+    }
+
+    &::after {
+      right: 100%;
+      top: 50%;
+      transform: translate(var(--space-i), -50%) scale(0.95);
+      border-left-color: var(--color-tooltip-bg);
+    }
+
+    &:hover,
+    &:focus-within {
+      &::before {
+        transform: translate(calc(-1 * var(--space-ii)), -50%) scale(1);
+      }
+      &::after {
+        transform: translate(0, -50%) scale(1);
+      }
+    }
+  }
+
+  /* RIGHT: tooltip to the right, caret to the left pointing left */
+  &[data-placement="right"] {
+    &::before {
+      left: 100%;
+      top: 50%;
+      transform: translate(calc(-1 * var(--space-ii)), -50%) scale(0.95);
+    }
+
+    &::after {
+      left: 100%;
+      top: 50%;
+      transform: translate(calc(-1 * var(--space-i)), -50%) scale(0.95);
+      border-right-color: var(--color-tooltip-bg);
+    }
+
+    &:hover,
+    &:focus-within {
+      &::before {
+        transform: translate(var(--space-ii), -50%) scale(1);
+      }
+      &::after {
+        transform: translate(0, -50%) scale(1);
+      }
+    }
+  }
+
+  /* --- Interactive Hover / Focus Trigger states --- */
+  &:hover,
+  &:focus-within {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}

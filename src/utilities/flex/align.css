@@ -1,17 +1,6 @@
-/* Alignment Utilities
-   Prefixes: u-
+/* Align Utilities
+   Prefixes: u-items-, u-align-, u-content-, u-self-
 */
-
-/* ==========================================
-   JUSTIFY CONTENT (justify-)
-   ========================================== */
-.u-justify-start { justify-content: flex-start !important; }
-.u-justify-end { justify-content: flex-end !important; }
-.u-justify-center { justify-content: center !important; }
-.u-justify-between { justify-content: space-between !important; }
-.u-justify-around { justify-content: space-around !important; }
-.u-justify-evenly { justify-content: space-evenly !important; }
-.u-justify-stretch { justify-content: stretch !important; }
 
 /* ==========================================
    ALIGN ITEMS (items-)
@@ -47,14 +36,3 @@
 .u-self-center { align-self: center !important; }
 .u-self-baseline { align-self: baseline !important; }
 .u-self-stretch { align-self: stretch !important; }
-
-/* ==========================================
-   PLACE ITEMS (place-items)
-   ========================================== */
-.u-place-items-start { place-items: start !important; }
-.u-place-items-end { place-items: end !important; }
-.u-place-items-center { place-items: center !important; }
-.u-place-items-stretch { place-items: stretch !important; }
-
-/* Legacy alias */
-.u-place-center { place-items: center !important; }

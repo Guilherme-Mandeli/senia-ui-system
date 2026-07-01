@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campos de Formulario Avanzados - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-container">
+    <!-- Sidebar (injected by visualizer.js) -->
+
+    <main class="v-main">
+      <div class="v-content">
+        <span class="c-badge u-mb-iii" style="background-color: var(--color-neutral-600); color: white;">Componente Avanzado</span>
+        <h1>Campos de Formulario Avanzados</h1>
+        <p class="u-text-muted u-mb-vi">
+          Patrones de formulario con estructura semántica extendida. Estos componentes exigen una estructura HTML específica para funcionar correctamente y ofrecen una experiencia de usuario premium con animaciones puras de CSS.
+        </p>
+
+        <!-- =============================================
+             SECTION 1: FLOATING LABEL FIELDS
+             ============================================= -->
+        <section class="u-mb-x">
+          <div class="u-mb-iv">
+            <span class="c-badge u-mb-ii" style="background-color: var(--color-info-500); color: white;">Etiqueta Flotante</span>
+            <h2>1. Campo con Etiqueta Flotante (Outlined)</h2>
+            <p class="u-text-muted">
+              Inspirado en el patrón Material Design Outlined. La etiqueta actúa como placeholder y al hacer foco o escribir contenido, flota hacia el borde superior creando un corte (notch) natural en el borde del <code>fieldset</code>. No requiere JavaScript.
+            </p>
+          </div>
+
+          <!-- Structure showcase -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Estructura HTML Requerida</div>
+            </div>
+            <div class="v-showcase__preview" style="background-color: var(--color-bg-code-block); padding: var(--space-v);">
+              <pre style="color: var(--color-neutral-300); font-size: var(--font-size-iii); line-height: 1.7; margin: 0; overflow-x: auto;"><code>&lt;div class="<span style="color: var(--color-success-400);">c-field-group c-field-group--floating</span>"&gt;
+  &lt;fieldset class="<span style="color: var(--color-info-400);">c-fieldset</span>"&gt;
+    &lt;legend&gt;&lt;span&gt;Nombre Completo&lt;/span&gt;&lt;/legend&gt;
+
+    &lt;input id="nombre" class="<span style="color: var(--color-warning-400);">c-input</span>"
+           type="text" placeholder=" " /&gt;
+
+    &lt;label class="<span style="color: var(--color-error-400);">c-label</span>" for="nombre"&gt;
+      Nombre Completo
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Live demo -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Demostración Interactiva</div>
+            </div>
+            <div class="v-showcase__preview u-align-start" style="display: flex; flex-direction: column; gap: var(--space-iv);">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                <span class="v-token-class">.c-field-group--floating</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-fieldset</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">legend + label</span>
+              </div>
+
+              <div class="l-grid l-grid--2col u-w-full">
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Nombre Completo</span></legend>
+                    <input id="fl-nombre" class="c-input" type="text" placeholder=" ">
+                    <label class="c-label" for="fl-nombre">Nombre Completo</label>
+                  </fieldset>
+                </div>
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Correo Electrónico</span></legend>
+                    <input id="fl-correo" class="c-input" type="email" placeholder=" ">
+                    <label class="c-label" for="fl-correo">Correo Electrónico</label>
+                  </fieldset>
+                </div>
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Teléfono</span></legend>
+                    <input id="fl-telefono" class="c-input" type="tel" placeholder=" ">
+                    <label class="c-label" for="fl-telefono">Teléfono</label>
+                  </fieldset>
+                </div>
+
+                <div class="c-field-group c-field-group--floating">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Contraseña</span></legend>
+                    <input id="fl-password" class="c-input" type="password" placeholder=" ">
+                    <label class="c-label" for="fl-password">Contraseña</label>
+                  </fieldset>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Status variants -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Estados Semánticos</div>
+            </div>
+            <div class="v-showcase__preview u-align-start" style="display: flex; flex-direction: column; gap: var(--space-iv);">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                <span class="v-token-class">.c-field-group--success</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-field-group--warning</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-field-group--info</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-field-group--error</span>
+              </div>
+
+              <div class="l-grid l-grid--2col u-w-full">
+
+                <!-- Success -->
+                <div class="c-field-group c-field-group--floating c-field-group--success">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Usuario</span></legend>
+                    <input id="fl-success" class="c-input" type="text" placeholder=" " value="usuario_valido">
+                    <label class="c-label" for="fl-success">Usuario</label>
+                  </fieldset>
+                  <span class="c-field-success-msg">¡El nombre de usuario está disponible!</span>
+                </div>
+
+                <!-- Warning -->
+                <div class="c-field-group c-field-group--floating c-field-group--warning">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Contraseña</span></legend>
+                    <input id="fl-warning" class="c-input" type="text" placeholder=" " value="abc123">
+                    <label class="c-label" for="fl-warning">Contraseña</label>
+                  </fieldset>
+                  <span class="c-field-warning-msg">La contraseña introducida es muy débil.</span>
+                </div>
+
+                <!-- Info -->
+                <div class="c-field-group c-field-group--floating c-field-group--info">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Alias</span></legend>
+                    <input id="fl-info" class="c-input" type="text" placeholder=" " value="mi_alias">
+                    <label class="c-label" for="fl-info">Alias</label>
+                  </fieldset>
+                  <span class="c-field-info-msg">Tu alias será visible para otros usuarios.</span>
+                </div>
+
+                <!-- Error -->
+                <div class="c-field-group c-field-group--floating c-field-group--error">
+                  <fieldset class="c-fieldset">
+                    <legend><span>Correo Electrónico</span></legend>
+                    <input id="fl-error" class="c-input" type="text" placeholder=" " value="correo_incorrecto.com">
+                    <label class="c-label" for="fl-error">Correo Electrónico</label>
+                  </fieldset>
+                  <span class="c-field-error-msg">El formato del correo introducido no es válido.</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical notes -->
+          <div class="c-card u-p-iv" style="background-color: var(--color-bg-warm-subtle); border-left: 3px solid var(--color-info-500);">
+            <p style="margin: 0 0 var(--space-iii); font-size: var(--font-size-iii); color: var(--color-text-body);">
+              <strong>Notas técnicas:</strong>
+            </p>
+            <ul style="margin: 0; padding-left: var(--space-v); font-size: var(--font-size-iii); color: var(--color-text-body); line-height: 1.8;">
+              <li>El <code>placeholder=" "</code> (espacio en blanco) es obligatorio para que <code>:placeholder-shown</code> funcione correctamente.</li>
+              <li>El <code>&lt;input&gt;</code> debe estar <strong>antes</strong> del <code>&lt;label&gt;</code> dentro del <code>fieldset</code> para que los selectores de hermano (<code>~</code>) de CSS funcionen.</li>
+              <li>El texto del <code>&lt;legend&gt; &lt;span&gt;</code> debe coincidir con el texto del <code>&lt;label&gt;</code> para que el corte del borde tenga el ancho correcto.</li>
+              <li>Los estados semánticos se aplican como modificadores en el contenedor: <code>.c-field-group--success</code>, <code>--warning</code>, <code>--info</code>, <code>--error</code>.</li>
+              <li>Compatible con modo oscuro sin configuración adicional.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acordeones - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Acordeones y Colapsables (`details`)</h1>
+          <p class="u-text-vi u-text-muted">
+            Paneles desplegables construidos sobre la etiqueta semántica nativa <code>&lt;details&gt;</code> para organizar información jerárquica o secundaria de forma limpia.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Classic Details Showcase -->
+        <section class="u-mb-vi">
+          <h2>Acordeón Estándar (Card-Style)</h2>
+          <p class="u-mb-v">Variante nativa por defecto. Los elementos se enmarcan con bordes, sombras sutiles y fondo de tarjeta, óptimos para secciones aisladas como FAQs.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Etiquetas details / summary</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column u-flex-gap-ii">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii u-w-full">
+                <span class="v-token-tag">&lt;details&gt;</span>
+                <span class="v-token-tag">&lt;summary&gt;</span>
+              </div>
+              <div class="u-w-full">
+                <details>
+                  <summary>¿Qué tecnologías utiliza el framework Senia UI?</summary>
+                  <div>
+                    <p class="u-mb-none">
+                      Senia UI está desarrollado íntegramente con CSS Vanilla moderno, haciendo uso de variables personalizadas (CSS Custom Properties) para la gestión cromática y de layout, y de Cascading Layers (<code>@layer</code>) para resolver la especificidad y precedencia de estilos.
+                    </p>
+                  </div>
+                </details>
+    
+                <details>
+                  <summary>¿Cómo se gestiona el cambio de color para el modo oscuro?</summary>
+                  <div>
+                    <p class="u-mb-none">
+                      El framework emplea la clase global <code>.theme-dark</code> en el elemento raíz del documento. Todas las variables de color están programadas en formato HSL, permitiendo que al activar esta clase se re-mapeen automáticamente todos los tonos y contrastes en tiempo de ejecución.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Clean Details Modifier -->
+        <section class="u-mb-vi">
+          <h2>Variante Limpia / Minimalista (`.c-accordion--clean`)</h2>
+          <p class="u-mb-v">Utilizando el modificador BEM <code>.c-accordion--clean</code>, se remueven los bordes circundantes, fondos y sombras, dejando únicamente una línea divisoria inferior y un estilo tipográfico más integrado.</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Acordeón Estilo Limpio</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-accordion.c-accordion--clean</span>
+              </div>
+              <div class="u-w-full">
+                <details class="c-accordion c-accordion--clean">
+                  <summary>Especificaciones técnicas de compilación</summary>
+                  <div>
+                    <p class="u-mb-ii">
+                      El flujo de compilación corre bajo PostCSS acoplado a un script en Node.js que procesa:
+                    </p>
+                    <ul>
+                      <li class="u-mb-i"><code>postcss-import</code>: Resolución de importaciones.</li>
+                      <li class="u-mb-i"><code>postcss-nesting</code>: Anidación nativa de reglas.</li>
+                      <li class="u-mb-i"><code>autoprefixer</code>: Adición de prefijos de compatibilidad.</li>
+                      <li><code>cssnano</code>: Minificación extrema para producción.</li>
+                    </ul>
+                  </div>
+                </details>
+    
+                <details class="c-accordion c-accordion--clean">
+                  <summary>Licencia y distribución comercial</summary>
+                  <div>
+                    <p class="u-mb-none">
+                      Senia UI CSS es un framework interno corporativo de uso exclusivo para las iniciativas del Grupo Senia y empresas asociadas. Todos los derechos reservados.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Implementation details -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Variante Estándar (Card-Style) --&gt;
+&lt;details&gt;
+  &lt;summary&gt;Título del colapsable&lt;/summary&gt;
+  &lt;div&gt;Contenido interno del elemento&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;!-- Variante Limpia (Clean) --&gt;
+&lt;details class="c-accordion c-accordion--clean"&gt;
+  &lt;summary&gt;Título del colapsable&lt;/summary&gt;
+  &lt;div&gt;Contenido interno del elemento&lt;/div&gt;
+&lt;/details&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* Blur Utilities
+   Prefixes: u-blur-
+*/
+
+.u-blur-none { filter: blur(0) !important; }
+.u-blur-sm { filter: blur(4px) !important; }
+.u-blur-md { filter: blur(8px) !important; }
+.u-blur-lg { filter: blur(12px) !important; }
+.u-blur-xl { filter: blur(16px) !important; }
+.u-blur-2xl { filter: blur(24px) !important; }
+.u-blur-3xl { filter: blur(40px) !important; }

@@ -1,0 +1,11 @@
+/* Min Height Utilities
+   Prefixes: u-min-h-
+*/
+
+.u-min-h-auto { min-height: auto !important; }
+.u-min-h-none { min-height: none !important; }
+.u-min-h-full { min-height: 100% !important; }
+.u-min-h-screen { min-height: 100vh !important; }
+.u-min-h-fit { min-height: fit-content !important; }
+.u-min-h-min { min-height: min-content !important; }
+.u-min-h-max { min-height: max-content !important; }

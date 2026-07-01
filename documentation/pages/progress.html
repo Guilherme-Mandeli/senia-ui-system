@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barras de Progreso - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Barras de Progreso (`progress`)</h1>
+          <p class="u-text-vi u-text-muted">
+            Normalización tipográfica y estética del elemento nativo HTML5 <code>&lt;progress&gt;</code> para reportar el avance de operaciones asíncronas, cargas y tareas.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Progress Value Showcase -->
+        <section class="u-mb-vi">
+          <h2>Estados con Valores Determinados</h2>
+          <p class="u-mb-v">Al definir los atributos <code>value</code> y <code>max</code>, la barra muestra de forma estática el porcentaje de avance correspondiente:</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Valores Estáticos</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;progress&gt;</span><span class="v-token-class">[value="25"]</span>
+                <span class="v-token-tag">&lt;progress&gt;</span><span class="v-token-class">[value="60"]</span>
+                <span class="v-token-tag">&lt;progress&gt;</span><span class="v-token-class">[value="100"]</span>
+              </div>
+              <div class="u-w-full">
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Porcentaje Bajo (25%)</span>
+                  <progress value="25" max="100"></progress>
+                </div>
+    
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Porcentaje Medio (60%)</span>
+                  <progress value="60" max="100"></progress>
+                </div>
+    
+                <div>
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Completado (100%)</span>
+                  <progress value="100" max="100"></progress>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Brand/Semantic Modifiers Showcase -->
+        <section class="u-mb-vi">
+          <h2>Variantes de Color Semánticas</h2>
+          <p class="u-mb-v">El framework ofrece modificadores BEM específicos para colorear la barra de progreso acorde al contexto cromático:</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Clases de Color Semánticas</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-progress--secondary</span>
+                <span class="v-token-class">.c-progress--success</span>
+                <span class="v-token-class">.c-progress--warning</span>
+                <span class="v-token-class">.c-progress--error</span>
+              </div>
+              <div class="u-w-full">
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Secondary (Dorado Verde)</span>
+                  <progress class="c-progress--secondary" value="45" max="100"></progress>
+                </div>
+    
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Success (Operación Exitosa)</span>
+                  <progress class="c-progress--success" value="80" max="100"></progress>
+                </div>
+    
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Warning (Alerta de Capacidad)</span>
+                  <progress class="c-progress--warning" value="70" max="100"></progress>
+                </div>
+    
+                <div>
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Error (Fallo crítico o cancelación)</span>
+                  <progress class="c-progress--error" value="30" max="100"></progress>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Indeterminate Showcase -->
+        <section class="u-mb-vi">
+          <h2>Estado Indeterminado (Carga Activa)</h2>
+          <p class="u-mb-v">Al omitir el atributo <code>value</code>, la barra entra de forma automática en un estado indeterminado, proyectando una animación de barrido infinito de gran suavidad visual:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Barras de Carga Indeterminadas</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;progress&gt;</span><span class="v-token-class">:indeterminate</span>
+                <span class="v-token-class">.c-progress--success</span><span class="v-token-class">:indeterminate</span>
+              </div>
+              <div class="u-w-full">
+                <div class="u-mb-iv">
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Carga por Defecto (Primary)</span>
+                  <progress></progress>
+                </div>
+    
+                <div>
+                  <span class="u-text-semibold u-text-ii u-text-muted u-text-uppercase u-mb-i u-display-block">Carga Exitosa (Success Indeterminate)</span>
+                  <progress class="c-progress--success"></progress>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Barra determinada por defecto --&gt;
+&lt;progress value="70" max="100"&gt;&lt;/progress&gt;
+
+&lt;!-- Barra determinada con color secundario --&gt;
+&lt;progress class="c-progress--secondary" value="45" max="100"&gt;&lt;/progress&gt;
+
+&lt;!-- Barra indeterminada animada (cargando) --&gt;
+&lt;progress&gt;&lt;/progress&gt;
+
+&lt;!-- Barra indeterminada animada de error --&gt;
+&lt;progress class="c-progress--error"&gt;&lt;/progress&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

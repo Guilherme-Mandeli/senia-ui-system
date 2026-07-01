@@ -1,0 +1,141 @@
+/* Loading & Spinner CSS Component
+   Styles elements when in loading state using [aria-busy="true"].
+   Inspired by PicoCSS, customized for Senia UI's design language.
+*/
+
+/* Rotate animation for spinners */
+@keyframes c-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 1. Buttons, inputs, & links in loading state */
+button,
+input[type="submit"],
+input[type="button"],
+[role="button"],
+.c-btn,
+a.c-btn {
+  &[aria-busy="true"] {
+    position: relative;
+    pointer-events: none; /* Disable interaction */
+    color: transparent !important; /* Hide text to center spinner */
+    text-shadow: none !important;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1.2em;
+      height: 1.2em;
+      top: calc(50% - 0.6em);
+      left: calc(50% - 0.6em);
+      border: 2px solid var(--color-highlight-text);
+      border-right-color: transparent !important;
+      border-radius: var(--radius-full);
+      animation: c-spin 0.6s linear infinite;
+    }
+  }
+}
+
+/* Explicit spinner border color overrides for button variants */
+.c-btn--primary[aria-busy="true"]::after {
+  border-color: var(--color-highlight-text) !important;
+  border-right-color: transparent !important;
+}
+
+.c-btn--outline[aria-busy="true"]::after,
+.c-btn--ghost[aria-busy="true"]::after {
+  border-color: var(--color-highlight) !important;
+  border-right-color: transparent !important;
+}
+
+.c-btn--neutral[aria-busy="true"]::after {
+  border-color: var(--color-neutral-900) !important;
+  border-right-color: transparent !important;
+  
+  .theme-dark & {
+    border-color: var(--color-neutral-100) !important;
+    border-right-color: transparent !important;
+  }
+}
+
+.c-btn--success[aria-busy="true"]::after {
+  border-color: var(--color-text-success, #ffffff) !important;
+  border-right-color: transparent !important;
+}
+
+.c-btn--error[aria-busy="true"]::after {
+  border-color: var(--color-text-error, #ffffff) !important;
+  border-right-color: transparent !important;
+}
+
+/* 2. Generic containers / non-button elements in loading state */
+:not(button, input, select, textarea, html, form)[aria-busy="true"] {
+  position: relative;
+  pointer-events: none;
+  min-height: 3rem;
+
+  /* If element is NOT empty, we add a semi-transparent blur overlay */
+  &:not(:empty) {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-busy-overlay-bg);
+      backdrop-filter: blur(1px);
+      z-index: var(--z-index-base);
+      border-radius: inherit;
+      transition: background-color var(--transition-duration-fast) var(--transition-easing-premium);
+    }
+  }
+
+  /* Centered spinner indicator */
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: calc(var(--z-index-base) + 1);
+    width: 2rem;
+    height: 2rem;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    border: 3px solid var(--color-highlight);
+    border-right-color: transparent;
+    border-radius: var(--radius-full);
+    animation: c-spin 0.6s linear infinite;
+  }
+}
+
+/* Special sizing for inline/smaller elements in loading state */
+span[aria-busy="true"],
+code[aria-busy="true"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: auto !important;
+  padding-right: 1.5em;
+  color: inherit !important;
+  pointer-events: none;
+
+  /* Disable overlay blur and background on inline elements */
+  &::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  &::before {
+    width: 0.9em;
+    height: 0.9em;
+    top: auto;
+    left: auto;
+    border-width: 1.5px;
+    border-color: var(--color-highlight);
+    border-right-color: transparent;
+    margin-left: var(--space-ii);
+    margin-right: var(--space-ii);
+    position: relative;
+    display: inline-block;
+  }
+}

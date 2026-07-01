@@ -1,21 +1,26 @@
 /* Card Component
    BEM: .c-card
+   Includes classic Sènia cards and modern card typologies with layered shadows.
 */
+
+/* --- Classic Sènia Cards --- */
 
 .c-card {
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border-card);
   border-radius: var(--radius-iv);
+  border: 1px solid var(--color-border-subtle);
   box-shadow: var(--shadow-ii);
   overflow: hidden;
   transition: transform var(--transition-duration-normal) var(--transition-easing-premium), 
               box-shadow var(--transition-duration-normal) var(--transition-easing-premium), 
-              border-color var(--transition-duration-normal) var(--transition-easing-premium);
+              border-color var(--transition-duration-normal) var(--transition-easing-premium),
+              background-color var(--transition-duration-normal) var(--transition-easing-premium);
 }
 
-.c-card__header {
+.c-card__header,
+.c-card > header {
   padding: var(--space-iv) var(--space-v);
   border-bottom: 1px solid var(--color-border-subtle);
   background-color: rgba(0, 0, 0, 0.01);
@@ -36,7 +41,8 @@
   flex-grow: 1;
 }
 
-.c-card__footer {
+.c-card__footer,
+.c-card > footer {
   padding: var(--space-iv) var(--space-v);
   border-top: 1px solid var(--color-border-subtle);
   background-color: rgba(0, 0, 0, 0.01);
@@ -46,13 +52,12 @@
   }
 }
 
-/* --- Interactive Card Modifier --- */
+/* --- Classic Sènia Modifiers --- */
 
 .c-card--interactive {
   cursor: pointer;
   
   &:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-iv);
     border-color: var(--color-primary-300);
     
@@ -62,7 +67,6 @@
   }
 }
 
-/* --- Featured Card Modifier --- */
 .c-card--featured {
   position: relative;
   
@@ -73,6 +77,227 @@
     left: 0;
     right: 0;
     height: 4px;
-    background-color: var(--color-primary-500);
+    background-color: var(--color-highlight);
   }
 }
+
+
+/* --- Modern Card Variants --- */
+
+/* Subtle Card */
+.c-card--subtle {
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-iii);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.04);
+  
+  .theme-dark & {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Elevated Card */
+.c-card--elevated {
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-iii);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06), 0px 0px 4px rgba(0, 0, 0, 0.04);
+  
+  .theme-dark & {
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Flat/Outline Card */
+.c-card--flat {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-iii);
+  box-shadow: none; /* No shadow, layout definition purely through fine borders */
+  
+  .theme-dark & {
+    border-color: var(--color-neutral-700);
+  }
+}
+
+/* Dynamic Card (Micro-interactions) */
+.c-card--dynamic {
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-iii);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  
+  .theme-dark & {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.005); /* Soft, extremely premium translation and scaling */
+    background-color: var(--color-input-hover-bg, var(--color-neutral-50));
+    border-color: var(--color-primary-400);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08), 0px 0px 4px rgba(0, 0, 0, 0.04);
+    
+    .theme-dark & {
+      background-color: var(--color-neutral-800);
+      border-color: var(--color-primary-600);
+      box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3), 0px 0px 4px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  /* Pressed state */
+  &:active {
+    transform: translateY(-2px) scale(0.995);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06), 0px 0px 2px rgba(0, 0, 0, 0.04);
+    
+    .theme-dark & {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Image Card Layouts
+   ========================================================================== */
+
+/* --- Card Image Element --- */
+.c-card__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 12rem;
+}
+
+/* Aspect ratio modifiers for card images */
+.c-card__img--sm {
+  height: 8rem;
+}
+
+.c-card__img--lg {
+  height: 16rem;
+}
+
+.c-card__img--xl {
+  height: 20rem;
+}
+
+
+/* --- Horizontal Card (Image Left) --- */
+.c-card--horizontal {
+  flex-direction: row;
+  
+  .c-card__img {
+    width: 14rem;
+    height: auto;
+    min-height: 100%;
+    flex-shrink: 0;
+    border-radius: var(--radius-iv) 0 0 var(--radius-iv);
+  }
+  
+  .c-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Inherit rounded corner from parent card variant */
+.c-card--subtle.c-card--horizontal .c-card__img,
+.c-card--elevated.c-card--horizontal .c-card__img,
+.c-card--flat.c-card--horizontal .c-card__img,
+.c-card--dynamic.c-card--horizontal .c-card__img {
+  border-radius: var(--radius-iii) 0 0 var(--radius-iii);
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 600px) {
+  .c-card--horizontal {
+    flex-direction: column;
+    
+    .c-card__img {
+      width: 100%;
+      height: 10rem;
+      border-radius: var(--radius-iv) var(--radius-iv) 0 0;
+    }
+  }
+  
+  .c-card--subtle.c-card--horizontal .c-card__img,
+  .c-card--elevated.c-card--horizontal .c-card__img,
+  .c-card--flat.c-card--horizontal .c-card__img,
+  .c-card--dynamic.c-card--horizontal .c-card__img {
+    border-radius: var(--radius-iii) var(--radius-iii) 0 0;
+  }
+}
+
+
+/* --- Cover Card (Image as Background) --- */
+.c-card--cover {
+  position: relative;
+  min-height: 16rem;
+  border: none;
+  color: #ffffff;
+  
+  .c-card__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  /* Gradient overlay for text readability */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.08) 100%
+    );
+    z-index: 1;
+    border-radius: inherit;
+  }
+  
+  .c-card__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    color: #ffffff;
+  }
+  
+  .c-card__footer {
+    position: relative;
+    z-index: 2;
+    border-top-color: rgba(255, 255, 255, 0.15);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  .c-card__header {
+    position: relative;
+    z-index: 2;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    background-color: transparent;
+    color: #ffffff;
+  }
+}
+
+/* Cover card height modifiers */
+.c-card--cover-sm {
+  min-height: 12rem;
+}
+
+.c-card--cover-lg {
+  min-height: 22rem;
+}
+

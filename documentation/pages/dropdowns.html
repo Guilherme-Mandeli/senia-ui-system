@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdowns - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Menús Desplegables (Dropdowns)</h1>
+          <p class="u-text-vi u-text-muted">
+            Menús de opciones flotantes autocontenidos y libres de JavaScript, maquetados utilizando la estructura HTML nativa de acordeones.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Native/Classless Dropdown Showcase -->
+        <section class="u-mb-vi">
+          <h2>Dropdown Classless Semántico</h2>
+          <p class="u-mb-v">Al utilizar selectores semánticos como <code>details.dropdown</code>, la lista interna se posiciona y oculta de forma automática. El menú se abre al hacer clic y se cierra al hacer clic fuera o re-seleccionar.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Dropdown Semántico</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;details&gt;</span><span class="v-token-class">.dropdown</span>
+                <span class="v-token-tag">&lt;summary&gt;</span>
+                <span class="v-token-tag">&lt;ul&gt;</span>
+              </div>
+              
+              <div style="display: flex; align-items: flex-start; gap: var(--space-iv); min-height: 180px;" class="u-w-full">
+                <!-- Standard Left Dropdown -->
+                <details class="dropdown">
+                  <summary>Opciones de Usuario</summary>
+                  <ul>
+                    <li><a href="#">Ver Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Seguridad</a></li>
+                    <li><hr style="margin: var(--space-i) 0; background-color: var(--color-border-subtle);"></li>
+                    <li><a href="#" style="color: var(--color-text-error);">Cerrar Sesión</a></li>
+                  </ul>
+                </details>
+
+                <!-- Right Aligned Dropdown -->
+                <details class="dropdown dropdown--right">
+                  <summary>Idiomas</summary>
+                  <ul>
+                    <li><a href="#">Español (ES)</a></li>
+                    <li><a href="#">English (EN)</a></li>
+                    <li><a href="#">Português (PT)</a></li>
+                  </ul>
+                </details>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- BEM Dropdown Showcase -->
+        <section class="u-mb-vi">
+          <h2>Dropdown en BEM (`.c-dropdown`)</h2>
+          <p class="u-mb-v">Variación con clases explícitas bajo nomenclatura BEM para mayor consistencia de marcado en arquitecturas de componentes modulares:</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Dropdown en Clases BEM</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-dropdown</span>
+                <span class="v-token-class">.c-dropdown__menu</span>
+              </div>
+              
+              <div style="display: flex; align-items: flex-start; gap: var(--space-iv); min-height: 160px;" class="u-w-full">
+                <details class="c-dropdown">
+                  <summary class="c-btn c-btn--outline" style="padding: var(--space-ii) var(--space-iv);">Acciones Rápidas</summary>
+                  <ul class="c-dropdown__menu">
+                    <li><a href="#">Exportar PDF</a></li>
+                    <li><a href="#">Descargar Excel</a></li>
+                    <li><a href="#">Imprimir Reporte</a></li>
+                  </ul>
+                </details>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Dropdown Classless Semántico --&gt;
+&lt;details class="dropdown"&gt;
+  &lt;summary&gt;Menú de Opciones&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Opción 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Opción 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;!-- Dropdown BEM con botón contorneado --&gt;
+&lt;details class="c-dropdown"&gt;
+  &lt;summary class="c-btn c-btn--outline"&gt;Acciones&lt;/summary&gt;
+  &lt;ul class="c-dropdown__menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Editar&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Eliminar&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

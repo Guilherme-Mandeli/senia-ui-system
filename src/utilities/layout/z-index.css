@@ -1,0 +1,17 @@
+/* Z-Index Utilities
+   Prefixes: u-z-
+*/
+
+/* ==========================================
+   STACKING SYSTEM (Z-INDEX)
+   ========================================== */
+.u-z-hide { z-index: var(--z-index-hide) !important; }
+.u-z-auto { z-index: var(--z-index-auto) !important; }
+.u-z-base { z-index: var(--z-index-base) !important; }
+.u-z-dropdown { z-index: var(--z-index-dropdown) !important; }
+.u-z-sticky { z-index: var(--z-index-sticky) !important; }
+.u-z-fixed { z-index: var(--z-index-fixed) !important; }
+.u-z-modal-backdrop { z-index: var(--z-index-modal-backdrop) !important; }
+.u-z-modal { z-index: var(--z-index-modal) !important; }
+.u-z-popover { z-index: var(--z-index-popover) !important; }
+.u-z-tooltip { z-index: var(--z-index-tooltip) !important; }

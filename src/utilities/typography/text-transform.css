@@ -1,0 +1,105 @@
+/* Text Transform & Contrast Utilities
+   Prefixes: u-text-, u-contrast-
+*/
+
+/* Text Transform */
+.u-text-uppercase { text-transform: uppercase !important; }
+.u-text-lowercase { text-transform: lowercase !important; }
+.u-text-capitalize { text-transform: capitalize !important; }
+.u-text-transform-none { text-transform: none !important; }
+
+/* ==========================================
+   COLOR CONTRAST THEMES (Light & Dark Contrast)
+   Afecta al texto, encabezados, botones outline/ghost, iconos SVG y efectos de carga
+   ========================================== */
+.u-contrast-light {
+  color: #ffffff !important;
+  
+  /* Encabezados y textos internos */
+  h1, h2, h3, h4, h5, h6, p, span, div, strong, small, p.u-text-muted {
+    color: #ffffff !important;
+  }
+  
+  /* Botones internos Outline y Ghost para adaptarse al contraste claro */
+  .c-btn--outline:not(.c-btn--loading),
+  .c-btn--ghost:not(.c-btn--loading) {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background-color: transparent !important;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.7) !important;
+      color: #ffffff !important;
+    }
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.22) !important;
+    }
+  }
+  
+  /* Estados de carga (Spinner) */
+  &.c-btn--loading,
+  .c-btn--loading {
+    border-color: rgba(255, 255, 255, 0.22) !important;
+  }
+  &.c-btn--loading::after,
+  .c-btn--loading::after,
+  &.v-loading::after {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    border-right-color: #ffffff !important;
+  }
+  
+  /* Iconos SVG y Flechas */
+  svg,
+  .icon,
+  .arrow {
+    stroke: #ffffff !important;
+  }
+}
+
+.u-contrast-dark {
+  color: var(--color-neutral-900) !important;
+  
+  /* Encabezados y textos internos */
+  h1, h2, h3, h4, h5, h6, p, span, div, strong, small, p.u-text-muted {
+    color: var(--color-neutral-900) !important;
+  }
+  
+  /* Botones internos Outline y Ghost para adaptarse al contraste oscuro */
+  .c-btn--outline:not(.c-btn--loading),
+  .c-btn--ghost:not(.c-btn--loading) {
+    color: var(--color-neutral-900) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    background-color: transparent !important;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06) !important;
+      border-color: rgba(0, 0, 0, 0.35) !important;
+      color: var(--color-neutral-950) !important;
+    }
+    
+    &:active {
+      background-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+  
+  /* Estados de carga (Spinner) */
+  &.c-btn--loading,
+  .c-btn--loading {
+    border-color: rgba(0, 0, 0, 0.12) !important;
+  }
+  &.c-btn--loading::after,
+  .c-btn--loading::after,
+  &.v-loading::after {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    border-right-color: var(--color-neutral-900) !important;
+  }
+  
+  /* Iconos SVG y Flechas */
+  svg,
+  .icon,
+  .arrow {
+    stroke: var(--color-neutral-900) !important;
+  }
+}

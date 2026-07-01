@@ -1,0 +1,160 @@
+/* Dropdown CSS Component
+   Inspired by PicoCSS, customized for Senia UI's HSL Design tokens.
+   Supports classless details.dropdown / details[role="list"] and BEM .c-dropdown.
+*/
+
+@keyframes c-dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- Container --- */
+details.dropdown,
+details.c-dropdown,
+details[role="list"] {
+  display: inline-block !important;
+  width: auto !important;
+  align-self: flex-start;
+  position: relative;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* Reset hover of native accordion wrapper */
+  &:hover,
+  &[open] {
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  /* Summary toggle trigger */
+  summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: var(--space-ii) var(--space-iii);
+    border-radius: var(--radius-ii);
+    list-style: none;
+    cursor: pointer;
+    transition: var(--transition-colors);
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::marker {
+      display: none;
+    }
+
+    /* Chevron caret pointing down */
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform var(--transition-duration-normal) var(--transition-easing-premium);
+      margin-left: var(--space-ii);
+      color: var(--color-neutral-400);
+    }
+
+    &:hover {
+      background-color: var(--color-neutral-100);
+      color: var(--color-text-heading);
+
+      .theme-dark & {
+        background-color: var(--color-neutral-800);
+      }
+    }
+  }
+
+  /* Rotate chevron when open */
+  &[open] > summary::after {
+    transform: rotate(-135deg) translateY(1px) translateX(-1px);
+    color: var(--color-text-heading);
+  }
+
+  /* --- Dropdown Menu (the inner list) --- */
+  > ul,
+  > ol,
+  .c-dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 12rem;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border-card);
+    border-radius: var(--radius-iii);
+    box-shadow: var(--shadow-iv);
+    list-style: none;
+    padding: var(--space-ii) 0;
+    margin: var(--space-ii) 0 0 0 !important;
+    z-index: var(--z-index-dropdown);
+    display: none;
+    animation: c-dropdown-fade var(--transition-duration-fast) var(--transition-easing-premium) forwards;
+
+    /* Reset child elements margins/padding */
+    li {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    /* Menu links */
+    a {
+      display: block;
+      width: 100%;
+      padding: var(--space-ii) var(--space-iv);
+      color: var(--color-text-body);
+      font-size: var(--font-size-iii);
+      font-family: var(--font-family-body);
+      font-weight: var(--font-weight-400);
+      text-decoration: none;
+      border-radius: 0;
+      transition: var(--transition-colors);
+
+      &:hover {
+        color: var(--color-text-heading);
+        background-color: var(--color-neutral-100);
+        
+        .theme-dark & {
+          background-color: var(--color-neutral-800);
+        }
+      }
+    }
+  }
+
+  /* Show menu when dropdown is open */
+  &[open] {
+    > ul,
+    > ol,
+    .c-dropdown__menu {
+      display: block;
+    }
+  }
+}
+
+/* Right-aligned dropdown modifier */
+details.dropdown--right,
+details.c-dropdown--right {
+  > ul,
+  > ol,
+  .c-dropdown__menu {
+    left: auto;
+    right: 0;
+  }
+}

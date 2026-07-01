@@ -1,6 +1,74 @@
 /* Form & Input Components
-   BEM: .c-input, .c-label, .c-field-group
+   Modern design inspired styles
+   BEM: .c-input, .c-label, .c-field-group, .c-switch
 */
+
+:root {
+  --form-highlight-color: var(--color-highlight);
+  --form-highlight-text: var(--color-highlight-text);
+  --form-focus-shadow: 0 0 0 2px var(--color-bg-card), 0 0 0 4px var(--form-highlight-color); /* Premium double-ring high-contrast focus style */
+
+  /* Default form dimensions (MD) */
+  --form-padding-block: 0.5rem;
+  --form-padding-inline: 0.75rem;
+  --form-control-size: 1.15rem;
+  --form-switch-width: 2.35rem;
+  --form-switch-height: 1.25rem;
+  --form-switch-knob-size: 0.85rem;
+  --form-switch-knob-translate: 1.1rem;
+}
+
+/* Parent container themes to change form highlight color from any ancestor */
+.u-form-theme-primary {
+  --form-highlight-color: var(--color-highlight);
+  --form-highlight-text: var(--color-highlight-text);
+}
+
+.u-form-theme-secondary {
+  --form-highlight-color: var(--color-secondary-500);
+  --form-highlight-text: #ffffff;
+}
+
+.u-form-theme-neutral {
+  --form-highlight-color: var(--color-neutral-900);
+  --form-highlight-text: #ffffff;
+  
+  .theme-dark & {
+    --form-highlight-color: #ffffff;
+    --form-highlight-text: var(--color-neutral-900);
+  }
+}
+
+/* Parent container sizes to change form sizes from any ancestor */
+.u-form-size-sm {
+  --form-padding-block: 0.35rem;
+  --form-padding-inline: 0.6rem;
+  --form-control-size: 1rem;
+  --form-switch-width: 2.05rem;
+  --form-switch-height: 1.1rem;
+  --form-switch-knob-size: 0.75rem;
+  --form-switch-knob-translate: 0.95rem;
+}
+
+.u-form-size-md {
+  --form-padding-block: 0.5rem;
+  --form-padding-inline: 0.75rem;
+  --form-control-size: 1.15rem;
+  --form-switch-width: 2.35rem;
+  --form-switch-height: 1.25rem;
+  --form-switch-knob-size: 0.85rem;
+  --form-switch-knob-translate: 1.1rem;
+}
+
+.u-form-size-lg {
+  --form-padding-block: 0.75rem;
+  --form-padding-inline: 1rem;
+  --form-control-size: 1.35rem;
+  --form-switch-width: 2.85rem;
+  --form-switch-height: 1.5rem;
+  --form-switch-knob-size: 1.05rem;
+  --form-switch-knob-translate: 1.35rem;
+}
 
 .c-field-group {
   margin-bottom: var(--space-iv);
@@ -12,7 +80,7 @@
   font-size: var(--font-size-iv);
   font-weight: var(--font-weight-600);
   color: var(--color-text-heading);
-  margin-bottom: var(--space-i);
+  margin-bottom: var(--space-ii);
 }
 
 .c-input {
@@ -23,26 +91,37 @@
   color: var(--color-input-text);
   background-color: var(--color-input-bg);
   border: 1px solid var(--color-input-border);
-  border-radius: var(--radius-iii);
-  padding: 0.5rem 0.75rem;
-  line-height: var(--line-height-none);
-  box-shadow: var(--shadow-inner);
-  transition: var(--transition-colors);
+  border-radius: var(--radius-ii);
+  padding: var(--form-padding-block) var(--form-padding-inline); /* Standardized padding */
+  line-height: 1.3; /* Adjusted to 1.3 to synchronize exactly with <select> height across browsers */
+  transition: background-color var(--transition-duration-fast) var(--transition-easing-premium),
+              border-color var(--transition-duration-fast) var(--transition-easing-premium),
+              box-shadow var(--transition-duration-fast) var(--transition-easing-premium);
   
   &::placeholder {
     color: var(--color-input-placeholder);
-    opacity: 1;
+    opacity: 0.75;
   }
   
   &:hover {
+    background-color: var(--color-input-hover-bg, var(--color-neutral-50));
     border-color: var(--color-neutral-400);
-    .theme-dark & { border-color: var(--color-neutral-600); }
+    .theme-dark & { 
+      background-color: var(--color-neutral-800);
+      border-color: var(--color-neutral-500); 
+    }
   }
   
   &:focus {
     outline: none;
-    border-color: var(--color-input-focus-border);
-    box-shadow: var(--shadow-focus), var(--shadow-inner);
+    background-color: var(--color-input-focus-bg, #ffffff);
+    border-color: var(--form-highlight-color); /* Highlight full border color */
+    box-shadow: var(--shadow-i);
+    
+    .theme-dark & {
+      background-color: var(--color-neutral-900);
+      border-color: var(--form-highlight-color);
+    }
   }
   
   &:disabled,
@@ -51,13 +130,68 @@
     color: var(--color-input-disabled-text);
     cursor: not-allowed;
     border-color: var(--color-border-subtle);
+    border-bottom-color: var(--color-border-subtle);
+    box-shadow: none;
+    opacity: 0.7;
   }
+
+  &[readonly] {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-600);
+    border-color: var(--color-border-subtle);
+    border-bottom-color: var(--color-border-subtle);
+    cursor: default;
+    box-shadow: none;
+
+    .theme-dark & {
+      background-color: var(--color-neutral-800);
+      color: var(--color-neutral-400);
+    }
+  }
+}
+
+/* File Upload input custom styling */
+input[type="file"].c-input {
+  padding: calc(var(--form-padding-block) - 0.15rem) var(--form-padding-inline);
+  cursor: pointer;
+  
+  &::file-selector-button {
+    background-color: var(--color-neutral-200);
+    border: none;
+    border-radius: var(--radius-i);
+    padding: 0.25rem 0.6rem;
+    font-size: var(--font-size-ii);
+    font-weight: var(--font-weight-600);
+    color: var(--color-neutral-800);
+    margin-right: var(--space-ii);
+    transition: background-color var(--transition-duration-fast) var(--transition-easing-premium);
+    cursor: pointer;
+    
+    .theme-dark & {
+      background-color: var(--color-neutral-700);
+      color: #ffffff;
+    }
+  }
+
+  &::file-selector-button:hover {
+    background-color: var(--color-neutral-300);
+    .theme-dark & {
+      background-color: var(--color-neutral-600);
+    }
+  }
+}
+
+/* Color input customization */
+input[type="color"].c-input {
+  height: calc(1.3em + var(--form-padding-block) * 2 + 2px);
+  padding: 0.25rem;
+  cursor: pointer;
 }
 
 /* Textarea modifier */
 textarea.c-input {
   line-height: var(--line-height-base);
-  min-height: 5rem;
+  min-height: 5.5rem;
   resize: vertical;
 }
 
@@ -65,9 +199,10 @@ textarea.c-input {
 select.c-input {
   padding-right: 2rem;
   appearance: none;
+  line-height: 1.3; /* Matches input exactly */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234b5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 0.75rem center;
+  background-position: right var(--form-padding-inline) center;
   background-size: 1rem 1rem;
   
   .theme-dark & {
@@ -81,7 +216,31 @@ select.c-input {
   border-color: var(--color-border-error) !important;
   
   &:focus {
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15), var(--shadow-inner) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+  }
+}
+
+.c-input--success {
+  border-color: var(--color-border-success) !important;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+  }
+}
+
+.c-input--warning {
+  border-color: var(--color-border-warning) !important;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(236, 120, 19, 0.15) !important;
+  }
+}
+
+.c-input--info {
+  border-color: var(--color-border-info) !important;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(38, 113, 217, 0.15) !important;
   }
 }
 
@@ -89,15 +248,190 @@ select.c-input {
   display: block;
   font-size: var(--font-size-ii);
   color: var(--color-text-error);
-  margin-top: var(--space-i);
+  margin-top: var(--space-ii);
+  font-weight: var(--font-weight-500);
+}
+
+.c-field-success-msg {
+  display: block;
+  font-size: var(--font-size-ii);
+  color: var(--color-text-success);
+  margin-top: var(--space-ii);
+  font-weight: var(--font-weight-500);
+}
+
+.c-field-warning-msg {
+  display: block;
+  font-size: var(--font-size-ii);
+  color: var(--color-text-warning);
+  margin-top: var(--space-ii);
+  font-weight: var(--font-weight-500);
+}
+
+.c-field-info-msg {
+  display: block;
+  font-size: var(--font-size-ii);
+  color: var(--color-text-info);
+  margin-top: var(--space-ii);
+  font-weight: var(--font-weight-500);
 }
 
 .c-field-help-msg {
   display: block;
   font-size: var(--font-size-ii);
   color: var(--color-text-body);
-  opacity: 0.8;
-  margin-top: var(--space-i);
+  opacity: 0.75;
+  margin-top: var(--space-ii);
+}
+
+/* --- Floating Labels (Pure CSS — Fieldset + Legend) --- */
+
+.c-field-group--floating {
+  position: relative;
+  margin-bottom: var(--space-iv);
+}
+
+.c-field-group--floating .c-fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-ii);
+  overflow: visible;
+  transition: border-color var(--transition-duration-fast) var(--transition-easing-premium);
+}
+
+/* Legend creates the notch in the top border.
+   Collapsed by default (no notch visible).
+   The browser natively cuts the border around the legend. */
+.c-field-group--floating .c-fieldset > legend {
+  margin-left: calc(var(--form-padding-inline) - 0.45rem);
+  padding: 0;
+  height: 0;
+  width: auto;
+  max-width: 0.01px;
+  overflow: hidden;
+  transition: max-width var(--transition-duration-fast) var(--transition-easing-premium);
+}
+
+.c-field-group--floating .c-fieldset > legend > span {
+  display: inline-block;
+  padding: 0 0.35rem;
+  font-size: var(--font-size-ii);
+  visibility: hidden; /* Hidden text — only used for sizing the notch gap */
+}
+
+/* Input inside floating field — remove its own border */
+.c-field-group--floating .c-input {
+  border: none;
+  border-radius: var(--radius-ii);
+  background-color: transparent;
+  width: 100%;
+  padding: var(--form-padding-block) var(--form-padding-inline);
+  box-shadow: none;
+  outline: none;
+}
+
+.c-field-group--floating .c-input:hover {
+  background-color: transparent;
+}
+
+.c-field-group--floating .c-input:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Label acts as placeholder — positioned over the input */
+.c-field-group--floating .c-label {
+  position: absolute;
+  left: var(--form-padding-inline);
+  top: 50%;
+  transform: translateY(-58%);
+  pointer-events: none;
+  color: var(--color-input-placeholder);
+  font-size: var(--font-size-iv);
+  font-weight: var(--font-weight-500);
+  margin-bottom: 0;
+  transition: top var(--transition-duration-fast) var(--transition-easing-premium),
+              left var(--transition-duration-fast) var(--transition-easing-premium),
+              transform var(--transition-duration-fast) var(--transition-easing-premium),
+              font-size var(--transition-duration-fast) var(--transition-easing-premium),
+              color var(--transition-duration-fast) var(--transition-easing-premium),
+              font-weight var(--transition-duration-fast) var(--transition-easing-premium);
+}
+
+/* Active state: label floats into the legend notch.
+   No background-color — the legend creates a real gap in the border. */
+.c-field-group--floating .c-input:focus ~ .c-label,
+.c-field-group--floating .c-input:not(:placeholder-shown) ~ .c-label {
+  top: 0;
+  transform: translateY(-58%);
+  font-size: var(--font-size-ii);
+  color: var(--form-highlight-color);
+  font-weight: var(--font-weight-700);
+  left: calc(var(--form-padding-inline) - 0.4rem);
+  padding: 0 0.25rem;
+}
+
+/* Expand legend notch when active — uses :has() because legend precedes input in DOM */
+.c-field-group--floating .c-fieldset:has(.c-input:focus) > legend,
+.c-field-group--floating .c-fieldset:has(.c-input:not(:placeholder-shown)) > legend {
+  max-width: 100%;
+}
+
+/* Fieldset highlight on focus */
+.c-field-group--floating:has(.c-input:focus) .c-fieldset {
+  border-color: var(--form-highlight-color);
+}
+
+/* Fieldset hover */
+.c-field-group--floating:has(.c-input:hover):not(:has(.c-input:focus)) .c-fieldset {
+  border-color: var(--color-neutral-400);
+}
+
+/* Status variants */
+.c-field-group--floating.c-field-group--error .c-fieldset {
+  border-color: var(--color-border-error);
+}
+.c-field-group--floating.c-field-group--error .c-input:focus ~ .c-label,
+.c-field-group--floating.c-field-group--error .c-input:not(:placeholder-shown) ~ .c-label {
+  color: var(--color-text-error);
+}
+.c-field-group--floating.c-field-group--error:has(.c-input:focus) .c-fieldset {
+  box-shadow: 0 0 0 1px var(--color-border-error);
+}
+
+.c-field-group--floating.c-field-group--success .c-fieldset {
+  border-color: var(--color-border-success);
+}
+.c-field-group--floating.c-field-group--success .c-input:focus ~ .c-label,
+.c-field-group--floating.c-field-group--success .c-input:not(:placeholder-shown) ~ .c-label {
+  color: var(--color-text-success);
+}
+.c-field-group--floating.c-field-group--success:has(.c-input:focus) .c-fieldset {
+  box-shadow: 0 0 0 1px var(--color-border-success);
+}
+
+.c-field-group--floating.c-field-group--warning .c-fieldset {
+  border-color: var(--color-border-warning);
+}
+.c-field-group--floating.c-field-group--warning .c-input:focus ~ .c-label,
+.c-field-group--floating.c-field-group--warning .c-input:not(:placeholder-shown) ~ .c-label {
+  color: var(--color-text-warning);
+}
+.c-field-group--floating.c-field-group--warning:has(.c-input:focus) .c-fieldset {
+  box-shadow: 0 0 0 1px var(--color-border-warning);
+}
+
+.c-field-group--floating.c-field-group--info .c-fieldset {
+  border-color: var(--color-border-info);
+}
+.c-field-group--floating.c-field-group--info .c-input:focus ~ .c-label,
+.c-field-group--floating.c-field-group--info .c-input:not(:placeholder-shown) ~ .c-label {
+  color: var(--color-text-info);
+}
+.c-field-group--floating.c-field-group--info:has(.c-input:focus) .c-fieldset {
+  box-shadow: 0 0 0 1px var(--color-border-info);
 }
 
 /* --- Inline Controls (Checkboxes & Radios) --- */
@@ -114,47 +448,275 @@ select.c-input {
 
 .c-input--checkbox,
 .c-input--radio {
-  width: 1rem;
-  height: 1rem;
-  border-radius: var(--radius-ii);
+  width: var(--form-control-size);
+  height: var(--form-control-size);
+  border-radius: var(--radius-i);
   border: 1px solid var(--color-input-border);
   background-color: var(--color-input-bg);
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   appearance: none;
-  transition: var(--transition-colors);
+  transition: background-color var(--transition-duration-fast) var(--transition-easing-premium),
+              border-color var(--transition-duration-fast) var(--transition-easing-premium),
+              box-shadow var(--transition-duration-fast) var(--transition-easing-premium),
+              width var(--transition-duration-fast) var(--transition-easing-premium),
+              height var(--transition-duration-fast) var(--transition-easing-premium);
   
   &:hover {
     border-color: var(--color-neutral-400);
+    background-color: var(--color-neutral-50);
+    .theme-dark & {
+      border-color: var(--color-neutral-500);
+      background-color: var(--color-neutral-800);
+    }
   }
   
   &:focus {
     outline: none;
     border-color: var(--color-input-focus-border);
-    box-shadow: var(--shadow-focus);
+    box-shadow: var(--form-focus-shadow);
   }
   
   &:checked {
-    background-color: var(--color-primary-500);
-    border-color: var(--color-primary-500);
+    background-color: var(--form-highlight-color);
+    border-color: var(--form-highlight-color);
+  }
+  
+  &:disabled {
+    background-color: var(--color-input-disabled-bg);
+    border-color: var(--color-border-subtle);
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }
 
 .c-input--checkbox:checked {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+  background-image: var(--svg-checkmark-active);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 0.75rem 0.75rem;
+  background-size: calc(var(--form-control-size) * 0.7) calc(var(--form-control-size) * 0.7);
+}
+
+/* Light checkmark adaptation for dark form backgrounds (Secondary and Neutral themes) */
+.u-form-theme-secondary .c-input--checkbox:checked,
+.u-form-theme-neutral .c-input--checkbox:checked {
+  background-image: var(--svg-checkmark-light);
+  
+  /* Reset to dark checkmark in dark mode neutral theme since the background turns white */
+  .theme-dark & {
+    background-image: var(--svg-checkmark-dark);
+  }
 }
 
 .c-input--radio {
   border-radius: var(--radius-full);
   
   &:checked {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3C/svg%3E");
+    background-image: var(--svg-radio-active);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 0.5rem 0.5rem;
+    background-size: calc(var(--form-control-size) * 0.5) calc(var(--form-control-size) * 0.5);
   }
 }
+
+/* Light indicator adaptation for dark form backgrounds (Secondary and Neutral themes) */
+.u-form-theme-secondary .c-input--radio:checked,
+.u-form-theme-neutral .c-input--radio:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3C/svg%3E");
+  
+  /* Reset to dark indicator in dark mode neutral theme since the background turns white */
+  .theme-dark & {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111827'%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3C/svg%3E");
+  }
+}
+
+/* --- Toggle Switch Component (.c-switch) --- */
+
+.c-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-iii);
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--font-size-iv);
+  color: var(--color-text-body);
+}
+
+.c-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.c-switch__slider {
+  width: var(--form-switch-width);
+  height: var(--form-switch-height);
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: background-color var(--transition-duration-fast) var(--transition-easing-premium),
+              border-color var(--transition-duration-fast) var(--transition-easing-premium),
+              width var(--transition-duration-fast) var(--transition-easing-premium),
+              height var(--transition-duration-fast) var(--transition-easing-premium);
+  display: inline-block;
+}
+
+.c-switch__slider::before {
+  content: "";
+  position: absolute;
+  width: var(--form-switch-knob-size);
+  height: var(--form-switch-knob-size);
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--color-text-muted, var(--color-neutral-600));
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-duration-fast) var(--transition-easing-premium),
+              background-color var(--transition-duration-fast) var(--transition-easing-premium),
+              width var(--transition-duration-fast) var(--transition-easing-premium),
+              height var(--transition-duration-fast) var(--transition-easing-premium);
+  
+  .theme-dark & {
+    background-color: var(--color-neutral-400);
+  }
+}
+
+.c-switch:hover .c-switch__slider {
+  border-color: var(--color-neutral-400);
+  background-color: var(--color-neutral-50);
+  
+  .theme-dark & {
+    border-color: var(--color-neutral-500);
+    background-color: var(--color-neutral-800);
+  }
+}
+
+.c-switch__input:checked + .c-switch__slider {
+  background-color: var(--form-highlight-color);
+  border-color: var(--form-highlight-color);
+}
+
+.c-switch__input:checked + .c-switch__slider::before {
+  transform: translateX(var(--form-switch-knob-translate));
+  background-color: var(--form-highlight-text); /* Dynamic knob color based on theme text contrast */
+}
+
+.c-switch__input:focus + .c-switch__slider {
+  box-shadow: var(--form-focus-shadow);
+}
+
+.c-switch__input:disabled + .c-switch__slider {
+  background-color: var(--color-input-disabled-bg);
+  border-color: var(--color-border-subtle);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.c-switch__input:disabled + .c-switch__slider::before {
+  background-color: var(--color-input-disabled-text);
+}
+
+/* --- Native HTML5 range slider inputs --- */
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1.25rem;
+  background: transparent;
+  cursor: pointer;
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.35rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-neutral-200);
+    transition: background-color var(--transition-duration-fast) var(--transition-easing-premium);
+    .theme-dark & { background-color: var(--color-neutral-800); }
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 0.35rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-neutral-200);
+    transition: background-color var(--transition-duration-fast) var(--transition-easing-premium);
+    .theme-dark & { background-color: var(--color-neutral-800); }
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: -0.4rem;
+    border-radius: var(--radius-full);
+    background-color: var(--form-highlight-color);
+    border: 2px solid var(--color-bg-card);
+    box-shadow: var(--shadow-ii);
+    transition: transform var(--transition-duration-fast) var(--transition-easing-premium),
+                background-color var(--transition-duration-fast) var(--transition-easing-premium);
+  }
+
+  &::-moz-range-thumb {
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: var(--radius-full);
+    background-color: var(--form-highlight-color);
+    border: 2px solid var(--color-bg-card);
+    box-shadow: var(--shadow-ii);
+    transition: transform var(--transition-duration-fast) var(--transition-easing-premium),
+                background-color var(--transition-duration-fast) var(--transition-easing-premium);
+  }
+
+  &:active {
+    &::-webkit-slider-thumb {
+      transform: scale(1.22);
+    }
+    &::-moz-range-thumb {
+      transform: scale(1.22);
+    }
+  }
+}
+
+/* --- Validation Icons on aria-invalid --- */
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="range"]),
+select {
+  &[aria-invalid] {
+    background-repeat: no-repeat;
+    background-size: 1.15rem 1.15rem;
+    
+    /* Reposition background image for <select> since it already has chevron arrow */
+    &:not(select) {
+      background-position: right var(--form-padding-inline) center;
+      padding-right: 2.2rem;
+    }
+    &::placeholder {
+      opacity: 0.6;
+    }
+  }
+
+  /* Invalid state - Red exclamation circle */
+  &[aria-invalid="true"] {
+    border-color: var(--color-border-error) !important;
+    border-bottom-color: var(--color-border-error) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23e02935'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(224, 41, 53, 0.15) !important;
+    }
+  }
+
+  /* Valid state - Green check circle */
+  &[aria-invalid="false"] {
+    border-color: var(--color-border-success) !important;
+    border-bottom-color: var(--color-border-success) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2383c76f'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(131, 199, 111, 0.15) !important;
+    }
+  }
+}
+

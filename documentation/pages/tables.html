@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,7 +40,7 @@
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
           <h1>Tablas de Datos (Tables)</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Tablas estructuradas para representar listados masivos de datos de forma limpia, responsiva y contrastada.
           </p>
         </header>
@@ -49,7 +50,7 @@
         <!-- Striped & Hover Table Section -->
         <section class="u-mb-vi">
           <h2>Tabla Cebrada e Interactiva</h2>
-          <p class="u-mb-v">Las clases modificadoras <code>.c-table--striped</code> y <code>.c-table--hover</code> colorean de forma alterna las filas del listado e iluminan la celda seleccionada al pasar el cursor (hover) para mejorar el escaneo de grandes columnas de datos.</p>
+          <p class="u-mb-v">Las clases modificadoras <code class="v-token-class">.c-table--striped</code> y <code class="v-token-class">.c-table--hover</code> colorean de forma alterna las filas del listado e iluminan la celda seleccionada al pasar el cursor (hover) para mejorar el escaneo de grandes columnas de datos.</p>
           
           <div class="c-table-container">
             <table class="c-table c-table--striped c-table--hover">
@@ -107,12 +108,169 @@
         <!-- Responsive Overflow Section -->
         <section class="u-mb-v">
           <h2>Responsividad Horizontal (.c-table-container)</h2>
-          <p class="u-mb-v">El contenedor inteligente <code>.c-table-container</code> aplica un scroll horizontal responsivo en pantallas móviles pequeñas para evitar la rotura o desborde del layout global de la página.</p>
+          <p class="u-mb-v">El contenedor inteligente <code class="v-token-class">.c-table-container</code> aplica un scroll horizontal responsivo en pantallas móviles pequeñas para evitar la rotura o desborde del layout global de la página.</p>
           
           <div class="c-card u-p-iv" style="border-style: dashed; border-color: var(--color-primary-300);">
-            <p class="u-text-2xs u-text-muted">
+            <p class="u-text-ii u-text-muted">
               Redimensiona tu navegador para simular una resolución de smartphone de menos de 480px de ancho y prueba a deslizar horizontalmente la tabla de arriba.
             </p>
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Modern Table Variants Section -->
+        <section class="u-mb-vi">
+          <h2>Tablas Modernas</h2>
+          <p class="u-mb-v">Variantes con estética limpia, transparente y minimalista. Cabeceras sin fondo, separadores ultra sutiles y filas con micro-interacciones premium.</p>
+          
+          <!-- Clean Standard Table -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Tabla Limpia (Clean) <code class="v-token-class u-ml-ii">.c-table--clean</code></div>
+              <div class="v-showcase__desc">Cabeceras transparentes con texto en mayúscula reducida, separadores de baja opacidad y contenedor sin bordes ni sombra.</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="c-table-container c-table-container--clean" style="width: 100%;">
+                <table class="c-table c-table--clean">
+                  <thead>
+                    <tr>
+                      <th class="c-table__th">Proyecto</th>
+                      <th class="c-table__th">Responsable</th>
+                      <th class="c-table__th">Progreso</th>
+                      <th class="c-table__th">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>Rediseño UI Dashboard</strong></td>
+                      <td class="c-table__td">Elena Martínez</td>
+                      <td class="c-table__td">85%</td>
+                      <td class="c-table__td">
+                        <span class="c-badge c-badge--soft c-badge--pill c-badge--success">En curso</span>
+                      </td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>Migración API v3</strong></td>
+                      <td class="c-table__td">Carlos Ruiz</td>
+                      <td class="c-table__td">42%</td>
+                      <td class="c-table__td">
+                        <span class="c-badge c-badge--soft c-badge--pill c-badge--warning">Revisión</span>
+                      </td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>Sistema de Notificaciones</strong></td>
+                      <td class="c-table__td">Ana López</td>
+                      <td class="c-table__td">100%</td>
+                      <td class="c-table__td">
+                        <span class="c-badge c-badge--soft c-badge--pill c-badge--primary">Completado</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Interactive Table -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Tabla Dinámica (Interactive) <code class="v-token-class u-ml-ii">.c-table--dynamic</code></div>
+              <div class="v-showcase__desc">Las filas responden al cursor con un realce de fondo sutil y bordes redondeados individuales. Incluye estado <code class="v-token-class">.c-table__tr--selected</code> con indicador lateral de color primario. <strong class="u-text-primary">Pasa el cursor por las filas.</strong></div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="c-table-container c-table-container--clean" style="width: 100%;">
+                <table class="c-table c-table--clean c-table--dynamic">
+                  <thead>
+                    <tr>
+                      <th class="c-table__th">Recurso</th>
+                      <th class="c-table__th">Tipo</th>
+                      <th class="c-table__th">Tamaño</th>
+                      <th class="c-table__th">Modificado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="c-table__tr c-table__tr--selected">
+                      <td class="c-table__td"><strong>design-tokens.json</strong></td>
+                      <td class="c-table__td">JSON</td>
+                      <td class="c-table__td">12.4 KB</td>
+                      <td class="c-table__td">Hace 2 horas</td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>button.css</strong></td>
+                      <td class="c-table__td">CSS</td>
+                      <td class="c-table__td">17.2 KB</td>
+                      <td class="c-table__td">Ayer</td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>input.css</strong></td>
+                      <td class="c-table__td">CSS</td>
+                      <td class="c-table__td">15.1 KB</td>
+                      <td class="c-table__td">Hace 3 días</td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td"><strong>visualizer.js</strong></td>
+                      <td class="c-table__td">JavaScript</td>
+                      <td class="c-table__td">18.1 KB</td>
+                      <td class="c-table__td">Hace 1 semana</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compact Table -->
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Tabla Compacta <code class="v-token-css u-ml-ii">.c-table--compact</code></div>
+              <div class="v-showcase__desc">Densidad reducida con padding y tipografía más pequeños, ideal para dashboards de alta densidad informativa y paneles administrativos.</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="c-table-container c-table-container--clean" style="width: 100%;">
+                <table class="c-table c-table--clean c-table--compact c-table--dynamic">
+                  <thead>
+                    <tr>
+                      <th class="c-table__th">Evento</th>
+                      <th class="c-table__th">Usuario</th>
+                      <th class="c-table__th">IP</th>
+                      <th class="c-table__th">Hora</th>
+                      <th class="c-table__th">Nivel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td">Login exitoso</td>
+                      <td class="c-table__td">admin@senia.es</td>
+                      <td class="c-table__td"><code>192.168.1.42</code></td>
+                      <td class="c-table__td">14:32:05</td>
+                      <td class="c-table__td"><span class="c-badge c-badge--soft c-badge--pill c-badge--success" style="font-size: var(--font-size-i);">OK</span></td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td">Acceso denegado</td>
+                      <td class="c-table__td">guest@senia.es</td>
+                      <td class="c-table__td"><code>10.0.0.15</code></td>
+                      <td class="c-table__td">14:28:11</td>
+                      <td class="c-table__td"><span class="c-badge c-badge--soft c-badge--pill c-badge--error" style="font-size: var(--font-size-i);">ERROR</span></td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td">Config. modificada</td>
+                      <td class="c-table__td">admin@senia.es</td>
+                      <td class="c-table__td"><code>192.168.1.42</code></td>
+                      <td class="c-table__td">14:15:33</td>
+                      <td class="c-table__td"><span class="c-badge c-badge--soft c-badge--pill c-badge--warning" style="font-size: var(--font-size-i);">WARN</span></td>
+                    </tr>
+                    <tr class="c-table__tr">
+                      <td class="c-table__td">Backup completado</td>
+                      <td class="c-table__td">sistema</td>
+                      <td class="c-table__td"><code>127.0.0.1</code></td>
+                      <td class="c-table__td">14:00:00</td>
+                      <td class="c-table__td"><span class="c-badge c-badge--soft c-badge--pill c-badge--info" style="font-size: var(--font-size-i);">INFO</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -27,6 +27,22 @@
   --shadow-vi:
     0 25px 50px -12px rgba(0, 0, 0, 0.15);
 
+  --shadow-vii:
+    0 30px 60px -15px rgba(0, 0, 0, 0.18),
+    0 12px 20px -10px rgba(0, 0, 0, 0.1);
+
+  --shadow-viii:
+    0 35px 70px -18px rgba(0, 0, 0, 0.2),
+    0 15px 25px -12px rgba(0, 0, 0, 0.12);
+
+  --shadow-ix:
+    0 40px 80px -20px rgba(0, 0, 0, 0.22),
+    0 20px 35px -15px rgba(0, 0, 0, 0.15);
+
+  --shadow-x:
+    0 50px 100px -25px rgba(0, 0, 0, 0.25),
+    0 25px 45px -20px rgba(0, 0, 0, 0.18);
+
   /* Special inner shadow for input fields */
   --shadow-inner:
     inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);

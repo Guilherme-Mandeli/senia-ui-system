@@ -1,0 +1,14 @@
+/* Grid Placement Utilities
+   Prefixes: u-place-
+*/
+
+/* ==========================================
+   PLACE ITEMS (place-items)
+   ========================================== */
+.u-place-items-start { place-items: start !important; }
+.u-place-items-end { place-items: end !important; }
+.u-place-items-center { place-items: center !important; }
+.u-place-items-stretch { place-items: stretch !important; }
+
+/* Legacy alias */
+.u-place-center { place-items: center !important; }

@@ -1,0 +1,6 @@
+/* Isolation Utilities
+   Prefixes: u-
+*/
+
+.u-isolate { isolation: isolate !important; }
+.u-isolation-auto { isolation: auto !important; }

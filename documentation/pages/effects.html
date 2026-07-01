@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efectos &amp; Animaciones - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+  <style>
+    /* Custom documentation playground styles */
+    .effects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-v);
+    }
+    
+    .demo-pulse-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-vi) var(--space-iv);
+      background-color: var(--color-neutral-100);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-iv);
+      position: relative;
+      text-align: center;
+      transition: border-color 0.2s ease;
+      
+      .theme-dark & {
+        background-color: var(--color-neutral-900);
+      }
+    }
+    
+    .status-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Efectos Avanzados</span>
+          <h1>Efectos y Animaciones</h1>
+          <p class="u-text-vi u-text-muted">
+            Colección de decoradores visuales dinámicos y micro-animaciones interactivas preconstruidas para dar vida a los componentes del sistema.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Seccion: Pulse Effect -->
+        <section class="u-mb-vi" id="sec-pulse-effect">
+          <h2>Efecto de Pulsación (Pulse Effect)</h2>
+          <p class="u-mb-v">
+            El efecto de pulsación proyecta una onda de color expansiva infinita o por demanda alrededor de cualquier elemento. 
+            Gracias a la propiedad CSS <code>isolation: isolate;</code>, el pseudo-elemento <code>::before</code> se dibuja de forma segura por encima del color de fondo del elemento padre pero por detrás de su contenido de texto/iconos, garantizando legibilidad y alta visibilidad sin conflictos de apilamiento.
+          </p>
+
+          <!-- Showcase Grid: Variantes Semanticas -->
+          <h3 class="u-mb-iv">Galería de Colores Semánticos (Infinitos con <code class="v-token-class">.u-pulse</code>)</h3>
+          <div class="effects-grid u-mb-vi">
+            
+            <!-- Primary Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">PRIMARY</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--primary u-pulse u-pulse-primary" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-primary</code>
+            </div>
+
+            <!-- Secondary Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">SECONDARY</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--secondary u-pulse u-pulse-secondary" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-secondary</code>
+            </div>
+
+            <!-- Success Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">SUCCESS</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--success u-pulse u-pulse-success" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-success</code>
+            </div>
+
+            <!-- Warning Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">WARNING</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--warning u-pulse u-pulse-warning" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-warning</code>
+            </div>
+
+            <!-- Error Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">ERROR / DANGER</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--error u-pulse u-pulse-error" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-error</code>
+            </div>
+
+            <!-- Info Pulse -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">INFO</span>
+              <div class="u-mb-v">
+                <span class="c-badge c-badge--dot c-badge--info u-pulse u-pulse-info" style="transform: scale(1.5);"></span>
+              </div>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-info</code>
+            </div>
+
+          </div>
+
+          <!-- Modos de Disparo / Solicitación -->
+          <h3 class="u-mb-iv">Modos de Disparo e Interacción (Pure CSS)</h3>
+          <p class="u-mb-v">
+            Además de la pulsación continua (infinita), el sistema permite configurar disparos interactivos bajo demanda usando únicamente pseudo-clases CSS:
+          </p>
+
+          <div class="effects-grid u-mb-vi">
+            
+            <!-- Hover Trigger -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">PULSACIÓN AL HOVER</span>
+              <div class="u-border-dashed u-border-neutral u-p-iii u-pulse-hover u-pulse-info">
+                Mantén el Cursor
+              </div>
+              <p class="u-text-3xs u-text-muted u-mt-ii">Pulsación infinita solo mientras dura el cursor encima.</p>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-hover</code>
+            </div>
+
+            <!-- Active / Click Trigger -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">PULSACIÓN AL HACER CLICK</span>
+              <button class="c-btn c-btn u-pulse-active u-pulse-success">
+                Haz Click Aquí
+              </button>
+              <p class="u-text-3xs u-text-muted u-mt-ii">Genera un único pulso táctil rápido e interactivo al presionar.</p>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-active</code>
+            </div>
+
+            <!-- Once Trigger -->
+            <div class="demo-pulse-card">
+              <span class="u-text-ii u-text-muted u-mb-v">PULSACIÓN ÚNICA (ON LOAD)</span>
+              <span class="c-badge c-badge--primary u-pulse-once u-pulse-primary">
+                Nuevo Elemento
+              </span>
+              <p class="u-text-3xs u-text-muted u-mt-ii">Ejecuta una sola onda de pulso al renderizarse el elemento.</p>
+              <code class="v-token-class u-border u-border-neutral u-mt-v">.u-pulse-once</code>
+            </div>
+
+          </div>
+
+          <!-- Documentacion de Uso -->
+          <h3>Instrucciones de Uso y HTML</h3>
+          <div class="c-card u-p-v">
+            <pre class="u-p-iii" style="background-color: var(--color-neutral-900); color: #c5c8c6; border-radius: var(--radius-ii); font-family: var(--font-family-mono); font-size: var(--font-size-ii); overflow-x: auto; margin-bottom: 0;">
+&lt;!-- 1. Pulsación Infinita (Predeterminada) --&gt;
+&lt;button class="c-btn c-btn--primary u-pulse u-pulse-primary"&gt;Infinito&lt;/button&gt;
+
+&lt;!-- 2. Solicitación / Disparo al pasar el ratón (Hover) --&gt;
+&lt;button class="c-btn c-btn--outline u-pulse-hover u-pulse-secondary"&gt;Hover Me&lt;/button&gt;
+
+&lt;!-- 3. Solicitación / Disparo al clickear (Active / Feedback) --&gt;
+&lt;button class="c-btn c-btn--primary u-pulse-active u-pulse-error"&gt;Click Me&lt;/button&gt;
+
+&lt;!-- 4. Pulsación Única al Cargar --&gt;
+&lt;span class="c-badge u-pulse-once u-pulse-info"&gt;Notificación&lt;/span&gt;</pre>
+          </div>
+        </section>
+
+        <!-- Especificacion Tecnica -->
+        <section class="u-mb-vi">
+          <h2>Especificación Técnica de Comportamientos</h2>
+          
+          <div class="c-table-container">
+            <table class="c-table c-table--striped">
+              <thead>
+                <tr>
+                  <th class="c-table__th">Clase CSS</th>
+                  <th class="c-table__th">Tipo de Disparo</th>
+                  <th class="c-table__th">Duración e Iteración</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>.u-pulse</code></td>
+                  <td class="c-table__td">Automático (Carga inicial)</td>
+                  <td class="c-table__td"><code>1.8s</code> - <strong>Infinite</strong></td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>.u-pulse-once</code></td>
+                  <td class="c-table__td">Automático (Carga inicial)</td>
+                  <td class="c-table__td"><code>1.6s</code> - <strong>1 iteración</strong> (forwards)</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>.u-pulse-hover</code></td>
+                  <td class="c-table__td">Interactivo (Hover / Foco)</td>
+                  <td class="c-table__td"><code>1.4s</code> - <strong>Infinite</strong> (mientras dure hover)</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>.u-pulse-active</code></td>
+                  <td class="c-table__td">Interactivo (Click / Touch)</td>
+                  <td class="c-table__td"><code>0.6s</code> - <strong>1 iteración</strong> (rápido feedback ripple)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

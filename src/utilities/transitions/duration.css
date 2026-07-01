@@ -1,0 +1,13 @@
+/* Transition Duration Utilities
+   Prefixes: u-duration-
+*/
+
+.u-duration-0 { transition-duration: 0s !important; }
+.u-duration-75 { transition-duration: 75ms !important; }
+.u-duration-100 { transition-duration: 100ms !important; }
+.u-duration-150 { transition-duration: 150ms !important; }
+.u-duration-200 { transition-duration: 200ms !important; }
+.u-duration-300 { transition-duration: 300ms !important; }
+.u-duration-500 { transition-duration: 500ms !important; }
+.u-duration-700 { transition-duration: 700ms !important; }
+.u-duration-1000 { transition-duration: 1000ms !important; }

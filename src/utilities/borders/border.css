@@ -1,0 +1,166 @@
+/* Border Utilities
+   Prefixes: u-
+*/
+
+/* ==========================================
+   BORDER INITIALIZERS & BASIC WIDTHS
+   ========================================== */
+.u-border { border: 1px solid var(--color-border-subtle); }
+.u-border-0 { border-width: 0; }
+.u-border-1 { border-width: 1px; }
+.u-border-2 { border-width: 2px; }
+.u-border-3 { border-width: 3px; }
+.u-border-4 { border-width: 4px; }
+.u-border-5 { border-width: 5px; }
+.u-border-6 { border-width: 6px; }
+.u-border-7 { border-width: 7px; }
+.u-border-8 { border-width: 8px; }
+.u-border-9 { border-width: 9px; }
+.u-border-10 { border-width: 10px; }
+
+/* Side Border Initializers (default width, style, color) */
+.u-border-t { border-top: 1px solid var(--color-border-subtle); }
+.u-border-b { border-bottom: 1px solid var(--color-border-subtle); }
+.u-border-l { border-left: 1px solid var(--color-border-subtle); }
+.u-border-r { border-right: 1px solid var(--color-border-subtle); }
+
+/* ==========================================
+   SIDE BORDER WIDTHS (TAMAÑOS POR LADO)
+   ========================================== */
+/* Top Border Widths */
+.u-border-t-0 { border-top-width: 0 !important; }
+.u-border-t-1 { border-top-width: 1px !important; }
+.u-border-t-2 { border-top-width: 2px !important; }
+.u-border-t-3 { border-top-width: 3px !important; }
+.u-border-t-4 { border-top-width: 4px !important; }
+.u-border-t-5 { border-top-width: 5px !important; }
+.u-border-t-6 { border-top-width: 6px !important; }
+.u-border-t-7 { border-top-width: 7px !important; }
+.u-border-t-8 { border-top-width: 8px !important; }
+.u-border-t-9 { border-top-width: 9px !important; }
+.u-border-t-10 { border-top-width: 10px !important; }
+
+/* Bottom Border Widths */
+.u-border-b-0 { border-bottom-width: 0 !important; }
+.u-border-b-1 { border-bottom-width: 1px !important; }
+.u-border-b-2 { border-bottom-width: 2px !important; }
+.u-border-b-3 { border-bottom-width: 3px !important; }
+.u-border-b-4 { border-bottom-width: 4px !important; }
+.u-border-b-5 { border-bottom-width: 5px !important; }
+.u-border-b-6 { border-bottom-width: 6px !important; }
+.u-border-b-7 { border-bottom-width: 7px !important; }
+.u-border-b-8 { border-bottom-width: 8px !important; }
+.u-border-b-9 { border-bottom-width: 9px !important; }
+.u-border-b-10 { border-bottom-width: 10px !important; }
+
+/* Left Border Widths */
+.u-border-l-0 { border-left-width: 0 !important; }
+.u-border-l-1 { border-left-width: 1px !important; }
+.u-border-l-2 { border-left-width: 2px !important; }
+.u-border-l-3 { border-left-width: 3px !important; }
+.u-border-l-4 { border-left-width: 4px !important; }
+.u-border-l-5 { border-left-width: 5px !important; }
+.u-border-l-6 { border-left-width: 6px !important; }
+.u-border-l-7 { border-left-width: 7px !important; }
+.u-border-l-8 { border-left-width: 8px !important; }
+.u-border-l-9 { border-left-width: 9px !important; }
+.u-border-l-10 { border-left-width: 10px !important; }
+
+/* Right Border Widths */
+.u-border-r-0 { border-right-width: 0 !important; }
+.u-border-r-1 { border-right-width: 1px !important; }
+.u-border-r-2 { border-right-width: 2px !important; }
+.u-border-r-3 { border-right-width: 3px !important; }
+.u-border-r-4 { border-right-width: 4px !important; }
+.u-border-r-5 { border-right-width: 5px !important; }
+.u-border-r-6 { border-right-width: 6px !important; }
+.u-border-r-7 { border-right-width: 7px !important; }
+.u-border-r-8 { border-right-width: 8px !important; }
+.u-border-r-9 { border-right-width: 9px !important; }
+.u-border-r-10 { border-right-width: 10px !important; }
+
+/* ==========================================
+   BORDER STYLES (ESTILOS GENERALES Y POR LADO)
+   ========================================== */
+/* General Styles */
+.u-border-solid { border-style: solid !important; }
+.u-border-dashed { border-style: dashed !important; }
+.u-border-dotted { border-style: dotted !important; }
+.u-border-double { border-style: double !important; }
+.u-border-none { border-style: none !important; }
+
+/* Top Border Styles */
+.u-border-t-solid { border-top-style: solid !important; }
+.u-border-t-dashed { border-top-style: dashed !important; }
+.u-border-t-dotted { border-top-style: dotted !important; }
+.u-border-t-double { border-top-style: double !important; }
+.u-border-t-none { border-top-style: none !important; }
+
+/* Bottom Border Styles */
+.u-border-b-solid { border-bottom-style: solid !important; }
+.u-border-b-dashed { border-bottom-style: dashed !important; }
+.u-border-b-dotted { border-bottom-style: dotted !important; }
+.u-border-b-double { border-bottom-style: double !important; }
+.u-border-b-none { border-bottom-style: none !important; }
+
+/* Left Border Styles */
+.u-border-l-solid { border-left-style: solid !important; }
+.u-border-l-dashed { border-left-style: dashed !important; }
+.u-border-l-dotted { border-left-style: dotted !important; }
+.u-border-l-double { border-left-style: double !important; }
+.u-border-l-none { border-left-style: none !important; }
+
+/* Right Border Styles */
+.u-border-r-solid { border-right-style: solid !important; }
+.u-border-r-dashed { border-right-style: dashed !important; }
+.u-border-r-dotted { border-right-style: dotted !important; }
+.u-border-r-double { border-right-style: double !important; }
+.u-border-r-none { border-right-style: none !important; }
+
+/* ==========================================
+   BORDER COLORS (COLORES GENERALES Y POR LADO)
+   ========================================== */
+/* General Colors */
+.u-border-primary { border-color: var(--color-primary-500) !important; }
+.u-border-neutral { border-color: var(--color-neutral-300) !important; }
+.u-border-secondary { border-color: var(--color-secondary-500) !important; }
+.u-border-success { border-color: var(--color-success-500) !important; }
+.u-border-warning { border-color: var(--color-warning-500) !important; }
+.u-border-error { border-color: var(--color-error-500) !important; }
+.u-border-info { border-color: var(--color-info-500) !important; }
+
+/* Top Border Colors */
+.u-border-t-primary { border-top-color: var(--color-primary-500) !important; }
+.u-border-t-neutral { border-top-color: var(--color-neutral-300) !important; }
+.u-border-t-secondary { border-top-color: var(--color-secondary-500) !important; }
+.u-border-t-success { border-top-color: var(--color-success-500) !important; }
+.u-border-t-warning { border-top-color: var(--color-warning-500) !important; }
+.u-border-t-error { border-top-color: var(--color-error-500) !important; }
+.u-border-t-info { border-top-color: var(--color-info-500) !important; }
+
+/* Bottom Border Colors */
+.u-border-b-primary { border-bottom-color: var(--color-primary-500) !important; }
+.u-border-b-neutral { border-bottom-color: var(--color-neutral-300) !important; }
+.u-border-b-secondary { border-bottom-color: var(--color-secondary-500) !important; }
+.u-border-b-success { border-bottom-color: var(--color-success-500) !important; }
+.u-border-b-warning { border-bottom-color: var(--color-warning-500) !important; }
+.u-border-b-error { border-bottom-color: var(--color-error-500) !important; }
+.u-border-b-info { border-bottom-color: var(--color-info-500) !important; }
+
+/* Left Border Colors */
+.u-border-l-primary { border-left-color: var(--color-primary-500) !important; }
+.u-border-l-neutral { border-left-color: var(--color-neutral-300) !important; }
+.u-border-l-secondary { border-left-color: var(--color-secondary-500) !important; }
+.u-border-l-success { border-left-color: var(--color-success-500) !important; }
+.u-border-l-warning { border-left-color: var(--color-warning-500) !important; }
+.u-border-l-error { border-left-color: var(--color-error-500) !important; }
+.u-border-l-info { border-left-color: var(--color-info-500) !important; }
+
+/* Right Border Colors */
+.u-border-r-primary { border-right-color: var(--color-primary-500) !important; }
+.u-border-r-neutral { border-right-color: var(--color-neutral-300) !important; }
+.u-border-r-secondary { border-right-color: var(--color-secondary-500) !important; }
+.u-border-r-success { border-right-color: var(--color-success-500) !important; }
+.u-border-r-warning { border-right-color: var(--color-warning-500) !important; }
+.u-border-r-error { border-right-color: var(--color-error-500) !important; }
+.u-border-r-info { border-right-color: var(--color-info-500) !important; }

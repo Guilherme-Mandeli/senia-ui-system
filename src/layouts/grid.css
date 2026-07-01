@@ -199,3 +199,14 @@
   --cols-xl: 12;
   --cols-2xl: 12;
 }
+
+/* Autoadaptative grid layout (stacks on mobile, equal columns on tablet+) */
+.l-grid--auto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap, var(--space-iii));
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+}

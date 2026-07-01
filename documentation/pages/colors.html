@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -37,9 +38,9 @@
       <div class="l-container">
         
         <header class="u-mb-vi">
-          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Tokens de Diseño</span>
           <h1>Sistema Cromático Corporativo (HSL)</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Paleta cromática corporativa del Grupo Senia basada en HSL. Cada color tiene una escala completa de 100 a 900 para garantizar consistencia y accesibilidad en todos los contextos de uso.
           </p>
         </header>
@@ -50,14 +51,14 @@
         <section class="u-mb-vi">
           <h2>Color primario: Amarillo Senia</h2>
           <p class="u-mb-iii">El color insignia de la marca. Utilizado en acentos de identidad visual, CTAs y elementos destacados.</p>
-          <p class="u-text-xs u-text-muted u-mb-v"><strong>Base HEX:</strong> <code>#FFEE58</code> &nbsp;|&nbsp; <strong>HSL:</strong> <code>hsl(52, 100%, 67%)</code></p>
+          <p class="u-text-iii u-text-muted u-mb-v"><strong>Base HEX:</strong> <code>#FFEE58</code> &nbsp;|&nbsp; <strong>HSL:</strong> <code>hsl(52, 100%, 67%)</code></p>
           <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
             
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-50);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-50</div>
                 <div class="v-swatch__name">Primary 50</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-50</div>
                 <div class="v-swatch__hex">#fffdf0</div>
               </div>
             </div>
@@ -65,8 +66,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-100);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-100</div>
                 <div class="v-swatch__name">Primary 100</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-100</div>
                 <div class="v-swatch__hex">#fffbdb</div>
               </div>
             </div>
@@ -74,8 +75,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-200);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-200</div>
                 <div class="v-swatch__name">Primary 200</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-200</div>
                 <div class="v-swatch__hex">#fff8b8</div>
               </div>
             </div>
@@ -83,8 +84,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-300);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-300</div>
                 <div class="v-swatch__name">Primary 300</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-300</div>
                 <div class="v-swatch__hex">#fff48f</div>
               </div>
             </div>
@@ -92,8 +93,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-400);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-400</div>
                 <div class="v-swatch__name">Primary 400</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-400</div>
                 <div class="v-swatch__hex">#fff170</div>
               </div>
             </div>
@@ -101,8 +102,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-500);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-500</div>
                 <div class="v-swatch__name"><strong>Primary 500</strong></div>
+                <div class="v-swatch__variable v-token-css">--color-primary-500</div>
                 <div class="v-swatch__hex">#ffee57</div>
               </div>
             </div>
@@ -110,8 +111,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-600);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-600</div>
                 <div class="v-swatch__name">Primary 600</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-600</div>
                 <div class="v-swatch__hex">#fae52e</div>
               </div>
             </div>
@@ -119,8 +120,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-700);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-700</div>
                 <div class="v-swatch__name">Primary 700</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-700</div>
                 <div class="v-swatch__hex">#e9d30c</div>
               </div>
             </div>
@@ -128,8 +129,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-800);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-800</div>
                 <div class="v-swatch__name">Primary 800</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-800</div>
                 <div class="v-swatch__hex">#b3a30f</div>
               </div>
             </div>
@@ -137,8 +138,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-900);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-900</div>
                 <div class="v-swatch__name">Primary 900</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-900</div>
                 <div class="v-swatch__hex">#81750e</div>
               </div>
             </div>
@@ -146,8 +147,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-primary-950);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-primary-950</div>
                 <div class="v-swatch__name">Primary 950</div>
+                <div class="v-swatch__variable v-token-css">--color-primary-950</div>
                 <div class="v-swatch__hex">#50490b</div>
               </div>
             </div>
@@ -161,14 +162,14 @@
         <section class="u-mb-vi">
           <h2>Color secundario: Esmeralda oscuro</h2>
           <p class="u-mb-iii">Utilizado en flujos secundarios, acentos complementarios y categorización visual.</p>
-          <p class="u-text-xs u-text-muted u-mb-v"><strong>Base HEX:</strong> <code>#315e4d</code> &nbsp;|&nbsp; <strong>HSL:</strong> <code>hsl(158, 32%, 28%)</code></p>
+          <p class="u-text-iii u-text-muted u-mb-v"><strong>Base HEX:</strong> <code>#315e4d</code> &nbsp;|&nbsp; <strong>HSL:</strong> <code>hsl(158, 32%, 28%)</code></p>
           <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
             
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-50);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-50</div>
                 <div class="v-swatch__name">Secondary 50</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-50</div>
                 <div class="v-swatch__hex">#f2f8f6</div>
               </div>
             </div>
@@ -176,8 +177,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-100);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-100</div>
                 <div class="v-swatch__name">Secondary 100</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-100</div>
                 <div class="v-swatch__hex">#e2eeea</div>
               </div>
             </div>
@@ -185,8 +186,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-200);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-200</div>
                 <div class="v-swatch__name">Secondary 200</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-200</div>
                 <div class="v-swatch__hex">#c5ddd4</div>
               </div>
             </div>
@@ -194,8 +195,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-300);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-300</div>
                 <div class="v-swatch__name">Secondary 300</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-300</div>
                 <div class="v-swatch__hex">#9ac1b3</div>
               </div>
             </div>
@@ -203,8 +204,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-400);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-400</div>
                 <div class="v-swatch__name">Secondary 400</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-400</div>
                 <div class="v-swatch__hex">#589d84</div>
               </div>
             </div>
@@ -212,8 +213,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-500);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-500</div>
                 <div class="v-swatch__name"><strong>Secondary 500</strong></div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-500</div>
                 <div class="v-swatch__hex">#315e4d</div>
               </div>
             </div>
@@ -221,8 +222,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-600);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-600</div>
                 <div class="v-swatch__name">Secondary 600</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-600</div>
                 <div class="v-swatch__hex">#275343</div>
               </div>
             </div>
@@ -230,8 +231,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-700);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-700</div>
                 <div class="v-swatch__name">Secondary 700</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-700</div>
                 <div class="v-swatch__hex">#1f4738</div>
               </div>
             </div>
@@ -239,8 +240,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-800);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-800</div>
                 <div class="v-swatch__name">Secondary 800</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-800</div>
                 <div class="v-swatch__hex">#173b2e</div>
               </div>
             </div>
@@ -248,8 +249,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-900);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-900</div>
                 <div class="v-swatch__name">Secondary 900</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-900</div>
                 <div class="v-swatch__hex">#102d23</div>
               </div>
             </div>
@@ -257,8 +258,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-secondary-950);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-secondary-950</div>
                 <div class="v-swatch__name">Secondary 950</div>
+                <div class="v-swatch__variable v-token-css">--color-secondary-950</div>
                 <div class="v-swatch__hex">#0a1f17</div>
               </div>
             </div>
@@ -272,14 +273,14 @@
         <section class="u-mb-vi">
           <h2>Paleta neutral: Gris puro Senia</h2>
           <p class="u-mb-iii">Escala acromática que define fondos de página, bordes, divisiones y escalas de texto.</p>
-          <p class="u-text-xs u-text-muted u-mb-v"><strong>Referencia de Marca:</strong> <code>#545454</code> (600) &nbsp;→&nbsp; <code>#0F0F0F</code> (950)</p>
+          <p class="u-text-iii u-text-muted u-mb-v"><strong>Referencia de Marca:</strong> <code>#545454</code> (600) &nbsp;→&nbsp; <code>#0F0F0F</code> (950)</p>
           <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
             
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-50);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-50</div>
                 <div class="v-swatch__name">Neutral 50</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-50</div>
                 <div class="v-swatch__hex">#f8f8f8</div>
               </div>
             </div>
@@ -287,8 +288,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-100);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-100</div>
                 <div class="v-swatch__name">Neutral 100</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-100</div>
                 <div class="v-swatch__hex">#f2f2f2</div>
               </div>
             </div>
@@ -296,8 +297,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-200);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-200</div>
                 <div class="v-swatch__name">Neutral 200</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-200</div>
                 <div class="v-swatch__hex">#e6e6e6</div>
               </div>
             </div>
@@ -305,8 +306,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-300);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-300</div>
                 <div class="v-swatch__name">Neutral 300</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-300</div>
                 <div class="v-swatch__hex">#cccccc</div>
               </div>
             </div>
@@ -314,8 +315,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-400);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-400</div>
                 <div class="v-swatch__name">Neutral 400</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-400</div>
                 <div class="v-swatch__hex">#a6a6a6</div>
               </div>
             </div>
@@ -323,8 +324,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-500);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-500</div>
                 <div class="v-swatch__name">Neutral 500</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-500</div>
                 <div class="v-swatch__hex">#808080</div>
               </div>
             </div>
@@ -332,8 +333,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-600);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-600</div>
                 <div class="v-swatch__name"><strong>Neutral 600</strong></div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-600</div>
                 <div class="v-swatch__hex">#545454</div>
               </div>
             </div>
@@ -341,8 +342,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-700);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-700</div>
                 <div class="v-swatch__name">Neutral 700</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-700</div>
                 <div class="v-swatch__hex">#474747</div>
               </div>
             </div>
@@ -350,8 +351,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-800);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-800</div>
                 <div class="v-swatch__name">Neutral 800</div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-800</div>
                 <div class="v-swatch__hex">#2e2e2e</div>
               </div>
             </div>
@@ -359,8 +360,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-900);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-900</div>
                 <div class="v-swatch__name"><strong>Neutral 900</strong></div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-900</div>
                 <div class="v-swatch__hex">#1a1a1a</div>
               </div>
             </div>
@@ -368,8 +369,8 @@
             <div class="v-swatch">
               <div class="v-swatch__color" style="background-color: var(--color-neutral-950);"></div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-neutral-950</div>
                 <div class="v-swatch__name"><strong>Neutral 950</strong></div>
+                <div class="v-swatch__variable v-token-css">--color-neutral-950</div>
                 <div class="v-swatch__hex">#0f0f0f</div>
               </div>
             </div>
@@ -383,7 +384,7 @@
         <section class="u-mb-vi">
           <h2>Paleta corporativa</h2>
           <p class="u-mb-iii">Paleta para fondos decorativos, secciones hero, banners y superficies.</p>
-          <p class="u-text-xs u-text-muted u-mb-v"><strong>Referencia de Marca:</strong> <code>#f5ebd2</code> (200) &nbsp;→&nbsp; <code>#ebe8c2</code> (300)</p>
+          <p class="u-text-iii u-text-muted u-mb-v"><strong>Referencia de Marca:</strong> <code>#f5ebd2</code> (200) &nbsp;→&nbsp; <code>#ebe8c2</code> (300)</p>
           <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
 
             <div class="v-swatch">
@@ -393,8 +394,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-cream-dark);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-cream-<i style="color: var(--color-neutral-500);">{light/dark}</i></div>
                 <div class="v-swatch__name">Cream</div>
+                <div class="v-swatch__variable v-token-css">--color-cream-<i style="color: var(--color-neutral-400);">{light/dark}</i></div>
                 <div class="v-swatch__hex">#fff8d6</div>
               </div>
             </div>
@@ -406,8 +407,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-sand-dark);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-sand-<i style="color: var(--color-neutral-500);">{light/dark}</i></div>
                 <div class="v-swatch__name">Sand</div>
+                <div class="v-swatch__variable v-token-css">--color-sand-<i style="color: var(--color-neutral-400);">{light/dark}</i></div>
                 <div class="v-swatch__hex">#e6e1cd</div>
               </div>
             </div>
@@ -419,8 +420,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-sage-dark);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-sage-<i style="color: var(--color-neutral-500);">{light/dark}</i></div>
                 <div class="v-swatch__name">Sage</div>
+                <div class="v-swatch__variable v-token-css">--color-sage-<i style="color: var(--color-neutral-400);">{light/dark}</i></div>
                 <div class="v-swatch__hex">#ebe8c2</div>
               </div>
             </div>
@@ -450,8 +451,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-success-900);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-success-<i style="color: var(--color-neutral-500);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__name">Success (Éxito)</div>
+                <div class="v-swatch__variable v-token-css">--color-success-<i style="color: var(--color-neutral-400);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__hex u-mb-iii">#83c76f</div>
                 <div class="v-swatch__example v-swatch__example--success">Ejemplo de éxito</div>
               </div>
@@ -471,8 +472,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-warning-900);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-warning-<i style="color: var(--color-neutral-500);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__name">Warning (Alerta)</div>
+                <div class="v-swatch__variable v-token-css">--color-warning-<i style="color: var(--color-neutral-400);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__hex u-mb-iii">#ec7813</div>
                 <div class="v-swatch__example v-swatch__example--warning">Ejemplo de alerta</div>
               </div>
@@ -492,8 +493,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-error-900);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-error-<i style="color: var(--color-neutral-500);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__name">Error (Peligro)</div>
+                <div class="v-swatch__variable v-token-css">--color-error-<i style="color: var(--color-neutral-400);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__hex u-mb-iii">#e02935</div>
                 <div class="v-swatch__example v-swatch__example--error">Ejemplo de peligro</div>
               </div>
@@ -513,8 +514,8 @@
                 <div class="v-swatch__color" style="background-color: var(--color-info-900);"></div>
               </div>
               <div class="v-swatch__body">
-                <div class="v-swatch__variable">--color-info-<i style="color: var(--color-neutral-500);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__name">Info (Información)</div>
+                <div class="v-swatch__variable v-token-css">--color-info-<i style="color: var(--color-neutral-400);">{x}</i> <span>100 → 900</span></div>
                 <div class="v-swatch__hex u-mb-iii">#2671d9</div>
                 <div class="v-swatch__example v-swatch__example--info">Ejemplo de información</div>
               </div>

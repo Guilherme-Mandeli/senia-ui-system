@@ -1,0 +1,17 @@
+/* Skew Utilities
+   Prefixes: u-skew-
+*/
+
+.u-skew-x-0 { transform: skewX(0deg) !important; }
+.u-skew-x-1 { transform: skewX(1deg) !important; }
+.u-skew-x-2 { transform: skewX(2deg) !important; }
+.u-skew-x-3 { transform: skewX(3deg) !important; }
+.u-skew-x-6 { transform: skewX(6deg) !important; }
+.u-skew-x-12 { transform: skewX(12deg) !important; }
+
+.u-skew-y-0 { transform: skewY(0deg) !important; }
+.u-skew-y-1 { transform: skewY(1deg) !important; }
+.u-skew-y-2 { transform: skewY(2deg) !important; }
+.u-skew-y-3 { transform: skewY(3deg) !important; }
+.u-skew-y-6 { transform: skewY(6deg) !important; }
+.u-skew-y-12 { transform: skewY(12deg) !important; }

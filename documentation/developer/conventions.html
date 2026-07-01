@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,7 +40,7 @@
         <header class="u-mb-v">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Estándares del Framework</span>
           <h1>Convenciones &amp; Filosofía</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Directrices de diseño técnico, nomenclatura semántica y políticas de apilamiento jerárquico.
           </p>
         </header>
@@ -65,28 +66,28 @@
             <!-- Section 1: Filosofía -->
             <section id="sec-filosofia" class="l-conventions-section">
               <h2>Filosofía General</h2>
-              <p class="u-text-md u-text-muted u-mb-v">
+              <p class="u-text-v u-text-muted u-mb-v">
                 Senia UI se sustenta en tres principios fundamentales que guían cómo escribimos estilos y estructuramos componentes:
               </p>
               
               <div class="u-grid u-grid-cols-1 u-grid-gap-md u-mb-vi" style="grid-template-columns: 1fr;">
                 <div class="c-card u-p-v">
                   <h4 class="u-text-primary u-mb-ii">1. CSS Nativo sobre Abstracciones</h4>
-                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                  <p class="u-text-iv u-text-muted" style="margin-bottom: 0;">
                     Priorizamos el uso de estándares web modernos como <strong>CSS Custom Properties</strong>, <strong>Cascading Layers (@layer)</strong> y anidamiento nativo. Evitamos el uso excesivo de frameworks de terceros para asegurar un rendimiento de carga óptimo de 100% en navegadores.
                   </p>
                 </div>
                 
                 <div class="c-card u-p-v">
                   <h4 class="u-text-primary u-mb-ii">2. Componentes Cohesivos con Utilidades de Apoyo</h4>
-                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                  <p class="u-text-iv u-text-muted" style="margin-bottom: 0;">
                     A diferencia del enfoque 100% atómico (Utility-First), defendemos el uso de **Componentes Robustos** que encapsulan los estilos de la marca y se apoyan en **Clases Utility** puntuales únicamente para retocar márgenes o alineaciones. Esto mantiene nuestro HTML limpio y semántico.
                   </p>
                 </div>
 
                 <div class="c-card u-p-v">
                   <h4 class="u-text-primary u-mb-ii">3. Flexibilidad Temática Dinámica</h4>
-                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                  <p class="u-text-iv u-text-muted" style="margin-bottom: 0;">
                     Al usar variables CSS globales en lugar de variables compiladas (como en Sass/Less), habilitamos el cambio dinámico de modos claro/oscuro o marcas corporativas en tiempo de ejecución de forma nativa e instantánea.
                   </p>
                 </div>
@@ -131,7 +132,7 @@
               
               <div class="c-card u-p-v u-mb-v">
                 <h4>¿Por qué desagregar componentes HSL?</h4>
-                <p class="u-text-sm u-text-muted">
+                <p class="u-text-iv u-text-muted">
                   Escribir los colores como variables de componentes individuales nos permite modificar dinámicamente la opacidad (usando la función CSS <code>color-mix</code> o <code>rgba()</code>) o la luminosidad en hovers y estados activos, sin necesidad de declarar una variable nueva para cada caso.
                 </p>
                 
@@ -156,7 +157,7 @@
             <!-- Section 4: Fuentes y Tipografía -->
             <section id="sec-fuentes" class="l-conventions-section">
               <h2>Fuentes y Tipografía</h2>
-              <p class="u-text-md u-text-muted u-mb-v">
+              <p class="u-text-v u-text-muted u-mb-v">
                 Estándares tipográficos, escala de tamaños relativos y optimización del CDN de fuentes corporativo en Senia UI.
               </p>
 
@@ -186,10 +187,10 @@
 
                 <div class="c-card u-p-v u-mt-v" style="background-color: rgba(255, 238, 88, 0.015); border: 1px dashed var(--color-border-card);">
                   <h4 class="u-text-primary u-mb-ii">💼 Contexto Serio: Tipografía Lato</h4>
-                  <p class="u-text-sm u-mb-iv">
+                  <p class="u-text-iv u-mb-iv">
                     Para productos corporativos o secciones con un <strong>contexto más formal y serio</strong> (ej. informes corporativos, paneles legales, políticas de privacidad), configuramos e integramos la tipografía **Lato**.
                   </p>
-                  <p class="u-text-sm u-mb-iv">
+                  <p class="u-text-iv u-mb-iv">
                     El token global es <code>--font-family-lato</code>, y puedes activarlo en cascada de forma nativa e instantánea añadiendo la clase <code>.theme-serious</code> o el atributo <code>data-theme="serious"</code> a cualquier contenedor de tu DOM:
                   </p>
                   <pre style="margin-bottom: 0;"><code>&lt;!-- Cambiar todo el contenido de una sección a la fuente Lato --&gt;
@@ -289,27 +290,27 @@
                 <div class="u-grid u-grid-cols-2 u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
                   <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-300);">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 300; font-size: var(--font-size-md);">Gill Sans Light (300)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Reservado para subtítulos ligeros de gran tamaño.</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">Reservado para subtítulos ligeros de gran tamaño.</p>
                   </div>
                   <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-400);">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 400; font-size: var(--font-size-md);">Gill Sans Regular (400)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Párrafos de texto, cuerpo base, menús principales.</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">Párrafos de texto, cuerpo base, menús principales.</p>
                   </div>
                   <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-neutral-500);">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 500; font-size: var(--font-size-md);">Gill Sans Medium (500)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Elementos interactivos con énfasis sutil.</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">Elementos interactivos con énfasis sutil.</p>
                   </div>
                   <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-primary-500);">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 600; font-size: var(--font-size-md);">Gill Sans Semibold (600)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">El peso por defecto para todos los encabezados (H1-H6).</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">El peso por defecto para todos los encabezados (H1-H6).</p>
                   </div>
                   <div class="c-card u-p-iv" style="border-left: 3px solid var(--color-primary-700);">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 700; font-size: var(--font-size-md);">Gill Sans Bold (700)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Negrita estándar para textos con fuerte importancia semántica.</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">Negrita estándar para textos con fuerte importancia semántica.</p>
                   </div>
                   <div class="c-card u-p-iv" style="border-left: 3px solid #000;">
                     <strong style="font-family: var(--font-family-gill-sans); font-weight: 900; font-size: var(--font-size-md);">Gill Sans Heavy (900)</strong>
-                    <p class="u-text-2xs u-text-muted u-mt-i" style="margin-bottom: 0;">Máxima contundencia tipográfica para textos Hero.</p>
+                    <p class="u-text-ii u-text-muted u-mt-i" style="margin-bottom: 0;">Máxima contundencia tipográfica para textos Hero.</p>
                   </div>
                 </div>
               </div>
@@ -322,7 +323,7 @@
                 <div class="c-card u-p-v" style="background-color: rgba(16, 185, 129, 0.02); border: 1px solid var(--color-success-200);">
                   <span class="c-badge c-badge--success c-badge--pill u-mb-iii">Estándar LCP</span>
                   <h4>Carga diferida bajo demanda (Lazy Loading Nativo)</h4>
-                  <p class="u-text-sm u-text-muted" style="margin-bottom: 0;">
+                  <p class="u-text-iv u-text-muted" style="margin-bottom: 0;">
                     A nivel de hoja de estilos corporativa, registramos las variantes de la tipografía Gill Sans usando reglas <code>@font-face</code>. Sin embargo, los navegadores modernos **solo descargan el archivo de la fuente del CDN si existe al menos un elemento en el DOM usando ese peso específico**.
                     <br><br>
                     Esto significa que al usar por defecto únicamente los pesos `400` y `600` en tu layout, las variantes `Light (300)`, `Bold (700)` o `Heavy (900)` **nunca consumirán ancho de banda de tu usuario**, optimizando al máximo el LCP (Largest Contentful Paint) y la velocidad de carga inicial.
@@ -350,7 +351,7 @@
                 Para evitar los dolores de cabeza que provocan los números arbitrarios de `z-index` (como `9999` o `999999`), el sistema de diseño gestiona el espacio tridimensional del navegador usando una escala estricta y predecible de tokens.
               </p>
               
-              <p class="u-text-sm u-text-muted">
+              <p class="u-text-iv u-text-muted">
                 <strong>Haz clic en cualquier capa</strong> del modelo 3D isométrico a continuación para consultar su definición, el token correspondiente en CSS y un caso de uso recomendado.
               </p>
 
@@ -482,7 +483,7 @@
               <!-- Z-Index Utilities Sub-section -->
               <div class="c-card u-p-v u-mt-vi">
                 <h3 style="font-size: var(--font-size-vi); margin-top: 0;">Clases de Utilidad de Apilamiento (Z-Index Utilities)</h3>
-                <p class="u-text-sm u-text-muted u-mb-iv">
+                <p class="u-text-iv u-text-muted u-mb-iv">
                   En lugar de escribir estilos embebidos, puedes aplicar directamente las clases de utilidad estructuradas bajo el patrón <code>.u-z-[capa]</code> en tu HTML.
                 </p>
 

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalización de Temas - Senia UI CSS Framework</title>
+    <link rel="stylesheet" href="../../src/style.css" />
+    <link rel="stylesheet" href="../visualizer.css" />
+    <script type="module" src="../visualizer.js"></script>
+  </head>
+  <body class="v-body">
+    <!-- Header -->
+    <header class="v-header">
+      <div class="v-header__logo">
+        <img class="logo-positive" src="/public/logo-senia.png" width="85px" />
+        <img
+          class="logo-negative"
+          src="/public/logo-senia-negative.webp"
+          width="85px"
+        />
+        <span style="margin-left: var(--space-ii); transform: translateY(3px)"
+          >UI CSS Framework</span
+        >
+      </div>
+      <div class="v-theme-switch">
+        <span>MODO OSCURO</span>
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          class="v-theme-switch__input"
+        />
+        <label for="theme-toggle" class="v-theme-switch__toggle">
+          <div class="v-theme-switch__knob"></div>
+        </label>
+      </div>
+    </header>
+
+    <!-- Main Showcase Container -->
+    <div class="v-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="v-sidebar"></aside>
+
+      <!-- Content Canvas -->
+      <main class="v-content">
+        <div class="l-container">
+          <header class="u-mb-vi">
+            <span class="c-badge c-badge--primary c-badge--pill u-mb-iii"
+              >Guía de Desarrollo</span
+            >
+            <h1>Personalización de Temas (Highlight &amp; Accents)</h1>
+            <p class="u-text-vi u-text-muted">
+              Aprende a personalizar el color de acento y resaltar toda la web
+              de forma simple mediante variables de configuración CSS y
+              fallbacks neutros de alta accesibilidad.
+            </p>
+          </header>
+
+          <hr class="u-mb-vi" />
+
+          <!-- Concepts Section -->
+          <section class="u-mb-vi">
+            <h2>Filosofía de Variables de Configuración</h2>
+            <p class="u-mb-iii">
+              Senia UI libera variables personalizadas específicas que actúan
+              como la "semilla cromática" del sitio web. Por defecto, si el
+              desarrollador no define estas variables, el framework utiliza
+              **colores neutros de alto contraste** (negro en modo claro y
+              blanco en modo oscuro) garantizando una legibilidad óptima
+              out-of-the-box.
+            </p>
+            <div
+              class="c-card u-p-iv u-mb-iv"
+              style="
+                background-color: var(--color-bg-warm-subtle);
+                border-left: 4px solid var(--color-highlight);
+              "
+            >
+              <h4 class="u-mb-ii">Regla de Oro de Accesibilidad y Control</h4>
+              <p class="u-text-iv u-mb-none">
+                <strong>Importante:</strong> El framework **nunca utiliza los
+                colores primarios y secundarios corporativos como fallback por
+                defecto**. Dado que la paleta primaria (ej. Amarillo Senia)
+                puede ser muy clara y comprometer el contraste WCAG en fondos
+                claros, los fallbacks por defecto están vinculados estrictamente
+                a la paleta neutra (Gris muy oscuro
+                <code>var(--color-neutral-900)</code> en modo claro, y Gris muy
+                claro <code>var(--color-neutral-100)</code> en modo oscuro)
+                sobre los cuales tenemos control absoluto de legibilidad.
+              </p>
+            </div>
+          </section>
+
+          <!-- Live Playground Showcase -->
+          <section class="u-mb-vi">
+            <h2>Laboratorio de Color en Vivo</h2>
+            <p class="u-mb-v">
+              Usa el selector de abajo para cambiar dinámicamente el color
+              primario de configuración y observa cómo responden
+              instantáneamente los botones, enlaces, progresos y switches de la
+              página:
+            </p>
+
+            <div class="v-showcase u-mb-v">
+              <div class="v-showcase__header">
+                <div class="v-showcase__title">
+                  Selector de Color Interactivo
+                </div>
+              </div>
+              <div class="v-showcase__preview u-flex-column">
+                <!-- Color Pickers Row -->
+                <div
+                  class="u-flex u-flex-wrap u-gap-iv u-mb-vi u-w-full u-p-v u-border u-radius-iii"
+                  style="background-color: var(--color-bg-card);"
+                >
+                  <div class="c-field-group u-m-none" style="max-width: 200px">
+                    <label for="color-picker-primary" class="c-label"
+                      >Color Highlight</label
+                    >
+                    <input
+                      type="color"
+                      id="color-picker-primary"
+                      class="c-input"
+                      value="#1e40af"
+                      style="height: 42px; padding: var(--space-i)"
+                    />
+                  </div>
+
+                  <div class="c-field-group u-m-none" style="max-width: 220px">
+                    <label for="color-picker-contrast" class="c-label"
+                      >Color Texto (Contraste)</label
+                    >
+                    <select id="color-picker-contrast" class="c-input">
+                      <option value="#ffffff" selected>Blanco (#ffffff)</option>
+                      <option value="#0f172a">Gris muy Oscuro (#0f172a)</option>
+                    </select>
+                  </div>
+
+                  <div class="u-flex u-align-end">
+                    <button
+                      id="btn-reset-theme"
+                      class="c-btn c-btn--outline c-btn--sm"
+                    >
+                      Restablecer a Neutro
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Interactive Demo Elements -->
+                <div class="l-grid l-grid--3col u-w-full u-gap-v">
+                  <!-- Buttons column -->
+                  <div class="u-flex-column u-gap-iii">
+                    <h4 class="u-mb-ii">Botones de Acción</h4>
+                    <button class="c-btn c-btn--primary u-w-full u-mb-ii">
+                      Botón Primario
+                    </button>
+                    <button
+                      class="c-btn c-btn--primary c-btn--outline u-w-full u-mb-ii"
+                    >
+                      Botón Contorneado
+                    </button>
+                    <button
+                      class="c-btn c-btn--primary c-btn--ghost u-w-full u-mb-ii"
+                    >
+                      Botón Ghost
+                    </button>
+                  </div>
+
+                  <!-- Forms column -->
+                  <div class="u-flex-column u-gap-iii">
+                    <h4 class="u-mb-ii">Inputs y Controles</h4>
+                    <div class="c-field-group">
+                      <input
+                        type="text"
+                        class="c-input"
+                        placeholder="Haz clic para ver borde de foco..."
+                        value="Campo de entrada"
+                      />
+                    </div>
+                    <div class="u-flex u-gap-iv u-items-center">
+                      <label class="c-choice-label">
+                        <input
+                          type="checkbox"
+                          class="c-input--checkbox"
+                          checked
+                        />
+                        <span>Casilla activa</span>
+                      </label>
+                      <label class="c-switch">
+                        <input
+                          type="checkbox"
+                          class="c-switch__input"
+                          checked
+                        />
+                        <span class="c-switch__slider"></span>
+                        <span>Switch</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Text, Links & Loaders column -->
+                  <div class="u-flex-column u-gap-iii">
+                    <h4 class="u-mb-ii">Textos y Progreso</h4>
+                    <p class="u-text-iv">
+                      Visita el sitio de
+                      <a href="#" onclick="return false;">Grupo Senia</a> para
+                      más detalles.
+                    </p>
+                    <progress value="65" max="100"></progress>
+                    <div class="u-flex u-items-center u-gap-ii">
+                      <span>Estado:</span>
+                      <span class="u-text-semibold" aria-busy="true"
+                        >Cargando recurso...</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Code integration instructions -->
+          <section class="u-mb-vi">
+            <h2>Cómo Integrarlo en tu Proyecto</h2>
+            <p class="u-mb-iv">
+              Para personalizar el aspecto cromático del framework en tu sitio
+              web, simplemente declara las variables de configuración en tu hoja
+              de estilos principal dentro del selector <code>:root</code> y de
+              la clase <code>.theme-dark</code>:
+            </p>
+
+            <pre><code>/* Variables configuradas por el desarrollador */
+:root {
+  --senia-primary-color: #1e40af;       /* Highlight en modo claro */
+  --senia-primary-hover: #1d4ed8;       /* Hover en modo claro */
+  --senia-primary-light: #eff6ff;       /* Alertas o fondos suaves */
+  --senia-primary-contrast: #ffffff;    /* Texto sobre fondo highlight */
+
+  /* Opcional: Si el acento es oscuro, fuerza el checkmark/radio de los inputs a blanco */
+  --senia-svg-checkmark: var(--svg-checkmark-light);
+  --senia-svg-radio: var(--svg-radio-light);
+}
+
+/* Sobrescribir los acentos solo para modo oscuro */
+.theme-dark {
+  --senia-primary-color-dark: #60a5fa;  /* Highlight en modo oscuro */
+  --senia-primary-hover-dark: #93c5fd;  /* Hover en modo oscuro */
+  --senia-primary-light-dark: #1e293b;  
+  --senia-primary-contrast-dark: #0f172a; /* Texto sobre highlight oscuro */
+
+  /* Opcional: Si en modo oscuro prefieres checkmark oscuro */
+  --senia-svg-checkmark: var(--svg-checkmark-dark);
+  --senia-svg-radio: var(--svg-radio-dark);
+}</code></pre>
+          </section>
+
+          <!-- Files and Main Variables Section -->
+          <section class="u-mb-vi">
+            <h2>Ubicación y Variables Clave</h2>
+            <p class="u-mb-iv">
+              Las variables de estilos base y temas se encuentran organizadas en los siguientes ficheros dentro de la estructura de tokens:
+            </p>
+            <ul>
+              <li><strong><a href="file:///s:/MARKETING/GUILHERME/grupo-senia/senia-ui-system/src/tokens/colors.css">src/tokens/colors.css</a>:</strong> Define la paleta de colores global y los valores por defecto del sistema.</li>
+              <li><strong><a href="file:///s:/MARKETING/GUILHERME/grupo-senia/senia-ui-system/src/themes/light.css">src/themes/light.css</a>:</strong> Mapea los colores semánticos, fondos e inputs del tema claro.</li>
+              <li><strong><a href="file:///s:/MARKETING/GUILHERME/grupo-senia/senia-ui-system/src/themes/dark.css">src/themes/dark.css</a>:</strong> Mapea los colores semánticos, fondos e inputs del tema oscuro.</li>
+            </ul>
+
+            <h3 class="u-mb-iii">Variables más propensas a actualizarse</h3>
+            <p class="u-mb-iv">Estas variables representan la personalización principal de tu marca:</p>
+            <table class="c-table u-w-full u-mb-v">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Uso y Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>--senia-primary-color</code></td>
+                  <td>Color de acento principal en modo claro. Define botones primarios, enlaces activos y focos.</td>
+                </tr>
+                <tr>
+                  <td><code>--senia-primary-contrast</code></td>
+                  <td>Color del texto sobre el fondo de acento en modo claro (ej. <code>#ffffff</code> o <code>#111827</code>).</td>
+                </tr>
+                <tr>
+                  <td><code>--senia-primary-color-dark</code></td>
+                  <td>Color de acento principal en modo oscuro.</td>
+                </tr>
+                <tr>
+                  <td><code>--senia-primary-contrast-dark</code></td>
+                  <td>Color del texto sobre el fondo de acento en modo oscuro.</td>
+                </tr>
+                <tr>
+                  <td><code>--senia-svg-checkmark</code></td>
+                  <td>Define el color del checkmark activo (<code>var(--svg-checkmark-light)</code> o <code>var(--svg-checkmark-dark)</code>).</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Collapsible Advanced Reference -->
+          <section class="u-mb-vi">
+            <details class="c-accordion" style="border: 1px solid var(--color-border-subtle); padding: var(--space-iv); border-radius: var(--radius-iii);">
+              <summary style="font-weight: bold; cursor: pointer; color: var(--color-text-heading);">Ver todas las variables del sistema (Avanzado)</summary>
+              <div class="u-mt-iv">
+                <p class="u-text-iv u-text-muted u-mb-iv">A continuación se lista la colección completa de variables semánticas que puedes sobrescribir en tu tema claro o tema oscuro para personalizar cualquier rincón del framework:</p>
+                <pre><code>/* Variables globales de estructura (:root / .theme-dark) */
+--color-bg-page:           /* Fondo principal de la web */
+--color-text-body:         /* Texto de cuerpo */
+--color-text-heading:      /* Texto de encabezados (h1-h6) */
+--color-text-link:         /* Texto de enlaces normales */
+--color-text-link-hover:   /* Enlaces en estado hover */
+
+/* Bordes y Divisiones */
+--color-border-default:    /* Bordes estándar */
+--color-border-subtle:     /* Bordes de división más suaves */
+--color-border-strong:     /* Bordes destacados y focus */
+
+/* Tarjetas y Contenedores */
+--color-bg-card:           /* Fondo de las tarjetas (.c-card) */
+--color-border-card:       /* Borde de las tarjetas */
+
+/* Formularios e Inputs */
+--color-input-bg:          /* Fondo de los campos */
+--color-input-border:      /* Borde de los campos */
+--color-input-text:        /* Texto escrito en los inputs */
+--color-input-placeholder: /* Color del marcador de posición */
+--color-input-focus-border:/* Borde activo en estado focus */
+--color-input-disabled-bg: /* Fondo para inputs deshabilitados */
+
+/* Componentes de Carga */
+--color-busy-overlay-bg:   /* Fondo opaco del contenedor en loading */
+--svg-checkmark-active:    /* Icono SVG de selección activo */
+--svg-radio-active:        /* Icono SVG de radio activo */</code></pre>
+              </div>
+            </details>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Interactive JavaScript controller -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const picker = document.getElementById("color-picker-primary");
+        const contrastSelect = document.getElementById("color-picker-contrast");
+        const resetBtn = document.getElementById("btn-reset-theme");
+
+        function updateTheme(color, contrast) {
+          document.documentElement.style.setProperty(
+            "--senia-primary-color",
+            color,
+          );
+          // Generate automatic hover using a darker variant for light mode
+          document.documentElement.style.setProperty(
+            "--senia-primary-hover",
+            color + "cc",
+          );
+          document.documentElement.style.setProperty(
+            "--senia-primary-light",
+            color + "15",
+          );
+          document.documentElement.style.setProperty(
+            "--senia-primary-contrast",
+            contrast,
+          );
+
+          // For dark theme simulator variables
+          document.documentElement.style.setProperty(
+            "--senia-primary-color-dark",
+            color,
+          );
+          document.documentElement.style.setProperty(
+            "--senia-primary-hover-dark",
+            color + "e6",
+          );
+          document.documentElement.style.setProperty(
+            "--senia-primary-contrast-dark",
+            contrast,
+          );
+
+          // Swap SVG checkmark/radio dynamically based on contrast light/dark choice
+          if (contrast === "#ffffff") {
+            document.documentElement.style.setProperty("--senia-svg-checkmark", "var(--svg-checkmark-light)");
+            document.documentElement.style.setProperty("--senia-svg-radio", "var(--svg-radio-light)");
+          } else {
+            document.documentElement.style.setProperty("--senia-svg-checkmark", "var(--svg-checkmark-dark)");
+            document.documentElement.style.setProperty("--senia-svg-radio", "var(--svg-radio-dark)");
+          }
+        }
+
+        // Initialize with default values on page load
+        updateTheme(picker.value, contrastSelect.value);
+
+        picker.addEventListener("input", (e) => {
+          updateTheme(e.target.value, contrastSelect.value);
+        });
+
+        contrastSelect.addEventListener("change", (e) => {
+          updateTheme(picker.value, e.target.value);
+        });
+
+        resetBtn.addEventListener("click", () => {
+          document.documentElement.style.removeProperty(
+            "--senia-primary-color",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-hover",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-light",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-contrast",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-color-dark",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-hover-dark",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-primary-contrast-dark",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-svg-checkmark",
+          );
+          document.documentElement.style.removeProperty(
+            "--senia-svg-radio",
+          );
+          picker.value = "#1e40af";
+          contrastSelect.value = "#ffffff";
+          updateTheme(picker.value, contrastSelect.value);
+        });
+      });
+    </script>
+  </body>
+</html>

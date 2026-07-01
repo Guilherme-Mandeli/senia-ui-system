@@ -1,10 +1,74 @@
 /* Utilities Entrypoint */
-@import "./flex.css";
-@import "./grid.css";
-@import "./spacing.css";
-@import "./display.css";
-@import "./alignment.css";
-@import "./text.css";
-@import "./sizing.css";
-@import "./position.css";
-@import "./border.css";
+
+/* 1. Layout */
+@import "./layout/display.css";
+@import "./layout/visibility.css";
+@import "./layout/overflow.css";
+@import "./layout/position.css";
+@import "./layout/z-index.css";
+@import "./layout/isolation.css";
+
+/* 2. Sizing */
+@import "./sizing/width.css";
+@import "./sizing/height.css";
+@import "./sizing/min-width.css";
+@import "./sizing/max-width.css";
+@import "./sizing/min-height.css";
+@import "./sizing/max-height.css";
+
+/* 3. Spacing */
+@import "./spacing/margin.css";
+@import "./spacing/padding.css";
+@import "./spacing/gap.css";
+
+/* 4. Flex */
+@import "./flex/flex.css";
+@import "./flex/justify.css";
+@import "./flex/align.css";
+@import "./flex/order.css";
+
+/* 5. Grid */
+@import "./grid/grid.css";
+@import "./grid/columns.css";
+@import "./grid/rows.css";
+@import "./grid/placement.css";
+
+/* 6. Typography */
+@import "./typography/font-size.css";
+@import "./typography/font-weight.css";
+@import "./typography/line-height.css";
+@import "./typography/text-align.css";
+@import "./typography/text-transform.css";
+
+/* 7. Borders */
+@import "./borders/border.css";
+@import "./borders/radius.css";
+@import "./borders/outline.css";
+
+/* 8. Backgrounds */
+@import "./backgrounds/background-color.css";
+@import "./backgrounds/background-position.css";
+@import "./backgrounds/background-size.css";
+
+/* 9. Effects */
+@import "./effects/opacity.css";
+@import "./effects/shadow.css";
+@import "./effects/blur.css";
+@import "./effects/filters.css";
+
+/* 10. Transforms */
+@import "./transforms/scale.css";
+@import "./transforms/rotate.css";
+@import "./transforms/translate.css";
+@import "./transforms/skew.css";
+
+/* 11. Transitions */
+@import "./transitions/duration.css";
+@import "./transitions/easing.css";
+@import "./transitions/delay.css";
+
+/* 12. Interaction */
+@import "./interaction/cursor.css";
+@import "./interaction/pointer-events.css";
+@import "./interaction/user-select.css";
+@import "./interaction/resize.css";

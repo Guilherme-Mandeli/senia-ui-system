@@ -82,17 +82,21 @@ small {
 a {
   color: var(--color-text-link, var(--color-primary-500));
   font-weight: var(--font-weight-500);
-  transition: var(--transition-colors);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 0.15em;
+  transition: var(--transition-colors), text-decoration-color var(--transition-duration-fast) var(--transition-easing-premium);
   
   &:hover {
     color: var(--color-text-link-hover, var(--color-primary-700));
+    text-decoration-color: currentColor;
   }
 }
 
 /* Lists */
 ul, ol {
-  margin-bottom: var(--space-iv);
-  padding-left: var(--space-vi);
+  margin-bottom: unset;
+  padding-left: unset;
 }
 
 li {

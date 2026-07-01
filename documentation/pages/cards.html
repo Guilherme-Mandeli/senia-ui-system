@@ -8,14 +8,387 @@
   <link rel="stylesheet" href="../../src/style.css">
   <link rel="stylesheet" href="../visualizer.css">
   <script type="module" src="../visualizer.js"></script>
+  <style>
+    /* Styling for Showcase Cards */
+    .showcase-cards-section {
+      margin-top: var(--space-vi);
+    }
+    .showcase-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-v);
+    }
+    @media (min-width: 768px) {
+      .showcase-cards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 1200px) {
+      .showcase-cards-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    /* Base style for showcase cards */
+    .c-card-showcase {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-neutral-50);
+      border: 1px solid var(--color-neutral-200);
+      border-radius: var(--radius-iii);
+      padding: var(--space-v);
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05);
+    }
+    .theme-dark .c-card-showcase {
+      background-color: var(--color-neutral-900);
+      border-color: var(--color-neutral-800);
+      box-shadow: 0 4px 25px -5px rgba(0,0,0,0.5);
+    }
+    .c-card-showcase:hover {
+      border-color: var(--color-neutral-400);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+    }
+    .theme-dark .c-card-showcase:hover {
+      border-color: var(--color-neutral-600);
+      box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+    }
+
+    /* Card 1: Pricing Card Custom Styles */
+    .c-card-showcase--pricing {
+      background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-100) 100%);
+      border-top: 4px solid var(--color-primary);
+    }
+    .theme-dark .c-card-showcase--pricing {
+      background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-950) 100%);
+      border-top-color: var(--color-primary-600);
+    }
+    .pricing-badge {
+      background-color: rgba(54, 100%, 67%, 0.15);
+      color: var(--color-neutral-800);
+      font-weight: 700;
+      padding: var(--space-i) var(--space-ii);
+      border-radius: var(--radius-pill);
+      font-size: var(--font-size-ii);
+      width: fit-content;
+    }
+    .theme-dark .pricing-badge {
+      background-color: rgba(255, 238, 88, 0.1);
+      color: var(--color-primary);
+    }
+    .price-value {
+      font-size: var(--font-size-vi);
+      font-weight: 800;
+      color: var(--color-neutral-900);
+    }
+    .theme-dark .price-value {
+      color: var(--color-neutral-50);
+    }
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-iv) 0;
+    }
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-ii);
+      margin-bottom: var(--space-ii);
+      font-size: var(--font-size-iii);
+      color: var(--color-neutral-600);
+    }
+    .theme-dark .features-list li {
+      color: var(--color-neutral-300);
+    }
+    .features-list li svg {
+      color: var(--color-success);
+      flex-shrink: 0;
+    }
+
+    /* Card 2: E-commerce Product Card Custom Styles */
+    .product-image-container {
+      position: relative;
+      border-radius: var(--radius-ii);
+      overflow: hidden;
+      height: 12rem;
+      background-color: var(--color-neutral-200);
+      margin-bottom: var(--space-iv);
+    }
+    .theme-dark .product-image-container {
+      background-color: var(--color-neutral-800);
+    }
+    .product-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .c-card-showcase:hover .product-image-container img {
+      transform: scale(1.08);
+    }
+    .wishlist-btn {
+      position: absolute;
+      top: var(--space-ii);
+      right: var(--space-ii);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      color: var(--color-error);
+    }
+    .wishlist-btn:hover {
+      transform: scale(1.1);
+      background: #ffffff;
+    }
+    .size-selector {
+      display: flex;
+      gap: var(--space-ii);
+      margin: var(--space-iii) 0;
+    }
+    .size-option {
+      border: 1px solid var(--color-neutral-300);
+      border-radius: var(--radius-i);
+      padding: var(--space-i) var(--space-ii);
+      font-size: var(--font-size-ii);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      color: var(--color-neutral-700);
+    }
+    .theme-dark .size-option {
+      border-color: var(--color-neutral-700);
+      color: var(--color-neutral-300);
+    }
+    .size-option:hover, .size-option.active {
+      border-color: var(--color-primary);
+      background-color: rgba(255, 238, 88, 0.1);
+      color: var(--color-neutral-900);
+    }
+    .theme-dark .size-option:hover, .theme-dark .size-option.active {
+      color: var(--color-neutral-50);
+    }
+
+    /* Card 3: Media Controller Custom Styles */
+    .media-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-iii);
+    }
+    .music-info {
+      display: flex;
+      align-items: center;
+      gap: var(--space-iii);
+    }
+    .album-art {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: var(--radius-ii);
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .progress-bar-container {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background-color: var(--color-neutral-200);
+      border-radius: var(--radius-pill);
+      margin: var(--space-iii) 0;
+      cursor: pointer;
+    }
+    .theme-dark .progress-bar-container {
+      background-color: var(--color-neutral-800);
+    }
+    .progress-fill {
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-pill);
+    }
+    .media-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-iv);
+      margin: var(--space-ii) 0;
+    }
+    .media-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-neutral-600);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-dark .media-btn {
+      color: var(--color-neutral-300);
+    }
+    .media-btn:hover {
+      color: var(--color-primary-700);
+      transform: scale(1.08);
+    }
+    .theme-dark .media-btn:hover {
+      color: var(--color-primary-300);
+    }
+    .media-btn--play {
+      background: var(--color-neutral-900);
+      color: #ffffff;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .theme-dark .media-btn--play {
+      background: var(--color-primary);
+      color: var(--color-neutral-900);
+    }
+    .media-btn--play:hover {
+      background: var(--color-neutral-800);
+      color: #ffffff;
+    }
+    .theme-dark .media-btn--play:hover {
+      background: var(--color-primary-400);
+      color: var(--color-neutral-900);
+    }
+
+    /* Card 4: Crypto Wallet Custom Styles */
+    .crypto-sparkline {
+      width: 100%;
+      height: 50px;
+      stroke: var(--color-success);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      filter: drop-shadow(0 2px 8px rgba(131, 199, 111, 0.3));
+    }
+    .trend-indicator {
+      display: flex;
+      align-items: center;
+      gap: var(--space-i);
+      color: var(--color-success);
+      font-weight: 700;
+      font-size: var(--font-size-ii);
+    }
+
+    /* Card 5: Kanban/Task Dashboard Custom Styles */
+    .avatar-pile {
+      display: flex;
+      align-items: center;
+    }
+    .avatar-item {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 2px solid var(--color-neutral-50);
+      margin-left: -0.6rem;
+      object-fit: cover;
+      transition: all 0.2s ease;
+    }
+    .theme-dark .avatar-item {
+      border-color: var(--color-neutral-900);
+    }
+    .avatar-item:first-child {
+      margin-left: 0;
+    }
+    .avatar-item:hover {
+      transform: translateY(-3px) scale(1.1);
+      z-index: 10;
+    }
+    .avatar-more {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: var(--color-neutral-200);
+      border: 2px solid var(--color-neutral-50);
+      margin-left: -0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-i);
+      font-weight: 700;
+      color: var(--color-neutral-600);
+    }
+    .theme-dark .avatar-more {
+      background-color: var(--color-neutral-800);
+      border-color: var(--color-neutral-900);
+      color: var(--color-neutral-400);
+    }
+
+    /* Camping Lodgings Core Overlays & Heights (Aesthetic layout not covered by generic framework tokens) */
+    .lodging-image-wrapper {
+      position: relative;
+      height: 18rem;
+      width: 100%;
+    }
+    .lodging-amenities-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 15, 15, 0.85);
+      padding: var(--space-ii) var(--space-iii);
+      display: flex;
+      gap: var(--space-iii);
+      color: #ffffff;
+      align-items: center;
+      font-size: var(--font-size-ii);
+    }
+    .lodging-amenity-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-i);
+      opacity: 0.9;
+    }
+    .lodging-amenity-item svg {
+      opacity: 0.8;
+    }
+    .lodging-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-iv) 0;
+    }
+    .lodging-features-list li {
+      position: relative;
+      padding-left: var(--space-iii);
+      font-size: var(--font-size-iii);
+      color: var(--color-neutral-700);
+      margin-bottom: var(--space-ii);
+    }
+    .theme-dark .lodging-features-list li {
+      color: var(--color-neutral-300);
+    }
+    .lodging-features-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-neutral-400);
+    }
+    .lodging-meta-slot {
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--space-iii);
+    }
+  </style>
 </head>
 <body class="v-body">
 
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,96 +412,766 @@
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
           <h1>Tarjetas (Cards)</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Contenedores modulares que agrupan información e integran llamadas a la acción, cabeceras y pies adaptables.
           </p>
         </header>
 
         <hr>
 
-        <!-- Card Styles Section -->
+        <!-- Classic Card Styles Section -->
         <section class="u-mb-vi">
-          <h2>Tipologías de Tarjetas</h2>
-          <p class="u-mb-v">Definimos tres versiones de estructura de tarjetas según el nivel de jerarquía y dinamismo requerido:</p>
+          <h2>Tarjetas Clásicas de Sènia</h2>
+          <p class="u-mb-v">Contenedores base del framework definidos bajo elevaciones estándar de sombras y bordes primarios destacados:</p>
           
           <div class="l-grid l-grid--3col">
             
             <!-- Standard Card -->
             <div class="c-card">
               <div class="c-card__header">
-                <h4 class="c-card__title">Tarjeta Estándar</h4>
+                <div class="u-flex u-justify-between u-align-center">
+                  <h4 class="c-card__title">Tarjeta Estándar</h4>
+                  <span class="v-token-class">.c-card</span>
+                </div>
               </div>
               <div class="c-card__body">
-                <p class="u-text-xs">
-                  La estructura básica consta de bordes refinados, un fondo blanco/neutro adaptativo y sombras suaves para definir una elevación limpia.
+                <p class="u-text-iii">
+                  La estructura clásica consta de bordes refinados, un fondo blanco/neutro adaptativo y sombras estándar para definir una elevación limpia.
                 </p>
               </div>
               <div class="c-card__footer">
-                <span class="u-text-2xs u-text-muted">Modificador base</span>
+                <span class="u-text-ii u-text-muted">Modificador base</span>
               </div>
             </div>
 
             <!-- Featured Card -->
             <div class="c-card c-card--featured">
               <div class="c-card__header">
-                <h4 class="c-card__title">Destacada (Featured)</h4>
+                <div class="u-flex u-justify-between u-align-center">
+                  <h4 class="c-card__title">Destacada (Featured)</h4>
+                  <span class="v-token-class">.c-card--featured</span>
+                </div>
               </div>
               <div class="c-card__body">
-                <p class="u-text-xs">
+                <p class="u-text-iii">
                   Añade una franja superior coloreada con el tono de marca primario para llamar la atención del usuario en resúmenes o planes de precios.
                 </p>
               </div>
               <div class="c-card__footer">
-                <span class="u-text-2xs u-text-primary u-text-bold">Llamada a la acción</span>
+                <span class="u-text-ii u-text-primary u-text-bold">Llamada a la acción</span>
               </div>
             </div>
 
             <!-- Interactive Card -->
             <div class="c-card c-card--interactive">
               <div class="c-card__header">
-                <h4 class="c-card__title">Interactiva (Hover)</h4>
+                <div class="u-flex u-justify-between u-align-center">
+                  <h4 class="c-card__title">Interactiva (Classic Hover)</h4>
+                  <span class="v-token-class">.c-card--interactive</span>
+                </div>
               </div>
               <div class="c-card__body">
-                <p class="u-text-xs">
-                  Ideal para listados navegables. Al pasar el cursor por encima (hover), la tarjeta se eleva sutilmente en el eje vertical y proyecta una sombra profunda.
+                <p class="u-text-iii">
+                  Ideal para listados navegables. Al pasar el cursor por encima (hover), la tarjeta se eleva sutilmente y proyecta una sombra más pronunciada.
                 </p>
               </div>
               <div class="c-card__footer">
-                <span class="u-text-2xs u-text-muted">Desliza el cursor encima</span>
+                <span class="u-text-ii u-text-muted">Desliza el cursor encima</span>
               </div>
             </div>
 
           </div>
         </section>
 
+        <!-- Modern Card Variants Section -->
+        <section class="u-mb-vi">
+          <h2>Tarjetas Modernas</h2>
+          <p class="u-mb-v">Variantes con sombras multicapa, contornos finos y respuestas dinámicas al cursor para profundidad y jerarquía visual:</p>
+          
+          <div class="l-grid l-grid--2col u-gap-v">
+            
+            <!-- Subtle Card -->
+            <div class="c-card c-card--subtle u-p-v">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <h4 class="u-m-none u-text-bold">Sutil (Subtle)</h4>
+                <span class="v-token-class">.c-card--subtle</span>
+              </div>
+              <p class="u-text-iii u-mb-none">
+                Presenta contornos extra delgados de baja opacidad y sombras multicapa suaves que otorgan un relieve natural y realista sobre la superficie.
+              </p>
+            </div>
+
+            <!-- Flat Card -->
+            <div class="c-card c-card--flat u-p-v">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <h4 class="u-m-none u-text-bold">Plana (Flat Outline)</h4>
+                <span class="v-token-class">.c-card--flat</span>
+              </div>
+              <p class="u-text-iii u-mb-none">
+                Carece por completo de sombras. La división de secciones se apoya exclusivamente en un borde neutral nítido, ideal para diseños planos de alta densidad.
+              </p>
+            </div>
+
+            <!-- Elevated Card -->
+            <div class="c-card c-card--elevated u-p-v">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <h4 class="u-m-none u-text-bold">Elevada</h4>
+                <span class="v-token-class">.c-card--elevated</span>
+              </div>
+              <p class="u-text-iii u-mb-none">
+                Usa una sombra de profundidad más extendida y difuminada que destaca fuertemente el contenedor, simulando elementos flotantes en la interfaz.
+              </p>
+            </div>
+
+            <!-- Dynamic Card -->
+            <div class="c-card c-card--dynamic u-p-v">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <h4 class="u-m-none u-text-bold">Dinámica (Hover &amp; Press)</h4>
+                <span class="v-token-class">.c-card--dynamic</span>
+              </div>
+              <p class="u-text-iii u-mb-iii">
+                Combina una traslación suave en el eje Y (`translateY(-4px)`), un escalado mínimo imperceptible y un realce de sombra y borde al pasar el ratón. Además, simula una pulsación real al hacer clic (`:active`).
+              </p>
+              <span class="u-text-ii u-text-primary u-text-bold">Interactúa con esta tarjeta</span>
+            </div>
+
+          </div>
+        </section>
+
         <!-- Composite Card Showcase -->
-        <section class="u-mb-v">
+        <section class="u-mb-vi">
           <h2>Tarjetas Compuestas &amp; Acciones</h2>
-          <p class="u-mb-v">Ejemplo real de tarjeta de visualización de producto/panel que combina componentes del framework:</p>
+          <p class="u-mb-v">Ejemplo real de panel compuesto diseñado mediante una tarjeta dinámica que encapsula elementos activos del framework:</p>
           
           <div class="l-container l-container--narrow">
-            <div class="c-card">
-              <div class="c-card__header">
-                <div class="l-flex-split">
-                  <h4 class="c-card__title">Módulo de Analítica</h4>
-                  <span class="c-badge c-badge--success c-badge--pill">Activo</span>
+            <div class="c-card c-card--dynamic u-p-v">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <div class="u-flex u-align-center u-gap-ii">
+                  <h4 class="u-m-none u-text-bold">Panel de Analítica Avanzada</h4>
+                  <span class="c-badge c-badge--success c-badge--pill">En tiempo real</span>
                 </div>
+                <span class="v-token-class">.c-card--dynamic</span>
               </div>
               
-              <div class="c-card__body">
-                <h2 class="u-mb-iii u-text-bold">3.245 <span class="u-text-xs u-text-muted" style="font-weight: normal;">Usuarios Mensuales</span></h2>
-                <p class="u-text-xs u-mb-iv">
-                  El tráfico de tu plataforma ha incrementado en un <strong>12%</strong> respecto al mes anterior. Continúa optimizando tus recursos.
+              <div class="u-mb-iv">
+                <h2 class="u-mb-ii u-text-bold" style="font-size: var(--font-size-vi);">4.829 <span class="u-text-iii u-text-muted" style="font-weight: normal; font-size: var(--font-size-iii);">Sesiones Activas</span></h2>
+                <p class="u-text-iii u-mb-iv u-text-muted">
+                  El tráfico de tu plataforma ha incrementado notablemente. La tasa de rebote se mantiene óptima en un <strong>2.4%</strong>.
                 </p>
-                <div class="u-text-2xs" style="background-color: var(--color-neutral-100); padding: var(--space-iii); border-radius: var(--radius-ii);">
-                  <strong class="u-text-primary">Nota técnica:</strong> Se están empleando layouts responsivos flexbox.
+                
+                <!-- Switch nested inside card -->
+                <div class="u-p-iii u-mb-iii" style="background-color: var(--color-neutral-100); border-radius: var(--radius-ii); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong class="u-block u-text-ii">Refresco en segundo plano</strong>
+                    <span class="u-text-i u-text-muted">Actualizar datos de forma constante</span>
+                  </div>
+                  <label class="c-switch">
+                    <input type="checkbox" class="c-switch__input" checked>
+                    <span class="c-switch__slider"></span>
+                  </label>
                 </div>
               </div>
               
+              <div class="u-flex u-justify-between u-align-center">
+                <button class="c-btn c-btn--sm c-btn--ghost">Descargar informe</button>
+                <button class="c-btn c-btn--sm c-btn--primary">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Showcase Cards Section -->
+        <section class="showcase-cards-section u-mb-vi">
+          <h2>5 Nuevos Modelos de Tarjetas Compuestas &amp; Acciones (Pro)</h2>
+          <p class="u-mb-v">Explora cinco diseños interactivos adaptados al contexto de nuestros resorts de camping, diseñados para flujos de reserva, actividades guiadas, monederos de pago y planificación de eventos:</p>
+
+          <div class="showcase-cards-grid">
+
+            <!-- Card 1: Booking / Accommodation Card -->
+            <div class="c-card-showcase c-card-showcase--pricing">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <span class="pricing-badge">BUNGALOW VIP</span>
+                <span class="u-text-ii u-text-muted">Por Noche</span>
+              </div>
+              <h3 class="u-m-none u-text-bold u-mb-i" style="font-size: var(--font-size-iv);">Bungalow Vista Marina</h3>
+              <p class="u-text-ii u-text-muted u-mb-iv">Alojamiento de madera premium frente a la bahía.</p>
+              
+              <div class="u-mb-iv u-flex u-align-baseline">
+                <span class="price-value">120€</span>
+                <span class="u-text-ii u-text-muted u-ml-i">/ noche</span>
+              </div>
+
+              <hr style="opacity: 0.2; margin: var(--space-iii) 0;">
+
+              <ul class="features-list">
+                <li>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Terraza exterior con hamacas</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Acceso ilimitado al parque acuático</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Barbacoa privada de gas</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Wifi de alta velocidad y Smart TV</span>
+                </li>
+              </ul>
+
+              <div class="u-mt-auto">
+                <button class="c-btn c-btn--primary" style="width: 100%; border-radius: var(--radius-ii);">Reservar estancia</button>
+              </div>
+            </div>
+
+            <!-- Card 2: Camping Gear / Activity Booking Card -->
+            <div class="c-card-showcase">
+              <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&q=80" alt="Alquiler de Kayak en el Camping">
+                <button class="wishlist-btn" title="Guardar en favoritos" onclick="this.classList.toggle('active');">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+              </div>
+
+              <div class="u-flex u-justify-between u-align-center u-mb-i">
+                <span class="c-badge c-badge--pill c-badge--success" style="font-size: var(--font-size-i);">ACTIVIDAD RESORT</span>
+                <span class="u-text-ii u-text-success u-text-bold">Plazas libres</span>
+              </div>
+
+              <h3 class="u-m-none u-text-bold u-mb-i" style="font-size: var(--font-size-iii);">Ruta en Kayak de Mar</h3>
+              <p class="u-text-ii u-text-muted u-mb-ii">Excursión guiada por los acantilados y calas cercanas al camping.</p>
+
+              <div class="u-flex u-align-center u-gap-ii u-mb-iii">
+                <span class="u-text-bold u-text-iv" style="color: var(--color-neutral-900);">25€ / persona</span>
+                <span class="u-text-ii u-text-muted" style="text-decoration: line-through;">35€</span>
+              </div>
+
+              <div class="size-selector">
+                <span class="size-option" onclick="this.parentNode.querySelectorAll('.size-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">1 Hora</span>
+                <span class="size-option active" onclick="this.parentNode.querySelectorAll('.size-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">2 Horas</span>
+                <span class="size-option" onclick="this.parentNode.querySelectorAll('.size-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">Medio Día</span>
+              </div>
+
+              <div class="u-mt-auto u-flex u-gap-ii">
+                <button class="c-btn c-btn--outline c-btn--sm" style="flex: 1;">Ver detalles</button>
+                <button class="c-btn c-btn--primary c-btn--sm" style="flex: 2;">Inscribirse</button>
+              </div>
+            </div>
+
+            <!-- Card 3: Camping Audio / Radio Announcement Card -->
+            <div class="c-card-showcase">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <span class="c-badge c-badge--pill c-badge--primary" style="font-size: var(--font-size-i);">SÈNIA RADIO</span>
+                <button class="media-btn" title="Configuración de Megafonía">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                </button>
+              </div>
+
+              <div class="media-container u-mb-iii">
+                <div class="music-info">
+                  <img class="album-art" src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?w=200&h=200&fit=crop&q=80" alt="Equipo de animación">
+                  <div>
+                    <h4 class="u-m-none u-text-bold" style="font-size: var(--font-size-iii);">Actividades de la Mañana</h4>
+                    <span class="u-text-ii u-text-muted">Equipo de Animación Sènia</span>
+                  </div>
+                </div>
+
+                <div class="progress-bar-container" onclick="const rect = this.getBoundingClientRect(); const pct = ((event.clientX - rect.left) / rect.width) * 100; this.querySelector('.progress-fill').style.width = pct + '%';">
+                  <div class="progress-fill"></div>
+                </div>
+
+                <div class="u-flex u-justify-between u-text-i u-text-muted u-mt-none" style="margin-top: -5px;">
+                  <span>0:45</span>
+                  <span>1:30</span>
+                </div>
+              </div>
+
+              <div class="media-controls u-mb-iv">
+                <button class="media-btn" title="Anterior">
+                  <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                </button>
+                <button class="media-btn media-btn--play" title="Reproducir anuncio" onclick="this.classList.toggle('playing');">
+                  <svg class="play-icon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <button class="media-btn" title="Siguiente">
+                  <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6zm9-12h2v12h-2z"/></svg>
+                </button>
+              </div>
+
+              <div class="u-mt-auto u-flex u-align-center u-justify-between u-p-ii" style="background-color: var(--color-neutral-100); border-radius: var(--radius-ii);">
+                <div class="u-flex u-align-center u-gap-ii">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--color-neutral-600);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                  <span class="u-text-ii u-text-bold">Zona de audio</span>
+                </div>
+                <span class="u-text-ii u-text-muted">Altavoces Terraza Principal</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Sènia Pay Digital Balance Card -->
+            <div class="c-card-showcase">
+              <div class="u-flex u-justify-between u-align-center u-mb-iv">
+                <div class="u-flex u-align-center u-gap-ii">
+                  <div style="width: 2rem; height: 2rem; border-radius: 50%; background: linear-gradient(135deg, var(--color-secondary-400), var(--color-primary-600)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: var(--font-size-ii);">S</div>
+                  <div>
+                    <h4 class="u-m-none u-text-bold" style="font-size: var(--font-size-iii);">Sènia Coins (Pay)</h4>
+                    <span class="u-text-i u-text-muted">Monedero Pulsera Inteligente</span>
+                  </div>
+                </div>
+                <div class="trend-indicator" style="color: var(--color-info);">
+                  <span>Resort Activo</span>
+                </div>
+              </div>
+
+              <div class="u-mb-iii">
+                <span class="u-text-i u-text-muted u-block">Saldo Disponible</span>
+                <span class="u-text-bold" style="font-size: var(--font-size-v); color: var(--color-neutral-900);">142.50 SNC <span class="u-text-ii u-text-muted" style="font-weight: normal; font-size: var(--font-size-ii);">(142.50€)</span></span>
+              </div>
+
+              <!-- Sparkline Chart -->
+              <div class="u-mb-iv" style="height: 60px; display: flex; align-items: flex-end;">
+                <svg class="crypto-sparkline" viewBox="0 0 100 30" style="stroke: var(--color-info);">
+                  <path d="M0,25 Q15,5 30,18 T60,8 T90,20 T100,5" />
+                </svg>
+              </div>
+
+              <div class="u-mt-auto u-flex u-gap-ii">
+                <button class="c-btn c-btn--outline c-btn--sm" style="flex: 1; border-radius: var(--radius-ii);">Historial</button>
+                <button class="c-btn c-btn--outline c-btn--sm" style="flex: 1; border-radius: var(--radius-ii);">Recargar</button>
+                <button class="c-btn c-btn--primary c-btn--sm" style="flex: 1; border-radius: var(--radius-ii);">Pagar QR</button>
+              </div>
+            </div>
+
+            <!-- Card 5: Camping Activities Kanban / Organization Card -->
+            <div class="c-card-showcase">
+              <div class="u-flex u-justify-between u-align-center u-mb-iii">
+                <span class="c-badge c-badge--soft c-badge--danger c-badge--pill" style="font-size: var(--font-size-i);">INSCRIPCIONES ABIERTAS</span>
+                <span class="u-text-ii u-text-muted">Hoy · 17:00</span>
+              </div>
+
+              <h3 class="u-m-none u-text-bold u-mb-ii" style="font-size: var(--font-size-iii);">Torneo de Vóley Playa</h3>
+              <p class="u-text-ii u-text-muted u-mb-iv">Apúntate con tu equipo en las canchas de arena del resort. Trofeo y consumiciones para los ganadores.</p>
+
+              <div class="u-mb-iv">
+                <div class="u-flex u-justify-between u-align-center u-mb-i">
+                  <span class="u-text-ii u-text-bold">Equipos Registrados</span>
+                  <span class="u-text-ii u-text-muted">6 / 8 Equipos</span>
+                </div>
+                <div class="progress-bar-container" style="height: 6px; margin: 0;">
+                  <div class="progress-fill" style="width: 75%; background: var(--color-success);"></div>
+                </div>
+              </div>
+
+              <div class="u-mt-auto u-flex u-justify-between u-align-center u-pt-ii" style="border-top: 1px solid var(--color-neutral-200);">
+                <div class="avatar-pile">
+                  <img class="avatar-item" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&q=80" alt="Campista inscrito" title="Familia García">
+                  <img class="avatar-item" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80" alt="Campista inscrito" title="Carlos Pérez">
+                  <img class="avatar-item" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop&q=80" alt="Campista inscrito" title="David Ruiz">
+                  <div class="avatar-more" title="3 equipos más">+3</div>
+                </div>
+                
+                <div class="u-flex u-align-center u-gap-iii u-text-muted">
+                  <div class="u-flex u-align-center u-gap-i" title="12 Comentarios">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+                    <span class="u-text-ii">12</span>
+                  </div>
+                  <div class="u-flex u-align-center u-gap-i" title="1 Reglamento en PDF">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+                    <span class="u-text-ii">1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Camping Lodgings Showcase Section -->
+        <section class="u-mb-vi">
+          <h2>Sección de Alojamientos y Parcelas</h2>
+          <p class="u-mb-v">Tarjetas de presentación de alojamientos y parcelas de camping adaptadas fielmente a la interfaz de reservas, utilizando las clases de botones, tarjetas, badges y tipografía del framework:</p>
+
+          <div class="l-grid l-grid--3col u-gap-v u-mb-vi">
+
+            <!-- Card 1: Cabaña Premium -->
+            <div class="c-card c-card--subtle">
+              <div class="lodging-image-wrapper u-overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=600&h=600&fit=crop&q=80" alt="Cabaña Premium">
+                <div class="lodging-amenities-bar">
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Capacidad: 4 personas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    <span style="font-weight: 700; margin-left: 2px;">4</span>
+                  </div>
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Se admiten mascotas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14a3 3 0 100-6 3 3 0 0 0 0 6z"/><path d="M12 17.5c-1.5 0-3-.5-3.5-1.5"/><path d="M12 17.5c1.5 0 3-.5 3.5-1.5"/><path d="M4.5 8.5c-.8 0-1.5.7-1.5 1.5 0 2 1.5 5 4 6.5"/><path d="M19.5 8.5c.8 0 1.5.7 1.5 1.5 0 2-1.5 5-4 6.5"/></svg>
+                  </div>
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Baño privado incluido">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v3m0 0a2 2 0 002 2h12a2 2 0 002-2V4M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M7 21v1m10-1v1"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="c-card__body">
+                <h4 class="c-card__title u-text-bold u-text-v u-mb-ii">Cabaña Premium</h4>
+                
+                <div class="u-flex u-align-center u-gap-i u-text-ii u-text-muted u-mb-iii">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Zona Norte - Vista al Lago</span>
+                </div>
+
+                <ul class="lodging-features-list u-text-iii">
+                  <li>Baño privado y cocina equipada</li>
+                  <li>Aire acondicionado y calefacción</li>
+                  <li>Terraza privada con muebles de jardín</li>
+                </ul>
+
+                <div class="c-card__footer u-p-none u-mt-auto u-pt-iv">
+                  <div class="lodging-meta-slot">
+                    <span class="c-badge c-badge--soft c-badge--neutral u-text-ii">
+                      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-right: 4px; vertical-align: middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 8.293A1 1 0 013 7.586V4z"/></svg>
+                      2 personas  •  5 noches
+                    </span>
+                  </div>
+
+                  <div class="u-text-ii u-text-muted u-mb-iii">
+                    A partir de <span class="u-text-bold u-text-vi u-text-neutral-900">€623</span> <span class="u-text-muted u-text-ii">€89/noche</span>
+                  </div>
+                  <button class="c-btn c-btn--primary u-w-full c-btn--lg">Reservar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Tienda Glamping Deluxe -->
+            <div class="c-card c-card--subtle">
+              <div class="lodging-image-wrapper u-overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1533873984035-25970ab07461?w=600&h=600&fit=crop&q=80" alt="Tienda Glamping Deluxe">
+                <div class="lodging-amenities-bar">
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Capacidad: 2 personas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    <span style="font-weight: 700; margin-left: 2px;">2</span>
+                  </div>
+                  <div class="lodging-amenity-item u-opacity-40" style="color: #ffffff;" title="No se admiten mascotas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14a3 3 0 100-6 3 3 0 0 0 0 6z"/><path d="M12 17.5c-1.5 0-3-.5-3.5-1.5"/><path d="M12 17.5c1.5 0 3-.5 3.5-1.5"/><path d="M4.5 8.5c-.8 0-1.5.7-1.5 1.5 0 2 1.5 5 4 6.5"/><path d="M19.5 8.5c.8 0 1.5.7 1.5 1.5 0 2-1.5 5-4 6.5"/></svg>
+                  </div>
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Baño privado incluido">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v3m0 0a2 2 0 002 2h12a2 2 0 002-2V4M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M7 21v1m10-1v1"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="c-card__body">
+                <h4 class="c-card__title u-text-bold u-text-v u-mb-ii">Tienda Glamping Deluxe</h4>
+                
+                <div class="u-flex u-align-center u-gap-i u-text-ii u-text-muted u-mb-iii">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Zona Este - Bosque de Pinos</span>
+                </div>
+
+                <ul class="lodging-features-list u-text-iii">
+                  <li>Cama king size con ropa de cama premium</li>
+                  <li>Iluminación LED y tomas de corriente</li>
+                  <li>Zona de desayuno con nevera portátil</li>
+                </ul>
+
+                <div class="c-card__footer u-p-none u-mt-auto u-pt-iv">
+                  <div class="lodging-meta-slot">
+                    <span class="u-text-ii u-text-muted">Disponible en fechas próximas</span>
+                  </div>
+
+                  <div class="u-text-ii u-text-muted u-mb-iii">
+                    A partir de <span class="u-text-bold u-text-vi u-text-neutral-900">€455</span> <span class="u-text-muted u-text-ii">€65/noche</span>
+                  </div>
+                  <button class="c-btn c-btn--neutral c-btn--outline u-w-full c-btn--lg">Ver fechas próximas</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Parcela Sènia Confort -->
+            <div class="c-card c-card--subtle">
+              <div class="lodging-image-wrapper u-overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=600&h=600&fit=crop&q=80" alt="Parcela Sènia Confort">
+                <div class="lodging-amenities-bar">
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Capacidad: 6 personas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    <span style="font-weight: 700; margin-left: 2px;">6</span>
+                  </div>
+                  <div class="lodging-amenity-item" style="color: #ffffff; opacity: 1;" title="Se admiten mascotas">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14a3 3 0 100-6 3 3 0 0 0 0 6z"/><path d="M12 17.5c-1.5 0-3-.5-3.5-1.5"/><path d="M12 17.5c1.5 0 3-.5 3.5-1.5"/><path d="M4.5 8.5c-.8 0-1.5.7-1.5 1.5 0 2 1.5 5 4 6.5"/><path d="M19.5 8.5c.8 0 1.5.7 1.5 1.5 0 2-1.5 5-4 6.5"/></svg>
+                  </div>
+                  <div class="lodging-amenity-item u-opacity-40" style="color: #ffffff;" title="Baño compartido en bloque sanitario">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v3m0 0a2 2 0 002 2h12a2 2 0 002-2V4M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M7 21v1m10-1v1"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="c-card__body">
+                <h4 class="c-card__title u-text-bold u-text-v u-mb-ii">Parcela Sènia Confort</h4>
+                
+                <div class="u-flex u-align-center u-gap-i u-text-ii u-text-muted u-mb-iii">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Zona Río - Sombra Abundante</span>
+                </div>
+
+                <ul class="lodging-features-list u-text-iii">
+                  <li>Conexión eléctrica de 10A incluida</li>
+                  <li>Superficie llana de césped natural</li>
+                  <li>Admisión de caravanas y autocaravanas</li>
+                </ul>
+
+                <div class="c-card__footer u-p-none u-mt-auto u-pt-iv">
+                  <div class="lodging-meta-slot">
+                    <span class="c-badge c-badge--soft c-badge--neutral u-text-ii">
+                      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-right: 4px; vertical-align: middle;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 8.293A1 1 0 013 7.586V4z"/></svg>
+                      4 personas  •  7 noches
+                    </span>
+                  </div>
+
+                  <div class="u-text-ii u-text-muted u-mb-iii">
+                    A partir de <span class="u-text-bold u-text-vi u-text-neutral-900">€175</span> <span class="u-text-muted u-text-ii">€25/noche</span>
+                  </div>
+                  <button class="c-btn c-btn--primary u-w-full c-btn--lg">Reservar</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <hr>
+
+        <!-- Image Card Layouts Section -->
+        <section class="u-mb-vi">
+          <h2>Tarjetas con Imagen</h2>
+          <p class="u-mb-v">Composiciones visuales que integran fotografías o gráficos dentro de la tarjeta. Tres disposiciones principales para cubrir cualquier necesidad de diseño editorial o de producto.</p>
+          
+          <!-- Image Top Cards -->
+          <h3 class="u-mb-iv">Imagen Superior <code class="v-token-class u-ml-ii">.c-card__img</code></h3>
+          <p class="u-mb-iv u-text-muted">La imagen ocupa el ancho completo de la tarjeta como cabecera visual. Combinable con cualquier variante de tarjeta.</p>
+          
+          <div class="l-grid l-grid--3col u-gap-v u-mb-vi">
+            
+            <!-- Image Top - Standard Card -->
+            <div class="c-card">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80" alt="Oficina moderna">
+              <div class="c-card__body">
+                <h4 class="c-card__title u-mb-ii">Espacio de Trabajo</h4>
+                <p class="u-text-iii u-text-muted u-mb-none">
+                  Tarjeta estándar con imagen superior por defecto a 12rem de altura.
+                </p>
+              </div>
               <div class="c-card__footer">
-                <div class="l-flex-split u-w-full">
-                  <button class="c-btn c-btn--sm c-btn--ghost">Descargar informe</button>
-                  <button class="c-btn c-btn--sm c-btn--primary">Ver Detalles</button>
+                <div class="u-flex u-justify-between u-align-center">
+                  <span class="u-text-ii u-text-muted">Estándar</span>
+                  <span class="v-token-class">.c-card</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Top - Subtle Card -->
+            <div class="c-card c-card--subtle">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&q=80" alt="Tecnología">
+              <div class="c-card__body">
+                <h4 class="c-card__title u-mb-ii">Innovación Digital</h4>
+                <p class="u-text-iii u-text-muted u-mb-none">
+                  Combinada con la variante sutil para un acabado limpio y refinado.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <div class="u-flex u-justify-between u-align-center">
+                  <span class="u-text-ii u-text-muted">Sutil</span>
+                  <span class="v-token-class">.c-card--subtle</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Top - Dynamic Card -->
+            <div class="c-card c-card--dynamic">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&q=80" alt="Equipo colaborando">
+              <div class="c-card__body">
+                <h4 class="c-card__title u-mb-ii">Colaboración</h4>
+                <p class="u-text-iii u-text-muted u-mb-none">
+                  Con la variante dinámica: hover elevado y micro-interacción al clic.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <div class="u-flex u-justify-between u-align-center">
+                  <span class="u-text-ii u-text-primary u-text-bold">Explorar →</span>
+                  <span class="v-token-class">.c-card--dynamic</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Horizontal Cards (Image Left) -->
+          <h3 class="u-mb-iv">Imagen Lateral <code class="v-token-class u-ml-ii">.c-card--horizontal</code></h3>
+          <p class="u-mb-iv u-text-muted">La imagen se posiciona a la izquierda y el contenido a la derecha en disposición horizontal. Se apila verticalmente en pantallas estrechas (&lt;600px).</p>
+          
+          <div class="l-flex-stack l-flex-stack--lg u-mb-vi">
+
+            <!-- Horizontal - Standard -->
+            <div class="c-card c-card--horizontal">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=400&fit=crop&q=80" alt="Persona trabajando con portátil">
+              <div class="c-card__body">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="c-badge c-badge--soft c-badge--pill c-badge--primary">Artículo</span>
+                  <span class="v-token-class">.c-card--horizontal</span>
+                </div>
+                <h4 class="c-card__title u-mb-ii">Guía de Productividad Remota</h4>
+                <p class="u-text-iii u-text-muted u-mb-iii">
+                  Descubre las mejores prácticas para mantener la concentración y la eficiencia trabajando desde cualquier lugar del mundo.
+                </p>
+                <span class="u-text-ii u-text-muted">5 min de lectura · Publicado hace 2 días</span>
+              </div>
+            </div>
+
+            <!-- Horizontal - Elevated -->
+            <div class="c-card c-card--elevated c-card--horizontal">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=400&fit=crop&q=80" alt="Equipo de desarrollo">
+              <div class="c-card__body">
+                <div class="u-flex u-justify-between u-align-center u-mb-ii">
+                  <span class="c-badge c-badge--soft c-badge--pill c-badge--success">Caso de Éxito</span>
+                  <span class="v-token-class">.c-card--elevated</span>
+                </div>
+                <h4 class="c-card__title u-mb-ii">Transformación Digital en Sènia Group</h4>
+                <p class="u-text-iii u-text-muted u-mb-iii">
+                  Cómo el equipo técnico redujo los tiempos de despliegue un 73% implementando un pipeline de CI/CD automatizado.
+                </p>
+                <div class="u-flex u-gap-ii">
+                  <button class="c-btn c-btn--sm c-btn--primary">Leer más</button>
+                  <button class="c-btn c-btn--sm c-btn--ghost">Compartir</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Cover Cards (Image as Background) -->
+          <h3 class="u-mb-iv">Imagen de Fondo <code class="v-token-class u-ml-ii">.c-card--cover</code></h3>
+          <p class="u-mb-iv u-text-muted">La imagen cubre toda la tarjeta como fondo. Un degradado superpuesto garantiza la legibilidad del texto en cualquier fotografía. Ideal para héroes, banners y destacados editoriales.</p>
+          
+          <div class="l-grid l-grid--2col u-gap-v u-mb-v">
+
+            <!-- Cover Card - Standard -->
+            <div class="c-card c-card--cover">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&h=500&fit=crop&q=80" alt="Paisaje urbano nocturno">
+              <div class="c-card__body">
+                <span class="c-badge c-badge--pill c-badge--primary u-mb-iii" style="width: fit-content;">Destacado</span>
+                <h3 style="color: #ffffff; margin-bottom: var(--space-ii); font-weight: var(--font-weight-700);">Diseño Urbano Contemporáneo</h3>
+                <p class="u-text-iii" style="color: rgba(255,255,255,0.8); margin-bottom: 0;">
+                  Exploración visual de las nuevas tendencias arquitectónicas que están redefiniendo el paisaje de las ciudades europeas.
+                </p>
+              </div>
+              <div class="c-card__footer">
+                <div class="u-flex u-justify-between u-align-center">
+                  <span class="u-text-ii" style="color: rgba(255,255,255,0.7);">Fotografía · 12 Mayo 2025</span>
+                  <span class="v-token-class" style="color: rgba(255,255,255,0.5);">.c-card--cover</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cover Card - Larger -->
+            <div class="c-card c-card--cover c-card--cover-lg">
+              <img class="c-card__img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80" alt="Equipo colaborando">
+              <div class="c-card__body">
+                <span class="c-badge c-badge--pill c-badge--warning u-mb-iii" style="width: fit-content;">Evento</span>
+                <h3 style="color: #ffffff; margin-bottom: var(--space-ii); font-weight: var(--font-weight-700);">Sènia Tech Summit 2025</h3>
+                <p class="u-text-iii" style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-iii);">
+                  Únete al mayor evento de innovación tecnológica del grupo. Ponencias, talleres prácticos y networking con más de 300 profesionales del sector.
+                </p>
+                <div class="u-flex u-gap-iii">
+                  <button class="c-btn c-btn--sm c-btn--primary">Reservar plaza</button>
+                  <button class="c-btn c-btn--sm c-btn--outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">Ver programa</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Size Reference Table -->
+          <div class="c-card c-card--flat u-p-iv">
+            <h4 class="u-mb-iii u-text-bold">Referencia de Tamaños de Imagen</h4>
+            <div class="c-table-container c-table-container--clean">
+              <table class="c-table c-table--clean c-table--compact">
+                <thead>
+                  <tr>
+                    <th class="c-table__th">Clase</th>
+                    <th class="c-table__th">Altura</th>
+                    <th class="c-table__th">Uso recomendado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card__img--sm</code></td>
+                    <td class="c-table__td">8rem</td>
+                    <td class="c-table__td">Listados compactos, thumbnails</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card__img</code> <span class="u-text-ii u-text-muted">(predeterminado)</span></td>
+                    <td class="c-table__td">12rem</td>
+                    <td class="c-table__td">Tarjetas estándar de blog o producto</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card__img--lg</code></td>
+                    <td class="c-table__td">16rem</td>
+                    <td class="c-table__td">Destacados, portafolio</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card__img--xl</code></td>
+                    <td class="c-table__td">20rem</td>
+                    <td class="c-table__td">Hero cards, galerías editoriales</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card--cover-sm</code></td>
+                    <td class="c-table__td">12rem</td>
+                    <td class="c-table__td">Cover compacto</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card--cover</code> <span class="u-text-ii u-text-muted">(predeterminado)</span></td>
+                    <td class="c-table__td">16rem</td>
+                    <td class="c-table__td">Cover estándar</td>
+                  </tr>
+                  <tr class="c-table__tr">
+                    <td class="c-table__td"><code class="v-token-class">.c-card--cover-lg</code></td>
+                    <td class="c-table__td">22rem</td>
+                    <td class="c-table__td">Hero banner, eventos, destacados principales</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Semantic Card Section -->
+          <h3 class="u-mb-iv">Cabecera y Pie Semánticos sin Clases (Classless HTML Tags)</h3>
+          <p class="u-mb-iv u-text-muted">Senia UI permite estructurar tarjetas acoplando directamente las etiquetas HTML semánticas <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> como hijos directos de <code>.c-card</code>. Los bordes, radios y fondos se acoplan automáticamente.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Tarjeta Semántica sin Clases</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-card</span>
+                <span class="v-token-tag">&lt;header&gt;</span>
+                <span class="v-token-tag">&lt;footer&gt;</span>
+              </div>
+              <div class="u-w-full">
+                <div class="c-card" style="max-width: 450px; margin: 0 auto;">
+                  <header>
+                    <h4 class="u-m-none" style="font-weight: 700;">Título de Tarjeta Semántica</h4>
+                  </header>
+                  <div class="c-card__body">
+                    <p class="u-mb-none">
+                      Esta sección corresponde al cuerpo estándar de la tarjeta. Las etiquetas superior e inferior de cabecera y pie de página se acoplan a las esquinas redondeadas del contenedor padre de forma automatizada.
+                    </p>
+                  </div>
+                  <footer>
+                    <div class="u-flex u-justify-between u-align-center">
+                      <span class="u-text-ii u-text-muted">Grupo Senia © 2026</span>
+                      <button class="c-btn c-btn--sm c-btn--primary">Aceptar</button>
+                    </div>
+                  </footer>
                 </div>
               </div>
             </div>

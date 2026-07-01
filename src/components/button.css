@@ -17,9 +17,9 @@
   user-select: none;
   border: 1px solid transparent;
   border-radius: var(--radius-iii);
-  padding: 0.5rem 1rem; /* Default medium */
+  padding: 0.5rem 1.25rem; /* Default medium */
   line-height: var(--line-height-none);
-  transition: var(--transition-colors);
+  transition: var(--transition-all);
   cursor: pointer;
   
   &:focus-visible {
@@ -30,72 +30,648 @@
   
   &:disabled,
   &.c-btn--disabled {
-    opacity: 0.5;
+    opacity: 0.45;
     cursor: not-allowed;
     pointer-events: none !important;
+    box-shadow: none !important;
   }
 }
 
 /* --- Sizes --- */
 
 .c-btn--sm {
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.875rem;
   font-size: var(--font-size-ii);
   border-radius: var(--radius-ii);
 }
 
 .c-btn--lg {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   font-size: var(--font-size-v);
   border-radius: var(--radius-iv);
 }
 
 /* --- Variants --- */
 
-/* Primary: Amarillo Senia (texto oscuro sobre fondo amarillo para contraste WCAG AA) */
-.c-btn--primary {
-  background-color: var(--color-primary-500);
-  border-color: var(--color-primary-500);
+/* ==========================================
+   NEUTRAL BUTTON (Base of the system)
+   ========================================== */
+.c-btn--neutral {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-200);
   color: var(--color-neutral-900);
   box-shadow: var(--shadow-i);
   
   &:hover {
-    background-color: var(--color-primary-600);
-    border-color: var(--color-primary-600);
-    color: var(--color-neutral-900);
+    background-color: var(--color-neutral-200);
+    border-color: var(--color-neutral-300);
+    color: var(--color-neutral-950);
     box-shadow: var(--shadow-ii);
   }
   
   &:active {
-    background-color: var(--color-primary-700);
-    border-color: var(--color-primary-700);
-    color: #ffffff;
+    background-color: var(--color-neutral-300);
+    border-color: var(--color-neutral-400);
+  }
+
+  .theme-dark & {
+    background-color: var(--color-neutral-800);
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-100);
+    
+    &:hover {
+      background-color: var(--color-neutral-700);
+      border-color: var(--color-neutral-600);
+      color: #ffffff;
+    }
+    
+    &:active {
+      background-color: var(--color-neutral-600);
+      border-color: var(--color-neutral-500);
+    }
   }
 }
 
-/* Secondary: Dorado Corporativo (texto oscuro sobre dorado) */
+.c-btn--neutral.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-neutral-300);
+  color: var(--color-neutral-700);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-neutral-100);
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-900);
+  }
+  
+  &:active {
+    background-color: var(--color-neutral-200);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-300);
+    
+    &:hover {
+      background-color: var(--color-neutral-800);
+      border-color: var(--color-neutral-600);
+      color: var(--color-neutral-100);
+    }
+    
+    &:active {
+      background-color: var(--color-neutral-700);
+    }
+  }
+}
+
+.c-btn--neutral.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-neutral-700);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+  }
+  
+  &:active {
+    background-color: var(--color-neutral-200);
+  }
+  
+  .theme-dark & {
+    color: var(--color-neutral-300);
+    
+    &:hover {
+      background-color: var(--color-neutral-800);
+      color: var(--color-neutral-100);
+    }
+    
+    &:active {
+      background-color: var(--color-neutral-700);
+    }
+  }
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON (Amarillo Senia)
+   ========================================== */
+.c-btn--primary {
+  background-color: var(--color-highlight);
+  border-color: var(--color-highlight);
+  color: var(--color-highlight-text);
+  box-shadow: var(--shadow-i);
+  
+  &:hover {
+    background-color: var(--color-highlight-hover);
+    border-color: var(--color-highlight-hover);
+    color: var(--color-highlight-text);
+    box-shadow: var(--shadow-ii);
+  }
+  
+  &:active {
+    background-color: color-mix(in srgb, var(--color-highlight) 80%, black);
+    border-color: color-mix(in srgb, var(--color-highlight) 80%, black);
+    color: var(--color-highlight-text);
+    
+    .theme-dark & {
+      background-color: color-mix(in srgb, var(--color-highlight) 80%, white);
+      border-color: color-mix(in srgb, var(--color-highlight) 80%, white);
+    }
+  }
+}
+
+.c-btn--primary.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-highlight);
+  color: var(--color-highlight);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-highlight) 10%, transparent);
+    border-color: var(--color-highlight-hover);
+    color: var(--color-highlight-hover);
+  }
+  
+  &:active {
+    background-color: color-mix(in srgb, var(--color-highlight) 20%, transparent);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-highlight);
+    color: var(--color-highlight);
+    
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-highlight) 15%, transparent);
+      border-color: var(--color-highlight-hover);
+      color: var(--color-highlight-hover);
+    }
+    
+    &:active {
+      background-color: color-mix(in srgb, var(--color-highlight) 25%, transparent);
+    }
+  }
+}
+
+.c-btn--primary.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-highlight);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-highlight) 10%, transparent);
+    color: var(--color-highlight-hover);
+  }
+  
+  &:active {
+    background-color: color-mix(in srgb, var(--color-highlight) 20%, transparent);
+  }
+  
+  .theme-dark & {
+    color: var(--color-highlight);
+    
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-highlight) 15%, transparent);
+      color: var(--color-highlight-hover);
+    }
+    
+    &:active {
+      background-color: rgba(255, 238, 88, 0.25);
+    }
+  }
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON (Dark background, white text)
+   ========================================== */
 .c-btn--secondary {
   background-color: var(--color-secondary-500);
   border-color: var(--color-secondary-500);
-  color: var(--color-neutral-900);
+  color: #ffffff;
   box-shadow: var(--shadow-i);
   
   &:hover {
     background-color: var(--color-secondary-600);
     border-color: var(--color-secondary-600);
-    color: var(--color-neutral-900);
+    color: #ffffff;
     box-shadow: var(--shadow-ii);
   }
   
   &:active {
     background-color: var(--color-secondary-700);
     border-color: var(--color-secondary-700);
-    color: #ffffff;
+  }
+  
+  .theme-dark & {
+    background-color: var(--color-secondary-400);
+    border-color: var(--color-secondary-400);
+    
+    &:hover {
+      background-color: var(--color-secondary-300);
+      border-color: var(--color-secondary-300);
+    }
+    
+    &:active {
+      background-color: var(--color-secondary-500);
+      border-color: var(--color-secondary-500);
+    }
   }
 }
 
-/* Outline */
-.c-btn--outline {
+.c-btn--secondary.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-secondary-500);
+  color: var(--color-secondary-500);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-secondary-50);
+    border-color: var(--color-secondary-600);
+    color: var(--color-secondary-600);
+  }
+  
+  &:active {
+    background-color: var(--color-secondary-100);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-secondary-400);
+    color: var(--color-secondary-300);
+    
+    &:hover {
+      background-color: rgba(39, 88, 26, 0.2);
+      border-color: var(--color-secondary-300);
+      color: var(--color-secondary-200);
+    }
+    
+    &:active {
+      background-color: rgba(39, 88, 26, 0.35);
+    }
+  }
+}
+
+.c-btn--secondary.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-secondary-500);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-secondary-50);
+    color: var(--color-secondary-600);
+  }
+  
+  &:active {
+    background-color: var(--color-secondary-100);
+  }
+  
+  .theme-dark & {
+    color: var(--color-secondary-300);
+    
+    &:hover {
+      background-color: rgba(39, 88, 26, 0.2);
+      color: var(--color-secondary-200);
+    }
+    
+    &:active {
+      background-color: rgba(39, 88, 26, 0.35);
+    }
+  }
+}
+
+
+/* ==========================================
+   SEMANTIC STATES (Success, Error, Info)
+   ========================================== */
+
+/* SUCCESS STATE */
+.c-btn--success {
+  background-color: var(--color-success-500);
+  border-color: var(--color-success-500);
+  color: #ffffff;
+  box-shadow: var(--shadow-i);
+  
+  &:hover {
+    background-color: var(--color-success-600);
+    border-color: var(--color-success-600);
+    box-shadow: var(--shadow-ii);
+  }
+  
+  &:active {
+    background-color: var(--color-success-700);
+    border-color: var(--color-success-700);
+  }
+}
+
+.c-btn--success.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-success-500);
+  color: var(--color-success-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-success-50);
+    border-color: var(--color-success-600);
+    color: var(--color-success-700);
+  }
+  
+  &:active {
+    background-color: var(--color-success-100);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-success-400);
+    color: var(--color-success-300);
+    
+    &:hover {
+      background-color: rgba(131, 199, 111, 0.15);
+      border-color: var(--color-success-300);
+      color: var(--color-success-200);
+    }
+    
+    &:active {
+      background-color: rgba(131, 199, 111, 0.25);
+    }
+  }
+}
+
+.c-btn--success.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-success-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-success-50);
+    color: var(--color-success-700);
+  }
+  
+  &:active {
+    background-color: var(--color-success-100);
+  }
+  
+  .theme-dark & {
+    color: var(--color-success-300);
+    
+    &:hover {
+      background-color: rgba(131, 199, 111, 0.15);
+      color: var(--color-success-200);
+    }
+    
+    &:active {
+      background-color: rgba(131, 199, 111, 0.25);
+    }
+  }
+}
+
+/* ERROR STATE */
+.c-btn--error {
+  background-color: var(--color-error-500);
+  border-color: var(--color-error-500);
+  color: #ffffff;
+  box-shadow: var(--shadow-i);
+  
+  &:hover {
+    background-color: var(--color-error-600);
+    border-color: var(--color-error-600);
+    box-shadow: var(--shadow-ii);
+  }
+  
+  &:active {
+    background-color: var(--color-error-700);
+    border-color: var(--color-error-700);
+  }
+}
+
+.c-btn--error.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-error-500);
+  color: var(--color-error-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-error-50);
+    border-color: var(--color-error-600);
+    color: var(--color-error-700);
+  }
+  
+  &:active {
+    background-color: var(--color-error-100);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-error-400);
+    color: var(--color-error-300);
+    
+    &:hover {
+      background-color: rgba(224, 41, 53, 0.15);
+      border-color: var(--color-error-300);
+      color: var(--color-error-200);
+    }
+    
+    &:active {
+      background-color: rgba(224, 41, 53, 0.25);
+    }
+  }
+}
+
+.c-btn--error.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-error-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-error-50);
+    color: var(--color-error-700);
+  }
+  
+  &:active {
+    background-color: var(--color-error-100);
+  }
+  
+  .theme-dark & {
+    color: var(--color-error-300);
+    
+    &:hover {
+      background-color: rgba(224, 41, 53, 0.15);
+      color: var(--color-error-200);
+    }
+    
+    &:active {
+      background-color: rgba(224, 41, 53, 0.25);
+    }
+  }
+}
+
+/* INFO STATE */
+.c-btn--info {
+  background-color: var(--color-info-500);
+  border-color: var(--color-info-500);
+  color: #ffffff;
+  box-shadow: var(--shadow-i);
+  
+  &:hover {
+    background-color: var(--color-info-600);
+    border-color: var(--color-info-600);
+    box-shadow: var(--shadow-ii);
+  }
+  
+  &:active {
+    background-color: var(--color-info-700);
+    border-color: var(--color-info-700);
+  }
+}
+
+.c-btn--info.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-info-500);
+  color: var(--color-info-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-info-50);
+    border-color: var(--color-info-600);
+    color: var(--color-info-700);
+  }
+  
+  &:active {
+    background-color: var(--color-info-100);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-info-400);
+    color: var(--color-info-300);
+    
+    &:hover {
+      background-color: rgba(38, 113, 217, 0.15);
+      border-color: var(--color-info-300);
+      color: var(--color-info-200);
+    }
+    
+    &:active {
+      background-color: rgba(38, 113, 217, 0.25);
+    }
+  }
+}
+
+.c-btn--info.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-info-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-info-50);
+    color: var(--color-info-700);
+  }
+  
+  &:active {
+    background-color: var(--color-info-100);
+  }
+  
+  .theme-dark & {
+    color: var(--color-info-300);
+    
+    &:hover {
+      background-color: rgba(38, 113, 217, 0.15);
+      color: var(--color-info-200);
+    }
+    
+    &:active {
+      background-color: rgba(38, 113, 217, 0.25);
+    }
+  }
+}
+
+/* WARNING STATE */
+.c-btn--warning {
+  background-color: var(--color-warning-500);
+  border-color: var(--color-warning-500);
+  color: #ffffff;
+  box-shadow: var(--shadow-i);
+  
+  &:hover {
+    background-color: var(--color-warning-600);
+    border-color: var(--color-warning-600);
+    box-shadow: var(--shadow-ii);
+  }
+  
+  &:active {
+    background-color: var(--color-warning-700);
+    border-color: var(--color-warning-700);
+  }
+}
+
+.c-btn--warning.c-btn--outline {
+  background-color: transparent;
+  border-color: var(--color-warning-500);
+  color: var(--color-warning-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-warning-50);
+    border-color: var(--color-warning-600);
+    color: var(--color-warning-700);
+  }
+  
+  &:active {
+    background-color: var(--color-warning-100);
+  }
+  
+  .theme-dark & {
+    border-color: var(--color-warning-400);
+    color: var(--color-warning-300);
+    
+    &:hover {
+      background-color: rgba(236, 120, 19, 0.15);
+      border-color: var(--color-warning-300);
+      color: var(--color-warning-200);
+    }
+    
+    &:active {
+      background-color: rgba(236, 120, 19, 0.25);
+    }
+  }
+}
+
+.c-btn--warning.c-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-warning-600);
+  box-shadow: none;
+  
+  &:hover {
+    background-color: var(--color-warning-50);
+    color: var(--color-warning-700);
+  }
+  
+  &:active {
+    background-color: var(--color-warning-100);
+  }
+  
+  .theme-dark & {
+    color: var(--color-warning-300);
+    
+    &:hover {
+      background-color: rgba(236, 120, 19, 0.15);
+      color: var(--color-warning-200);
+    }
+    
+    &:active {
+      background-color: rgba(236, 120, 19, 0.25);
+    }
+  }
+}
+
+
+/* ==========================================
+   DEFAULT OUTLINE & GHOST (Fallback)
+   ========================================== */
+.c-btn--outline:not([class*="--primary"]):not([class*="--secondary"]):not([class*="--neutral"]):not([class*="--success"]):not([class*="--error"]):not([class*="--info"]):not([class*="--warning"]) {
   background-color: transparent;
   border-color: var(--color-border-default);
   color: var(--color-text-body);
@@ -126,8 +702,7 @@
   }
 }
 
-/* Ghost */
-.c-btn--ghost {
+.c-btn--ghost:not([class*="--primary"]):not([class*="--secondary"]):not([class*="--neutral"]):not([class*="--success"]):not([class*="--error"]):not([class*="--info"]):not([class*="--warning"]) {
   background-color: transparent;
   color: var(--color-text-body);
   
@@ -154,12 +729,16 @@
   }
 }
 
-/* Link */
+
+/* ==========================================
+   LINK BUTTON
+   ========================================== */
 .c-btn--link {
   background-color: transparent;
   color: var(--color-text-link);
   padding: 0;
   border-radius: 0;
+  border: none;
   
   &:hover {
     color: var(--color-text-link-hover);
@@ -167,46 +746,112 @@
   }
 }
 
-/* Loading Spinner Simulation */
+
+/* ==========================================
+   LOADING SPINNER SIMULATION
+   ========================================== */
 .c-btn--loading {
   position: relative;
   color: transparent !important;
-  pointer-events: none;
+  pointer-events: none !important;
+  opacity: 0.65; /* Fading del botón para indicar inactividad */
+  cursor: not-allowed;
+  box-shadow: none !important;
+  
+  /* Borde atenuado no cliqueable */
+  border-color: rgba(0, 0, 0, 0.12) !important;
   
   &::after {
     content: "";
     position: absolute;
-    width: 1rem;
-    height: 1rem;
+    width: 1.15rem;
+    height: 1.15rem;
     top: 50%;
     left: 50%;
-    margin-top: -0.5rem;
-    margin-left: -0.5rem;
-    border: 2px solid currentColor;
-    border-right-color: transparent;
+    margin-top: -0.575rem;
+    margin-left: -0.575rem;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-right-color: currentColor;
     border-radius: var(--radius-full);
     animation: c-btn-spin 0.75s linear infinite;
   }
+
   
-  &.c-btn--primary::after,
-  &.c-btn--secondary::after {
-    border-color: rgba(0, 0, 0, 0.15);
-    border-right-color: var(--color-neutral-900);
+  /* Overrides for dark buttons or light text buttons */
+  &.c-btn--secondary::after,
+  &.c-btn--success::after,
+  &.c-btn--error::after,
+  &.c-btn--info::after,
+  &.c-btn--warning::after {
+    border-color: rgba(255, 255, 255, 0.25);
+    border-right-color: #ffffff;
   }
   
-  &.c-btn--outline::after,
-  &.c-btn--ghost::after {
-    border-color: rgba(0, 0, 0, 0.1);
-    border-right-color: var(--color-primary-600);
-  }
-  
-  .theme-dark &.c-btn--outline::after,
-  .theme-dark &.c-btn--ghost::after {
-    border-color: rgba(255, 255, 255, 0.1);
-    border-right-color: var(--color-primary-400);
+  .theme-dark & {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    &::after {
+      border-color: rgba(255, 255, 255, 0.2);
+      border-right-color: currentColor;
+    }
   }
 }
+
+/* ==========================================
+   SQUARE & ICON-ONLY BUTTONS
+   ========================================== */
+.c-btn--square {
+  padding: 0;
+  width: 2.5rem; /* Coincide con la altura por defecto */
+  height: 2.5rem;
+  flex-shrink: 0;
+  
+  &.c-btn--sm {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+  
+  &.c-btn--lg {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+/* ==========================================
+   SPLIT & GROUP BUTTONS
+   ========================================== */
+.c-btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+  box-shadow: var(--shadow-i);
+  border-radius: var(--radius-iii);
+  overflow: hidden;
+  
+  .c-btn {
+    border-radius: 0;
+    box-shadow: none !important;
+    
+    &:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+  }
+  
+  &.c-btn-group--sm {
+    border-radius: var(--radius-ii);
+  }
+  
+  &.c-btn-group--lg {
+    border-radius: var(--radius-iv);
+  }
+  
+  .theme-dark & {
+    .c-btn:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
 
 @keyframes c-btn-spin {
   to { transform: rotate(360deg); }
 }
+

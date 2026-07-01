@@ -1,0 +1,138 @@
+/* Box Shadow & Pulse Utilities
+   Prefixes: u-shadow-, u-pulse-
+*/
+
+/* ==========================================================================
+   BOX SHADOW UTILITIES
+   Prefixes: u-shadow-
+   ========================================================================== */
+.u-shadow-none { box-shadow: var(--shadow-none) !important; }
+.u-shadow-i { box-shadow: var(--shadow-i) !important; }
+.u-shadow-ii { box-shadow: var(--shadow-ii) !important; }
+.u-shadow-iii { box-shadow: var(--shadow-iii) !important; }
+.u-shadow-iv { box-shadow: var(--shadow-iv) !important; }
+.u-shadow-v { box-shadow: var(--shadow-v) !important; }
+.u-shadow-vi { box-shadow: var(--shadow-vi) !important; }
+.u-shadow-vii { box-shadow: var(--shadow-vii) !important; }
+.u-shadow-viii { box-shadow: var(--shadow-viii) !important; }
+.u-shadow-ix { box-shadow: var(--shadow-ix) !important; }
+.u-shadow-x { box-shadow: var(--shadow-x) !important; }
+.u-shadow-inner { box-shadow: var(--shadow-inner) !important; }
+.u-shadow-focus { box-shadow: var(--shadow-focus) !important; }
+
+/* --------------------------------------------------------------------------
+   Pulse Effect (Pseudo-element Based)
+   Can be applied to any relative container (buttons, badges, icons, etc.)
+   -------------------------------------------------------------------------- */
+
+/* Base structural setup for any element with pulse decoration */
+.u-pulse,
+.u-pulse-hover,
+.u-pulse-active,
+.u-pulse-once {
+  position: relative;
+  isolation: auto; /* Permite ver el pulso que está detrás */
+  z-index: 1;
+  overflow: visible; /* Permite que el pulso crezca sin recortarse */
+}
+
+.u-pulse::before,
+.u-pulse-hover::before,
+.u-pulse-active::before,
+.u-pulse-once::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pulse-color, hsla(var(--color-neutral-h), var(--color-neutral-s), 50%, 0.55));
+  border-radius: inherit;
+  transform: scale(1);
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 75ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Animation Triggers (CSS-only behaviors)
+   -------------------------------------------------------------------------- */
+
+/* 1. Default / Infinite Pulse (always running) */
+.u-pulse::before {
+  animation: u-pulse-animation 2s infinite ease-out;
+}
+
+/* 2. Single Pulse on Load (Only once, ideal for notification alerts) */
+.u-pulse-once::before {
+  animation: u-pulse-animation 1.8s 1 ease-out forwards;
+}
+
+/* 3. On-demand Hover Pulse (Only pulses when mouse is over) */
+.u-pulse-hover:hover::before {
+  animation: u-pulse-animation 1.6s infinite ease-out;
+}
+
+/* 4. On-demand Click/Request Pulse (Satisfying feedback ripple on click/active state, repeatable) */
+.u-pulse-active::before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.u-pulse-active:active::before {
+  transform: scale(1);
+  opacity: 0.85;
+  transition: none;
+}
+
+@keyframes u-pulse-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Color Modifier Overrides (Using HSL values programmatically)
+   -------------------------------------------------------------------------- */
+
+/* Primary */
+.u-pulse-primary::before {
+  --pulse-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.55);
+}
+
+/* Secondary */
+.u-pulse-secondary::before {
+  --pulse-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.55);
+}
+
+/* Neutral */
+.u-pulse-neutral::before {
+  --pulse-color: hsla(var(--color-neutral-h), var(--color-neutral-s), var(--color-neutral-500-l, 50%), 0.55);
+}
+
+/* Success */
+.u-pulse-success::before {
+  --pulse-color: hsla(var(--color-success-h), var(--color-success-s), var(--color-success-l), 0.55);
+}
+
+/* Warning */
+.u-pulse-warning::before {
+  --pulse-color: hsla(var(--color-warning-h), var(--color-warning-s), var(--color-warning-l), 0.55);
+}
+
+/* Error */
+.u-pulse-error::before {
+  --pulse-color: hsla(var(--color-error-h), var(--color-error-s), var(--color-error-l), 0.55);
+}
+
+/* Info */
+.u-pulse-info::before {
+  --pulse-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.55);
+}

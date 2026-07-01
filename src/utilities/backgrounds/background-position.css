@@ -1,0 +1,13 @@
+/* Background Position Utilities
+   Prefixes: u-bg-
+*/
+
+.u-bg-bottom { background-position: bottom !important; }
+.u-bg-center { background-position: center !important; }
+.u-bg-left { background-position: left !important; }
+.u-bg-left-bottom { background-position: left bottom !important; }
+.u-bg-left-top { background-position: left top !important; }
+.u-bg-right { background-position: right !important; }
+.u-bg-right-bottom { background-position: right bottom !important; }
+.u-bg-right-top { background-position: right top !important; }
+.u-bg-top { background-position: top !important; }

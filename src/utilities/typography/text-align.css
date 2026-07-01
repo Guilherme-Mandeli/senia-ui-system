@@ -1,0 +1,47 @@
+/* Text Alignment & Layout Utilities
+   Prefixes: u-text-
+*/
+
+/* Text Alignments */
+.u-text-left { text-align: left !important; }
+.u-text-center { text-align: center !important; }
+.u-text-right { text-align: right !important; }
+.u-text-justify { text-align: justify !important; }
+
+/* Text Decoration */
+.u-text-underline { text-decoration: underline !important; }
+.u-text-line-through { text-decoration: line-through !important; }
+.u-text-decoration-none { text-decoration: none !important; }
+
+/* White Space */
+.u-text-nowrap { white-space: nowrap !important; }
+.u-text-pre { white-space: pre !important; }
+.u-text-pre-line { white-space: pre-line !important; }
+.u-text-pre-wrap { white-space: pre-wrap !important; }
+.u-text-white-space-normal { white-space: normal !important; }
+
+/* Word Break */
+.u-text-break-normal { word-break: normal !important; }
+.u-text-break-all { word-break: break-all !important; }
+.u-text-break-keep { word-break: keep-all !important; }
+
+/* Overflow Wrap (Word Wrap) */
+.u-text-wrap-normal { overflow-wrap: normal !important; }
+.u-text-wrap-anywhere { overflow-wrap: anywhere !important; }
+.u-text-wrap-break { overflow-wrap: break-word !important; }
+
+/* Text Overflow */
+.u-text-overflow-clip { text-overflow: clip !important; }
+.u-text-overflow-ellipsis { text-overflow: ellipsis !important; }
+
+/* Hyphens */
+.u-text-hyphens-none { hyphens: none !important; }
+.u-text-hyphens-manual { hyphens: manual !important; }
+.u-text-hyphens-auto { hyphens: auto !important; }
+
+/* Ellipsis & Squeezing (legacy utility) */
+.u-text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}

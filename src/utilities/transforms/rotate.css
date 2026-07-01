@@ -1,0 +1,22 @@
+/* Rotate Utilities
+   Prefixes: u-rotate-
+*/
+
+.u-rotate-0 { transform: rotate(0deg) !important; }
+.u-rotate-1 { transform: rotate(1deg) !important; }
+.u-rotate-2 { transform: rotate(2deg) !important; }
+.u-rotate-3 { transform: rotate(3deg) !important; }
+.u-rotate-6 { transform: rotate(6deg) !important; }
+.u-rotate-12 { transform: rotate(12deg) !important; }
+.u-rotate-45 { transform: rotate(45deg) !important; }
+.u-rotate-90 { transform: rotate(90deg) !important; }
+.u-rotate-180 { transform: rotate(180deg) !important; }
+
+.u-rotate-n1 { transform: rotate(-1deg) !important; }
+.u-rotate-n2 { transform: rotate(-2deg) !important; }
+.u-rotate-n3 { transform: rotate(-3deg) !important; }
+.u-rotate-n6 { transform: rotate(-6deg) !important; }
+.u-rotate-n12 { transform: rotate(-12deg) !important; }
+.u-rotate-n45 { transform: rotate(-45deg) !important; }
+.u-rotate-n90 { transform: rotate(-90deg) !important; }
+.u-rotate-n180 { transform: rotate(-180deg) !important; }

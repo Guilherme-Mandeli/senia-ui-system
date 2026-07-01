@@ -1,0 +1,8 @@
+/* User Select Utilities
+   Prefixes: u-select-
+*/
+
+.u-select-none { user-select: none !important; }
+.u-select-text { user-select: text !important; }
+.u-select-all { user-select: all !important; }
+.u-select-auto { user-select: auto !important; }

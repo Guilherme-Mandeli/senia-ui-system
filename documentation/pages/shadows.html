@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -36,10 +37,10 @@
     <main class="v-content">
       <div class="l-container">
         
-        <header class="u-mb-vi">
-          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+        <header class="u-mb-viii">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Tokens de Diseño</span>
           <h1>Sombras &amp; Elevaciones</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Escala tridimensional realista de sombras para simular profundidad, prioridades y jerarquías aéreas.
           </p>
         </header>
@@ -47,69 +48,89 @@
         <hr>
 
         <!-- Shadow Elevators Grid -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2>Elevaciones Físicas</h2>
           <p class="u-mb-v">Pase el cursor o pulse sobre las siguientes tarjetas para inspeccionar el nivel de proyección de sombras tridimensionales:</p>
           
-          <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          <div class="u-grid u-gap-vi" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-none); border-color: var(--color-border-default);">
-              <span class="u-text-xs u-text-bold">--shadow-none</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 0 (Plano)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-none" style="min-height: 160px; border-color: var(--color-border-default);">
+              <span class="u-text-iii u-text-bold">.u-shadow-none</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 0 (Plano)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-i);">
-              <span class="u-text-xs u-text-bold">--shadow-i</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 1 (Mínima)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-i" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-i</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 1 (Mínima)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-ii);">
-              <span class="u-text-xs u-text-bold">--shadow-ii</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 2 (Card por defecto)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-ii" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-ii</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 2 (Card por defecto)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-iii);">
-              <span class="u-text-xs u-text-bold">--shadow-iii</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 3 (Flotante)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-iii" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-iii</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 3 (Flotante)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-iv);">
-              <span class="u-text-xs u-text-bold">--shadow-iv</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 4 (Hover / Popovers)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-iv" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-iv</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 4 (Hover / Popovers)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-v);">
-              <span class="u-text-xs u-text-bold">--shadow-v</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 5 (Toast / Sticky)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-v" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-v</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 5 (Toast / Sticky)</span>
             </div>
 
-            <div class="c-card u-p-v u-items-center u-justify-center" style="min-height: 160px; box-shadow: var(--shadow-vi);">
-              <span class="u-text-xs u-text-bold">--shadow-vi</span>
-              <span class="u-text-2xs u-text-muted u-mt-i">Elevación 6 (Modales aéreos)</span>
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-vi" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-vi</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 6 (Modales aéreos)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-vii" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-vii</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 7 (Modales XL)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-viii" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-viii</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 8 (Paneles Flotantes)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-ix" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-ix</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 9 (Súper Aéreo)</span>
+            </div>
+
+            <div class="c-card u-p-v u-items-center u-justify-center u-shadow-x" style="min-height: 160px;">
+              <span class="u-text-iii u-text-bold">.u-shadow-x</span>
+              <span class="u-text-ii u-text-muted u-mt-i">Elevación 10 (Máxima Distancia)</span>
             </div>
 
           </div>
         </section>
 
         <!-- Special shadows and controls -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2>Sombras Especiales y Enfoque</h2>
           <p class="u-mb-v">Especialmente diseñadas para interactivos del sistema como campos de texto y focos de accesibilidad:</p>
           
           <div class="u-grid u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             
             <div class="c-card u-p-v">
-              <h4>Sombra Interna (<code>--shadow-inner</code>)</h4>
-              <p class="u-text-xs u-text-muted u-mb-iii">Proyecta la sombra hacia el interior de la superficie, simulando hundimiento físico.</p>
-              <div class="u-p-iv" style="box-shadow: var(--shadow-inner); background: var(--color-neutral-100); border-radius: var(--radius-ii); text-align: center; font-family: var(--font-family-mono); font-size: var(--font-size-ii);">
-                box-shadow: var(--shadow-inner);
+              <h4>Sombra Interna (<code>.u-shadow-inner</code>)</h4>
+              <p class="u-text-iii u-text-muted u-mb-iii">Proyecta la sombra hacia el interior de la superficie, simulando hundimiento físico.</p>
+              <div class="u-p-iv u-shadow-inner" style="background: var(--color-neutral-100); border-radius: var(--radius-ii); text-align: center; font-family: var(--font-family-mono); font-size: var(--font-size-ii);">
+                class="u-shadow-inner"
               </div>
             </div>
 
             <div class="c-card u-p-v">
-              <h4>Foco de Accesibilidad (<code>--shadow-focus</code>)</h4>
-              <p class="u-text-xs u-text-muted u-mb-iii">Aureola brillante exterior con el color amarillo corporativo de Sènia para resaltar interacciones por teclado.</p>
-              <button class="c-btn c-btn--outline u-w-full" style="box-shadow: var(--shadow-focus);">
+              <h4>Foco de Accesibilidad (<code>.u-shadow-focus</code>)</h4>
+              <p class="u-text-iii u-text-muted u-mb-iii">Aureola brillante exterior con el color amarillo corporativo de Sènia para resaltar interacciones por teclado.</p>
+              <button class="c-btn c-btn--outline u-w-full u-shadow-focus">
                 Botón Enfocado de Muestra
               </button>
             </div>
@@ -118,7 +139,7 @@
         </section>
 
         <!-- Equivalence Table -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2 class="u-mb-iii">Guía y Convenciones de Uso</h2>
           
           <div class="c-table-container">
@@ -165,6 +186,26 @@
                   <td class="c-table__td"><code>--shadow-vi</code></td>
                   <td class="c-table__td">Máxima proyección de sombra y desenfoque.</td>
                   <td class="c-table__td">Ventanas Modales del sistema (.c-modal) y diálogos aéreos principales.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-vii</code></td>
+                  <td class="c-table__td">Elevación 7 amplia.</td>
+                  <td class="c-table__td">Modales extra grandes y vistas superpuestas a gran altura.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-viii</code></td>
+                  <td class="c-table__td">Elevación 8 de alto contraste.</td>
+                  <td class="c-table__td">Paneles deslizantes laterales complejos de configuración (drawers/flyouts).</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-ix</code></td>
+                  <td class="c-table__td">Sombra dramática y profunda.</td>
+                  <td class="c-table__td">Contenedores y cuadros flotantes aéreos de máxima jerarquía en la aplicación.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--shadow-x</code></td>
+                  <td class="c-table__td">Sombra gigante extendida de largo alcance.</td>
+                  <td class="c-table__td">Simulación de objetos a máxima altura física con degradado tridimensional ultra difuso.</td>
                 </tr>
               </tbody>
             </table>

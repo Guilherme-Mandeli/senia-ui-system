@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,7 +40,7 @@
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Developer Guide</span>
           <h1>Integración &amp; Uso de Estilos</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Aprende a integrar, estructurar y extender los estilos de <strong>Senia UI CSS Framework</strong> en tus aplicaciones web con un alto rendimiento.
           </p>
         </header>
@@ -55,17 +56,17 @@
             <div class="c-card u-p-v">
               <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">Recomendado</span>
               <h4>Vía Compilada (Producción / CDN)</h4>
-              <p class="u-text-sm u-text-muted">
+              <p class="u-text-iv u-text-muted">
                 Una vez construido el framework (<code>npm run build</code>), se generan dos archivos CSS independientes y sus versiones minificadas en el directorio <code>/dist/</code>:
               </p>
               <div class="u-mb-iii" style="margin-top: var(--space-ii);">
-                <strong class="u-text-xs" style="color: var(--color-primary-500); display: block;">1. Estilo Esencial (Tokens, Temas y Reset):</strong>
-                <p class="u-text-xs u-text-muted u-mb-i">Perfecto para usar solo variables y estilos base nativos.</p>
+                <strong class="u-text-iii" style="color: var(--color-primary-500); display: block;">1. Estilo Esencial (Tokens, Temas y Reset):</strong>
+                <p class="u-text-iii u-text-muted u-mb-i">Perfecto para usar solo variables y estilos base nativos.</p>
                 <pre style="margin-bottom: var(--space-ii);"><code>&lt;link rel="stylesheet" href="https://cdn.grupo-senia.com/assets/senia-essential.min.css"&gt;</code></pre>
               </div>
               <div>
-                <strong class="u-text-xs" style="color: var(--color-success-500); display: block;">2. Suite Completa (Componentes, Layouts y Utilidades):</strong>
-                <p class="u-text-xs u-text-muted u-mb-i">Nuestra suite completa lista para construir interfaces estilo Bootstrap.</p>
+                <strong class="u-text-iii" style="color: var(--color-success-500); display: block;">2. Suite Completa (Componentes, Layouts y Utilidades):</strong>
+                <p class="u-text-iii u-text-muted u-mb-i">Nuestra suite completa lista para construir interfaces estilo Bootstrap.</p>
                 <pre style="margin-bottom: 0;"><code>&lt;link rel="stylesheet" href="https://cdn.grupo-senia.com/assets/senia-full.min.css"&gt;</code></pre>
               </div>
             </div>
@@ -73,15 +74,15 @@
             <div class="c-card u-p-v">
               <span class="c-badge c-badge--outline c-badge--success u-mb-ii">Entorno Local</span>
               <h4>Vía PostCSS / Módulos</h4>
-              <p class="u-text-sm u-text-muted">
+              <p class="u-text-iv u-text-muted">
                 Si estás desarrollando dentro del repositorio de Senia UI o en un bundle de Vite con PostCSS, puedes importar cualquiera de los dos entrypoints globales:
               </p>
               <div class="u-mb-iii" style="margin-top: var(--space-ii);">
-                <strong class="u-text-xs" style="display: block;">1. Estilo Esencial:</strong>
+                <strong class="u-text-iii" style="display: block;">1. Estilo Esencial:</strong>
                 <pre style="margin-bottom: var(--space-ii);"><code>@import "senia-ui-system/src/essential.css";</code></pre>
               </div>
               <div>
-                <strong class="u-text-xs" style="display: block;">2. Suite Completa:</strong>
+                <strong class="u-text-iii" style="display: block;">2. Suite Completa:</strong>
                 <pre style="margin-bottom: 0;"><code>@import "senia-ui-system/src/style.css";</code></pre>
               </div>
             </div>
@@ -152,7 +153,7 @@
         <section class="u-mb-v">
           <div class="c-card c-card--featured u-p-v">
             <h4>💡 Siguiente Paso: Gestión de Tipografías</h4>
-            <p class="u-text-sm u-text-muted">
+            <p class="u-text-iv u-text-muted">
               Hemos implementado Gill Sans de forma integrada y optimizada. Visita la guía específica para aprender a utilizar los distintos pesos tipográficos de Gill Sans sin perjudicar la velocidad de tu web.
             </p>
             <a href="fonts.html" class="c-badge c-badge--primary c-badge--pill">Ir a Guía de Fuentes →</a>

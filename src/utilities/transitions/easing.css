@@ -1,0 +1,8 @@
+/* Transition Easing Utilities
+   Prefixes: u-ease-
+*/
+
+.u-ease-linear { transition-timing-function: linear !important; }
+.u-ease-in { transition-timing-function: cubic-bezier(0.4, 0, 1, 1) !important; }
+.u-ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1) !important; }
+.u-ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important; }

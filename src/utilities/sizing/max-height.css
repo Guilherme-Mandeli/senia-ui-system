@@ -1,0 +1,11 @@
+/* Max Height Utilities
+   Prefixes: u-max-h-
+*/
+
+.u-max-h-auto { max-height: auto !important; }
+.u-max-h-none { max-height: none !important; }
+.u-max-h-full { max-height: 100% !important; }
+.u-max-h-screen { max-height: 100vh !important; }
+.u-max-h-fit { max-height: fit-content !important; }
+.u-max-h-min { max-height: min-content !important; }
+.u-max-h-max { max-height: max-content !important; }

@@ -1,0 +1,11 @@
+/* Min Width Utilities
+   Prefixes: u-min-w-
+*/
+
+.u-min-w-auto { min-width: auto !important; }
+.u-min-w-none { min-width: none !important; }
+.u-min-w-full { min-width: 100% !important; }
+.u-min-w-screen { min-width: 100vw !important; }
+.u-min-w-fit { min-width: fit-content !important; }
+.u-min-w-min { min-width: min-content !important; }
+.u-min-w-max { min-width: max-content !important; }

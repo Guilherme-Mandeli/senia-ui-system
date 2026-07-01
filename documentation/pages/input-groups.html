@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupos de Input - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Grupos de Entrada (Input Groups)</h1>
+          <p class="u-text-vi u-text-muted">
+            Combinaciones compactas de campos de entrada de texto, selectores y botones de acción unificados en un único control visual continuo.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Classic Input Groups -->
+        <section class="u-mb-vi">
+          <h2>Grupo Estándar (`.c-input-group` o `[role="group"]`)</h2>
+          <p class="u-mb-v">Permite fusionar de forma fluida bordes, desactivar radios de esquina internos y superponer bordes adyacentes para que se comporten como un solo elemento unificado:</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Campos Combinados Estándar</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-input-group</span>
+                <span class="v-token-class">[role="group"]</span>
+              </div>
+              <div class="u-w-full">
+                <div class="u-mb-iv">
+                  <label class="c-label">Buscar registros en el sistema</label>
+                  <div class="c-input-group">
+                    <input type="text" class="c-input" placeholder="Escribe el término de búsqueda...">
+                    <button class="c-btn c-btn--primary">Buscar</button>
+                  </div>
+                </div>
+    
+                <div class="u-mb-iv">
+                  <label class="c-label">Selección y entrada mixta</label>
+                  <div class="c-input-group">
+                    <select class="c-input" style="max-width: 130px;">
+                      <option>EUR</option>
+                      <option>USD</option>
+                      <option>GBP</option>
+                    </select>
+                    <input type="number" class="c-input" placeholder="0.00">
+                    <button class="c-btn c-btn--secondary">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Search Input Group Modifier -->
+        <section class="u-mb-vi">
+          <h2>Búsqueda Redondeada (`.c-input-group--search` o `[role="search"]`)</h2>
+          <p class="u-mb-v">Aplica radios de borde totalmente circulares (estilo píldora/cápsula) en los extremos exteriores de los campos agrupados para crear una barra de búsqueda premium:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Barra de Búsqueda de Esquinas Redondas</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-class">.c-input-group--search</span>
+                <span class="v-token-class">[role="search"]</span>
+              </div>
+              <div class="u-w-full">
+                <div>
+                  <label class="c-label">Barra de búsqueda del visualizador</label>
+                  <div class="c-input-group--search">
+                    <input type="text" class="c-input" placeholder="Buscar en la documentación técnica...">
+                    <button class="c-btn c-btn--primary">Buscar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Grupo estándar (input + botón) --&gt;
+&lt;div class="c-input-group"&gt;
+  &lt;input type="text" class="c-input" placeholder="Buscar..."&gt;
+  &lt;button class="c-btn c-btn--primary"&gt;Acción&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Variante de barra de búsqueda redondeada --&gt;
+&lt;div class="c-input-group--search"&gt;
+  &lt;input type="text" class="c-input" placeholder="Escribe algo..."&gt;
+  &lt;button class="c-btn c-btn--primary"&gt;Buscar&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

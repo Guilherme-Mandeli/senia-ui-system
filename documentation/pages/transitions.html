@@ -18,12 +18,14 @@
       margin-bottom: var(--space-iii);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      max-width: 680px; /* Limited track width for better tracking and premium layout */
       
       .theme-dark & { background-color: var(--color-neutral-900); }
     }
     
     .v-demo-box {
-      width: 48px;
+      width: 96px; /* Adjusted to 96px to perfectly contain 'Premium' with safe breathing room */
       height: 48px;
       background: var(--color-primary-500);
       border: 1px solid var(--color-neutral-400);
@@ -31,25 +33,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: var(--font-size-2xs);
+      font-size: var(--font-size-iii); /* Improved for text readability */
       font-weight: bold;
       color: var(--color-neutral-900);
-      transform: translateX(0);
-      transition: transform var(--transition-duration-slow);
+      position: relative;
+      left: 0;
+      transition: left var(--transition-duration-slow), transform var(--transition-duration-fast) var(--transition-easing-premium), box-shadow var(--transition-duration-fast) var(--transition-easing-premium);
+      box-shadow: var(--shadow-i);
     }
     
     .v-demo-track:hover .v-demo-box {
-      transform: translateX(calc(100% + 140px));
+      left: calc(100% - 96px); /* Exact displacement to the right edge matching the updated width */
+      transform: scale(1.03);
+      box-shadow: var(--shadow-ii);
     }
   </style>
+
 </head>
 <body class="v-body">
 
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -71,9 +79,9 @@
       <div class="l-container">
         
         <header class="u-mb-vi">
-          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Tokens de Diseño</span>
           <h1>Transiciones &amp; Animaciones</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Curvas de aceleración y tiempos estándar para crear micro-interacciones corporativas fluidas y naturales.
           </p>
         </header>
@@ -88,28 +96,28 @@
           <div class="c-card u-p-v">
             
             <div class="u-mb-iv">
-              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva Lineal (<code>--transition-easing-linear</code>)</span>
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Curva Lineal <code class="v-token-css u-ml-ii">--transition-easing-linear</code></span>
               <div class="v-demo-track">
                 <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-linear);">Linear</div>
               </div>
             </div>
 
             <div class="u-mb-iv">
-              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Entrada (<code>--transition-easing-in</code>)</span>
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Curva de Entrada <code class="v-token-css u-ml-ii">--transition-easing-in</code></span>
               <div class="v-demo-track">
                 <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-in);">In</div>
               </div>
             </div>
 
             <div class="u-mb-iv">
-              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Salida (<code>--transition-easing-out</code>)</span>
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Curva de Salida <code class="v-token-css u-ml-ii">--transition-easing-out</code></span>
               <div class="v-demo-track">
                 <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-out);">Out</div>
               </div>
             </div>
 
             <div class="u-mb-iv">
-              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva de Entrada-Salida (<code>--transition-easing-in-out</code>)</span>
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Curva de Entrada-Salida <code class="v-token-css u-ml-ii">--transition-easing-in-out</code></span>
               <div class="v-demo-track">
                 <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-in-out);">In-Out</div>
               </div>
@@ -117,9 +125,47 @@
 
             <div class="u-mb-iv">
               <span class="c-badge c-badge--primary u-mb-ii">Premium</span>
-              <span class="u-text-xs u-text-bold u-mb-ii style=display: block;">Curva Orgánica de Sènia (<code>--transition-easing-premium</code>)</span>
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Curva Orgánica de Sènia <code class="v-token-css u-ml-ii">--transition-easing-premium</code></span>
               <div class="v-demo-track">
                 <div class="v-demo-box" style="transition-timing-function: var(--transition-easing-premium); background: var(--color-secondary-500); color: #ffffff;">Premium</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Interactive durations comparison -->
+        <section class="u-mb-vi">
+          <h2>Comparador de Tiempos de Duración (Durations comparison)</h2>
+          <p class="u-mb-v">Pase el cursor por encima de cada pista de carrera para ver el comportamiento de las velocidades de transición:</p>
+          
+          <div class="c-card u-p-v">
+            
+            <div class="u-mb-iv">
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Rápido - 150ms <code class="v-token-css u-ml-ii">--transition-duration-fast</code></span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-duration: var(--transition-duration-fast); background: var(--color-info-500); color: #ffffff;">150ms</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Normal - 250ms <code class="v-token-css u-ml-ii">--transition-duration-normal</code></span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-duration: var(--transition-duration-normal); background: var(--color-success-500); color: #ffffff;">250ms</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Lento - 400ms <code class="v-token-css u-ml-ii">--transition-duration-slow</code></span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-duration: var(--transition-duration-slow); background: var(--color-warning-500); color: #ffffff;">400ms</div>
+              </div>
+            </div>
+
+            <div class="u-mb-iv">
+              <span class="u-text-iii u-text-bold u-mb-ii" style="display: block;">Extra Lento - 720ms <code class="v-token-css u-ml-ii">--transition-duration-extra-slow</code></span>
+              <div class="v-demo-track">
+                <div class="v-demo-box" style="transition-duration: var(--transition-duration-extra-slow); background: var(--color-primary-500); color: var(--color-neutral-900);">720ms</div>
               </div>
             </div>
 
@@ -137,12 +183,12 @@
               <button class="c-btn c-btn--outline" style="transition: var(--transition-colors);">
                 Transición de Colores
               </button>
-              <span class="u-text-2xs u-text-muted u-mt-iii"><code>transition: var(--transition-colors);</code></span>
+              <span class="u-text-ii u-text-muted u-mt-iii"><code>transition: var(--transition-colors);</code></span>
             </div>
 
             <div class="c-card c-card--interactive u-p-v u-items-center u-justify-center" style="min-height: 160px; transition: var(--transition-all);">
-              <span class="u-text-xs u-text-bold">Efecto Elevador Global</span>
-              <span class="u-text-2xs u-text-muted u-mt-ii"><code>transition: var(--transition-all);</code></span>
+              <span class="u-text-iii u-text-bold">Efecto Elevador Global</span>
+              <span class="u-text-ii u-text-muted u-mt-ii"><code>transition: var(--transition-all);</code></span>
             </div>
 
           </div>
@@ -164,18 +210,23 @@
               <tbody>
                 <tr class="c-table__tr">
                   <td class="c-table__td"><code>--transition-duration-fast</code></td>
-                  <td class="c-table__td">120ms</td>
+                  <td class="c-table__td">150ms</td>
                   <td class="c-table__td">Micro-interacciones ultrarrápidas: hovers de botones, cambios de iconos y links.</td>
                 </tr>
                 <tr class="c-table__tr">
                   <td class="c-table__td"><code>--transition-duration-normal</code></td>
-                  <td class="c-table__td">200ms</td>
+                  <td class="c-table__td">250ms</td>
                   <td class="c-table__td">Transición intermedia óptima: elevaciones de tarjetas y aperturas de barras laterales.</td>
                 </tr>
                 <tr class="c-table__tr">
                   <td class="c-table__td"><code>--transition-duration-slow</code></td>
-                  <td class="c-table__td">300ms</td>
+                  <td class="c-table__td">400ms</td>
                   <td class="c-table__td">Transiciones lentas y majestuosas: modales fluidos, diálogos grandes y banners rotativos.</td>
+                </tr>
+                <tr class="c-table__tr">
+                  <td class="c-table__td"><code>--transition-duration-extra-slow</code></td>
+                  <td class="c-table__td">720ms</td>
+                  <td class="c-table__td">Transición muy lenta y deliberada: transiciones detalladas, layouts complejos y secuencias animadas pausadas.</td>
                 </tr>
                 <tr class="c-table__tr">
                   <td class="c-table__td"><code>--transition-easing-linear</code></td>
@@ -184,7 +235,7 @@
                 </tr>
                 <tr class="c-table__tr">
                   <td class="c-table__td"><code>--transition-easing-premium</code></td>
-                  <td class="c-table__td">cubic-bezier(0.16, 1, 0.3, 1)</td>
+                  <td class="c-table__td">cubic-bezier(0.2, 0, 0, 1)</td>
                   <td class="c-table__td">Curva de aceleración ultra fluida inspirada en interfaces nativas de Apple y Google.</td>
                 </tr>
               </tbody>

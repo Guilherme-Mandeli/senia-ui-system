@@ -9,9 +9,9 @@
   --color-text-body: var(--color-neutral-300);
   --color-text-heading: var(--color-neutral-50);
   
-  /* Brand Links (lighter yellow for dark backgrounds) */
-  --color-text-link: var(--color-primary-400);
-  --color-text-link-hover: var(--color-primary-300);
+  /* Highlight Links */
+  --color-text-link: var(--color-highlight);
+  --color-text-link-hover: var(--color-highlight-hover);
   
   /* Borders */
   --color-border-default: var(--color-neutral-800);
@@ -36,7 +36,7 @@
   --color-input-border: var(--color-neutral-800);
   --color-input-text: var(--color-neutral-200);
   --color-input-placeholder: var(--color-neutral-600);
-  --color-input-focus-border: var(--color-primary-500);
+  --color-input-focus-border: var(--color-highlight);
   --color-input-disabled-bg: var(--color-neutral-900);
   --color-input-disabled-text: var(--color-neutral-600);
 
@@ -59,4 +59,16 @@
 
   /* Special focus override */
   --color-focus: hsl(var(--color-primary-h), var(--color-primary-s), 50%);
+
+  /* ==========================================================================
+     Highlight / Accent Color Configuration (Overridable)
+     Default fallback: neutral colors (light gray in dark theme)
+     ========================================================================== */
+  --color-highlight: var(--senia-primary-color-dark, var(--senia-primary-color, var(--color-primary, var(--color-neutral-100))));
+  --color-highlight-hover: var(--senia-primary-hover-dark, var(--senia-primary-hover, var(--color-primary-300, var(--color-neutral-200))));
+  --color-highlight-light: var(--senia-primary-light-dark, var(--senia-primary-light, var(--color-neutral-800)));
+  --color-highlight-text: var(--senia-primary-contrast-dark, var(--senia-primary-contrast, var(--color-neutral-950)));
+
+  /* Loading state overlay background */
+  --color-busy-overlay-bg: rgb(24 24 24 / 60%);
 }

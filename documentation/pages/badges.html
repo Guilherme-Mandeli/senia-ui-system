@@ -4,18 +4,53 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etiquetas - Senia UI CSS Framework</title>
+  <title>Etiquetas &amp; Chips - Senia UI CSS Framework</title>
   <link rel="stylesheet" href="../../src/style.css">
   <link rel="stylesheet" href="../visualizer.css">
   <script type="module" src="../visualizer.js"></script>
+  <style>
+    /* Spacing and helper styles for documentation page */
+    .showcase-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      align-items: center;
+    }
+    
+    .demo-icon-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 44px;
+      border-radius: var(--radius-ii);
+      background-color: var(--color-neutral-100);
+      color: var(--color-text-body);
+      border: 1px solid var(--color-border-subtle);
+      transition: background-color var(--transition-fast-duration) var(--transition-fast-ease);
+      
+      .theme-dark & {
+        background-color: var(--color-neutral-900);
+        border-color: var(--color-neutral-800);
+      }
+    }
+    
+    .demo-icon-container svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: currentColor;
+    }
+  </style>
 </head>
 <body class="v-body">
 
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -38,61 +73,309 @@
         
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes UI</span>
-          <h1>Etiquetas &amp; Badges</h1>
-          <p class="u-text-lg u-text-muted">
-            Pequeños indicadores visuales para estados, metadatos estructurados y prioridades de información.
+          <h1>Etiquetas &amp; Chips</h1>
+          <p class="u-text-vi u-text-muted">
+            Indicadores de estado estáticos al estilo **Bootstrap** y elementos interactivos compactos tipo chip con el diseño visual de **Material Design 3**.
           </p>
         </header>
 
         <hr>
 
-        <!-- Solid Badges -->
-        <section class="u-mb-vi">
-          <h2>Etiquetas Sólidas (Solid Badges)</h2>
-          <p class="u-mb-v">Fondo coloreado suave con alta legibilidad cromática. Se complementa con formas rectangulares y tipo píldora (pill):</p>
+        <!-- Seccion: Badges / Etiquetas -->
+        <section class="u-mb-vi" id="sec-badges">
+          <h2>Etiquetas (Badges)</h2>
+          <p class="u-mb-v">Las etiquetas de Senia UI permiten catalogar, destacar cantidades y advertir estados utilizando las escalas cromáticas del sistema. Soporta tres rellenos fundamentales:</p>
           
-          <div class="v-showcase">
+          <!-- Solid Badges -->
+          <div class="v-showcase u-mb-v">
             <div class="v-showcase__header">
-              <div class="v-showcase__title">Variantes Rectangulares estándar</div>
+              <div class="v-showcase__title">Variantes Sólidas (Alto Contraste)</div>
+              <div class="v-showcase__desc">Por defecto al declarar variantes. Ofrece fondos fuertes con máxima legibilidad de texto.</div>
             </div>
             <div class="v-showcase__preview">
-              <span class="c-badge c-badge--primary">Primario</span>
-              <span class="c-badge c-badge--success">Completado</span>
-              <span class="c-badge c-badge--warning">Pendiente</span>
-              <span class="c-badge c-badge--error">Rechazado</span>
-              <span class="c-badge c-badge--info">Novedad</span>
+              <div class="showcase-group">
+                <span class="c-badge c-badge--primary">Primario</span>
+                <span class="c-badge c-badge--secondary">Secundario</span>
+                <span class="c-badge c-badge--success">Éxito</span>
+                <span class="c-badge c-badge--warning">Alerta</span>
+                <span class="c-badge c-badge--error">Error</span>
+                <span class="c-badge c-badge--info">Información</span>
+                <span class="c-badge c-badge--neutral">Neutro</span>
+              </div>
             </div>
           </div>
 
-          <div class="v-showcase">
+          <!-- Soft Badges -->
+          <div class="v-showcase u-mb-v">
             <div class="v-showcase__header">
-              <div class="v-showcase__title">Variantes tipo Píldora (.c-badge--pill)</div>
+              <div class="v-showcase__title">Variantes Suaves (Soft) <code class="v-token-css u-ml-ii">.c-badge--soft</code></div>
+              <div class="v-showcase__desc">Utiliza fondos claros o translúcidos con texto oscuro en la escala correspondiente, ideal para estados secundarios.</div>
             </div>
             <div class="v-showcase__preview">
-              <span class="c-badge c-badge--pill c-badge--primary">Indigo Pill</span>
-              <span class="c-badge c-badge--pill c-badge--success">Success Pill</span>
-              <span class="c-badge c-badge--pill c-badge--warning">Warning Pill</span>
-              <span class="c-badge c-badge--pill c-badge--error">Error Pill</span>
-              <span class="c-badge c-badge--pill c-badge--info">Info Pill</span>
+              <div class="showcase-group">
+                <span class="c-badge c-badge--soft c-badge--primary">Primario</span>
+                <span class="c-badge c-badge--soft c-badge--secondary">Secundario</span>
+                <span class="c-badge c-badge--soft c-badge--success">Éxito</span>
+                <span class="c-badge c-badge--soft c-badge--warning">Alerta</span>
+                <span class="c-badge c-badge--soft c-badge--error">Error</span>
+                <span class="c-badge c-badge--soft c-badge--info">Información</span>
+                <span class="c-badge c-badge--soft c-badge--neutral">Neutro</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outline Badges -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Variantes Delineadas (Outline) <code class="v-token-css u-ml-ii">.c-badge--outline</code></div>
+              <div class="v-showcase__desc">Diseño limpio con fondo transparente y bordes coloreados sutilmente.</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="showcase-group">
+                <span class="c-badge c-badge--outline c-badge--primary">Primario</span>
+                <span class="c-badge c-badge--outline c-badge--secondary">Secundario</span>
+                <span class="c-badge c-badge--outline c-badge--success">Éxito</span>
+                <span class="c-badge c-badge--outline c-badge--warning">Alerta</span>
+                <span class="c-badge c-badge--outline c-badge--error">Error</span>
+                <span class="c-badge c-badge--outline c-badge--info">Información</span>
+                <span class="c-badge c-badge--outline c-badge--neutral">Neutro</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft + Outline Badges -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Variantes Combinadas (Soft + Outline) <code class="v-token-css u-ml-ii">.c-badge--soft.c-badge--outline</code></div>
+              <div class="v-showcase__desc">Muestra un fondo suave junto con un borde delineado de color más fuerte para máxima diferenciación visual.</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="showcase-group">
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--primary">Primario</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--secondary">Secundario</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--success">Éxito</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--warning">Alerta</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--error">Error</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--info">Información</span>
+                <span class="c-badge c-badge--soft c-badge--outline c-badge--neutral">Neutro</span>
+              </div>
+            </div>
+          <!-- Shape & Position Variations -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Formas &amp; Puntos Estáticos</div>
+              <div class="v-showcase__desc">Soporte de forma píldora (<code class="v-token-css">.c-badge--pill</code>) e indicadores tipo punto alineados con texto (<code class="v-token-css">.c-badge--dot</code>).</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="showcase-group">
+                <!-- Pill Shape -->
+                <span class="c-badge c-badge--pill c-badge--success">Completado</span>
+                <span class="c-badge c-badge--pill c-badge--soft c-badge--primary">Píldora Suave</span>
+                <span class="c-badge c-badge--pill c-badge--outline c-badge--error">Delineada</span>
+                
+                <div style="width: 2px; height: 1.5rem; background-color: var(--color-border-subtle); margin: 0 0.5rem;"></div>
+                
+                <!-- Dot indicator -->
+                <span class="c-badge c-badge--dot c-badge--success" title="Online"></span><span class="u-mr-ii">Activo</span>
+                <span class="c-badge c-badge--dot c-badge--error" title="Offline"></span><span>Desconectado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dedicated Notification Showcase -->
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Comparación de Posiciones de Notificación</div>
+              <div class="v-showcase__desc">Tabla comparativa de posiciones para notificaciones absolutas flotantes y notificaciones alineadas en línea (antes y después del contenido).</div>
+            </div>
+            <div class="v-showcase__preview">
+              <div style="width: 100%; display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <!-- Row 1: Superior Derecha -->
+                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border-subtle); gap: var(--space-vii)">
+                  <div style="width: 314px">
+                    <strong style="display: block; font-size: var(--font-size-iii); margin-bottom: 4px;">Superior Derecha (Esquina)</strong>
+                    <code class="v-token-css">.c-badge--notification.c-badge--top-right</code>
+                  </div>
+                  <div>
+                    <div class="c-badge-container">
+                      <div class="demo-icon-container">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                      </div>
+                      <span class="c-badge c-badge--error c-badge--notification c-badge--top-right">+99</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: Superior Izquierda -->
+                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border-subtle); gap: var(--space-vii)">
+                  <div style="width: 314px">
+                    <strong style="display: block; font-size: var(--font-size-iii); margin-bottom: 4px;">Superior Izquierda (Esquina)</strong>
+                    <code class="v-token-css">.c-badge--notification.c-badge--top-left</code>
+                  </div>
+                  <div>
+                    <div class="c-badge-container">
+                      <div class="demo-icon-container">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                      </div>
+                      <span class="c-badge c-badge--warning c-badge--notification c-badge--top-left">!</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Alineado Izquierda (Antes / Prefijo) -->
+                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border-subtle); gap: var(--space-vii)">
+                  <div style="width: 314px">
+                    <strong style="display: block; font-size: var(--font-size-iii); margin-bottom: 4px;">Alineado a la Izquierda (Antes / Prefijo)</strong>
+                    <code class="v-token-css">.c-badge--left</code>
+                  </div>
+                  <div>
+                    <button class="c-btn c-btn--outline c-btn--md u-gap-none">
+                      <span class="c-badge c-badge--success c-badge--left">Nuevo</span>
+                      Bandeja de Entrada
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Row 4: Alineado Derecha (Después / Sufijo) -->
+                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border-subtle); gap: var(--space-vii)">
+                  <div style="width: 314px">
+                    <strong style="display: block; font-size: var(--font-size-iii); margin-bottom: 4px;">Alineado a la Derecha (Después / Sufijo)</strong>
+                    <code class="v-token-css">.c-badge--right.c-badge--pill</code>
+                  </div>
+                  <div>
+                    <button class="c-btn c-btn--outline c-btn--md u-gap-none">
+                      Notificaciones
+                      <span class="c-badge c-badge--error c-badge--right c-badge--pill">12</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- Outline Badges -->
-        <section class="u-mb-v">
-          <h2>Etiquetas Delineadas (Outline Badges)</h2>
-          <p class="u-mb-v">Ideal para metadatos, tags de categorías secundarias y filtros de interfaz:</p>
-          
-          <div class="v-showcase">
+        <hr>
+
+        <!-- Seccion: Chips -->
+        <section class="u-mb-vi" id="sec-chips">
+          <h2>Chips (Material Design 3)</h2>
+          <p class="u-mb-v">
+            Los **Chips** son contenedores interactivos y compactos que representan entradas de datos, avatares, filtros seleccionables o disparadores de acciones. 
+            Cuentan con soporte completo para hover, focus, active states, iconos iniciales y botones de cierre.
+          </p>
+
+          <!-- Action Chips -->
+          <div class="v-showcase u-mb-v">
             <div class="v-showcase__header">
-              <div class="v-showcase__title">Variantes Outline Píldora</div>
+              <div class="v-showcase__title">Chips de Acción (Action / Assist Chips)</div>
+              <div class="v-showcase__desc">Chips interactivos clicables que ejecutan una acción o abren sub-menús.</div>
             </div>
             <div class="v-showcase__preview">
-              <span class="c-badge c-badge--pill c-badge--outline c-badge--primary">Categoría</span>
-              <span class="c-badge c-badge--pill c-badge--outline c-badge--success">Aprobado</span>
-              <span class="c-badge c-badge--pill c-badge--outline c-badge--warning">En Espera</span>
-              <span class="c-badge c-badge--pill c-badge--outline c-badge--error">Crítico</span>
-              <span class="c-badge c-badge--pill c-badge--outline c-badge--info">Ayuda</span>
+              <div class="showcase-group">
+                <!-- Flat style with icons -->
+                <button class="c-chip">
+                  <span class="c-chip__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                  </span>
+                  Más Información
+                </button>
+                
+                <!-- Avatar chip -->
+                <button class="c-chip">
+                  <img class="c-chip__avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&fit=crop&q=80" alt="Avatar">
+                  Asignar a Marta
+                </button>
+
+                <!-- Outline style -->
+                <button class="c-chip c-chip--outline">
+                  <span class="c-chip__icon">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  </span>
+                  Buscar Filtro
+                </button>
+
+                <!-- Semantic Colored chips -->
+                <button class="c-chip c-chip--primary">Primario</button>
+                <button class="c-chip c-chip--success">Completar</button>
+                <button class="c-chip c-chip--error">Eliminar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Chips (Choice) -->
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Chips de Filtro (Filter / Choice Chips)</div>
+              <div class="v-showcase__desc">Permiten alternar estados de selección activa/desactiva. <strong class="u-text-primary">Haz clic sobre ellos para probar su interactividad.</strong></div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="showcase-group">
+                <button class="c-chip c-chip--outline js-filter-chip" aria-selected="true">
+                  <span class="c-chip__icon">
+                    <svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                  Diseño UX
+                </button>
+
+                <button class="c-chip c-chip--outline js-filter-chip">
+                  <span class="c-chip__icon" style="display: none;">
+                    <svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                  Desarrollo Frontend
+                </button>
+
+                <button class="c-chip c-chip--outline js-filter-chip">
+                  <span class="c-chip__icon" style="display: none;">
+                    <svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                  Marketing
+                </button>
+
+                <button class="c-chip c-chip--outline js-filter-chip">
+                  <span class="c-chip__icon" style="display: none;">
+                    <svg class="check-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                  Recursos Humanos
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input / Entry Chips (Dismissible) -->
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Chips de Entrada / Eliminables (Input / Entry Chips)</div>
+              <div class="v-showcase__desc">Ideales para etiquetas aplicadas o listas de destinatarios. Incluye un botón de cierre. <strong class="u-text-primary">Haz clic en la "X" para eliminar el chip de la pantalla.</strong></div>
+            </div>
+            <div class="v-showcase__preview">
+              <div class="showcase-group" id="input-chips-container">
+                
+                <span class="c-chip c-chip--outline js-input-chip">
+                  <span>Tecnología</span>
+                  <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                  </button>
+                </span>
+
+                <span class="c-chip c-chip--outline js-input-chip">
+                  <span>Sostenibilidad</span>
+                  <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                  </button>
+                </span>
+
+                <span class="c-chip c-chip--outline js-input-chip">
+                  <img class="c-chip__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&fit=crop&q=80" alt="Avatar">
+                  <span>Alejandro G.</span>
+                  <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                  </button>
+                </span>
+
+                <button class="c-btn c-btn--outline c-btn--sm u-ml-auto" onclick="resetInputChips()">Reiniciar Etiquetas</button>
+              </div>
             </div>
           </div>
         </section>
@@ -102,5 +385,73 @@
 
   </div>
 
+  <!-- Interactive JavaScript for Chips Documentation -->
+  <script>
+    // 1. Toggle Selection in Filter Chips
+    document.querySelectorAll('.js-filter-chip').forEach(chip => {
+      // Toggle selected class and selected icon
+      chip.addEventListener('click', () => {
+        const isSelected = chip.getAttribute('aria-selected') === 'true';
+        const checkIcon = chip.querySelector('.c-chip__icon');
+        
+        if (isSelected) {
+          chip.setAttribute('aria-selected', 'false');
+          chip.classList.remove('c-chip--selected');
+          if (checkIcon) checkIcon.style.display = 'none';
+        } else {
+          chip.setAttribute('aria-selected', 'true');
+          chip.classList.add('c-chip--selected');
+          if (checkIcon) checkIcon.style.display = 'inline-flex';
+        }
+      });
+    });
+
+    // 2. Dismiss Entry Chips
+    function dismissChip(closeButton) {
+      const chip = closeButton.closest('.js-input-chip');
+      if (chip) {
+        chip.style.transform = 'scale(0.8)';
+        chip.style.opacity = '0';
+        chip.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+        setTimeout(() => {
+          chip.style.display = 'none';
+        }, 200);
+      }
+    }
+
+    // 3. Reset dismissed entry chips
+    const originalInputChipsHTML = `
+      <span class="c-chip c-chip--outline js-input-chip">
+        <span>Tecnología</span>
+        <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+          <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </span>
+
+      <span class="c-chip c-chip--outline js-input-chip">
+        <span>Sostenibilidad</span>
+        <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+          <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </span>
+
+      <span class="c-chip c-chip--outline js-input-chip">
+        <img class="c-chip__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&fit=crop&q=80" alt="Avatar">
+        <span>Alejandro G.</span>
+        <button class="c-chip__close" aria-label="Eliminar etiqueta" onclick="dismissChip(this)">
+          <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </span>
+      
+      <button class="c-btn c-btn--outline c-btn--sm u-ml-auto" onclick="resetInputChips()">Reiniciar Etiquetas</button>
+    `;
+
+    function resetInputChips() {
+      const container = document.getElementById('input-chips-container');
+      if (container) {
+        container.innerHTML = originalInputChipsHTML;
+      }
+    }
+  </script>
 </body>
 </html>

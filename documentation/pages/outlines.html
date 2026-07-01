@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outlines (Contornos) - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-viii">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Utilidades de Estructura</span>
+          <h1>Contornos &amp; Outlines</h1>
+          <p class="u-text-vi u-text-muted">
+            Sistema flexible y programático de contornos (outlines) independientes para destacar elementos sin alterar su tamaño o flujo en el layout.
+          </p>
+        </header>
+
+        <hr>
+
+        <!-- Dynamic Showcases for Outlines -->
+        <section class="u-mb-viii">
+          <h2>Demostraciones de Contornos</h2>
+          <p class="u-mb-v">Inspirado en nuestro sistema de bordes, puedes configurar el grosor, el desplazamiento (offset) y el color semántico de forma separada:</p>
+          
+          <div class="u-grid u-grid-cols-3 u-gap-vi u-mb-vi" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            
+            <!-- Demo 1: Thick success outline with offset -->
+            <div class="c-card u-p-iv u-flex u-flex-column u-gap-iii" style="min-height: 200px;">
+              <div>
+                <span class="c-badge c-badge--outline u-mb-ii">Contorno con Desplazamiento</span>
+                <p class="u-text-iii u-text-muted u-mb-iv">Contorno de éxito con grosor de 3px y un desplazamiento exterior (offset) de 4px.</p>
+              </div>
+              <div class="u-mt-auto u-flex u-flex-column u-gap-iii">
+                <div class="u-p-iv u-text-center u-outline u-outline-3 u-outline-offset-4 u-outline-success" style="background: var(--color-neutral-100); border-radius: var(--radius-ii);">
+                  <span class="u-text-ii">Objeto Destacado</span>
+                </div>
+                <div class="v-token-class u-mt-ii">u-outline u-outline-3 u-outline-offset-4 u-outline-success</div>
+              </div>
+            </div>
+
+            <!-- Demo 2: Dashed warning outline -->
+            <div class="c-card u-p-iv u-flex u-flex-column u-gap-iii" style="min-height: 200px;">
+              <div>
+                <span class="c-badge c-badge--outline u-mb-ii">Contorno Discontinuo</span>
+                <p class="u-text-iii u-text-muted u-mb-iv">Contorno de advertencia en estilo discontinuo (dashed) con grosor de 2px y desplazamiento de 2px.</p>
+              </div>
+              <div class="u-mt-auto u-flex u-flex-column u-gap-iii">
+                <div class="u-p-iv u-text-center u-outline u-outline-2 u-outline-dashed u-outline-offset-2 u-outline-warning" style="background: var(--color-neutral-100); border-radius: var(--radius-ii);">
+                  <span class="u-text-ii">Área de Advertencia</span>
+                </div>
+                <div class="v-token-class u-mt-ii">u-outline u-outline-2 u-outline-dashed u-outline-offset-2 u-outline-warning</div>
+              </div>
+            </div>
+
+            <!-- Demo 3: Negative offset (Inset outline) -->
+            <div class="c-card u-p-iv u-flex u-flex-column u-gap-iii" style="min-height: 200px;">
+              <div>
+                <span class="c-badge c-badge--outline u-mb-ii">Desplazamiento Negativo</span>
+                <p class="u-text-iii u-text-muted u-mb-iv">Contorno interior de error de 2px metido hacia adentro con un desplazamiento negativo (offset -3px).</p>
+              </div>
+              <div class="u-mt-auto u-flex u-flex-column u-gap-iii">
+                <div class="u-p-iv u-text-center u-outline u-outline-2 u-outline-offset-n3 u-outline-error" style="background: var(--color-neutral-100); border-radius: var(--radius-ii);">
+                  <span class="u-text-ii">Contenedor Crítico</span>
+                </div>
+                <div class="v-token-class u-mt-ii">u-outline u-outline-2 u-outline-offset-n3 u-outline-error</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Outline Class Reference -->
+        <section class="u-mb-viii">
+          <div class="c-card u-p-v">
+            <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Guía de Nomenclaturas y Clases Disponibles</h3>
+            <p class="u-mb-v u-text-iv u-text-muted">Aplica y combina las clases para lograr total control sobre la proyección del contorno:</p>
+            
+            <div class="u-grid u-grid-cols-2 u-gap-v" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+              <div>
+                <strong class="u-text-iii u-text-info u-text-uppercase">1. Habilitador General</strong>
+                <ul class="u-mt-ii u-mb-vii" style="padding-left: var(--space-iv); line-height: 1.7; font-size: var(--font-size-sm);">
+                  <li><code class="v-token-class">.u-outline</code> (Inicializa el contorno base)</li>
+                </ul>
+
+                <strong class="u-text-iii u-text-info u-text-uppercase">2. Grosores de Contorno (Widths 0 a 10)</strong>
+                <ul class="u-mt-ii" style="padding-left: var(--space-iv); line-height: 1.7; font-size: var(--font-size-sm);">
+                  <li><code class="v-token-class">.u-outline-0</code> hasta <code class="v-token-class">.u-outline-10</code></li>
+                </ul>
+              </div>
+
+              <div>
+                <strong class="u-text-iii u-text-info u-text-uppercase">3. Desplazamientos (Offsets -5 a 10)</strong>
+                <ul class="u-mt-ii u-mb-vii" style="padding-left: var(--space-iv); line-height: 1.7; font-size: var(--font-size-sm);">
+                  <li>Exteriores: <code class="v-token-class">.u-outline-offset-0</code> hasta <code class="v-token-class">.u-outline-offset-10</code></li>
+                  <li>Interiores (Negativos): <code class="v-token-class">.u-outline-offset-n1</code> hasta <code class="v-token-class">.u-outline-offset-n5</code></li>
+                </ul>
+
+                <strong class="u-text-iii u-text-info u-text-uppercase">4. Estilos y Colores Semánticos</strong>
+                <ul class="u-mt-ii" style="padding-left: var(--space-iv); line-height: 1.7; font-size: var(--font-size-sm);">
+                  <li>Estilos: <code class="v-token-class">.u-outline-[solid|dashed|dotted|double|none]</code></li>
+                  <li>Colores: <code class="v-token-class">.u-outline-[primary|secondary|neutral|success|warning|error|info]</code> (Soporta también escalas de 50 a 950)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

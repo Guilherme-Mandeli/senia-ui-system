@@ -1,0 +1,11 @@
+/* Max Width Utilities
+   Prefixes: u-max-w-
+*/
+
+.u-max-w-auto { max-width: auto !important; }
+.u-max-w-none { max-width: none !important; }
+.u-max-w-full { max-width: 100% !important; }
+.u-max-w-screen { max-width: 100vw !important; }
+.u-max-w-fit { max-width: fit-content !important; }
+.u-max-w-min { max-width: min-content !important; }
+.u-max-w-max { max-width: max-content !important; }

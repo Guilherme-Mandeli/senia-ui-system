@@ -1,0 +1,98 @@
+/* Input Group CSS Component
+   Inspired by PicoCSS, customized for Senia UI's BEM architecture.
+   Groups inputs, selects, labels and buttons together as a single component.
+   Supports .c-input-group class and [role="group"] / [role="search"] attributes.
+*/
+
+.c-input-group,
+.c-input-group--search,
+[role="group"],
+[role="search"] {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+  border-radius: var(--radius-iii);
+  margin-bottom: var(--space-iv);
+  
+  /* Reset margins for children */
+  > * {
+    margin-bottom: 0 !important;
+  }
+
+  /* Core flex child setup for inputs, buttons, selects */
+  > .c-input,
+  > input:not([type="checkbox"], [type="radio"]),
+  > select,
+  > button,
+  > .c-btn {
+    position: relative;
+    margin-bottom: 0;
+    
+    /* Ensure elements overlap their borders to prevent double lines */
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+
+  /* Flex sizing settings */
+  > .c-input,
+  > input:not([type="checkbox"], [type="radio"]),
+  > select {
+    flex: 1 1 auto;
+    width: 1%; /* Allow proper shrinking in flex */
+  }
+
+  > button,
+  > .c-btn {
+    flex: 0 0 auto;
+  }
+
+  > button:not(.c-btn--square),
+  > .c-btn:not(.c-btn--square) {
+    width: auto;
+  }
+
+  /* --- Border Radius Resets --- */
+
+  /* First Child */
+  > :first-child {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  /* Last Child */
+  > :last-child {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  /* Middle Elements */
+  > :not(:first-child):not(:last-child) {
+    border-radius: 0 !important;
+  }
+
+  /* --- Focus layering --- */
+  > *:focus-within,
+  > *:focus {
+    z-index: 2; /* Put focused element on top of overlaps */
+  }
+}
+
+/* --- Search variation (.c-input-group--search / [role="search"]) --- */
+.c-input-group--search,
+[role="search"] {
+  border-radius: var(--radius-full);
+
+  > :first-child {
+    border-top-left-radius: var(--radius-full) !important;
+    border-bottom-left-radius: var(--radius-full) !important;
+    padding-left: var(--space-v) !important;
+  }
+
+  > :last-child {
+    border-top-right-radius: var(--radius-full) !important;
+    border-bottom-right-radius: var(--radius-full) !important;
+    padding-right: var(--space-v) !important;
+  }
+}

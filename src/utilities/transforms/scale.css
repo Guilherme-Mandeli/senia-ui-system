@@ -1,0 +1,22 @@
+/* Scale Utilities
+   Prefixes: u-scale-
+*/
+
+.u-scale-0 { transform: scale(0) !important; }
+.u-scale-50 { transform: scale(0.5) !important; }
+.u-scale-75 { transform: scale(0.75) !important; }
+.u-scale-90 { transform: scale(0.9) !important; }
+.u-scale-95 { transform: scale(0.95) !important; }
+.u-scale-100 { transform: scale(1) !important; }
+.u-scale-105 { transform: scale(1.05) !important; }
+.u-scale-110 { transform: scale(1.1) !important; }
+.u-scale-125 { transform: scale(1.25) !important; }
+.u-scale-150 { transform: scale(1.5) !important; }
+
+.u-scale-x-0 { transform: scaleX(0) !important; }
+.u-scale-x-50 { transform: scaleX(0.5) !important; }
+.u-scale-x-100 { transform: scaleX(1) !important; }
+
+.u-scale-y-0 { transform: scaleY(0) !important; }
+.u-scale-y-50 { transform: scaleY(0.5) !important; }
+.u-scale-y-100 { transform: scaleY(1) !important; }

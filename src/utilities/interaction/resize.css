@@ -1,0 +1,8 @@
+/* Resize Utilities
+   Prefixes: u-resize-
+*/
+
+.u-resize-none { resize: none !important; }
+.u-resize-y { resize: vertical !important; }
+.u-resize-x { resize: horizontal !important; }
+.u-resize-both { resize: both !important; }

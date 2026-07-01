@@ -1,0 +1,13 @@
+/* Grid Utilities
+   Prefixes: u-
+*/
+
+.u-grid { display: grid !important; }
+
+/* Grid Auto Flow */
+.u-grid-flow-row { grid-auto-flow: row !important; }
+.u-grid-flow-column { grid-auto-flow: column !important; }
+.u-grid-flow-col { grid-auto-flow: column !important; }
+.u-grid-flow-dense { grid-auto-flow: dense !important; }
+.u-grid-flow-row-dense { grid-auto-flow: row dense !important; }
+.u-grid-flow-col-dense { grid-auto-flow: column dense !important; }

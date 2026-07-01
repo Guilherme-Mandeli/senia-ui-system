@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/public/favicon-senia.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estados de Carga - Senia UI CSS Framework</title>
+  <link rel="stylesheet" href="../../src/style.css">
+  <link rel="stylesheet" href="../visualizer.css">
+  <script type="module" src="../visualizer.js"></script>
+</head>
+<body class="v-body">
+
+  <!-- Header -->
+  <header class="v-header">
+    <div class="v-header__logo">
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
+    </div>
+    <div class="v-theme-switch">
+      <span>MODO OSCURO</span>
+      <input type="checkbox" id="theme-toggle" class="v-theme-switch__input">
+      <label for="theme-toggle" class="v-theme-switch__toggle">
+        <div class="v-theme-switch__knob"></div>
+      </label>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <div class="v-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="v-sidebar"></aside>
+
+    <!-- Content Canvas -->
+    <main class="v-content">
+      <div class="l-container">
+        
+        <header class="u-mb-vi">
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Componentes CSS</span>
+          <h1>Estados de Carga (`aria-busy`)</h1>
+          <p class="u-text-vi u-text-muted">
+            Indicadores visuales de espera y carga aplicados de manera semántica mediante el atributo estándar <code>aria-busy="true"</code>, eliminando la necesidad de marcado HTML redundante para spinners.
+          </p>
+        </header>
+
+        <hr class="u-mb-vi">
+
+        <!-- Button Loading Showcase -->
+        <section class="u-mb-vi">
+          <h2>Cargas en Botones y Enlaces</h2>
+          <p class="u-mb-v">Al aplicar <code>aria-busy="true"</code> sobre un botón, el texto se oculta automáticamente y se centra un spinner que hereda la tipografía y el color del botón. La interacción queda inhabilitada.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Botones con Spinner</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;button&gt;</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--primary</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--secondary</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--outline</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--success</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--info</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--warning</span><span class="v-token-class">[aria-busy="true"]</span>
+                <span class="v-token-separator">|</span>
+                <span class="v-token-class">.c-btn--error</span><span class="v-token-class">[aria-busy="true"]</span>
+              </div>
+              <div class="u-flex u-flex-gap-md u-flex-wrap u-items-center u-w-full u-brand-colors">
+                <!-- Primary Loading Button -->
+                <button class="c-btn c-btn--primary" aria-busy="true">
+                  Enviar Formulario
+                </button>
+  
+                <!-- Secondary Loading Button -->
+                <button class="c-btn c-btn--secondary" aria-busy="true">
+                  Guardar
+                </button>
+  
+                <!-- Outline Loading Button -->
+                <button class="c-btn c-btn--outline" aria-busy="true">
+                  Procesar Pago
+                </button>
+  
+                <!-- Success Loading Button -->
+                <button class="c-btn c-btn--success" aria-busy="true">
+                  Validar
+                </button>
+
+                <!-- Info Loading Button -->
+                <button class="c-btn c-btn--info" aria-busy="true">
+                  Consultando
+                </button>
+
+                <!-- Warning Loading Button -->
+                <button class="c-btn c-btn--warning" aria-busy="true">
+                  Actualizando
+                </button>
+
+                <!-- Error Loading Button -->
+                <button class="c-btn c-btn--error" aria-busy="true">
+                  Eliminando
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Container Loading Showcase -->
+        <section class="u-mb-vi">
+          <h2>Secciones y Contenedores en Espera</h2>
+          <p class="u-mb-v">Al aplicar el atributo sobre un div o tarjeta que contiene contenido estructural, el sistema genera automáticamente un fondo traslúcido difuminado y posiciona un spinner de carga en el centro absoluto.</p>
+          
+          <div class="v-showcase u-mb-v">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Bloque de Contenedor en Carga</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;div&gt;</span><span class="v-token-class">[aria-busy="true"]</span>
+              </div>
+              <div class="u-w-full u-p-v u-border u-radius-iii" aria-busy="true" style="background-color: var(--color-bg-card);">
+                <div class="u-px-v">
+                  <h3>Panel de Estadísticas Semanales</h3>
+                  <p class="u-text-muted u-mb-iv">Este texto representa datos que se están resolviendo en el servidor.</p>
+                  <div class="u-grid u-grid-cols-3 u-gap-ii">
+                    <div class="u-p-iv u-border u-radius-iii" style="background: var(--color-neutral-100);">Valor 1</div>
+                    <div class="u-p-iv u-border u-radius-iii" style="background: var(--color-neutral-100);">Valor 2</div>
+                    <div class="u-p-iv u-border u-radius-iii" style="background: var(--color-neutral-100);">Valor 3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Inline Text Loading Showcase -->
+        <section class="u-mb-vi">
+          <h2>Cargas en Línea (Inline)</h2>
+          <p class="u-mb-v">Soporte para etiquetas en línea como <code>&lt;span&gt;</code> para animar transiciones de texto específicas:</p>
+          
+          <div class="v-showcase">
+            <div class="v-showcase__header">
+              <div class="v-showcase__title">Carga en Texto Inline</div>
+            </div>
+            <div class="v-showcase__preview u-flex-column">
+              <div class="u-flex u-flex-wrap u-gap-ii u-mb-iv u-w-full">
+                <span class="v-token-tag">&lt;span&gt;</span><span class="v-token-class">[aria-busy="true"]</span>
+              </div>
+              <div class="u-w-full">
+                <p class="u-mb-none">
+                  Estado de la sincronización del servidor: <span class="u-text-semibold u-text-primary" aria-busy="true">Sincronizando base de datos...</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuration Reference -->
+        <section class="u-mb-v">
+          <h2>Código de Ejemplo</h2>
+          <pre><code>&lt;!-- Botón cargando --&gt;
+&lt;button class="c-btn c-btn--primary" aria-busy="true"&gt;
+  Guardar Cambios
+&lt;/button&gt;
+
+&lt;!-- Panel/Contenedor en espera --&gt;
+&lt;div class="c-card" aria-busy="true"&gt;
+  &lt;h3&gt;Título del bloque&lt;/h3&gt;
+  &lt;p&gt;Contenido estructural...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Texto en línea cargando --&gt;
+&lt;span aria-busy="true"&gt;Cargando sección...&lt;/span&gt;</code></pre>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* Font Sizes & Text Colors Utilities
+   Prefixes: u-text-
+*/
+
+/* Font sizes (Roman numeral system mapping modular scale tokens) */
+.u-text-i { font-size: var(--font-size-i) !important; }
+.u-text-ii { font-size: var(--font-size-ii) !important; }
+.u-text-iii { font-size: var(--font-size-iii) !important; }
+.u-text-iv { font-size: var(--font-size-iv) !important; }
+.u-text-v { font-size: var(--font-size-v) !important; }
+.u-text-vi { font-size: var(--font-size-vi) !important; }
+.u-text-vii { font-size: var(--font-size-vii) !important; }
+.u-text-viii { font-size: var(--font-size-viii) !important; }
+.u-text-ix { font-size: var(--font-size-ix) !important; }
+.u-text-x { font-size: var(--font-size-x) !important; }
+
+/* Color overrides */
+.u-text-primary { color: var(--color-primary-500) !important; }
+.u-text-secondary { color: var(--color-secondary-500) !important; }
+.u-text-muted { color: var(--color-neutral-500) !important; }
+
+/* Primary Text Colors Scale */
+.u-text-primary-50 { color: var(--color-primary-50) !important; }
+.u-text-primary-100 { color: var(--color-primary-100) !important; }
+.u-text-primary-200 { color: var(--color-primary-200) !important; }
+.u-text-primary-300 { color: var(--color-primary-300) !important; }
+.u-text-primary-400 { color: var(--color-primary-400) !important; }
+.u-text-primary-500 { color: var(--color-primary-500) !important; }
+.u-text-primary-600 { color: var(--color-primary-600) !important; }
+.u-text-primary-700 { color: var(--color-primary-700) !important; }
+.u-text-primary-800 { color: var(--color-primary-800) !important; }
+.u-text-primary-900 { color: var(--color-primary-900) !important; }
+.u-text-primary-950 { color: var(--color-primary-950) !important; }
+
+/* Secondary Text Colors Scale */
+.u-text-secondary-50 { color: var(--color-secondary-50) !important; }
+.u-text-secondary-100 { color: var(--color-secondary-100) !important; }
+.u-text-secondary-200 { color: var(--color-secondary-200) !important; }
+.u-text-secondary-300 { color: var(--color-secondary-300) !important; }
+.u-text-secondary-400 { color: var(--color-secondary-400) !important; }
+.u-text-secondary-500 { color: var(--color-secondary-500) !important; }
+.u-text-secondary-600 { color: var(--color-secondary-600) !important; }
+.u-text-secondary-700 { color: var(--color-secondary-700) !important; }
+.u-text-secondary-800 { color: var(--color-secondary-800) !important; }
+.u-text-secondary-900 { color: var(--color-secondary-900) !important; }
+.u-text-secondary-950 { color: var(--color-secondary-950) !important; }
+
+/* Neutral Text Colors Scale */
+.u-text-neutral-50 { color: var(--color-neutral-50) !important; } /* Safe check with standard variables */
+.u-text-neutral-100 { color: var(--color-neutral-100) !important; }
+.u-text-neutral-200 { color: var(--color-neutral-200) !important; }
+.u-text-neutral-300 { color: var(--color-neutral-300) !important; }
+.u-text-neutral-400 { color: var(--color-neutral-400) !important; }
+.u-text-neutral-500 { color: var(--color-neutral-500) !important; }
+.u-text-neutral-600 { color: var(--color-neutral-600) !important; }
+.u-text-neutral-700 { color: var(--color-neutral-700) !important; }
+.u-text-neutral-800 { color: var(--color-neutral-800) !important; }
+.u-text-neutral-900 { color: var(--color-neutral-900) !important; }
+.u-text-neutral-950 { color: var(--color-neutral-950) !important; }
+
+/* Info Text Colors */
+.u-text-info { color: var(--color-info-500) !important; }
+.u-text-info-50 { color: var(--color-info-50) !important; }
+.u-text-info-100 { color: var(--color-info-100) !important; }
+.u-text-info-200 { color: var(--color-info-200) !important; }
+.u-text-info-300 { color: var(--color-info-300) !important; }
+.u-text-info-400 { color: var(--color-info-400) !important; }
+.u-text-info-500 { color: var(--color-info-500) !important; }
+.u-text-info-600 { color: var(--color-info-600) !important; }
+.u-text-info-700 { color: var(--color-info-700) !important; }
+.u-text-info-800 { color: var(--color-info-800) !important; }
+.u-text-info-900 { color: var(--color-info-900) !important; }
+.u-text-info-950 { color: var(--color-info-950) !important; }
+
+/* Warning Text Colors */
+.u-text-warning { color: var(--color-warning-500) !important; }
+.u-text-warning-50 { color: var(--color-warning-50) !important; }
+.u-text-warning-100 { color: var(--color-warning-100) !important; }
+.u-text-warning-200 { color: var(--color-warning-200) !important; }
+.u-text-warning-300 { color: var(--color-warning-300) !important; }
+.u-text-warning-400 { color: var(--color-warning-400) !important; }
+.u-text-warning-500 { color: var(--color-warning-500) !important; }
+.u-text-warning-600 { color: var(--color-warning-600) !important; }
+.u-text-warning-700 { color: var(--color-warning-700) !important; }
+.u-text-warning-800 { color: var(--color-warning-800) !important; }
+.u-text-warning-900 { color: var(--color-warning-900) !important; }
+.u-text-warning-950 { color: var(--color-warning-950) !important; }
+
+/* Success Text Colors */
+.u-text-success { color: var(--color-success-500) !important; }
+.u-text-success-50 { color: var(--color-success-50) !important; }
+.u-text-success-100 { color: var(--color-success-100) !important; }
+.u-text-success-200 { color: var(--color-success-200) !important; }
+.u-text-success-300 { color: var(--color-success-300) !important; }
+.u-text-success-400 { color: var(--color-success-400) !important; }
+.u-text-success-500 { color: var(--color-success-500) !important; }
+.u-text-success-600 { color: var(--color-success-600) !important; }
+.u-text-success-700 { color: var(--color-success-700) !important; }
+.u-text-success-800 { color: var(--color-success-800) !important; }
+.u-text-success-900 { color: var(--color-success-900) !important; }
+.u-text-success-950 { color: var(--color-success-950) !important; }
+
+/* Error Text Colors */
+.u-text-error { color: var(--color-error-500) !important; }
+.u-text-error-50 { color: var(--color-error-50) !important; }
+.u-text-error-100 { color: var(--color-error-100) !important; }
+.u-text-error-200 { color: var(--color-error-200) !important; }
+.u-text-error-300 { color: var(--color-error-300) !important; }
+.u-text-error-400 { color: var(--color-error-400) !important; }
+.u-text-error-500 { color: var(--color-error-500) !important; }
+.u-text-error-600 { color: var(--color-error-600) !important; }
+.u-text-error-700 { color: var(--color-error-700) !important; }
+.u-text-error-800 { color: var(--color-error-800) !important; }
+.u-text-error-900 { color: var(--color-error-900) !important; }
+.u-text-error-950 { color: var(--color-error-950) !important; }

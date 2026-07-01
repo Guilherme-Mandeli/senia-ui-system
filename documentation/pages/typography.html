@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -37,9 +38,9 @@
       <div class="l-container">
         
         <header class="u-mb-vi">
-          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Tokens de Diseño</span>
+          <span class="c-badge c-badge--primary c-badge--pill u-mb-iii u-py-ii u-px-iv">Tokens de Diseño</span>
           <h1>Sistema Tipográfico</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Jerarquía visual legible y consistente estructurada mediante las familias tipográficas Outfit e Inter.
           </p>
         </header>
@@ -47,83 +48,132 @@
         <hr>
 
         <!-- Font Families -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2>Fuentes Corporativas</h2>
-          <div class="u-grid u-grid-cols-3 u-grid-gap-sm u-mt-v" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div class="u-flex u-flex-row u-gap-iv u-mt-iv" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
             
             <div class="c-card u-p-v">
-              <span class="c-badge c-badge--outline c-badge--primary u-mb-ii">Predeterminado</span>
-              <h3 style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-vii); font-weight: 800;">Gill Sans</h3>
-              <p style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-v);">
+              <span class="c-badge c-badge--outline u-mb-iii">Predeterminado</span>
+              <h3 class="u-mb-ii" style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-vii); font-weight: 800;">Gill Sans</h3>
+              <p class="u-mb-iv" style="font-family: var(--font-family-gill-sans); font-size: var(--font-size-v);">
                 ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
                 abcdefghijklmnñopqrstuvwxyz<br>
                 1234567890!@#$%^&*()
               </p>
-              <div class="u-text-xs u-text-success u-mt-iii">--font-family-gill-sans</div>
+              <div class="v-token-css">--font-family-gill-sans</div>
             </div>
 
             <div class="c-card u-p-v">
-              <span class="c-badge c-badge--outline c-badge--success u-mb-ii">Seriedad</span>
-              <h3 style="font-family: var(--font-family-lato); font-size: var(--font-size-vii); font-weight: 700;">Lato</h3>
-              <p style="font-family: var(--font-family-lato); font-size: var(--font-size-v);">
+              <span class="c-badge c-badge--outline u-mb-iii">Seriedad</span>
+              <h3 class="u-mb-ii" style="font-family: var(--font-family-lato); font-size: var(--font-size-vii); font-weight: 700;">Lato</h3>
+              <p class="u-mb-iv" style="font-family: var(--font-family-lato); font-size: var(--font-size-v);">
                 ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>
                 abcdefghijklmnñopqrstuvwxyz<br>
                 1234567890!@#$%^&*()
               </p>
-              <div class="u-text-xs u-text-success u-mt-iii">--font-family-lato</div>
+              <div class="v-token-css">--font-family-lato</div>
             </div>
 
           </div>
         </section>
 
-        <hr>
-
         <!-- Typography Sizes -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2>Escala de Tamaños (Modular)</h2>
-          <p class="u-mb-v">Escala relativa basada en unidades <code>rem</code> que escala armoniosamente en cualquier resolución.</p>
+          <p>Escala relativa basada en unidades <code>rem</code> que escala armoniosamente en cualquier resolución.</p>
           
-          <div class="c-card u-p-v">
+          <div class="c-card u-p-v u-mt-iv">
+
             <div class="l-flex-stack l-flex-stack--md">
               
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-x</span>
-                <div style="font-size: var(--font-size-x); font-family: var(--font-family-heading); font-weight: 800; line-height: 1;">Senia Framework</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-x</span>
+                  <span class="v-token-class">.u-text-x</span>
+                  <span class="v-token">font-size: 40px (2.5rem)</span>
+                </div>
+                <div class="u-text-x" style="font-family: var(--font-family-heading); font-weight: 800; line-height: 1;">Senia Framework</div>
               </div>
               
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-ix</span>
-                <div style="font-size: var(--font-size-ix); font-family: var(--font-family-heading); font-weight: 800; line-height: 1.1;">Tamaño de Encabezado Principal</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-ix</span>
+                  <span class="v-token-class">.u-text-ix</span>
+                  <span class="v-token">font-size: 32px (2rem)</span>
+                </div>
+                <div class="u-text-ix" style="font-family: var(--font-family-heading); font-weight: 800; line-height: 1.1;">Tamaño de Encabezado Principal</div>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-viii</span>
-                <div style="font-size: var(--font-size-viii); font-family: var(--font-family-heading); font-weight: 700;">Encabezados de Segundo Nivel (H2)</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-viii</span>
+                  <span class="v-token-class">.u-text-viii</span>
+                  <span class="v-token">font-size: 24px (1.5rem)</span>
+                </div>
+                <div class="u-text-viii" style="font-family: var(--font-family-heading); font-weight: 700;">Encabezados de Segundo Nivel (H2)</div>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-vii</span>
-                <div style="font-size: var(--font-size-vii); font-weight: 600;">Secciones medianas (H3)</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-vii</span>
+                  <span class="v-token-class">.u-text-vii</span>
+                  <span class="v-token">font-size: 20px (1.25rem)</span>
+                </div>
+                <div class="u-text-vii" style="font-weight: 600;">Secciones medianas (H3)</div>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-vi</span>
-                <div style="font-size: var(--font-size-vi); font-weight: 500;">Párrafos destacados, leads o subtítulos (H4)</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-vi</span>
+                  <span class="v-token-class">.u-text-vi</span>
+                  <span class="v-token">font-size: 18px (1.125rem)</span>
+                </div>
+                <div class="u-text-vi" style="font-weight: 500;">Párrafos destacados, leads o subtítulos (H4)</div>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-v</span>
-                <div style="font-size: var(--font-size-v);">Cuerpo de texto estándar por defecto de 1rem (16px). Legibilidad óptima para textos continuos.</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-v</span>
+                  <span class="v-token-class">.u-text-v</span>
+                  <span class="v-token">font-size: 16px (1rem)</span>
+                </div>
+                <div class="u-text-v">Cuerpo de texto estándar por defecto de 1rem (16px). Legibilidad óptima para textos continuos.</div>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">--font-size-iv</span>
-                <div style="font-size: var(--font-size-iv);">Textos auxiliares, inputs de formulario y tablas secundarias (14px).</div>
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-iv</span>
+                  <span class="v-token-class">.u-text-iv</span>
+                  <span class="v-token">font-size: 14px (0.875rem)</span>
+                </div>
+                <div class="u-text-iv">Textos auxiliares, inputs de formulario y tablas secundarias (14px).</div>
+              </div>
+
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-iii</span>
+                  <span class="v-token-class">.u-text-iii</span>
+                  <span class="v-token">font-size: 13px (0.8125rem)</span>
+                </div>
+                <div class="u-text-iii">Campos de texto compactos, datos de tablas secundarias y subtítulos pequeños (13px).</div>
+              </div>
+
+              <div class="u-border-b u-pb-iii u-mb-iv">
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-ii</span>
+                  <span class="v-token-class">.u-text-ii</span>
+                  <span class="v-token">font-size: 12px (0.75rem)</span>
+                </div>
+                <div class="u-text-ii" style="text-transform: uppercase; font-weight: 600;">Etiquetas pequeñas, badges y notas (12px).</div>
               </div>
 
               <div>
-                <span class="c-badge u-mb-i">--font-size-ii</span>
-                <div style="font-size: var(--font-size-ii); text-transform: uppercase; font-weight: 600;">Etiquetas pequeñas, badges y notas (12px).</div>
+                <div class="u-flex u-flex-wrap u-gap-ii u-mb-ii">
+                  <span class="v-token-css">--font-size-i</span>
+                  <span class="v-token-class">.u-text-i</span>
+                  <span class="v-token">font-size: 11px (0.6875rem)</span>
+                </div>
+                <div class="u-text-i" style="text-transform: uppercase; font-weight: 700; letter-spacing: var(--letter-spacing-ii);">Micro-textos de copyright, leyendas y tooltips mínimos (11px).</div>
               </div>
 
             </div>
@@ -131,52 +181,146 @@
         </section>
 
         <!-- Font Weights Section -->
-        <section class="u-mb-vi">
+        <section class="u-mb-viii">
           <h2>Pesos Tipográficos</h2>
-          <div class="c-card u-p-v">
-            <div class="l-grid l-grid--2col">
-              <div>
-                <p class="u-text-light" style="font-size: var(--font-size-vi);">Light (300) - Cuerpo de lectura ligero</p>
-                <p class="u-text-regular" style="font-size: var(--font-size-vi);">Regular (400) - Cuerpo de lectura principal</p>
-                <p class="u-text-medium" style="font-size: var(--font-size-vi);">Medium (500) - Enlaces y etiquetas secundarias</p>
+          <div class="c-card u-p-v u-mt-iv">
+
+            <div class="u-flex u-flex-column u-gap-iv">
+              
+              <!-- Thin -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-100</span>
+                  <span class="v-token-class">.u-text-thin</span>
+                  <span class="v-token-class">.u-text-100</span>
+                  <span class="v-token">font-weight: 100</span>
+                </div>
+                <p class="u-text-thin u-mb-none" style="font-size: var(--font-size-vi);">Thin (100) - Cuerpo de lectura ultra-fino de diseño</p>
               </div>
-              <div>
-                <p class="u-text-semibold" style="font-size: var(--font-size-vi);">Semibold (600) - Títulos de componentes</p>
-                <p class="u-text-bold" style="font-size: var(--font-size-vi);">Bold (700) - Títulos de secciones</p>
+
+              <!-- Extralight -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-200</span>
+                  <span class="v-token-class">.u-text-extralight</span>
+                  <span class="v-token-class">.u-text-200</span>
+                  <span class="v-token">font-weight: 200</span>
+                </div>
+                <p class="u-text-extralight u-mb-none" style="font-size: var(--font-size-vi);">Extralight (200) - Cuerpo de lectura extra-delgado</p>
               </div>
+
+              <!-- Light -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-300</span>
+                  <span class="v-token-class">.u-text-light</span>
+                  <span class="v-token-class">.u-text-300</span>
+                  <span class="v-token">font-weight: 300</span>
+                </div>
+                <p class="u-text-light u-mb-none" style="font-size: var(--font-size-vi);">Light (300) - Cuerpo de lectura ligero y elegante</p>
+              </div>
+
+              <!-- Regular -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-400</span>
+                  <span class="v-token-class">.u-text-regular</span>
+                  <span class="v-token-class">.u-text-400</span>
+                  <span class="v-token">font-weight: 400</span>
+                </div>
+                <p class="u-text-regular u-mb-none" style="font-size: var(--font-size-vi);">Regular (400) - Cuerpo de lectura principal altamente legible</p>
+              </div>
+
+              <!-- Medium -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-500</span>
+                  <span class="v-token-class">.u-text-medium</span>
+                  <span class="v-token-class">.u-text-500</span>
+                  <span class="v-token">font-weight: 500</span>
+                </div>
+                <p class="u-text-medium u-mb-none" style="font-size: var(--font-size-vi);">Medium (500) - Enlaces, botones y etiquetas de énfasis medio</p>
+              </div>
+
+              <!-- Semibold -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-600</span>
+                  <span class="v-token-class">.u-text-semibold</span>
+                  <span class="v-token-class">.u-text-600</span>
+                  <span class="v-token">font-weight: 600</span>
+                </div>
+                <p class="u-text-semibold u-mb-none" style="font-size: var(--font-size-vi);">Semibold (600) - Títulos de componentes y énfasis destacado</p>
+              </div>
+
+              <!-- Bold -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-700</span>
+                  <span class="v-token-class">.u-text-bold</span>
+                  <span class="v-token-class">.u-text-700</span>
+                  <span class="v-token">font-weight: 700</span>
+                </div>
+                <p class="u-text-bold u-mb-none" style="font-size: var(--font-size-vi);">Bold (700) - Títulos de secciones y encabezados principales</p>
+              </div>
+
+              <!-- Extrabold -->
+              <div class="u-border-b u-pb-iii u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-800</span>
+                  <span class="v-token-class">.u-text-extrabold</span>
+                  <span class="v-token-class">.u-text-800</span>
+                  <span class="v-token">font-weight: 800</span>
+                </div>
+                <p class="u-text-extrabold u-mb-none" style="font-size: var(--font-size-vi);">Extrabold (800) - Títulos destacados y énfasis ultra-fuerte</p>
+              </div>
+
+              <!-- Black -->
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-flex u-flex-wrap u-gap-ii">
+                  <span class="v-token-css">--font-weight-900</span>
+                  <span class="v-token-class">.u-text-black</span>
+                  <span class="v-token-class">.u-text-900</span>
+                  <span class="v-token">font-weight: 900</span>
+                </div>
+                <p class="u-text-black u-mb-none" style="font-size: var(--font-size-vi);">Black (900) - Máxima contundencia tipográfica para títulos principales</p>
+              </div>
+
             </div>
           </div>
         </section>
 
-        <!-- Text Utilities Section -->
-        <section class="u-mb-v">
-          <h2>Utilidades de Texto</h2>
-          <p class="u-mb-v">Clases de utilidad premium para controlar alineación, transformación, decoración, saltos de línea y desbordamientos.</p>
 
-          <div class="u-grid u-grid-cols-2 u-grid-gap-md" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+        <!-- Text Utilities Section -->
+        <section class="u-mb-viii">
+          <h2>Utilidades de Texto</h2>
+          <p>Clases de utilidad premium para controlar alineación, transformación, decoración, saltos de línea y desbordamientos.</p>
+
+          <div class="u-grid u-grid-cols-2 u-grid-gap-md u-mt-iv" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
             
             <!-- Alignment & Transform -->
             <div class="c-card u-p-v">
               <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Alineación y Transformación</h3>
               
               <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-center</span>
-                <p class="u-text-center u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto centrado</p>
+                <span class="v-token-class">.u-text-center</span>
+                <p class="u-text-center u-p-iii u-border u-radius-ii u-mt-ii">Texto centrado</p>
               </div>
 
               <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-right</span>
-                <p class="u-text-right u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto a la derecha</p>
+                <span class="v-token-class">.u-text-right</span>
+                <p class="u-text-right u-p-iii u-border u-radius-ii u-mt-ii">Texto a la derecha</p>
               </div>
 
               <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-uppercase</span>
-                <p class="u-text-uppercase u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">Texto convertido a mayúsculas</p>
+                <span class="v-token-class">.u-text-uppercase</span>
+                <p class="u-text-uppercase u-p-iii u-border u-radius-ii u-mt-ii">Texto convertido a mayúsculas</p>
               </div>
 
               <div>
-                <span class="c-badge u-mb-i">.u-text-capitalize</span>
-                <p class="u-text-capitalize u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px;">texto capitalizado automáticamente</p>
+                <span class="v-token-class">.u-text-capitalize</span>
+                <p class="u-text-uppercase u-p-iii u-border u-radius-ii u-mt-ii">Texto capitalizado automaticamente</p>
               </div>
             </div>
 
@@ -184,26 +328,26 @@
             <div class="c-card u-p-v">
               <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Decoración y Ajustes</h3>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-underline</span>
-                <p class="u-text-underline u-p-iii">Texto subrayado</p>
+              <div class="u-mb-v">
+                <span class="v-token-class u-mb-ii">.u-text-underline</span>
+                <p class="u-text-underline u-p-iii u-border u-radius-ii u-mt-ii">Texto subrayado</p>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-line-through</span>
-                <p class="u-text-line-through u-p-iii">Texto tachado</p>
+              <div class="u-mb-v">
+                <span class="v-token-class">.u-text-line-through</span>
+                <p class="u-text-line-through u-p-iii u-border u-radius-ii u-mt-ii">Texto tachado</p>
               </div>
 
-              <div class="u-mb-iv">
-                <span class="c-badge u-mb-i">.u-text-truncate</span>
-                <p class="u-text-truncate u-p-iii" style="background: var(--color-neutral-100); border-radius: 4px; max-width: 250px;">
+              <div class="u-mb-v">
+                <span class="v-token-class">.u-text-truncate</span>
+                <p class="u-text-truncate u-p-iii u-border u-radius-ii u-mt-ii" style="max-width: 250px;">
                   Este es un texto largo que se recortará automáticamente.
                 </p>
               </div>
 
               <div>
-                <span class="c-badge u-mb-i">.u-text-hyphens-auto</span>
-                <p class="u-text-hyphens-auto u-p-iii" lang="es" style="background: var(--color-neutral-100); border-radius: 4px; max-width: 150px; text-align: justify;">
+                <span class="v-token-class">.u-text-hyphens-auto</span>
+                <p class="u-text-hyphens-auto u-p-iii u-border u-radius-ii u-mt-ii" lang="es" style="max-width: 150px; text-align: justify;">
                   Establecemos la separación silábica automática.
                 </p>
               </div>
@@ -214,20 +358,20 @@
               <h3 class="u-mb-iii" style="font-size: var(--font-size-vi);">Ajustes de Línea y Rupturas</h3>
               <div class="u-grid u-grid-cols-3 u-grid-gap-sm" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
                 <div>
-                  <span class="c-badge u-mb-i">.u-text-nowrap</span>
-                  <div class="u-p-iii u-text-nowrap" style="background: var(--color-neutral-100); border-radius: 4px; overflow: auto;">
+                  <span class="v-token-class">.u-text-nowrap</span>
+                  <div class="u-p-iii u-text-nowrap u-border u-radius-ii u-mt-ii" style="overflow: auto; max-width: 228px">
                     Este texto no saltará de línea bajo ninguna circunstancia.
                   </div>
                 </div>
                 <div>
-                  <span class="c-badge u-mb-i">.u-text-break-all</span>
-                  <div class="u-p-iii u-text-break-all" style="background: var(--color-neutral-100); border-radius: 4px; word-break: break-all;">
+                  <span class="v-token-class">.u-text-break-all</span>
+                  <div class="u-p-iii u-text-break-all u-border u-radius-ii u-mt-ii" style="overflow: auto; max-width: 228px">
                     Supercalifragilisticoespialidosoconsaltodelineaextremo
                   </div>
                 </div>
                 <div>
-                  <span class="c-badge u-mb-i">.u-text-wrap-break</span>
-                  <div class="u-p-iii u-text-wrap-break" style="background: var(--color-neutral-100); border-radius: 4px;">
+                  <span class="v-token-class">.u-text-wrap-break</span>
+                  <div class="u-p-iii u-text-wrap-break u-border u-radius-ii u-mt-ii" style="overflow: auto; max-width: 228px">
                     Palabras extremadamente-largas-que-se-deben-envolver.
                   </div>
                 </div>
@@ -236,8 +380,197 @@
 
           </div>
         </section>
+
+        <!-- New State Text Colors Scale Section -->
+        <section class="u-mb-viii">
+          <h2>Colores de Estado y Escalas Semánticas (50 a 950)</h2>
+          <p>Clases de utilidad para los cuatro estados semánticos del sistema (<code>primary</code>, <code>secondary</code>, <code>neutral</code>, <code>info</code>, <code>success</code>, <code>warning</code>, <code>error</code>) con una escala de tonos completa de 50 a 950 para lograr combinaciones de alto contraste.</p>
+
+          <div class="u-grid u-grid-cols-4 u-gap-iv u-mt-iv">
+
+            <!-- Primary Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-primary u-display-block u-mb-iii">PRIMARY PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-primary-50 u-text-bold">.u-text-primary-50 (50)</div>
+                <div class="u-text-primary-100 u-text-bold">.u-text-primary-100 (100)</div>
+                <div class="u-text-primary-200 u-text-semibold">.u-text-primary-200 (200)</div>
+                <div class="u-text-primary-300">.u-text-primary-300 (300)</div>
+                <div class="u-text-primary-400">.u-text-primary-400 (400)</div>
+                <div class="u-text-primary-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-primary-500 (500)</div>
+                <div class="u-text-primary-600">.u-text-primary-600 (600)</div>
+                <div class="u-text-primary-700">.u-text-primary-700 (700)</div>
+                <div class="u-text-primary-800 u-text-semibold">.u-text-primary-800 (800)</div>
+                <div class="u-text-primary-900 u-text-bold">.u-text-primary-900 (900)</div>
+                <div class="u-text-primary-950 u-text-bold">.u-text-primary-950 (950)</div>
+              </div>
+            </div>
+
+            <!-- Secondary Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-secondary u-display-block u-mb-iii">SECONDARY PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-secondary-50 u-text-bold">.u-text-secondary-50 (50)</div>
+                <div class="u-text-secondary-100 u-text-bold">.u-text-secondary-100 (100)</div>
+                <div class="u-text-secondary-200 u-text-semibold">.u-text-secondary-200 (200)</div>
+                <div class="u-text-secondary-300">.u-text-secondary-300 (300)</div>
+                <div class="u-text-secondary-400">.u-text-secondary-400 (400)</div>
+                <div class="u-text-secondary-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-secondary-500 (500)</div>
+                <div class="u-text-secondary-600">.u-text-secondary-600 (600)</div>
+                <div class="u-text-secondary-700">.u-text-secondary-700 (700)</div>
+                <div class="u-text-secondary-800 u-text-semibold">.u-text-secondary-800 (800)</div>
+                <div class="u-text-secondary-900 u-text-bold">.u-text-secondary-900 (900)</div>
+                <div class="u-text-secondary-950 u-text-bold">.u-text-secondary-950 (950)</div>
+              </div>
+            </div>
+
+            <!-- Neutral Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-muted u-display-block u-mb-iii">NEUTRAL PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-neutral-50 u-text-bold">.u-text-neutral-50 (50)</div>
+                <div class="u-text-neutral-100 u-text-bold">.u-text-neutral-100 (100)</div>
+                <div class="u-text-neutral-200 u-text-semibold">.u-text-neutral-200 (200)</div>
+                <div class="u-text-neutral-300">.u-text-neutral-300 (300)</div>
+                <div class="u-text-neutral-400">.u-text-neutral-400 (400)</div>
+                <div class="u-text-neutral-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-neutral-500 (500)</div>
+                <div class="u-text-neutral-600">.u-text-neutral-600 (600)</div>
+                <div class="u-text-neutral-700">.u-text-neutral-700 (700)</div>
+                <div class="u-text-neutral-800 u-text-semibold">.u-text-neutral-800 (800)</div>
+                <div class="u-text-neutral-900 u-text-bold">.u-text-neutral-900 (900)</div>
+                <div class="u-text-neutral-950 u-text-bold">.u-text-neutral-950 (950)</div>
+              </div>
+            </div>
+            
+            <!-- Info Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-info u-display-block u-mb-iii">INFO PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-info-50 u-text-bold">.u-text-info-50 (50)</div>
+                <div class="u-text-info-100 u-text-bold">.u-text-info-100 (100)</div>
+                <div class="u-text-info-200 u-text-semibold">.u-text-info-200 (200)</div>
+                <div class="u-text-info-300">.u-text-info-300 (300)</div>
+                <div class="u-text-info-400">.u-text-info-400 (400)</div>
+                <div class="u-text-info-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-info-500 (500)</div>
+                <div class="u-text-info-600">.u-text-info-600 (600)</div>
+                <div class="u-text-info-700">.u-text-info-700 (700)</div>
+                <div class="u-text-info-800 u-text-semibold">.u-text-info-800 (800)</div>
+                <div class="u-text-info-900 u-text-bold">.u-text-info-900 (900)</div>
+                <div class="u-text-info-950 u-text-bold">.u-text-info-950 (950)</div>
+              </div>
+            </div>
+
+            <!-- Success Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-success u-display-block u-mb-iii">SUCCESS PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-success-50 u-text-bold">.u-text-success-50 (50)</div>
+                <div class="u-text-success-100 u-text-bold">.u-text-success-100 (100)</div>
+                <div class="u-text-success-200 u-text-semibold">.u-text-success-200 (200)</div>
+                <div class="u-text-success-300">.u-text-success-300 (300)</div>
+                <div class="u-text-success-400">.u-text-success-400 (400)</div>
+                <div class="u-text-success-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-success-500 (500)</div>
+                <div class="u-text-success-600">.u-text-success-600 (600)</div>
+                <div class="u-text-success-700">.u-text-success-700 (700)</div>
+                <div class="u-text-success-800 u-text-semibold">.u-text-success-800 (800)</div>
+                <div class="u-text-success-900 u-text-bold">.u-text-success-900 (900)</div>
+                <div class="u-text-success-950 u-text-bold">.u-text-success-950 (950)</div>
+              </div>
+            </div>
+
+            <!-- Warning Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-warning u-display-block u-mb-iii">WARNING PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-warning-50 u-text-bold">.u-text-warning-50 (50)</div>
+                <div class="u-text-warning-100 u-text-bold">.u-text-warning-100 (100)</div>
+                <div class="u-text-warning-200 u-text-semibold">.u-text-warning-200 (200)</div>
+                <div class="u-text-warning-300">.u-text-warning-300 (300)</div>
+                <div class="u-text-warning-400">.u-text-warning-400 (400)</div>
+                <div class="u-text-warning-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-warning-500 (500)</div>
+                <div class="u-text-warning-600">.u-text-warning-600 (600)</div>
+                <div class="u-text-warning-700">.u-text-warning-700 (700)</div>
+                <div class="u-text-warning-800 u-text-semibold">.u-text-warning-800 (800)</div>
+                <div class="u-text-warning-900 u-text-bold">.u-text-warning-900 (900)</div>
+                <div class="u-text-warning-950 u-text-bold">.u-text-warning-950 (950)</div>
+              </div>
+            </div>
+
+            <!-- Error Scale Column -->
+            <div class="c-card u-p-iv">
+              <strong class="u-text-iv u-text-error u-display-block u-mb-iii">ERROR PALETTE</strong>
+              <div class="u-flex u-flex-column u-gap-ii">
+                <div class="u-text-error-50 u-text-bold">.u-text-error-50 (50)</div>
+                <div class="u-text-error-100 u-text-bold">.u-text-error-100 (100)</div>
+                <div class="u-text-error-200 u-text-semibold">.u-text-error-200 (200)</div>
+                <div class="u-text-error-300">.u-text-error-300 (300)</div>
+                <div class="u-text-error-400">.u-text-error-400 (400)</div>
+                <div class="u-text-error-500 u-text-bold" style="font-size: var(--font-size-vi);">.u-text-error-500 (500)</div>
+                <div class="u-text-error-600">.u-text-error-600 (600)</div>
+                <div class="u-text-error-700">.u-text-error-700 (700)</div>
+                <div class="u-text-error-800 u-text-semibold">.u-text-error-800 (800)</div>
+                <div class="u-text-error-900 u-text-bold">.u-text-error-900 (900)</div>
+                <div class="u-text-error-950 u-text-bold">.u-text-error-950 (950)</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="c-card u-p-v u-mt-iv">
+            <h3 class="u-mb-ii" style="font-size: var(--font-size-vi);">Estructura de Clases</h3>
+            <p class="u-mb-none u-text-sm u-text-muted">
+              Para aplicar los colores, utiliza el formato <code>.u-text-[paleta]-[escala]</code>, donde paleta es <code>primary</code>, <code>secondary</code>, <code>neutral</code>, <code>info</code>, <code>success</code>, <code>warning</code> o <code>error</code> y la escala abarca los niveles <code>50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950</code> (ejemplo: <code>.u-text-primary-500</code>).
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Theme & Contrast Utilities Section -->
+        <section class="u-mb-viii">
+          <h2>Temas de Contraste Activo (Light &amp; Dark Contrast)</h2>
+          <p>Clases de utilidad global para conmutar el color de primer plano a claro u oscuro. Adicionalmente, estas clases propagan de forma inteligente el contraste hacia elementos secundarios como iconos SVG, flechas indicadoras y efectos de carga interactivos.</p>
+
+          <div class="u-grid u-grid-cols-2 u-grid-gap-md u-mt-iv" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            
+            <!-- Light Contrast Container -->
+            <div class="c-card u-p-v u-contrast-light" style="background-color: var(--color-neutral-900); border-color: var(--color-neutral-800);">
+              <span class="c-badge c-badge--outline u-mb-iii" style="border-color: rgba(255,255,255,0.4); color: white;">u-contrast-light</span>
+              <h3 class="u-mb-ii">Contraste Claro</h3>
+              <p class="u-text-iv u-mb-iv" style="opacity: 0.85;">
+                Fuerza al texto de todo el contenedor a renderizarse en color blanco puro. Los iconos vectoriales adyacentes y cargadores de carga heredan el tono automáticamente.
+              </p>
+              
+              <div style="display: flex; gap: var(--space-iii); align-items: center;">
+                <button class="c-btn c-btn--outline c-btn--loading">Cargando</button>
+                <button class="c-btn c-btn--ghost">
+                  Avanzar
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="arrow"><path d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dark Contrast Container -->
+            <div class="c-card u-p-v u-contrast-dark" style="background-color: var(--color-primary-200); border-color: var(--color-primary-300);">
+              <span class="c-badge c-badge--outline u-mb-iii" style="border-color: rgba(0,0,0,0.15);">u-contrast-dark</span>
+              <h3 class="u-mb-ii">Contraste Oscuro</h3>
+              <p class="u-text-iv u-mb-iv" style="opacity: 0.85;">
+                Fuerza al texto del contenedor a color gris oscuro/negro corporativo. Se adapta dinámicamente a fondos claros (como amarillo primario o arena).
+              </p>
+              
+              <div style="display: flex; gap: var(--space-iii); align-items: center;">
+                <button class="c-btn c-btn--neutral c-btn--outline c-btn--loading">Cargando</button>
+                <button class="c-btn c-btn--neutral c-btn--ghost">
+                  Avanzar
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="arrow"><path d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
         
       </div>
+
     </main>
 
   </div>

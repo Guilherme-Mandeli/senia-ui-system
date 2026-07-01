@@ -14,8 +14,9 @@
   <!-- Header -->
   <header class="v-header">
     <div class="v-header__logo">
-      <div class="v-header__dot"></div>
-      <span>Senia UI CSS Framework</span>
+      <img class="logo-positive" src="/public/logo-senia.png" width="85px"/>
+      <img class="logo-negative" src="/public/logo-senia-negative.webp" width="85px"/>
+      <span style="margin-left: var(--space-ii); transform: translateY(3px);">UI CSS Framework</span>
     </div>
     <div class="v-theme-switch">
       <span>MODO OSCURO</span>
@@ -39,7 +40,7 @@
         <header class="u-mb-vi">
           <span class="c-badge c-badge--primary c-badge--pill u-mb-iii">Lato &amp; Gill Sans</span>
           <h1>Uso de Fuentes &amp; Jerarquía del CDN</h1>
-          <p class="u-text-lg u-text-muted">
+          <p class="u-text-vi u-text-muted">
             Directrices para el consumo y optimización de las dos fuentes del sistema: <strong>Lato</strong> (contexto serio por defecto) y <strong>Gill Sans</strong> (diseño general corporativo).
           </p>
         </header>
@@ -55,7 +56,7 @@
           
           <div class="c-card c-card--featured u-p-v u-mb-v">
             <h4 class="u-text-primary u-mb-iii">🔒 Sin Descarga Forzada</h4>
-            <p class="u-text-sm" style="margin-bottom: 0;">
+            <p class="u-text-iv" style="margin-bottom: 0;">
               Los navegadores modernos implementan una optimización automática nativa: **solo realizan la petición de descarga (HTTP request) de los archivos de fuentes si la página actual tiene al menos un nodo en el DOM que utilice de manera explícita ese peso de fuente y familia en particular.**
               <br><br>
               Por tanto, al usar por defecto únicamente los pesos `400` y `700` en tu layout, las variantes de pesos extremos (`Light 300` o `Heavy 900`) **nunca consumirán ancho de banda de tu usuario**, optimizando al máximo el rendimiento móvil y de escritorio.

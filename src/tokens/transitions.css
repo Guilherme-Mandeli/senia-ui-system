@@ -1,26 +1,31 @@
 /* Transition & Easing Tokens
    Consistent, delightful micro-animations for high-fidelity interactive feedback.
+   Google Material Design 3 inspired easing curves and durations.
 */
 
 :root {
-  /* Durations */
-  --transition-duration-fast: 120ms;
-  --transition-duration-normal: 200ms;
-  --transition-duration-slow: 300ms;
+  /* Google Material Design 3 Durations */
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 250ms;
+  --transition-duration-slow: 400ms;
+  --transition-duration-extra-slow: 720ms;
 
-  /* Easing curves */
+  /* Google Material Design 3 Easing Curves */
   --transition-easing-linear: linear;
-  --transition-easing-in: cubic-bezier(0.4, 0, 1, 1);
-  --transition-easing-out: cubic-bezier(0, 0, 0.2, 1);
-  --transition-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-easing-in: cubic-bezier(0.3, 0, 1, 1);       /* Accelerated */
+  --transition-easing-out: cubic-bezier(0, 0, 0.2, 1);      /* Decelerated */
+  --transition-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);   /* Standard */
   
-  /* Smooth organic curve for UI transitions */
-  --transition-easing-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Google Material 3 Emphasized Curve (Premium Organic Spring-like Ease) */
+  --transition-easing-premium: cubic-bezier(0.2, 0, 0, 1);
 
   /* Pre-configured Shorthands */
   --transition-all: all var(--transition-duration-normal) var(--transition-easing-premium);
-  --transition-colors: color var(--transition-duration-fast) var(--transition-easing-linear), 
-                      background-color var(--transition-duration-fast) var(--transition-easing-linear), 
-                      border-color var(--transition-duration-fast) var(--transition-easing-linear), 
-                      box-shadow var(--transition-duration-fast) var(--transition-easing-linear);
+  
+  /* Google Inspired Color and Shadow Smooth Transition */
+  --transition-colors: color var(--transition-duration-fast) var(--transition-easing-premium), 
+                      background-color var(--transition-duration-fast) var(--transition-easing-premium), 
+                      border-color var(--transition-duration-fast) var(--transition-easing-premium), 
+                      box-shadow var(--transition-duration-fast) var(--transition-easing-premium);
 }
+
